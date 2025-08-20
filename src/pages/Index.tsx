@@ -1,12 +1,295 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Header } from "@/components/Header";
+import { PolicyCard } from "@/components/PolicyCard";
+import { PolicyGenerator } from "@/components/PolicyGenerator";
+import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
+import { Button } from "@/components/ui/button";
+import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
+import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy } from "@/lib/policyTemplates";
+import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
+import { Search, Shield, Zap, Globe } from "lucide-react";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+  const [selectedPolicyId, setSelectedPolicyId] = useState<string | null>(null);
+  const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleGeneratePolicy = (policyId: string) => {
+    setSelectedPolicyId(policyId);
+    setGeneratedPolicy(null);
+  };
+
+  const handlePolicyGenerated = (formData: PolicyFormData) => {
+    if (!selectedPolicyId) return;
+    
+    const policyType = getPolicyById(selectedPolicyId);
+    if (!policyType) return;
+
+    let content = "";
+    switch (selectedPolicyId) {
+      case 'privacy-policy':
+        content = generatePrivacyPolicy(formData);
+        break;
+      case 'terms-of-use':
+        content = generateTermsOfUse(formData);
+        break;
+      case 'cookie-policy':
+        content = generateCookiePolicy(formData);
+        break;
+      default:
+        content = `${policyType.name} para ${formData.siteName}\n\nEsta política está sendo gerada automaticamente...`;
+    }
+
+    const generated: GeneratedPolicy = {
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    };
+
+    setGeneratedPolicy(generated);
+  };
+
+  const handleGenerateNew = () => {
+    setSelectedPolicyId(null);
+    setGeneratedPolicy(null);
+  };
+
+  const filteredPolicies = POLICY_TYPES.filter(policy =>
+    policy.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    policy.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    policy.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  if (generatedPolicy) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={handleGenerateNew}
+          />
+        </main>
       </div>
+    );
+  }
+
+  if (selectedPolicyId) {
+    const policyType = getPolicyById(selectedPolicyId);
+    if (!policyType) {
+      setSelectedPolicyId(null);
+      return null;
+    }
+
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <div className="mb-6">
+            <Button variant="outline" onClick={() => setSelectedPolicyId(null)}>
+              ← Voltar às Políticas
+            </Button>
+          </div>
+          
+          <PolicyGenerator
+            policyType={policyType}
+            onGenerate={handlePolicyGenerated}
+          />
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="bg-gradient-hero py-16 px-4">
+        <div className="container mx-auto text-center">
+          <div className="mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+              Gerador de <span className="text-primary">Políticas Legais</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Crie políticas de privacidade, termos de uso e outros documentos legais profissionais em minutos. 
+              Gratuito, rápido e otimizado para LGPD e GDPR.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
+              <Shield className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">LGPD Compliant</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
+              <Zap className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">Geração Instantânea</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
+              <Globe className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">Múltiplos Idiomas</span>
+            </div>
+          </div>
+
+          <Button variant="google" size="xl" onClick={() => handleGeneratePolicy('privacy-policy')}>
+            Gerar Política de Privacidade
+          </Button>
+        </div>
+      </section>
+
+      {/* AdSense Banner - Leaderboard */}
+      <div className="container mx-auto px-4 py-4">
+        <div className="adsense-banner adsense-leaderboard">
+          <span>Google AdSense - Leaderboard (728x90)</span>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+            Escolha o Tipo de Política
+          </h2>
+          <p className="text-muted-foreground text-center mb-6">
+            Selecione o documento legal que você precisa gerar para seu site
+          </p>
+          
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <input
+                type="text"
+                placeholder="Buscar políticas..."
+                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="policy-grid">
+          {filteredPolicies.map((policy) => (
+            <PolicyCard
+              key={policy.id}
+              policy={policy}
+              onGenerate={handleGeneratePolicy}
+            />
+          ))}
+        </div>
+
+        {filteredPolicies.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">
+              Nenhuma política encontrada para "{searchTerm}"
+            </p>
+          </div>
+        )}
+      </main>
+
+      {/* AdSense Banner - Rectangle */}
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-center">
+          <div className="adsense-banner adsense-square">
+            <span>Google AdSense - Square (300x250)</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <section className="bg-gradient-secondary py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+            Por que escolher nosso gerador?
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Totalmente Gratuito</h3>
+              <p className="text-muted-foreground">
+                Gere quantas políticas precisar sem custo algum. Sem limites ou restrições.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Zap className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Rápido e Simples</h3>
+              <p className="text-muted-foreground">
+                Gere documentos profissionais em menos de 2 minutos. Interface intuitiva e fácil de usar.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Múltiplos Formatos</h3>
+              <p className="text-muted-foreground">
+                Baixe em TXT, DOC ou PDF. Copie o texto com um clique. Múltiplos idiomas disponíveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-card border-t border-border py-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-2xl">📋</span>
+                <span className="font-bold text-lg">Gerador de Políticas</span>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                A maneira mais rápida e fácil de criar documentos legais profissionais para seu site.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Políticas Populares</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="/politica-privacidade" className="hover:text-primary">Política de Privacidade</a></li>
+                <li><a href="/termos-uso" className="hover:text-primary">Termos de Uso</a></li>
+                <li><a href="/politica-cookies" className="hover:text-primary">Política de Cookies</a></li>
+                <li><a href="/politica-reembolso" className="hover:text-primary">Política de Reembolso</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Recursos</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="/sobre" className="hover:text-primary">Sobre</a></li>
+                <li><a href="/ajuda" className="hover:text-primary">Ajuda</a></li>
+                <li><a href="/contato" className="hover:text-primary">Contato</a></li>
+                <li><a href="/blog" className="hover:text-primary">Blog</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="/nossa-privacidade" className="hover:text-primary">Nossa Privacidade</a></li>
+                <li><a href="/nossos-termos" className="hover:text-primary">Nossos Termos</a></li>
+                <li><a href="/cookies" className="hover:text-primary">Uso de Cookies</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2024 Gerador de Políticas Legais. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
