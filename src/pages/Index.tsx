@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { PolicyCard } from "@/components/PolicyCard";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
@@ -140,12 +141,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AdSense Banner - Leaderboard */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="adsense-banner adsense-leaderboard">
-          <span>Google AdSense - Leaderboard (728x90)</span>
-        </div>
-      </div>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
@@ -191,14 +186,6 @@ const Index = () => {
         )}
       </main>
 
-      {/* AdSense Banner - Rectangle */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-center">
-          <div className="adsense-banner adsense-square">
-            <span>Google AdSense - Square (300x250)</span>
-          </div>
-        </div>
-      </div>
 
       {/* Features Section */}
       <section className="bg-gradient-secondary py-16 px-4">
@@ -241,55 +228,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <span className="text-2xl">📋</span>
-                <span className="font-bold text-lg">Gerador de Políticas</span>
-              </div>
-              <p className="text-muted-foreground text-sm">
-                A maneira mais rápida e fácil de criar documentos legais profissionais para seu site.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Políticas Populares</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/politica-privacidade" className="hover:text-primary">Política de Privacidade</a></li>
-                <li><a href="/termos-uso" className="hover:text-primary">Termos de Uso</a></li>
-                <li><a href="/politica-cookies" className="hover:text-primary">Política de Cookies</a></li>
-                <li><a href="/politica-reembolso" className="hover:text-primary">Política de Reembolso</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Recursos</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/sobre" className="hover:text-primary">Sobre</a></li>
-                <li><a href="/ajuda" className="hover:text-primary">Ajuda</a></li>
-                <li><a href="/contato" className="hover:text-primary">Contato</a></li>
-                <li><a href="/blog" className="hover:text-primary">Blog</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/nossa-privacidade" className="hover:text-primary">Nossa Privacidade</a></li>
-                <li><a href="/nossos-termos" className="hover:text-primary">Nossos Termos</a></li>
-                <li><a href="/cookies" className="hover:text-primary">Uso de Cookies</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Gerador de Políticas Legais. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      
+      <Footer />
     </div>
   );
 };
