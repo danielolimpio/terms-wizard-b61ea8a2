@@ -108,34 +108,39 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-16 px-4">
+      <section className="bg-gradient-hero py-8 md:py-16 px-4">
         <div className="container mx-auto text-center">
           <div className="mb-6">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl md:text-6xl font-bold text-foreground mb-4">
               Gerador de <span className="text-primary">Políticas Legais</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 px-4">
               Crie políticas de privacidade, termos de uso e outros documentos legais profissionais em minutos. 
               Gratuito, rápido e otimizado para LGPD e GDPR.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
-              <Shield className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium">LGPD Compliant</span>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+              <Shield className="h-4 md:h-5 w-4 md:w-5 text-primary" />
+              <span className="text-xs md:text-sm font-medium">LGPD Compliant</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
-              <Zap className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium">Geração Instantânea</span>
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+              <Zap className="h-4 md:h-5 w-4 md:w-5 text-primary" />
+              <span className="text-xs md:text-sm font-medium">Geração Instantânea</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-4 py-2">
-              <Globe className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium">Múltiplos Idiomas</span>
+            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+              <Globe className="h-4 md:h-5 w-4 md:w-5 text-primary" />
+              <span className="text-xs md:text-sm font-medium">Múltiplos Idiomas</span>
             </div>
           </div>
 
-          <Button variant="google" size="xl" onClick={() => handleGeneratePolicy('privacy-policy')}>
+          <Button 
+            variant="google" 
+            size="xl" 
+            className="text-sm md:text-base px-6 md:px-8"
+            onClick={() => handleGeneratePolicy('privacy-policy')}
+          >
             Gerar Política de Privacidade
           </Button>
         </div>
@@ -143,12 +148,12 @@ const Index = () => {
 
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
             Escolha o Tipo de Política
           </h2>
-          <p className="text-muted-foreground text-center mb-6">
+          <p className="text-sm md:text-base text-muted-foreground text-center mb-6 px-4">
             Selecione o documento legal que você precisa gerar para seu site
           </p>
           
@@ -159,7 +164,7 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Buscar políticas..."
-                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm md:text-base"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -188,39 +193,39 @@ const Index = () => {
 
 
       {/* Features Section */}
-      <section className="bg-gradient-secondary py-16 px-4">
+      <section className="bg-gradient-secondary py-8 md:py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8 md:mb-12">
             Por que escolher nosso gerador?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-primary" />
+              <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Totalmente Gratuito</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Totalmente Gratuito</h3>
+              <p className="text-sm md:text-base text-muted-foreground">
                 Gere quantas políticas precisar sem custo algum. Sem limites ou restrições.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-primary" />
+              <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
+                <Zap className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Rápido e Simples</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Rápido e Simples</h3>
+              <p className="text-sm md:text-base text-muted-foreground">
                 Gere documentos profissionais em menos de 2 minutos. Interface intuitiva e fácil de usar.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-8 w-8 text-primary" />
+              <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Múltiplos Formatos</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Múltiplos Formatos</h3>
+              <p className="text-sm md:text-base text-muted-foreground">
                 Baixe em TXT, DOC ou PDF. Copie o texto com um clique. Múltiplos idiomas disponíveis.
               </p>
             </div>

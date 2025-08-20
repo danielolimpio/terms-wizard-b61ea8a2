@@ -172,15 +172,22 @@
     @apply min-h-[90px] transition-opacity hover:opacity-80;
   }
 
-  .adsense-leaderboard {
-    @apply w-full h-[90px];
-  }
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
-  .adsense-rectangle {
-    @apply w-full h-[250px];
+@media (max-width: 640px) {
+  .policy-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
+}
 
-  .adsense-square {
-    @apply w-[300px] h-[250px];
-  }
+.adsense-banner {
+  @apply w-full h-[90px] bg-muted/30 border border-dashed border-muted-foreground/20 rounded-lg flex items-center justify-center text-muted-foreground text-sm;
+  display: none; /* Hidden as requested */
+}
 }
