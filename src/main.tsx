@@ -17,6 +17,8 @@ import OurTermsPage from './pages/OurTermsPage.tsx';
 import CookieUsagePage from './pages/CookieUsagePage.tsx';
 import CookiePolicyInfoPage from './pages/CookiePolicyInfoPage.tsx';
 import RefundPolicyInfoPage from './pages/RefundPolicyInfoPage.tsx';
+import PrivacyPolicyInfoPage from './pages/PrivacyPolicyInfoPage.tsx';
+import TermsOfUseInfoPage from './pages/TermsOfUseInfoPage.tsx';
 import NotFound from './pages/NotFound.tsx';
 import './index.css';
 
@@ -42,6 +44,8 @@ const AppRouter = () => (
           <Route path="/o-que-e-politica-reembolso" element={<RefundPolicyInfoPage />} />
           <Route path="/politica-privacidade" element={<PrivacyPolicyPage />} />
           <Route path="/termos-uso" element={<TermsOfUsePage />} />
+          <Route path="/politica-de-privacidade" element={<PrivacyPolicyInfoPage />} />
+          <Route path="/termos-de-uso" element={<TermsOfUseInfoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
