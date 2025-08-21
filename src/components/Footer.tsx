@@ -42,7 +42,7 @@ export const Footer = () => {
         
         <div className="border-t mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Gerador de Políticas. Desenvolvido por{" "}
+            Copyright © 2025 | Todos direitos reservados | Gerador de Políticas | Desenvolvido por{" "}
             <a 
               href="https://danielolimpio.com/" 
               target="_blank" 

@@ -184,6 +184,23 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  
+  /* Improve mobile button responsiveness */
+  .btn-google,
+  .btn-google-outline {
+    @apply text-sm px-4 py-2;
+    min-width: 100px;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .container {
+    @apply px-3;
+  }
+  
+  /* Improve card spacing on mobile */
+  .card-professional {
+    @apply mx-2;
+  }
 }
 
 .adsense-banner {

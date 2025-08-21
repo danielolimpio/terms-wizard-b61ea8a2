@@ -34,9 +34,9 @@ export const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center space-x-2">
           <div className="text-xl md:text-2xl font-bold text-primary">📋</div>
-          <h1 className="text-sm md:text-xl font-bold text-foreground">
+          <a href="/" className="text-sm md:text-xl font-bold text-foreground hover:text-primary transition-colors">
             Gerador de Políticas
-          </h1>
+          </a>
         </div>
         
         {/* Desktop Navigation */}
@@ -80,10 +80,10 @@ export const Header = () => {
 
         {/* Desktop Action Buttons */}
         <div className="hidden lg:flex items-center space-x-2 md:space-x-4">
-          <Button variant="google-outline" size="sm" className="text-xs md:text-sm px-2 md:px-4" onClick={() => window.location.href = '/ajuda'}>
+          <Button variant="google-outline" size="sm" className="text-xs md:text-sm px-3 md:px-4" onClick={() => window.location.href = '/ajuda'}>
             Ajuda
           </Button>
-          <Button variant="google" size="sm" className="text-xs md:text-sm px-2 md:px-4" onClick={() => window.location.href = '/'}>
+          <Button variant="google" size="sm" className="text-xs md:text-sm px-3 md:px-4" onClick={() => window.location.href = '/'}>
             Gerar Política
           </Button>
         </div>

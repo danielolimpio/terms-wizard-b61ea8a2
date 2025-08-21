@@ -199,10 +199,11 @@ export default function AllPoliciesPage() {
                           Categoria: {policy.category}
                         </span>
                         
-                        <div className="flex gap-2">
+                        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                           <Button 
                             variant="google-outline" 
                             size="sm"
+                            className="w-full sm:w-auto"
                             onClick={() => window.location.href = `/?policy=${policy.id}`}
                           >
                             Gerar Esta Política
@@ -210,7 +211,8 @@ export default function AllPoliciesPage() {
                           <Button 
                             variant="google" 
                             size="sm"
-                            onClick={() => window.location.href = `/${policy.slug}`}
+                            className="w-full sm:w-auto"
+                            onClick={() => window.location.href = `/${policy.slug}-info`}
                           >
                             Saber Mais
                           </Button>
