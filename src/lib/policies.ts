@@ -84,7 +84,7 @@ export const POLICY_TYPES: PolicyType[] = [
   },
   {
     id: 'comment-moderation',
-    name: 'Política de Moderação de Comentários',
+    name: 'Política de Moderação',
     description: 'Regras para moderação e aprovação de comentários',
     keywords: ['comentários', 'moderação', 'comunidade', 'interação'],
     slug: 'moderacao-comentarios',
