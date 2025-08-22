@@ -1,11 +1,14 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AdBanner } from "@/components/AdBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      <AdBanner />
       
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
