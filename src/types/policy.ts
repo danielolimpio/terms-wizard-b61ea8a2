@@ -89,6 +89,28 @@ export interface PolicyFormData {
   securityContactEmail?: string;
   usesAIAutomation?: boolean;
   aiRiskControl?: string;
+  
+  // Campos específicos para Política de Propriedade Intelectual
+  ownsOriginalContent?: boolean;
+  contentTypes?: string;
+  registeredTrademarks?: boolean;
+  trademarksList?: string;
+  hasPatents?: boolean;
+  patentsList?: string;
+  allowsUserContent?: boolean;
+  userContentRights?: string;
+  hasContentLicensing?: boolean;
+  licensingTypes?: string;
+  acceptsDMCARequests?: boolean;
+  dmcaAgentName?: string;
+  dmcaAgentEmail?: string;
+  dmcaAgentAddress?: string;
+  protectsThirdPartyIP?: boolean;
+  ipViolationProcess?: string;
+  hasContentModeration?: boolean;
+  moderationProcess?: string;
+  providesIPNotice?: boolean;
+  ipNoticeMethod?: string;
 }
 
 export interface GeneratedPolicy {

@@ -7,7 +7,7 @@ import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { AdBanner } from "@/components/AdBanner";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
-import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy } from "@/lib/policyTemplates";
+import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 import { Search, Shield, Zap, Globe } from "lucide-react";
 
@@ -43,6 +43,12 @@ const Index = () => {
         break;
       case 'transparency-policy':
         content = generateTransparencyPolicy(formData);
+        break;
+      case 'security-policy':
+        content = generateSecurityPolicy(formData);
+        break;
+      case 'copyright-policy':
+        content = generateCopyrightPolicy(formData);
         break;
       default:
         content = `${policyType.name} para ${formData.siteName}\n\nEsta política está sendo gerada automaticamente...`;

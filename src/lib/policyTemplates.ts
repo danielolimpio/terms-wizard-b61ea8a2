@@ -883,5 +883,322 @@ For questions, suggestions, corrections, or any matter related to this Transpare
 Email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
 Website: ${data.siteUrl}
 
-This policy has been in effect since ${currentDate} and may be updated periodically. We will always inform about significant changes.`;
+    This policy has been in effect since ${currentDate} and may be updated periodically. We will always inform about significant changes.`;
+};
+
+export const generateSecurityPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE SEGURANÇA - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política de Segurança estabelece nosso compromisso absoluto com a proteção de dados, sistemas e informações de nossos usuários. Implementamos medidas técnicas e organizacionais robustas, alinhadas às melhores práticas internacionais de cibersegurança, incluindo diretrizes do NIST, ISO/IEC 27001, LGPD e GDPR.
+
+INTRODUÇÃO E COMPROMISSO COM A SEGURANÇA
+
+A segurança da informação é nossa prioridade máxima. Protegemos seus dados com o mesmo rigor que protegeríamos os nossos próprios, implementando múltiplas camadas de segurança e mantendo vigilância constante contra ameaças digitais.
+
+Site: ${data.siteName}
+URL: ${data.siteUrl}
+Email de contato: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.securityContactEmail ? `Email de segurança: ${data.securityContactEmail}` : ''}
+${data.companyName ? `Empresa: ${data.companyName}` : ''}
+${data.country ? `País: ${data.country}` : ''}
+
+DADOS COLETADOS E FINALIDADES
+
+${data.dataCollected ? `Tipos de dados coletados: ${data.dataCollected}` : 'Coletamos apenas dados essenciais para o funcionamento do serviço.'}
+
+${data.dataCollectionPurpose ? `Finalidade da coleta: ${data.dataCollectionPurpose}` : 'Todos os dados são coletados com finalidades específicas e legítimas.'}
+
+${data.collectsMinorData ? `PROTEÇÃO DE MENORES: Implementamos procedimentos especiais para proteção de dados de menores. ${data.minorDataConsent || 'Exigimos consentimento expresso dos responsáveis legais.'}` : 'Não coletamos intencionalmente dados de menores de idade.'}
+
+MEDIDAS TÉCNICAS E ORGANIZACIONAIS DE PROTEÇÃO
+
+Criptografia e Transmissão Segura:
+${data.usesHttps ? '✓ Utilizamos protocolo HTTPS com certificado SSL/TLS válido' : '⚠ Recomendamos implementar HTTPS para segurança completa'}
+✓ Criptografia de dados em trânsito e em repouso
+✓ Protocolos de comunicação segura
+
+Infraestrutura e Armazenamento:
+${data.serverLocation ? `Localização dos servidores: ${data.serverLocation}` : 'Servidores localizados em datacenters seguros'}
+${data.performsBackups ? `✓ Backups automatizados ${data.backupFrequency ? `(${data.backupFrequency})` : ''}` : '⚠ Recomendamos implementar backups regulares'}
+${data.automaticUpdates ? '✓ Atualizações automáticas de segurança ativadas' : '⚠ Importante manter sistemas sempre atualizados'}
+
+Proteção Contra Ameaças:
+${data.usesFirewall ? '✓ Firewall e WAF (Web Application Firewall) configurados' : '⚠ Recomendamos implementar firewall robusto'}
+${data.accessMonitoring ? '✓ Monitoramento contínuo de acessos e tentativas de intrusão' : 'Sistema de monitoramento em implementação'}
+✓ Proteção contra malware, phishing e ataques DDoS
+✓ Análise regular de vulnerabilidades
+
+CONTROLE DE ACESSO E GESTÃO DE PRIVILÉGIOS
+
+${data.teamAccessCount ? `Pessoas com acesso aos dados: ${data.teamAccessCount}` : 'Acesso restrito apenas aos funcionários autorizados'}
+
+Medidas de Controle Implementadas:
+${data.accessControl ? '✓ Controle de acesso baseado em funções (RBAC)' : '⚠ Recomendamos implementar controle granular de acesso'}
+${data.strongAuthentication ? '✓ Autenticação multifatorial (2FA) para áreas críticas' : '⚠ Importante implementar autenticação forte'}
+${data.securityTraining ? '✓ Treinamento regular em segurança da informação para equipe' : 'Programa de treinamento em desenvolvimento'}
+✓ Princípio do menor privilégio aplicado
+✓ Revisão periódica de permissões de acesso
+
+USO DE SERVIÇOS DE TERCEIROS CONFIÁVEIS
+
+${data.usesThirdPartyServices ? `Serviços de terceiros utilizados: ${data.thirdPartyServices || 'Plataformas confiáveis e certificadas'}` : 'Utilizamos apenas serviços próprios ou altamente confiáveis'}
+
+${data.thirdPartyCompliance ? '✓ Todos os fornecedores são auditados quanto ao compliance' : 'Processo de auditoria de fornecedores em desenvolvimento'}
+${data.dataProcessingAgreements ? '✓ Acordos de processamento de dados (DPA) assinados com todos os parceiros' : '⚠ Recomendamos formalizar DPAs com todos os terceiros'}
+✓ Due diligence rigorosa na seleção de parceiros
+✓ Monitoramento contínuo da segurança de terceiros
+
+RESPOSTA A INCIDENTES DE SEGURANÇA
+
+${data.hasIncidentPlan ? '✓ Plano de resposta a incidentes documentado e testado' : 'Plano de resposta em desenvolvimento'}
+
+Procedimentos em Caso de Incidente:
+- Detecção e análise imediata da ameaça
+- Contenção e erradicação do problema
+- Recuperação e restauração dos serviços
+${data.incidentNotificationMethod ? `- Notificação via: ${data.incidentNotificationMethod}` : '- Notificação através de canais oficiais'}
+${data.incidentNotificationTime ? `- Prazo de notificação: ${data.incidentNotificationTime}` : '- Notificação em até 72 horas conforme LGPD'}
+- Análise post-incidente e melhorias
+
+DIREITOS DO TITULAR E COMO EXERCÊ-LOS
+
+${data.lgpdCompliance ? 'Este site está em total conformidade com a LGPD.' : 'Trabalhamos para conformidade total com a LGPD.'}
+
+${data.providesDataRights ? 'Você tem direito a:' : 'Seus direitos incluem:'}
+✓ Acesso aos seus dados pessoais
+✓ Correção de informações incorretas
+✓ Exclusão de dados (direito ao esquecimento)
+✓ Portabilidade dos dados
+✓ Revogação do consentimento
+
+${data.hasDPO ? `Encarregado de Proteção de Dados (DPO): ${data.dpoContact || 'Disponível através dos canais de contato'}` : 'Responsável pela proteção de dados disponível para esclarecimentos'}
+
+Como exercer seus direitos:
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.securityContactEmail ? `Email de segurança: ${data.securityContactEmail}` : ''}
+Prazo de resposta: até 15 dias úteis
+
+TRANSPARÊNCIA E MELHORIAS CONTÍNUAS
+
+${data.performsSecurityTests ? '✓ Realizamos testes de penetração e auditorias regulares' : 'Programa de testes de segurança em desenvolvimento'}
+${data.acceptsSecurityReports ? `✓ Aceitamos relatórios de segurança responsável: ${data.securityContactEmail || data.contactEmail || 'Entre em contato conosco'}` : 'Canal para reportar vulnerabilidades disponível'}
+
+${data.usesAIAutomation ? `USO DE INTELIGÊNCIA ARTIFICIAL: Utilizamos IA para automação de processos. ${data.aiRiskControl || 'Implementamos controles rigorosos para mitigar riscos relacionados ao uso de IA.'}` : ''}
+
+COMPROMISSO CONTÍNUO
+
+A segurança não é um destino, mas uma jornada contínua. Nos comprometemos a:
+- Manter-nos atualizados com as últimas ameaças e soluções
+- Investir constantemente em tecnologias de segurança
+- Treinar nossa equipe regularmente
+- Responder rapidamente a qualquer incidente
+- Ser transparentes sobre nossas práticas
+
+CONTATO E DPO
+
+Para questões relacionadas à segurança:
+Email: ${data.securityContactEmail || data.contactEmail || 'seguranca@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.hasDPO && data.dpoContact ? `DPO: ${data.dpoContact}` : ''}
+
+${data.hasPrivacyPolicy && data.privacyPolicyLink ? `Política de Privacidade: ${data.privacyPolicyLink}` : ''}
+
+Esta política está em vigor desde ${currentDate} e é revisada periodicamente. Mudanças significativas serão comunicadas com antecedência.
+
+A segurança de seus dados é nossa responsabilidade e seu direito. Conte conosco para proteger suas informações como o bem mais valioso que elas são.`;
+  }
+
+  // English version
+  return `SECURITY POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Security Policy establishes our absolute commitment to protecting data, systems, and information of our users. We implement robust technical and organizational measures, aligned with international cybersecurity best practices, including NIST, ISO/IEC 27001, GDPR guidelines.
+
+INTRODUCTION AND SECURITY COMMITMENT
+
+Information security is our top priority. We protect your data with the same rigor we would protect our own, implementing multiple security layers and maintaining constant vigilance against digital threats.
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Contact email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.securityContactEmail ? `Security email: ${data.securityContactEmail}` : ''}
+
+DATA COLLECTED AND PURPOSES
+
+${data.dataCollected ? `Types of data collected: ${data.dataCollected}` : 'We collect only essential data for service operation.'}
+${data.dataCollectionPurpose ? `Collection purpose: ${data.dataCollectionPurpose}` : 'All data is collected for specific and legitimate purposes.'}
+
+TECHNICAL AND ORGANIZATIONAL PROTECTION MEASURES
+
+Encryption and Secure Transmission:
+${data.usesHttps ? '✓ We use HTTPS protocol with valid SSL/TLS certificate' : '⚠ We recommend implementing HTTPS for complete security'}
+✓ Data encryption in transit and at rest
+✓ Secure communication protocols
+
+HOW TO CONTACT US
+
+For security-related matters:
+Email: ${data.securityContactEmail || data.contactEmail || 'security@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate} and is reviewed periodically.`;
+};
+
+export const generateCopyrightPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE PROPRIEDADE INTELECTUAL - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política de Propriedade Intelectual protege de forma abrangente todos os direitos autorais, marcas registradas, patentes e demais ativos de propriedade intelectual de ${data.siteName}, estabelecendo também procedimentos claros para lidar com violações, denúncias DMCA e uso não autorizado de conteúdo protegido.
+
+INTRODUÇÃO
+
+${data.siteName} respeita a propriedade intelectual de terceiros e espera que nossos usuários façam o mesmo. Esta política estabelece diretrizes claras sobre nossos direitos de propriedade intelectual e os procedimentos para reportar violações.
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email de contato: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.companyName ? `Empresa: ${data.companyName}` : ''}
+
+NOSSOS DIREITOS DE PROPRIEDADE INTELECTUAL
+
+${data.ownsOriginalContent ? `✓ Somos proprietários de conteúdo original` : 'Respeitamos e protegemos todo conteúdo original'}
+${data.contentTypes ? `Tipos de conteúdo protegido: ${data.contentTypes}` : 'Todo conteúdo, design, textos, imagens, vídeos, áudios, códigos e materiais'}
+
+MARCAS REGISTRADAS
+${data.registeredTrademarks ? `✓ Possuímos marcas registradas: ${data.trademarksList || 'Conforme registro no INPI'}` : 'Todas as marcas e logomarcas utilizadas são protegidas por direitos autorais'}
+
+PATENTES
+${data.hasPatents ? `✓ Possuímos patentes registradas: ${data.patentsList || 'Conforme registros oficiais'}` : 'Não possuímos patentes registradas atualmente'}
+
+CONTEÚDO GERADO POR USUÁRIOS
+
+${data.allowsUserContent ? `Este site permite conteúdo gerado por usuários.` : 'Este site não permite upload de conteúdo por usuários.'}
+
+${data.allowsUserContent && data.userContentRights ? `Direitos sobre conteúdo de usuários: ${data.userContentRights}` : ''}
+
+${data.hasContentModeration ? `✓ Implementamos moderação de conteúdo: ${data.moderationProcess || 'Processo automatizado e manual de verificação'}` : 'Todo conteúdo é de nossa propriedade exclusiva'}
+
+LICENCIAMENTO DE CONTEÚDO
+
+${data.hasContentLicensing ? `Oferecemos licenciamento de conteúdo: ${data.licensingTypes || 'Consulte nossos termos de licenciamento'}` : 'Nosso conteúdo não está disponível para licenciamento'}
+
+Todo uso não autorizado de nosso conteúdo é estritamente proibido, incluindo:
+- Reprodução sem autorização prévia por escrito
+- Distribuição comercial ou não comercial
+- Modificação ou criação de obras derivadas
+- Uso em outros sites ou plataformas sem permissão
+
+PROCEDIMENTOS DMCA (DIGITAL MILLENNIUM COPYRIGHT ACT)
+
+${data.acceptsDMCARequests ? 'Aceitamos e processamos denúncias DMCA de forma rápida e eficiente.' : 'Respeitamos direitos autorais conforme legislação aplicável'}
+
+${data.acceptsDMCARequests ? `
+AGENTE DMCA DESIGNADO:
+Nome: ${data.dmcaAgentName || 'Responsável Legal'}
+Email: ${data.dmcaAgentEmail || data.contactEmail || 'dmca@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.dmcaAgentAddress ? `Endereço: ${data.dmcaAgentAddress}` : ''}
+
+COMO REPORTAR VIOLAÇÃO DE DIREITOS AUTORAIS:
+
+Para reportar violação de direitos autorais, envie uma notificação contendo:
+
+1. Assinatura física ou eletrônica do proprietário dos direitos autorais
+2. Identificação da obra protegida que foi violada
+3. Identificação do material que viola direitos autorais
+4. Informações de contato (endereço, telefone, email)
+5. Declaração de boa-fé de que o uso não foi autorizado
+6. Declaração de que as informações são precisas
+
+Envie para: ${data.dmcaAgentEmail || data.contactEmail || 'dmca@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+` : ''}
+
+CONTRA-NOTIFICAÇÃO DMCA
+
+Se você acredita que seu conteúdo foi removido por engano, pode enviar uma contra-notificação contendo:
+- Sua assinatura física ou eletrônica
+- Identificação do conteúdo removido
+- Declaração sob pena de perjúrio de que a remoção foi por engano
+- Consentimento para jurisdição do tribunal federal
+
+PROTEÇÃO DE PROPRIEDADE INTELECTUAL DE TERCEIROS
+
+${data.protectsThirdPartyIP ? '✓ Respeitamos rigorosamente direitos de propriedade intelectual de terceiros' : 'Comprometemo-nos a respeitar direitos de terceiros'}
+
+${data.ipViolationProcess ? `Processo para violações: ${data.ipViolationProcess}` : 'Investigamos prontamente qualquer alegação de violação e tomamos medidas apropriadas'}
+
+NOTIFICAÇÃO DE VIOLAÇÕES
+
+${data.providesIPNotice ? `Como notificamos sobre violações: ${data.ipNoticeMethod || 'Através de email e notificação no site'}` : 'Notificamos usuários sobre violações através de canais oficiais'}
+
+Ao identificar possível violação:
+1. Investigamos a alegação
+2. Notificamos o usuário sobre a possível violação
+3. Solicitamos esclarecimentos ou remoção do conteúdo
+4. Tomamos ação apropriada conforme a situação
+
+PENALIDADES POR VIOLAÇÃO
+
+Violações desta política podem resultar em:
+- Remoção imediata do conteúdo violador
+- Suspensão temporária ou permanente da conta
+- Ação legal para recuperação de danos
+- Notificação às autoridades competentes quando aplicável
+
+MODIFICAÇÕES DESTA POLÍTICA
+
+Esta política pode ser atualizada periodicamente. Modificações significativas serão notificadas através de:
+- Email para usuários cadastrados
+- Aviso destacado no site
+- Atualização da data de modificação
+
+CONTATO PARA QUESTÕES DE PROPRIEDADE INTELECTUAL
+
+Para questões relacionadas à propriedade intelectual:
+Email geral: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.dmcaAgentEmail ? `Email DMCA: ${data.dmcaAgentEmail}` : ''}
+
+CONCLUSÃO
+
+A proteção da propriedade intelectual é fundamental para manter a inovação e a criatividade. Ao usar nossos serviços, você concorda em respeitar nossos direitos e os direitos de terceiros.
+
+Esta política está em vigor desde ${currentDate} e constitui parte integral de nossos Termos de Uso.
+
+Trabalhamos continuamente para proteger nossos ativos intelectuais e respeitar os direitos de terceiros, criando um ambiente digital seguro e respeitoso para todos.`;
+  }
+
+  // English version
+  return `INTELLECTUAL PROPERTY POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Intellectual Property Policy comprehensively protects all copyrights, trademarks, patents, and other intellectual property assets of ${data.siteName}, also establishing clear procedures for handling violations, DMCA complaints, and unauthorized use of protected content.
+
+INTRODUCTION
+
+${data.siteName} respects the intellectual property of third parties and expects our users to do the same. This policy establishes clear guidelines about our intellectual property rights and procedures for reporting violations.
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Contact email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+OUR INTELLECTUAL PROPERTY RIGHTS
+
+${data.ownsOriginalContent ? `✓ We own original content` : 'We respect and protect all original content'}
+${data.contentTypes ? `Types of protected content: ${data.contentTypes}` : 'All content, design, texts, images, videos, audio, code and materials'}
+
+HOW TO CONTACT US
+
+For intellectual property related matters:
+General email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.dmcaAgentEmail ? `DMCA email: ${data.dmcaAgentEmail}` : ''}
+
+This policy has been in effect since ${currentDate} and constitutes an integral part of our Terms of Use.`;
 };
