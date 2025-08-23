@@ -7,7 +7,7 @@ import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { AdBanner } from "@/components/AdBanner";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
-import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy } from "@/lib/policyTemplates";
+import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 import { Search, Shield, Zap, Globe } from "lucide-react";
 
@@ -37,6 +37,9 @@ const Index = () => {
         break;
       case 'cookie-policy':
         content = generateCookiePolicy(formData);
+        break;
+      case 'refund-policy':
+        content = generateRefundPolicy(formData);
         break;
       default:
         content = `${policyType.name} para ${formData.siteName}\n\nEsta política está sendo gerada automaticamente...`;

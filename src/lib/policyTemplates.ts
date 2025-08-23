@@ -383,3 +383,278 @@ If you have questions about our Cookie Policy, please contact us:
 
 This policy is effective as of ${currentDate}.`;
 };
+
+export const generateRefundPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE REEMBOLSO - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política de Reembolso estabelece as condições, prazos e procedimentos para reembolsos e devoluções da ${data.companyName || data.siteName}, em conformidade com o Código de Defesa do Consumidor (Lei nº 8.078/1990) e demais normas aplicáveis no Brasil.
+
+1. DIREITO DE ARREPENDIMENTO (COMPRAS ONLINE)
+
+1.1. Prazo Legal
+Conforme o artigo 49 do Código de Defesa do Consumidor, você tem o direito de se arrepender da compra realizada fora do estabelecimento comercial (online, telefone, catálogo) no prazo de 7 (sete) dias corridos, contados a partir:
+- Para produtos físicos: da data de recebimento do produto
+- Para serviços: da data da contratação
+- Para produtos digitais: da data da compra (antes do início do consumo)
+
+1.2. Como Exercer o Direito
+Para exercer o direito de arrependimento, entre em contato conosco através:
+- E-mail: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+- Site: ${data.siteUrl}
+
+1.3. Produtos Físicos - Condições para Devolução
+Para produtos físicos, é necessário que o produto esteja:
+- Sem uso e em perfeitas condições
+- Com etiquetas originais
+- Na embalagem original
+- Com todos os acessórios e manuais
+
+1.4. Produtos Digitais
+Para produtos digitais (e-books, cursos online, softwares, downloads):
+- O reembolso só é possível antes do início do download ou acesso ao conteúdo
+- Após o início do consumo do produto digital, não há direito ao arrependimento, exceto em casos de defeito ou informação enganosa
+- Produtos personalizados ou sob encomenda não são elegíveis para reembolso
+
+2. REEMBOLSO POR DEFEITO OU NÃO CONFORMIDADE
+
+2.1. Prazos para Reclamação (CDC art. 26)
+- Produtos não duráveis: 30 dias corridos
+- Produtos duráveis: 90 dias corridos
+- O prazo inicia na data da entrega para vícios aparentes
+- Para vícios ocultos, o prazo inicia quando o defeito se manifestar
+
+2.2. Opções do Consumidor (CDC art. 18)
+Em caso de produto com defeito, você pode escolher entre:
+- Substituição do produto por outro igual
+- Restituição integral do valor pago
+- Abatimento proporcional do preço
+
+2.3. Prazo para Solução
+Temos até 30 dias para sanar o vício. Caso não seja possível, você poderá optar por uma das alternativas acima.
+
+3. FRETE DE DEVOLUÇÃO
+
+3.1. Arrependimento
+Em caso de arrependimento (compras online), o frete de devolução é por conta do consumidor, salvo se oferecermos frete grátis como cortesia.
+
+3.2. Defeito ou Erro Nosso
+Em caso de:
+- Produto com defeito
+- Produto diferente do pedido
+- Erro na entrega
+O frete de devolução será por nossa conta.
+
+4. COMPRAS PRESENCIAIS (LOJA FÍSICA)
+
+4.1. Direito de Arrependimento
+O direito de arrependimento de 7 dias NÃO se aplica a compras realizadas presencialmente em nossa loja física.
+
+4.2. Defeitos e Não Conformidade
+Mantém-se o direito à troca, conserto ou reembolso por defeito ou não conformidade, conforme prazos e condições estabelecidos no CDC.
+
+4.3. Política de Trocas Voluntárias
+Como cortesia, oferecemos trocas voluntárias em até 30 dias para compras presenciais, desde que o produto esteja em perfeitas condições, com nota fiscal e etiquetas originais.
+
+5. PROCESSO DE SOLICITAÇÃO DE REEMBOLSO
+
+5.1. Como Solicitar
+Para solicitar reembolso:
+1. Entre em contato através do e-mail: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+2. Informe número do pedido, motivo da devolução e dados para identificação
+3. Aguarde nossas instruções para envio (se aplicável)
+
+5.2. Análise da Solicitação
+- Prazo para análise: até 7 dias úteis após recebimento da solicitação
+- Para produtos físicos: prazo conta após recebimento do produto devolvido
+- Você será notificado sobre a aprovação ou negativa
+
+5.3. Processamento do Reembolso
+- Reembolsos aprovados serão processados no mesmo meio de pagamento utilizado na compra
+- Prazo para estorno: até 2 dias úteis após confirmação
+- O prazo para aparecer na fatura pode variar conforme a operadora do cartão
+
+6. CASOS EM QUE O REEMBOLSO PODE SER NEGADO
+
+6.1. Produtos Físicos
+- Produto usado, danificado pelo consumidor ou com sinais de mau uso
+- Produto sem embalagem original ou com embalagem danificada
+- Descumprimento dos prazos legais estabelecidos
+- Produtos personalizados, sob encomenda ou feitos sob medida
+- Produtos de higiene pessoal com lacre violado
+
+6.2. Produtos Digitais
+- Produtos já consumidos (downloads iniciados, cursos já acessados)
+- Produtos personalizados ou customizados
+
+6.3. Serviços
+- Serviços já prestados ou iniciados, salvo em caso de defeito
+
+7. INFORMAÇÕES OBRIGATÓRIAS AO CONSUMIDOR
+
+7.1. Antes da Compra
+Informamos claramente:
+- Condições de reembolso e troca
+- Prazos aplicáveis
+- Formas de contato para solicitações
+- Custos de frete quando aplicáveis
+
+7.2. Direitos do Consumidor
+- Direito de arrependimento em compras online (7 dias)
+- Direito à garantia legal (30 ou 90 dias conforme o produto)
+- Direito à informação clara e adequada
+- Direito à proteção contra práticas abusivas
+
+8. GARANTIA ADICIONAL
+
+Além da garantia legal prevista no CDC, alguns produtos podem ter garantia adicional do fabricante. Nestes casos, a garantia adicional não substitui a garantia legal, sendo complementar a ela.
+
+9. PRODUTOS PERSONALIZADOS E SOB ENCOMENDA
+
+Produtos feitos especialmente para você, personalizados ou sob encomenda, não são elegíveis para devolução por arrependimento, apenas em casos de defeito ou não conformidade com o solicitado.
+
+10. DISPOSIÇÕES GERAIS
+
+10.1. Legislação Aplicável
+Esta política está em conformidade com:
+- Código de Defesa do Consumidor (Lei nº 8.078/1990)
+- Marco Civil da Internet (Lei nº 12.965/2014)
+- Demais normas aplicáveis no Brasil
+
+10.2. Resolução de Conflitos
+Em caso de dúvidas ou conflitos, procure nosso atendimento ao cliente. Não sendo possível resolver amigavelmente, você pode recorrer aos órgãos de defesa do consumidor ou ao Poder Judiciário.
+
+10.3. Alterações nesta Política
+Esta política pode ser alterada a qualquer tempo. Alterações entrarão em vigor imediatamente após publicação em nosso site. Recomendamos consultar periodicamente esta página.
+
+CONTATO
+Para dúvidas, reclamações ou solicitações relacionadas a esta Política de Reembolso:
+- E-mail: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+- Site: ${data.siteUrl}
+
+Esta política é efetiva a partir de ${currentDate}.`;
+  }
+
+  // English version
+  return `REFUND POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Refund Policy establishes the conditions, terms, and procedures for refunds and returns for ${data.companyName || data.siteName}, in compliance with applicable consumer protection laws.
+
+1. RIGHT OF WITHDRAWAL (ONLINE PURCHASES)
+
+1.1. Legal Period
+For purchases made online, by phone, or catalog, you have the right to withdraw from the purchase within 7 (seven) calendar days from:
+- Physical products: date of product delivery
+- Services: date of contract
+- Digital products: date of purchase (before consumption begins)
+
+1.2. How to Exercise the Right
+To exercise your right of withdrawal, contact us:
+- Email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+- Website: ${data.siteUrl}
+
+1.3. Physical Products - Return Conditions
+For physical products, the item must be:
+- Unused and in perfect condition
+- With original tags
+- In original packaging
+- With all accessories and manuals
+
+1.4. Digital Products
+For digital products (e-books, online courses, software, downloads):
+- Refund only possible before download or content access begins
+- After consumption starts, no withdrawal right except for defects or misleading information
+- Personalized or custom-made products are not eligible for refund
+
+2. REFUND FOR DEFECTS OR NON-COMPLIANCE
+
+2.1. Complaint Periods
+- Non-durable products: 30 calendar days
+- Durable products: 90 calendar days
+- Period starts from delivery date for apparent defects
+- For hidden defects, period starts when defect manifests
+
+2.2. Consumer Options
+In case of defective products, you can choose:
+- Product replacement with an equivalent item
+- Full refund of amount paid
+- Proportional price reduction
+
+2.3. Resolution Time
+We have up to 30 days to fix the defect. If not possible, you may choose one of the alternatives above.
+
+3. RETURN SHIPPING
+
+3.1. Withdrawal
+For withdrawal (online purchases), return shipping is at customer's expense, unless we offer free return shipping as courtesy.
+
+3.2. Defect or Our Error
+In case of:
+- Defective product
+- Wrong product delivered
+- Delivery error
+Return shipping will be at our expense.
+
+4. IN-STORE PURCHASES
+
+4.1. Right of Withdrawal
+The 7-day withdrawal right does NOT apply to purchases made in physical stores.
+
+4.2. Defects and Non-compliance
+The right to exchange, repair, or refund for defects or non-compliance remains, according to legal terms and conditions.
+
+5. REFUND REQUEST PROCESS
+
+5.1. How to Request
+To request a refund:
+1. Contact us via email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+2. Provide order number, reason for return, and identification data
+3. Await our shipping instructions (if applicable)
+
+5.2. Request Analysis
+- Analysis period: up to 7 business days after receiving request
+- For physical products: period counts after receiving returned product
+- You will be notified of approval or denial
+
+5.3. Refund Processing
+- Approved refunds will be processed using the same payment method
+- Refund timeframe: up to 2 business days after confirmation
+- Time to appear on statement may vary by card operator
+
+6. CASES WHERE REFUND MAY BE DENIED
+
+6.1. Physical Products
+- Used, damaged, or showing signs of misuse
+- Without original packaging or with damaged packaging
+- Non-compliance with established legal deadlines
+- Personalized, custom-made, or made-to-measure products
+- Personal hygiene products with broken seal
+
+6.2. Digital Products
+- Already consumed products (downloads started, courses accessed)
+- Personalized or customized products
+
+6.3. Services
+- Services already provided or started, except in case of defect
+
+7. GENERAL PROVISIONS
+
+7.1. Applicable Legislation
+This policy complies with applicable consumer protection laws in ${data.country || 'your jurisdiction'}.
+
+7.2. Conflict Resolution
+For questions or conflicts, contact our customer service. If amicable resolution is not possible, you may resort to consumer protection agencies or courts.
+
+CONTACT
+For questions, complaints, or requests related to this Refund Policy:
+- Email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+- Website: ${data.siteUrl}
+
+This policy is effective as of ${currentDate}.`;
+};
