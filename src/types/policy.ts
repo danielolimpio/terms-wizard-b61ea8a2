@@ -35,8 +35,6 @@ export interface PolicyFormData {
   collectsUserData?: boolean;
   dataTypes?: string;
   sharesDataWithThirdParties?: boolean;
-  thirdPartyServices?: string;
-  hasPrivacyPolicy?: boolean;
   privacyPolicyUrl?: string;
   correctsErrors?: boolean;
   errorCorrectionProcess?: string;
@@ -56,6 +54,41 @@ export interface PolicyFormData {
   offersFreeAndPaidContent?: boolean;
   contentDifferentiation?: string;
   otherRevenueStreams?: string;
+
+  // Campos específicos para Política de Segurança
+  dataCollected?: string;
+  dataCollectionPurpose?: string;
+  collectsMinorData?: boolean;
+  minorDataConsent?: string;
+  usesHttps?: boolean;
+  serverLocation?: string;
+  performsBackups?: boolean;
+  backupFrequency?: string;
+  automaticUpdates?: boolean;
+  usesFirewall?: boolean;
+  accessMonitoring?: boolean;
+  teamAccessCount?: string;
+  securityTraining?: boolean;
+  accessControl?: boolean;
+  strongAuthentication?: boolean;
+  usesThirdPartyServices?: boolean;
+  thirdPartyServices?: string;
+  thirdPartyCompliance?: boolean;
+  dataProcessingAgreements?: boolean;
+  hasIncidentPlan?: boolean;
+  incidentNotificationMethod?: string;
+  incidentNotificationTime?: string;
+  lgpdCompliance?: boolean;
+  hasDPO?: boolean;
+  dpoContact?: string;
+  providesDataRights?: boolean;
+  hasPrivacyPolicy?: boolean;
+  privacyPolicyLink?: string;
+  performsSecurityTests?: boolean;
+  acceptsSecurityReports?: boolean;
+  securityContactEmail?: string;
+  usesAIAutomation?: boolean;
+  aiRiskControl?: string;
 }
 
 export interface GeneratedPolicy {
