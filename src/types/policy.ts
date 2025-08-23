@@ -16,6 +16,46 @@ export interface PolicyFormData {
   contactEmail?: string;
   companyName?: string;
   country?: string;
+  
+  // Campos específicos para Política de Transparência
+  siteType?: string;
+  legalResponsible?: string;
+  cnpjCpf?: string;
+  businessAddress?: string;
+  city?: string;
+  state?: string;
+  zipCode?: string;
+  hasSponsoredContent?: boolean;
+  hasAffiliatePrograms?: boolean;
+  affiliatePartners?: string;
+  receivesFreeProducts?: boolean;
+  freeProductsDisclosure?: string;
+  sellsProducts?: boolean;
+  productTypes?: string;
+  collectsUserData?: boolean;
+  dataTypes?: string;
+  sharesDataWithThirdParties?: boolean;
+  thirdPartyServices?: string;
+  hasPrivacyPolicy?: boolean;
+  privacyPolicyUrl?: string;
+  correctsErrors?: boolean;
+  errorCorrectionProcess?: string;
+  revealsConflictsOfInterest?: boolean;
+  conflictExamples?: string;
+  receivesEditorialSupport?: boolean;
+  editorialSupportDetails?: string;
+  usesAI?: boolean;
+  aiDisclosureMethod?: string;
+  allowsComments?: boolean;
+  hasModeration?: boolean;
+  hasErrorReportingProcess?: boolean;
+  errorReportingMethod?: string;
+  showsPublicationDates?: boolean;
+  hasEditorialTeam?: boolean;
+  editorialTeamDetails?: string;
+  offersFreeAndPaidContent?: boolean;
+  contentDifferentiation?: string;
+  otherRevenueStreams?: string;
 }
 
 export interface GeneratedPolicy {

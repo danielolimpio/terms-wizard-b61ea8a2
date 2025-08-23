@@ -658,3 +658,230 @@ For questions, complaints, or requests related to this Refund Policy:
 
 This policy is effective as of ${currentDate}.`;
 };
+
+export const generateTransparencyPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  const siteTypeText = data.siteType ? `
+TIPO DE SITE
+Este é um site do tipo: ${data.siteType}` : '';
+
+  const responsibleText = data.legalResponsible ? `
+RESPONSÁVEL LEGAL
+Responsável pelo conteúdo: ${data.legalResponsible}
+${data.cnpjCpf ? `Documento: ${data.cnpjCpf}` : ''}` : '';
+
+  const addressText = (data.businessAddress || data.city || data.state) ? `
+ENDEREÇO COMERCIAL
+${data.businessAddress ? data.businessAddress : ''}
+${data.city ? data.city : ''}${data.state ? `, ${data.state}` : ''}
+${data.zipCode ? `CEP: ${data.zipCode}` : ''}` : '';
+
+  const adsenseText = data.hasAdsense ? `
+GOOGLE ADSENSE
+Este site utiliza o Google AdSense para exibir anúncios. Os anúncios são selecionados com base no conteúdo da página e no histórico de navegação do usuário. Recebemos comissões pelos cliques e visualizações desses anúncios.` : '';
+
+  const sponsoredContentText = data.hasSponsoredContent ? `
+CONTEÚDO PATROCINADO E PUBLICIDADE
+Este site pode publicar conteúdo patrocinado e publicitário. Todo conteúdo patrocinado é claramente identificado com as marcações "Conteúdo Patrocinado", "Publicidade" ou "Parceria Comercial". Nossa política editorial mantém independência mesmo em conteúdos patrocinados, garantindo que as opiniões expressas sejam sempre baseadas em nossa experiência e análise criteriosa.` : `
+CONTEÚDO PATROCINADO E PUBLICIDADE
+Este site não publica conteúdo patrocinado no momento.`;
+
+  const affiliateText = data.hasAffiliatePrograms ? `
+PROGRAMAS DE AFILIADOS
+Este site participa de programas de afiliados e pode receber comissões por vendas realizadas através de links presentes no conteúdo. ${data.affiliatePartners ? `Principais parcerias: ${data.affiliatePartners}.` : ''} 
+
+Importante: Este site pode receber uma pequena comissão por compras feitas através de links marcados como afiliados, sem custo adicional ao leitor. Essas comissões nos ajudam a manter o site e criar conteúdo de qualidade.
+
+Todas as recomendações são baseadas em nossa experiência real com os produtos/serviços, pesquisa criteriosa e análise independente. A participação em programas de afiliados não influencia nosso processo editorial ou nossas recomendações.` : `
+PROGRAMAS DE AFILIADOS
+Este site não participa de programas de afiliados no momento.`;
+
+  const freeProductsText = data.receivesFreeProducts ? `
+PRODUTOS RECEBIDOS GRATUITAMENTE
+Este site pode receber produtos gratuitos de marcas para análise e avaliação. ${data.freeProductsDisclosure ? `Método de divulgação: ${data.freeProductsDisclosure}` : 'Sempre informamos claramente quando um produto foi recebido gratuitamente.'}
+
+Nossa política: "Recebemos este produto em parceria com a marca, mas nossa opinião é independente e baseada em nossa experiência real com o produto."` : `
+PRODUTOS RECEBIDOS GRATUITAMENTE
+Este site não recebe produtos gratuitos para avaliação no momento.`;
+
+  const productsText = data.sellsProducts ? `
+VENDA DE PRODUTOS E SERVIÇOS
+Este site vende produtos e/ou serviços diretamente. ${data.productTypes ? `Tipos: ${data.productTypes}.` : ''} Todas as informações sobre produtos, preços, condições de venda e políticas de devolução estão claramente disponíveis antes da compra.` : `
+VENDA DE PRODUTOS E SERVIÇOS
+Este site não vende produtos ou serviços diretamente.`;
+
+  const dataCollectionText = data.collectsUserData ? `
+COLETA DE DADOS E PRIVACIDADE
+Este site coleta dados de usuários ${data.dataTypes ? `do tipo: ${data.dataTypes}` : 'conforme descrito em nossa Política de Privacidade'}. ${data.sharesDataWithThirdParties ? `Compartilhamos dados com terceiros: ${data.thirdPartyServices || 'conforme necessário para operação do site'}.` : 'Não compartilhamos dados pessoais com terceiros, exceto quando exigido por lei.'}
+
+${data.hasPrivacyPolicy && data.privacyPolicyUrl ? `Nossa Política de Privacidade completa está disponível em: ${data.privacyPolicyUrl}` : 'Estamos em conformidade com a LGPD e demais leis de proteção de dados aplicáveis.'}` : `
+COLETA DE DADOS E PRIVACIDADE
+Este site coleta apenas dados essenciais para funcionamento, respeitando integralmente a LGPD e demais leis de proteção de dados.`;
+
+  const errorCorrectionText = data.correctsErrors ? `
+CORREÇÃO DE ERROS E ATUALIZAÇÕES
+Temos um compromisso firme com a precisão das informações. ${data.errorCorrectionProcess ? `Processo de correção: ${data.errorCorrectionProcess}` : 'Corrigimos erros assim que identificados e informamos claramente as atualizações realizadas.'}
+
+${data.hasErrorReportingProcess ? `Como reportar erros: ${data.errorReportingMethod || 'Entre em contato através dos nossos canais oficiais.'}` : 'Encorajamos leitores a reportarem imprecisões através do nosso email de contato.'}` : `
+CORREÇÃO DE ERROS E ATUALIZAÇÕES
+Mantemos compromisso com a precisão das informações e corrigimos erros assim que identificados.`;
+
+  const conflictText = data.revealsConflictsOfInterest ? `
+CONFLITOS DE INTERESSE
+Revelamos todos os conflitos de interesse que possam influenciar nosso conteúdo. ${data.conflictExamples ? `Exemplos incluem: ${data.conflictExamples}.` : 'Isso inclui relacionamentos pessoais, participações societárias, parcerias financeiras ou qualquer situação que possa comprometer nossa independência editorial.'}
+
+Sempre que houver potencial conflito de interesse, informamos claramente aos leitores no início do conteúdo.` : `
+CONFLITOS DE INTERESSE
+Não possuímos conflitos de interesse que afetem nosso conteúdo editorial.`;
+
+  const editorialSupportText = data.receivesEditorialSupport ? `
+APOIO EDITORIAL E FINANCEIRO
+${data.editorialSupportDetails ? data.editorialSupportDetails : 'Este site recebe apoio editorial e/ou financeiro de terceiros.'} Mantemos independência editorial mesmo quando há apoio financeiro, garantindo que nosso conteúdo seja sempre baseado em nossa experiência e análise criteriosa.` : `
+APOIO EDITORIAL E FINANCEIRO
+Este site opera de forma independente, sem apoio editorial ou financeiro externo.`;
+
+  const aiText = data.usesAI ? `
+USO DE INTELIGÊNCIA ARTIFICIAL
+Este site utiliza inteligência artificial como ferramenta de apoio na criação de conteúdo. ${data.aiDisclosureMethod ? `Método de divulgação: ${data.aiDisclosureMethod}` : 'Sempre informamos quando IA foi utilizada na criação do conteúdo.'}
+
+Importante: Todo conteúdo gerado com apoio de IA é revisado, validado e editado por nossa equipe editorial antes da publicação. A responsabilidade final pelo conteúdo é sempre humana.` : `
+USO DE INTELIGÊNCIA ARTIFICIAL
+Este site não utiliza inteligência artificial para geração de conteúdo.`;
+
+  const commentsText = data.allowsComments ? `
+COMENTÁRIOS E MODERAÇÃO
+Este site permite comentários dos usuários. ${data.hasModeration ? 'Mantemos moderação ativa para garantir um ambiente respeitoso e construtivo.' : 'Os comentários são de responsabilidade dos usuários que os publicam.'} Reservamo-nos o direito de remover comentários que violem nossas diretrizes de comunidade.` : `
+COMENTÁRIOS E MODERAÇÃO
+Este site não permite comentários públicos.`;
+
+  const publicationDatesText = data.showsPublicationDates ? `
+DATAS DE PUBLICAÇÃO E ATUALIZAÇÃO
+Informamos claramente as datas de publicação e última atualização de todos os nossos conteúdos, permitindo que os leitores avaliem a atualidade das informações.` : `
+DATAS DE PUBLICAÇÃO E ATUALIZAÇÃO
+Mantemos registro interno das datas de publicação e atualização de conteúdos.`;
+
+  const editorialTeamText = data.hasEditorialTeam ? `
+EQUIPE EDITORIAL
+${data.editorialTeamDetails ? data.editorialTeamDetails : 'Este site conta com equipe editorial dedicada à criação e revisão de conteúdo.'} Todos os membros da equipe são identificados e suas qualificações estão disponíveis quando relevante para a credibilidade do conteúdo.` : `
+EQUIPE EDITORIAL
+O conteúdo deste site é produzido pelo responsável editorial principal.`;
+
+  const contentTypesText = data.offersFreeAndPaidContent ? `
+CONTEÚDO GRATUITO E PAGO
+Este site oferece tanto conteúdo gratuito quanto pago. ${data.contentDifferentiation ? `Diferenciação: ${data.contentDifferentiation}` : 'Sempre informamos claramente qual conteúdo é gratuito e qual é pago antes do acesso.'}` : `
+CONTEÚDO GRATUITO E PAGO
+Todo o conteúdo deste site é gratuito para acesso.`;
+
+  const otherRevenueText = data.otherRevenueStreams ? `
+OUTRAS FONTES DE RECEITA
+Além das fontes já mencionadas, este site pode ter as seguintes fontes de receita: ${data.otherRevenueStreams}` : '';
+
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE TRANSPARÊNCIA - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política de Transparência demonstra nosso compromisso com a transparência, ética e responsabilidade em todas as nossas operações. É um documento que vai além das obrigações legais, estabelecendo nosso compromisso voluntário com a prestação de contas e comunicação aberta com todos os nossos usuários e stakeholders.
+
+QUEM SOMOS
+
+Site: ${data.siteName}
+URL: ${data.siteUrl}
+Email de contato: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.companyName ? `Empresa: ${data.companyName}` : ''}${siteTypeText}${responsibleText}${addressText}
+
+NOSSA MISSÃO E VALORES
+
+Nossa missão é fornecer informações precisas, confiáveis e úteis aos nossos usuários. Valorizamos:
+- Transparência total em nossas operações
+- Independência editorial
+- Precisão e confiabilidade das informações
+- Respeito aos direitos dos usuários
+- Ética em todas as nossas práticas comerciais
+
+FONTES DE RECEITA
+
+Para manter este site funcionando e gratuito para os usuários, utilizamos as seguintes fontes de receita:${adsenseText}${sponsoredContentText}${affiliateText}${freeProductsText}${productsText}${otherRevenueText}
+
+INDEPENDÊNCIA EDITORIAL
+
+Mantemos total independência editorial. Nossas recomendações e opiniões são baseadas em:
+- Pesquisa criteriosa e análise independente
+- Experiência real com produtos e serviços
+- Conhecimento técnico da equipe
+- Feedback genuíno dos usuários
+
+Importante: Incentivos financeiros NUNCA influenciam nossas recomendações ou opiniões editoriais.${conflictText}${editorialSupportText}${aiText}${dataCollectionText}${errorCorrectionText}${commentsText}${publicationDatesText}${editorialTeamText}${contentTypesText}
+
+COMPROMISSO COM A VERDADE
+
+- Verificamos todas as informações antes da publicação
+- Citamos fontes confiáveis e verificáveis
+- Corrigimos erros assim que identificados
+- Mantemos atualização constante do conteúdo
+- Respondemos dúvidas e questionamentos dos leitores
+
+COMO NOS CONTATAR
+
+Para dúvidas, sugestões, correções ou qualquer questão relacionada a esta Política de Transparência:
+
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+Site: ${data.siteUrl}
+
+Esta política está em vigor desde ${currentDate} e pode ser atualizada periodicamente. Sempre informaremos sobre mudanças significativas.
+
+CONCLUSÃO
+
+Nossa transparência é um compromisso contínuo com nossos usuários. Acreditamos que a confiança se constrói através da abertura, honestidade e consistência em nossas ações. Se você tiver qualquer duvida sobre nossas práticas, não hesite em nos contatar.`;
+  }
+
+  // English version
+  return `TRANSPARENCY POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Transparency Policy demonstrates our commitment to transparency, ethics, and responsibility in all our operations. It is a document that goes beyond legal obligations, establishing our voluntary commitment to accountability and open communication with all our users and stakeholders.
+
+WHO WE ARE
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Contact email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+${data.companyName ? `Company: ${data.companyName}` : ''}
+
+OUR MISSION AND VALUES
+
+Our mission is to provide accurate, reliable, and useful information to our users. We value:
+- Complete transparency in our operations
+- Editorial independence
+- Accuracy and reliability of information
+- Respect for user rights
+- Ethics in all our business practices
+
+REVENUE SOURCES
+
+To keep this website running and free for users, we use the following revenue sources:
+${data.hasAdsense ? 'Google AdSense advertising' : 'No advertising revenue'}
+${data.hasAffiliatePrograms ? 'Affiliate programs partnerships' : 'No affiliate partnerships'}
+${data.sellsProducts ? 'Direct product/service sales' : 'No direct sales'}
+
+EDITORIAL INDEPENDENCE
+
+We maintain complete editorial independence. Our recommendations and opinions are based on:
+- Thorough research and independent analysis
+- Real experience with products and services
+- Team technical knowledge
+- Genuine user feedback
+
+Important: Financial incentives NEVER influence our editorial recommendations or opinions.
+
+HOW TO CONTACT US
+
+For questions, suggestions, corrections, or any matter related to this Transparency Policy:
+
+Email: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+Website: ${data.siteUrl}
+
+This policy has been in effect since ${currentDate} and may be updated periodically. We will always inform about significant changes.`;
+};
