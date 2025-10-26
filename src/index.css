@@ -207,4 +207,55 @@
   @apply w-full h-[90px] bg-muted/30 border border-dashed border-muted-foreground/20 rounded-lg flex items-center justify-center text-muted-foreground text-sm;
   display: none; /* Hidden as requested */
 }
+
+/* React Quill Styles */
+.ql-container {
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ql-editor {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ql-editor.ql-blank::before {
+  font-style: normal;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Dark mode support for Quill */
+.dark .ql-toolbar {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .ql-container {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .ql-editor {
+  color: hsl(var(--foreground));
+}
+
+.dark .ql-snow .ql-stroke {
+  stroke: hsl(var(--foreground));
+}
+
+.dark .ql-snow .ql-fill {
+  fill: hsl(var(--foreground));
+}
+
+.dark .ql-snow .ql-picker-label {
+  color: hsl(var(--foreground));
+}
+
+.dark .ql-snow .ql-picker-options {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .ql-snow .ql-picker-item:hover {
+  color: hsl(var(--primary));
+}
 }

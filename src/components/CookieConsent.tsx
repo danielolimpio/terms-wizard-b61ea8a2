@@ -29,7 +29,7 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 max-w-md bg-card border border-border rounded-lg shadow-lg p-6 animate-in slide-in-from-bottom-5">
+    <div className="fixed bottom-4 left-4 z-[9999] max-w-md bg-card border border-border rounded-lg shadow-lg p-6 animate-in slide-in-from-bottom-5">
       <button
         onClick={handleClose}
         className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors"

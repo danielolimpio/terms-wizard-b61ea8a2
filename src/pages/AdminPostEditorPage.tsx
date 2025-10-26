@@ -1,0 +1,395 @@
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Switch } from '@/components/ui/switch';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { RichTextEditor } from '@/components/RichTextEditor';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
+import { Loader2, Upload, X } from 'lucide-react';
+
+export default function AdminPostEditorPage() {
+  const { id } = useParams();
+  const isEdit = !!id;
+  
+  const [title, setTitle] = useState('');
+  const [slug, setSlug] = useState('');
+  const [metaDescription, setMetaDescription] = useState('');
+  const [content, setContent] = useState('');
+  const [featuredImage, setFeaturedImage] = useState('');
+  const [imageCredit, setImageCredit] = useState('');
+  const [categories, setCategories] = useState('');
+  const [tags, setTags] = useState('');
+  const [published, setPublished] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState('');
+  
+  const { isAdmin, loading: authLoading, user } = useAuth();
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!authLoading && !isAdmin) {
+      navigate('/admin/login');
+    }
+  }, [isAdmin, authLoading, navigate]);
+
+  useEffect(() => {
+    if (isEdit && isAdmin) {
+      fetchPost();
+    }
+  }, [isEdit, isAdmin]);
+
+  useEffect(() => {
+    if (title && !isEdit) {
+      const slugified = title
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+      setSlug(slugified);
+    }
+  }, [title, isEdit]);
+
+  const fetchPost = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('*')
+      .eq('id', id)
+      .single();
+
+    if (error) {
+      toast({
+        title: 'Erro ao carregar post',
+        description: error.message,
+        variant: 'destructive',
+      });
+      navigate('/admin/posts');
+    } else if (data) {
+      setTitle(data.title);
+      setSlug(data.slug);
+      setMetaDescription(data.meta_description || '');
+      setContent(data.content);
+      setFeaturedImage(data.featured_image || '');
+      setImageCredit(data.image_credit || '');
+      setCategories(data.categories?.join(', ') || '');
+      setTags(data.tags?.join(', ') || '');
+      setPublished(data.published);
+      if (data.featured_image) {
+        setImagePreview(data.featured_image);
+      }
+    }
+    setLoading(false);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const uploadImage = async () => {
+    if (!imageFile) return featuredImage;
+
+    const fileExt = imageFile.name.split('.').pop();
+    const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+    const filePath = `${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('blog-images')
+      .upload(filePath, imageFile);
+
+    if (uploadError) {
+      throw uploadError;
+    }
+
+    const { data } = supabase.storage
+      .from('blog-images')
+      .getPublicUrl(filePath);
+
+    return data.publicUrl;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      let imageUrl = featuredImage;
+      if (imageFile) {
+        imageUrl = await uploadImage();
+      }
+
+      const postData = {
+        title,
+        slug,
+        meta_description: metaDescription,
+        content,
+        featured_image: imageUrl,
+        image_credit: imageCredit,
+        categories: categories.split(',').map(c => c.trim()).filter(Boolean),
+        tags: tags.split(',').map(t => t.trim()).filter(Boolean),
+        published,
+        published_at: published ? new Date().toISOString() : null,
+        author_id: user?.id,
+      };
+
+      if (isEdit) {
+        const { error } = await supabase
+          .from('blog_posts')
+          .update(postData)
+          .eq('id', id);
+
+        if (error) throw error;
+
+        toast({
+          title: 'Post atualizado com sucesso',
+        });
+      } else {
+        const { error } = await supabase
+          .from('blog_posts')
+          .insert([postData]);
+
+        if (error) throw error;
+
+        toast({
+          title: 'Post criado com sucesso',
+        });
+      }
+
+      navigate('/admin/posts');
+    } catch (error: any) {
+      toast({
+        title: 'Erro ao salvar post',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
+
+    setLoading(false);
+  };
+
+  if (authLoading || (isEdit && loading)) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
+  if (!isAdmin) return null;
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <Header />
+      
+      <main className="flex-1 container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-4xl font-bold">
+              {isEdit ? 'Editar Post' : 'Novo Post'}
+            </h1>
+            <Button variant="outline" onClick={() => navigate('/admin/posts')}>
+              Voltar
+            </Button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Informações Básicas</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="title">Título *</Label>
+                  <Input
+                    id="title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required
+                    placeholder="Digite o título do post"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="slug">Slug *</Label>
+                  <Input
+                    id="slug"
+                    value={slug}
+                    onChange={(e) => setSlug(e.target.value)}
+                    required
+                    placeholder="url-amigavel-do-post"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="meta-description">Meta Descrição (SEO)</Label>
+                  <Textarea
+                    id="meta-description"
+                    value={metaDescription}
+                    onChange={(e) => setMetaDescription(e.target.value)}
+                    placeholder="Descrição para motores de busca (max 160 caracteres)"
+                    maxLength={160}
+                    rows={3}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    {metaDescription.length}/160 caracteres
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Conteúdo</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <RichTextEditor value={content} onChange={setContent} />
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Imagem Destacada</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="image">Upload de Imagem</Label>
+                  <div className="flex items-center gap-4">
+                    <Input
+                      id="image"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="flex-1"
+                    />
+                    {imagePreview && (
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => {
+                          setImageFile(null);
+                          setImagePreview('');
+                          setFeaturedImage('');
+                        }}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
+                </div>
+
+                {imagePreview && (
+                  <div className="border rounded-lg p-4">
+                    <img
+                      src={imagePreview}
+                      alt="Preview"
+                      className="max-w-full h-auto rounded"
+                    />
+                  </div>
+                )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="image-credit">Créditos da Imagem</Label>
+                  <Input
+                    id="image-credit"
+                    value={imageCredit}
+                    onChange={(e) => setImageCredit(e.target.value)}
+                    placeholder="Fotógrafo ou fonte da imagem"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>SEO e Categorização</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="categories">Categorias</Label>
+                  <Input
+                    id="categories"
+                    value={categories}
+                    onChange={(e) => setCategories(e.target.value)}
+                    placeholder="Legal, Guias, Técnico (separadas por vírgula)"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="tags">Tags</Label>
+                  <Input
+                    id="tags"
+                    value={tags}
+                    onChange={(e) => setTags(e.target.value)}
+                    placeholder="lgpd, privacidade, cookies (separadas por vírgula)"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Publicação</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id="published"
+                    checked={published}
+                    onCheckedChange={setPublished}
+                  />
+                  <Label htmlFor="published" className="cursor-pointer">
+                    Publicar post
+                  </Label>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Posts não publicados ficam como rascunho e não aparecem no blog
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="flex justify-end gap-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => navigate('/admin/posts')}
+                disabled={loading}
+              >
+                Cancelar
+              </Button>
+              <Button type="submit" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Salvando...
+                  </>
+                ) : (
+                  'Salvar Post'
+                )}
+              </Button>
+            </div>
+          </form>
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyCard } from "@/components/PolicyCard";
@@ -12,9 +13,18 @@ import { Search, Shield, Zap, Globe } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedPolicyId, setSelectedPolicyId] = useState<string | null>(null);
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const policyParam = searchParams.get('policy');
+    if (policyParam && getPolicyById(policyParam)) {
+      setSelectedPolicyId(policyParam);
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
 
   const handleGeneratePolicy = (policyId: string) => {
     setSelectedPolicyId(policyId);

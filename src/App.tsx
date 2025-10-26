@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
+import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AllPoliciesPage from "./pages/AllPoliciesPage";
@@ -21,16 +22,20 @@ import SustainabilityPolicyInfoPage from "./pages/SustainabilityPolicyInfoPage";
 import RefundPolicyInfoPage from "./pages/RefundPolicyInfoPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
+import AdminLoginPage from "./pages/AdminLoginPage";
+import AdminPostsPage from "./pages/AdminPostsPage";
+import AdminPostEditorPage from "./pages/AdminPostEditorPage";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <CookieConsent />
-      <BrowserRouter>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <CookieConsent />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sobre" element={<AboutPage />} />
@@ -48,11 +53,16 @@ const App = () => (
           <Route path="/accessibility-policy-info" element={<AccessibilityPolicyInfoPage />} />
           <Route path="/sustainability-policy-info" element={<SustainabilityPolicyInfoPage />} />
           <Route path="/refund-policy-info" element={<RefundPolicyInfoPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/posts" element={<AdminPostsPage />} />
+          <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />
+          <Route path="/admin/posts/edit/:id" element={<AdminPostEditorPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
