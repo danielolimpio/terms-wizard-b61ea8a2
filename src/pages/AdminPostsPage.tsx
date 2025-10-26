@@ -4,8 +4,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
 import { Loader2, Plus, Edit, Trash2 } from 'lucide-react';
 import {
   AlertDialog,
@@ -33,7 +31,7 @@ export default function AdminPostsPage() {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
-  const { toast } = useToast();
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,45 +39,54 @@ export default function AdminPostsPage() {
   }, []);
 
   const checkAuth = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    if (!user) {
-      navigate('/admin/login');
-      return;
-    }
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        navigate('/admin/login');
+        return;
+      }
 
-    const { data: roleData } = await supabase
-      .from('user_roles')
-      .select('role')
-      .eq('user_id', user.id)
-      .eq('role', 'admin')
-      .maybeSingle();
-    
-    if (!roleData) {
-      navigate('/admin/login');
-      return;
-    }
+      const { data: roleData } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      
+      if (!roleData) {
+        navigate('/admin/login');
+        return;
+      }
 
-    setIsAdmin(true);
-    setAuthLoading(false);
-    fetchPosts();
+      setIsAdmin(true);
+      setAuthLoading(false);
+      fetchPosts();
+    } catch (err: any) {
+      setError('Erro de autenticação: ' + err.message);
+      setAuthLoading(false);
+    }
   };
 
   const fetchPosts = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('id, title, slug, published, created_at, categories')
-      .order('created_at', { ascending: false });
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('id, title, slug, published, created_at, categories')
+        .order('created_at', { ascending: false });
 
-    if (error) {
-      toast({
-        title: 'Erro ao carregar posts',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } else {
-      setPosts(data || []);
+      if (error) {
+        setError('Erro ao carregar posts: ' + error.message);
+      } else {
+        setPosts(data || []);
+      }
+    } catch (err: any) {
+      setError('Erro ao carregar posts: ' + err.message);
     }
     setLoading(false);
   };
@@ -87,32 +94,36 @@ export default function AdminPostsPage() {
   const handleDelete = async () => {
     if (!deleteId) return;
 
-    const { error } = await supabase
-      .from('blog_posts')
-      .delete()
-      .eq('id', deleteId);
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { error } = await supabase
+        .from('blog_posts')
+        .delete()
+        .eq('id', deleteId);
 
-    if (error) {
-      toast({
-        title: 'Erro ao deletar post',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } else {
-      toast({
-        title: 'Post deletado com sucesso',
-      });
-      fetchPosts();
+      if (error) {
+        setError('Erro ao deletar post: ' + error.message);
+      } else {
+        fetchPosts();
+      }
+    } catch (err: any) {
+      setError('Erro ao deletar post: ' + err.message);
     }
     setDeleteId(null);
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
-    navigate('/admin/login');
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      await supabase.auth.signOut();
+      navigate('/admin/login');
+    } catch (err: any) {
+      setError('Erro ao fazer logout: ' + err.message);
+    }
   };
 
-  if (authLoading || !isAdmin) {
+  if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Loader2 className="h-8 w-8 animate-spin" />
@@ -120,12 +131,20 @@ export default function AdminPostsPage() {
     );
   }
 
+  if (!isAdmin) return null;
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
+          {error && (
+            <div className="mb-4 p-4 text-sm text-red-500 bg-red-50 border border-red-200 rounded">
+              {error}
+            </div>
+          )}
+          
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-4xl font-bold">Gerenciar Posts</h1>
             <div className="flex gap-2">

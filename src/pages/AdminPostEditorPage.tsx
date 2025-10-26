@@ -8,10 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { RichTextEditor } from '@/components/RichTextEditor';
-import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
-import { Loader2, Upload, X } from 'lucide-react';
+import { Loader2, X } from 'lucide-react';
 
 export default function AdminPostEditorPage() {
   const { id } = useParams();
@@ -32,8 +29,8 @@ export default function AdminPostEditorPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [userId, setUserId] = useState<string>('');
+  const [error, setError] = useState('');
   
-  const { toast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,31 +42,6 @@ export default function AdminPostEditorPage() {
       fetchPost();
     }
   }, [isEdit, isAdmin]);
-
-  const checkAuth = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    if (!user) {
-      navigate('/admin/login');
-      return;
-    }
-
-    const { data: roleData } = await supabase
-      .from('user_roles')
-      .select('role')
-      .eq('user_id', user.id)
-      .eq('role', 'admin')
-      .maybeSingle();
-    
-    if (!roleData) {
-      navigate('/admin/login');
-      return;
-    }
-
-    setUserId(user.id);
-    setIsAdmin(true);
-    setAuthLoading(false);
-  };
 
   useEffect(() => {
     if (title && !isEdit) {
@@ -83,34 +55,68 @@ export default function AdminPostEditorPage() {
     }
   }, [title, isEdit]);
 
+  const checkAuth = async () => {
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        navigate('/admin/login');
+        return;
+      }
+
+      const { data: roleData } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      
+      if (!roleData) {
+        navigate('/admin/login');
+        return;
+      }
+
+      setUserId(user.id);
+      setIsAdmin(true);
+      setAuthLoading(false);
+    } catch (err: any) {
+      setError('Erro de autenticação: ' + err.message);
+      setAuthLoading(false);
+    }
+  };
+
   const fetchPost = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('id', id)
-      .single();
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('id', id)
+        .single();
 
-    if (error) {
-      toast({
-        title: 'Erro ao carregar post',
-        description: error.message,
-        variant: 'destructive',
-      });
-      navigate('/admin/posts');
-    } else if (data) {
-      setTitle(data.title);
-      setSlug(data.slug);
-      setMetaDescription(data.meta_description || '');
-      setContent(data.content);
-      setFeaturedImage(data.featured_image || '');
-      setImageCredit(data.image_credit || '');
-      setCategories(data.categories?.join(', ') || '');
-      setTags(data.tags?.join(', ') || '');
-      setPublished(data.published);
-      if (data.featured_image) {
-        setImagePreview(data.featured_image);
+      if (error) {
+        setError('Erro ao carregar post: ' + error.message);
+        navigate('/admin/posts');
+      } else if (data) {
+        setTitle(data.title);
+        setSlug(data.slug);
+        setMetaDescription(data.meta_description || '');
+        setContent(data.content);
+        setFeaturedImage(data.featured_image || '');
+        setImageCredit(data.image_credit || '');
+        setCategories(data.categories?.join(', ') || '');
+        setTags(data.tags?.join(', ') || '');
+        setPublished(data.published);
+        if (data.featured_image) {
+          setImagePreview(data.featured_image);
+        }
       }
+    } catch (err: any) {
+      setError('Erro ao carregar post: ' + err.message);
     }
     setLoading(false);
   };
@@ -130,30 +136,37 @@ export default function AdminPostEditorPage() {
   const uploadImage = async () => {
     if (!imageFile) return featuredImage;
 
-    const fileExt = imageFile.name.split('.').pop();
-    const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
-    const filePath = `${fileName}`;
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const fileExt = imageFile.name.split('.').pop();
+      const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+      const filePath = `${fileName}`;
 
-    const { error: uploadError } = await supabase.storage
-      .from('blog-images')
-      .upload(filePath, imageFile);
+      const { error: uploadError } = await supabase.storage
+        .from('blog-images')
+        .upload(filePath, imageFile);
 
-    if (uploadError) {
-      throw uploadError;
+      if (uploadError) throw uploadError;
+
+      const { data } = supabase.storage
+        .from('blog-images')
+        .getPublicUrl(filePath);
+
+      return data.publicUrl;
+    } catch (err: any) {
+      throw new Error('Erro ao fazer upload da imagem: ' + err.message);
     }
-
-    const { data } = supabase.storage
-      .from('blog-images')
-      .getPublicUrl(filePath);
-
-    return data.publicUrl;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
     try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
       let imageUrl = featuredImage;
       if (imageFile) {
         imageUrl = await uploadImage();
@@ -180,29 +193,17 @@ export default function AdminPostEditorPage() {
           .eq('id', id);
 
         if (error) throw error;
-
-        toast({
-          title: 'Post atualizado com sucesso',
-        });
       } else {
         const { error } = await supabase
           .from('blog_posts')
           .insert([postData]);
 
         if (error) throw error;
-
-        toast({
-          title: 'Post criado com sucesso',
-        });
       }
 
       navigate('/admin/posts');
-    } catch (error: any) {
-      toast({
-        title: 'Erro ao salvar post',
-        description: error.message,
-        variant: 'destructive',
-      });
+    } catch (err: any) {
+      setError('Erro ao salvar post: ' + err.message);
     }
 
     setLoading(false);
@@ -224,6 +225,12 @@ export default function AdminPostEditorPage() {
       
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
+          {error && (
+            <div className="mb-4 p-4 text-sm text-red-500 bg-red-50 border border-red-200 rounded">
+              {error}
+            </div>
+          )}
+          
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-4xl font-bold">
               {isEdit ? 'Editar Post' : 'Novo Post'}
@@ -283,7 +290,15 @@ export default function AdminPostEditorPage() {
                 <CardTitle>Conteúdo</CardTitle>
               </CardHeader>
               <CardContent>
-                <RichTextEditor value={content} onChange={setContent} />
+                <Textarea
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  className="min-h-[400px] font-mono"
+                  placeholder="Digite o conteúdo do post aqui... (HTML aceito)"
+                />
+                <p className="text-xs text-muted-foreground mt-2">
+                  Você pode usar HTML básico: {'<p>, <h1>-<h6>, <ul>, <ol>, <li>, <strong>, <em>, <a>'}
+                </p>
               </CardContent>
             </Card>
 
