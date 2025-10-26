@@ -9,22 +9,22 @@ export const Header = () => {
 
   const NavLinks = () => (
     <>
-      <a href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+      <a href="/" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Início
       </a>
-      <a href="/sobre" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/sobre" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Sobre
       </a>
-      <a href="/politicas" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/politicas" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Todas as Políticas
       </a>
-      <a href="/ajuda" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/ajuda" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Ajuda
       </a>
-      <a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/blog" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Blog
       </a>
-      <a href="/contato" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/contato" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Contato
       </a>
     </>
@@ -80,10 +80,10 @@ export const Header = () => {
 
         {/* Desktop Action Buttons */}
         <div className="hidden lg:flex items-center space-x-2 md:space-x-4">
-          <Button variant="google-outline" size="sm" className="text-xs md:text-sm px-3 md:px-4" onClick={() => window.location.href = '/ajuda'}>
+          <Button variant="google-outline" size="sm" className="text-sm md:text-base px-4 md:px-6" onClick={() => window.location.href = '/ajuda'}>
             Ajuda
           </Button>
-          <Button variant="google" size="sm" className="text-xs md:text-sm px-3 md:px-4" onClick={() => window.location.href = '/'}>
+          <Button variant="google" size="sm" className="text-sm md:text-base px-4 md:px-6" onClick={() => window.location.href = '/'}>
             Gerar Política
           </Button>
         </div>
