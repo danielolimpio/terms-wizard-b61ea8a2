@@ -134,7 +134,7 @@ export default function OurTermsPage() {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">12. Contato</h2>
                 <p>
                   Para dúvidas sobre estes termos, entre em contato conosco através do 
-                  e-mail: contato@geradorpoliticas.com
+                  e-mail: contato@politicasprivacidade.com
                 </p>
                 <p className="mt-4">
                   <strong>Última atualização:</strong> Janeiro de 2024

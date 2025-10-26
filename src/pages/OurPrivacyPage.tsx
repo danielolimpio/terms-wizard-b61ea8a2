@@ -99,7 +99,7 @@ export default function OurPrivacyPage() {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">8. Contato</h2>
                 <p>
                   Para exercer seus direitos ou esclarecer dúvidas sobre esta política, 
-                  entre em contato conosco através do e-mail: contato@geradorpoliticas.com
+                  entre em contato conosco através do e-mail: contato@politicasprivacidade.com
                 </p>
               </section>
 

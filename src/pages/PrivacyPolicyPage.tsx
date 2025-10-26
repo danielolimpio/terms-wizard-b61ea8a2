@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,7 @@ const PrivacyPolicyPage = () => {
             onGenerateNew={handleGenerateNew}
           />
         </main>
+        <Footer />
       </div>
     );
   }
@@ -64,6 +66,7 @@ const PrivacyPolicyPage = () => {
             onGenerate={handlePolicyGenerated}
           />
         </main>
+        <Footer />
       </div>
     );
   }
@@ -246,10 +249,12 @@ const PrivacyPolicyPage = () => {
             Gere sua política de privacidade profissional agora mesmo.
           </p>
           <Button variant="google" size="xl" onClick={() => setShowGenerator(true)}>
-            Começar Agora - É Grátis!
-          </Button>
-        </div>
-      </section>
+          Começar Agora - É Grátis!
+        </Button>
+      </div>
+    </section>
+    
+    <Footer />
     </div>
   );
 };

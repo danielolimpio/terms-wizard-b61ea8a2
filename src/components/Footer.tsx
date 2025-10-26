@@ -44,7 +44,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center bg-gray-950">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-base text-gray-400">
             Copyright © 2025 | Todos direitos reservados | Desenvolvido por{" "}
             <a 

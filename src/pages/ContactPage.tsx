@@ -79,10 +79,10 @@ export default function ContactPage() {
                     Para dúvidas gerais e suporte:
                   </p>
                   <a 
-                    href="mailto:contato@geradorpoliticas.com" 
+                    href="mailto:contato@politicasprivacidade.com" 
                     className="text-primary hover:underline font-medium"
                   >
-                    contato@geradorpoliticas.com
+                    contato@politicasprivacidade.com
                   </a>
                 </CardContent>
               </Card>

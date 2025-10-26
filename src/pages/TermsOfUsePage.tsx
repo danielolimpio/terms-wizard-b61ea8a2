@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,7 @@ const TermsOfUsePage = () => {
             onGenerateNew={handleGenerateNew}
           />
         </main>
+        <Footer />
       </div>
     );
   }
@@ -64,6 +66,7 @@ const TermsOfUsePage = () => {
             onGenerate={handlePolicyGenerated}
           />
         </main>
+        <Footer />
       </div>
     );
   }
@@ -247,10 +250,12 @@ const TermsOfUsePage = () => {
             e estabeleça regras claras para seus usuários.
           </p>
           <Button variant="google" size="xl" onClick={() => setShowGenerator(true)}>
-            Criar Termos de Uso Agora
-          </Button>
-        </div>
-      </section>
+          Criar Termos de Uso Agora
+        </Button>
+      </div>
+    </section>
+    
+    <Footer />
     </div>
   );
 };

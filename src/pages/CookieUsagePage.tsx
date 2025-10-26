@@ -164,7 +164,7 @@ export default function CookieUsagePage() {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">Contato</h2>
                 <p>
                   Se você tiver dúvidas sobre nossa política de cookies, entre em contato 
-                  conosco através do e-mail: contato@geradorpoliticas.com
+                  conosco através do e-mail: contato@politicasprivacidade.com
                 </p>
               </section>
             </div>
