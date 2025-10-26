@@ -35,7 +35,7 @@ export const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <img src={logo} alt="Políticas de Privacidade" className="h-10 md:h-12" />
+            <img src={logo} alt="Políticas de Privacidade" className="h-14 md:h-16" />
           </a>
         </div>
         

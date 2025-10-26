@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <a href="/" className="inline-block mb-4">
-              <img src={logo} alt="Políticas de Privacidade" className="h-10" />
+              <img src={logo} alt="Políticas de Privacidade" className="h-14" />
             </a>
             <p className="text-sm text-muted-foreground">
               Crie políticas legais profissionais de forma rápida e fácil.

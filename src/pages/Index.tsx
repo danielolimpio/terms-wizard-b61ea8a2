@@ -9,6 +9,7 @@ import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 import { Search, Shield, Zap, Globe } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
   const [selectedPolicyId, setSelectedPolicyId] = useState<string | null>(null);
@@ -120,37 +121,43 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-8 md:py-16 px-4">
-        <div className="container mx-auto text-center">
+      <section 
+        className="relative py-16 md:py-24 px-4 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        <div className="container mx-auto text-center relative z-10">
           <div className="mb-6">
-            <h1 className="text-3xl md:text-6xl font-bold text-foreground mb-4">
-              Gerador de <span className="text-primary">Políticas Legais</span>
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              Gerador de <span className="text-cyan-400">Políticas Legais</span>
             </h1>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 px-4">
+            <p className="text-base md:text-xl text-gray-100 max-w-3xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md">
               Crie políticas de privacidade, termos de uso e outros documentos legais profissionais em minutos. 
               Gratuito, rápido e otimizado para LGPD e GDPR.
             </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
               <Shield className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium">LGPD Compliant</span>
+              <span className="text-xs md:text-sm font-medium text-gray-900">LGPD Compliant</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
               <Zap className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium">Geração Instantânea</span>
+              <span className="text-xs md:text-sm font-medium text-gray-900">Geração Instantânea</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/80 rounded-lg px-3 md:px-4 py-2">
+            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
               <Globe className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium">Múltiplos Idiomas</span>
+              <span className="text-xs md:text-sm font-medium text-gray-900">Múltiplos Idiomas</span>
             </div>
           </div>
 
           <Button 
             variant="google" 
             size="xl" 
-            className="text-sm md:text-base px-6 md:px-8"
+            className="text-sm md:text-base px-6 md:px-8 shadow-xl"
             onClick={() => handleGeneratePolicy('privacy-policy')}
           >
             Gerar Política de Privacidade
