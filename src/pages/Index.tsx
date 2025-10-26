@@ -4,7 +4,6 @@ import { Footer } from "@/components/Footer";
 import { PolicyCard } from "@/components/PolicyCard";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
-import { AdBanner } from "@/components/AdBanner";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
@@ -120,8 +119,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <AdBanner />
-      
       {/* Hero Section */}
       <section className="bg-gradient-hero py-8 md:py-16 px-4">
         <div className="container mx-auto text-center">
@@ -205,8 +202,6 @@ const Index = () => {
           </div>
         )}
       </main>
-
-      <AdBanner />
 
       {/* Features Section */}
       <section className="bg-gradient-secondary py-8 md:py-16 px-4">

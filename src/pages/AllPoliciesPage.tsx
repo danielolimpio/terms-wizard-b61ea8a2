@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { AdBanner } from "@/components/AdBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES } from "@/lib/policies";
@@ -96,8 +95,6 @@ export default function AllPoliciesPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      <AdBanner />
       
       <main className="flex-1 py-8">
         <div className="container mx-auto px-4">
@@ -219,8 +216,6 @@ export default function AllPoliciesPage() {
             );
           })}
         </div>
-        
-        <AdBanner />
       </div>
       </main>
       

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const isMobile = useIsMobile();
@@ -32,10 +33,9 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center space-x-2">
-          <div className="text-xl md:text-2xl font-bold text-primary">📋</div>
-          <a href="/" className="text-sm md:text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Gerador de Políticas
+        <div className="flex items-center">
+          <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <img src={logo} alt="Políticas de Privacidade" className="h-10 md:h-12" />
           </a>
         </div>
         

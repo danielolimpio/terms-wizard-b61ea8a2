@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { AdBanner } from "@/components/AdBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -60,8 +59,6 @@ export default function BlogPage() {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <AdBanner />
-      
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -111,8 +108,6 @@ export default function BlogPage() {
               Carregar Mais Artigos
             </Button>
           </div>
-
-          <AdBanner />
 
           <div className="mt-16">
             <Card>

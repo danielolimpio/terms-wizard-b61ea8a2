@@ -1,10 +1,14 @@
+import logo from "@/assets/logo.png";
+
 export const Footer = () => {
   return (
     <footer className="mt-16 border-t bg-muted/30">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Gerador de Políticas</h3>
+            <a href="/" className="inline-block mb-4">
+              <img src={logo} alt="Políticas de Privacidade" className="h-10" />
+            </a>
             <p className="text-sm text-muted-foreground">
               Crie políticas legais profissionais de forma rápida e fácil.
             </p>
@@ -42,7 +46,7 @@ export const Footer = () => {
         
         <div className="border-t mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            Copyright © 2025 | Todos direitos reservados | Gerador de Políticas | Desenvolvido por{" "}
+            Copyright © 2025 | Todos direitos reservados | Desenvolvido por{" "}
             <a 
               href="https://danielolimpio.com/" 
               target="_blank" 
