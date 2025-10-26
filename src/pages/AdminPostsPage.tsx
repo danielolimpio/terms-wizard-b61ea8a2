@@ -4,7 +4,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Plus, Edit, Trash2 } from 'lucide-react';
@@ -32,21 +31,39 @@ export default function AdminPostsPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [deleteId, setDeleteId] = useState<string | null>(null);
-  const { isAdmin, loading: authLoading, signOut } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
   const { toast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!authLoading && !isAdmin) {
-      navigate('/admin/login');
-    }
-  }, [isAdmin, authLoading, navigate]);
+    checkAuth();
+  }, []);
 
-  useEffect(() => {
-    if (isAdmin) {
-      fetchPosts();
+  const checkAuth = async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    if (!user) {
+      navigate('/admin/login');
+      return;
     }
-  }, [isAdmin]);
+
+    const { data: roleData } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .maybeSingle();
+    
+    if (!roleData) {
+      navigate('/admin/login');
+      return;
+    }
+
+    setIsAdmin(true);
+    setAuthLoading(false);
+    fetchPosts();
+  };
 
   const fetchPosts = async () => {
     setLoading(true);
@@ -91,7 +108,7 @@ export default function AdminPostsPage() {
   };
 
   const handleLogout = async () => {
-    await signOut();
+    await supabase.auth.signOut();
     navigate('/admin/login');
   };
 

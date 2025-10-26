@@ -9,7 +9,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RichTextEditor } from '@/components/RichTextEditor';
-import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Upload, X } from 'lucide-react';
@@ -30,22 +29,47 @@ export default function AdminPostEditorPage() {
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [userId, setUserId] = useState<string>('');
   
-  const { isAdmin, loading: authLoading, user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!authLoading && !isAdmin) {
-      navigate('/admin/login');
-    }
-  }, [isAdmin, authLoading, navigate]);
+    checkAuth();
+  }, []);
 
   useEffect(() => {
     if (isEdit && isAdmin) {
       fetchPost();
     }
   }, [isEdit, isAdmin]);
+
+  const checkAuth = async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    if (!user) {
+      navigate('/admin/login');
+      return;
+    }
+
+    const { data: roleData } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .maybeSingle();
+    
+    if (!roleData) {
+      navigate('/admin/login');
+      return;
+    }
+
+    setUserId(user.id);
+    setIsAdmin(true);
+    setAuthLoading(false);
+  };
 
   useEffect(() => {
     if (title && !isEdit) {
@@ -146,7 +170,7 @@ export default function AdminPostEditorPage() {
         tags: tags.split(',').map(t => t.trim()).filter(Boolean),
         published,
         published_at: published ? new Date().toISOString() : null,
-        author_id: user?.id,
+        author_id: userId,
       };
 
       if (isEdit) {

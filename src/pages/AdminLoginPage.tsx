@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
@@ -14,7 +14,6 @@ export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -22,7 +21,10 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await signIn(email, password);
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
     if (error) {
       toast({
@@ -32,12 +34,29 @@ export default function AdminLoginPage() {
           : error.message,
         variant: 'destructive',
       });
-    } else {
-      toast({
-        title: 'Login realizado com sucesso',
-        description: 'Redirecionando para o painel de administração...',
-      });
-      navigate('/admin/posts');
+    } else if (data.user) {
+      // Check if user is admin
+      const { data: roleData } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', data.user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      
+      if (roleData) {
+        toast({
+          title: 'Login realizado com sucesso',
+          description: 'Redirecionando para o painel de administração...',
+        });
+        navigate('/admin/posts');
+      } else {
+        await supabase.auth.signOut();
+        toast({
+          title: 'Acesso negado',
+          description: 'Você não tem permissão de administrador',
+          variant: 'destructive',
+        });
+      }
     }
 
     setLoading(false);

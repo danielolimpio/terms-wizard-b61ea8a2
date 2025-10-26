@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
-import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AllPoliciesPage from "./pages/AllPoliciesPage";
@@ -35,32 +34,30 @@ const App = () => (
       <Sonner />
       <CookieConsent />
       <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/sobre" element={<AboutPage />} />
-            <Route path="/politicas" element={<AllPoliciesPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/ajuda" element={<HelpPage />} />
-            <Route path="/contato" element={<ContactPage />} />
-            <Route path="/privacy-policy-info" element={<PrivacyPolicyInfoPage />} />
-            <Route path="/transparency-policy-info" element={<TransparencyPolicyInfoPage />} />
-            <Route path="/security-policy-info" element={<SecurityPolicyInfoPage />} />
-            <Route path="/antispam-policy-info" element={<AntispamPolicyInfoPage />} />
-            <Route path="/copyright-policy-info" element={<CopyrightPolicyInfoPage />} />
-            <Route path="/content-policy-info" element={<ContentPolicyInfoPage />} />
-            <Route path="/comment-moderation-info" element={<CommentModerationInfoPage />} />
-            <Route path="/accessibility-policy-info" element={<AccessibilityPolicyInfoPage />} />
-            <Route path="/sustainability-policy-info" element={<SustainabilityPolicyInfoPage />} />
-            <Route path="/refund-policy-info" element={<RefundPolicyInfoPage />} />
-            <Route path="/admin/login" element={<AdminLoginPage />} />
-            <Route path="/admin/posts" element={<AdminPostsPage />} />
-            <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />
-            <Route path="/admin/posts/edit/:id" element={<AdminPostEditorPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AuthProvider>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/sobre" element={<AboutPage />} />
+          <Route path="/politicas" element={<AllPoliciesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/ajuda" element={<HelpPage />} />
+          <Route path="/contato" element={<ContactPage />} />
+          <Route path="/privacy-policy-info" element={<PrivacyPolicyInfoPage />} />
+          <Route path="/transparency-policy-info" element={<TransparencyPolicyInfoPage />} />
+          <Route path="/security-policy-info" element={<SecurityPolicyInfoPage />} />
+          <Route path="/antispam-policy-info" element={<AntispamPolicyInfoPage />} />
+          <Route path="/copyright-policy-info" element={<CopyrightPolicyInfoPage />} />
+          <Route path="/content-policy-info" element={<ContentPolicyInfoPage />} />
+          <Route path="/comment-moderation-info" element={<CommentModerationInfoPage />} />
+          <Route path="/accessibility-policy-info" element={<AccessibilityPolicyInfoPage />} />
+          <Route path="/sustainability-policy-info" element={<SustainabilityPolicyInfoPage />} />
+          <Route path="/refund-policy-info" element={<RefundPolicyInfoPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/posts" element={<AdminPostsPage />} />
+          <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />
+          <Route path="/admin/posts/edit/:id" element={<AdminPostEditorPage />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
