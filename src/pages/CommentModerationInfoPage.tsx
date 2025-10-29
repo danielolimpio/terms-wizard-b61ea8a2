@@ -165,7 +165,7 @@ export default function CommentModerationInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=comment-moderation'}
+                    onClick={() => window.location.href = '/gerador-politica-moderacao'}
                   >
                     Gerar Política de Moderação de Comentários
                   </Button>

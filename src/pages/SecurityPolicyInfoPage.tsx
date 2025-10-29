@@ -131,7 +131,7 @@ export default function SecurityPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=security-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-seguranca'}
                   >
                     Gerar Política de Segurança
                   </Button>

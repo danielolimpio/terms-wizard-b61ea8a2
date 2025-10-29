@@ -147,7 +147,7 @@ export default function CopyrightPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=copyright-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-propriedade-intelectual'}
                   >
                     Gerar Política de Propriedade Intelectual
                   </Button>

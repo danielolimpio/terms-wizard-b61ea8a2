@@ -125,7 +125,7 @@ export default function TransparencyPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=transparency-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-transparencia'}
                   >
                     Gerar Política de Transparência
                   </Button>

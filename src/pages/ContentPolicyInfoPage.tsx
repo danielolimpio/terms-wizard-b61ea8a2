@@ -147,7 +147,7 @@ export default function ContentPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=content-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-conteudo'}
                   >
                     Gerar Política de Conteúdo
                   </Button>

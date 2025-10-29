@@ -303,7 +303,7 @@ export default function PrivacyPolicyInfoPage() {
               <Button 
                 variant="google" 
                 size="lg"
-                onClick={() => window.location.href = '/?policy=privacy-policy'}
+                onClick={() => window.location.href = '/gerador-politica-privacidade'}
               >
                 Gerar Política de Privacidade
               </Button>
