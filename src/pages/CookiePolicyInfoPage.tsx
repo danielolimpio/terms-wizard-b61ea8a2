@@ -84,7 +84,7 @@ const CookiePolicyInfoPage = () => {
       <section className="bg-gradient-primary py-16 px-4 text-white">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Gerador de Política de Cookies
+            Gerador Política de Cookies
           </h1>
           <p className="text-xl mb-8 text-gray-100">
             Crie uma política de cookies completa e conforme a LGPD em minutos
@@ -94,7 +94,7 @@ const CookiePolicyInfoPage = () => {
             size="lg"
             onClick={() => setShowGenerator(true)}
           >
-            Gerar Política de Cookies Agora
+            Gerar Política de Cookies
           </Button>
         </div>
       </section>
@@ -211,7 +211,7 @@ const CookiePolicyInfoPage = () => {
             size="lg"
             onClick={() => setShowGenerator(true)}
           >
-            Começar Agora
+            Gerar Política de Cookies
           </Button>
         </div>
       </main>

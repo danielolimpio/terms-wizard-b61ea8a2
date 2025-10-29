@@ -14,7 +14,7 @@ export default function SecurityPolicyInfoPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="text-4xl">🛡️</span>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-                Gerador de Política de Segurança
+                Gerador Política de Segurança
               </h1>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">

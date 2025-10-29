@@ -14,7 +14,7 @@ export default function AccessibilityPolicyInfoPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="text-4xl">♿</span>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-                Gerador de Política de Acessibilidade
+                Gerador Política de Acessibilidade
               </h1>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -161,7 +161,7 @@ export default function AccessibilityPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=accessibility-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-acessibilidade'}
                   >
                     Gerar Política de Acessibilidade
                   </Button>

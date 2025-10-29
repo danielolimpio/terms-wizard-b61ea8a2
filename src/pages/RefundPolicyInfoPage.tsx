@@ -14,7 +14,7 @@ export default function RefundPolicyInfoPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="text-4xl">💰</span>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-                Gerador de Política de Reembolso
+                Gerador Política de Reembolso
               </h1>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -59,7 +59,7 @@ export default function RefundPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=refund-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-reembolso'}
                   >
                     Gerar Política de Reembolso
                   </Button>

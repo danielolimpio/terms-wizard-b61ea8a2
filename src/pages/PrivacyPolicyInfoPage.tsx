@@ -12,7 +12,7 @@ export default function PrivacyPolicyInfoPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Gerador de Política de Privacidade
+              Gerador Política de Privacidade
             </h1>
             <p className="text-xl text-muted-foreground">
               Tudo que você precisa saber sobre políticas de privacidade para seu site
@@ -305,7 +305,7 @@ export default function PrivacyPolicyInfoPage() {
                 size="lg"
                 onClick={() => window.location.href = '/?policy=privacy-policy'}
               >
-                Gerar Política de Privacidade Agora
+                Gerar Política de Privacidade
               </Button>
             </div>
           </div>

@@ -14,7 +14,7 @@ export default function SustainabilityPolicyInfoPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="text-4xl">🌱</span>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-                Gerador de Política de Sustentabilidade
+                Gerador Política de Sustentabilidade
               </h1>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -165,7 +165,7 @@ export default function SustainabilityPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/?policy=sustainability-policy'}
+                    onClick={() => window.location.href = '/gerador-politica-sustentabilidade'}
                   >
                     Gerar Política de Sustentabilidade
                   </Button>

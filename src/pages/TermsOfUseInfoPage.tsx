@@ -84,7 +84,7 @@ const TermsOfUseInfoPage = () => {
       <section className="bg-gradient-primary py-16 px-4 text-white">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Gerador de Termos de Uso
+            Gerador Termos de Uso
           </h1>
           <p className="text-xl mb-8 text-gray-100">
             Crie termos de uso profissionais e completos para seu site em minutos
@@ -94,7 +94,7 @@ const TermsOfUseInfoPage = () => {
             size="lg"
             onClick={() => setShowGenerator(true)}
           >
-            Gerar Termos de Uso Agora
+            Gerar Termos de Uso
           </Button>
         </div>
       </section>
@@ -211,7 +211,7 @@ const TermsOfUseInfoPage = () => {
             size="lg"
             onClick={() => setShowGenerator(true)}
           >
-            Começar Agora
+            Gerar Termos de Uso
           </Button>
         </div>
       </main>
