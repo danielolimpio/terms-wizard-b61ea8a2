@@ -1,9 +1,80 @@
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PolicyGenerator } from "@/components/PolicyGenerator";
+import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { getPolicyById } from "@/lib/policies";
+import { generateRefundPolicy } from "@/lib/policyTemplates";
+import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function RefundPolicyInfoPage() {
+const RefundPolicyInfoPage = () => {
+  const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
+  const [showGenerator, setShowGenerator] = useState(false);
+
+  const handlePolicyGenerated = (formData: PolicyFormData) => {
+    const policyType = getPolicyById('refund-policy');
+    if (!policyType) return;
+
+    const content = generateRefundPolicy(formData);
+    
+    const generated: GeneratedPolicy = {
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    };
+
+    setGeneratedPolicy(generated);
+  };
+
+  const handleGenerateNew = () => {
+    setGeneratedPolicy(null);
+    setShowGenerator(false);
+  };
+
+  const policyType = getPolicyById('refund-policy');
+  
+  if (!policyType) {
+    return <div>Política não encontrada</div>;
+  }
+
+  if (generatedPolicy) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={handleGenerateNew}
+          />
+        </main>
+      </div>
+    );
+  }
+
+  if (showGenerator) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <div className="mb-6">
+            <Button variant="outline" onClick={() => setShowGenerator(false)}>
+              ← Voltar
+            </Button>
+          </div>
+          
+          <PolicyGenerator
+            policyType={policyType}
+            onGenerate={handlePolicyGenerated}
+          />
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -59,7 +130,7 @@ export default function RefundPolicyInfoPage() {
                 <CardContent>
                   <Button 
                     className="w-full"
-                    onClick={() => window.location.href = '/gerador-politica-reembolso'}
+                    onClick={() => setShowGenerator(true)}
                   >
                     Gerar Política de Reembolso
                   </Button>
@@ -73,4 +144,6 @@ export default function RefundPolicyInfoPage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default RefundPolicyInfoPage;

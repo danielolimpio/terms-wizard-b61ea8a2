@@ -1202,3 +1202,348 @@ ${data.dmcaAgentEmail ? `DMCA email: ${data.dmcaAgentEmail}` : ''}
 
 This policy has been in effect since ${currentDate} and constitutes an integral part of our Terms of Use.`;
 };
+
+export const generateAntispamPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA ANTISPAM - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política Antispam estabelece as diretrizes e procedimentos do ${data.siteName} para prevenir, detectar e combater práticas de spam em nossa plataforma.
+
+INTRODUÇÃO
+
+${data.siteName} está comprometido em manter um ambiente digital limpo, seguro e livre de spam para todos os nossos usuários.
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email de contato: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+O QUE CONSIDERAMOS SPAM
+
+- Mensagens comerciais não solicitadas
+- Conteúdo repetitivo ou duplicado
+- Links maliciosos ou enganosos
+- Tentativas de phishing ou fraude
+- Abuso de recursos de comunicação
+
+MEDIDAS DE PREVENÇÃO
+
+Implementamos múltiplas camadas de proteção:
+- Filtros automatizados de spam
+- Verificação de email e captcha
+- Limitação de taxa de envio
+- Análise de comportamento suspeito
+- Blacklists e whitelists
+
+CONSEQUÊNCIAS
+
+Usuários que praticarem spam estarão sujeitos a:
+- Advertência e notificação
+- Suspensão temporária de conta
+- Bloqueio permanente
+- Ação legal quando aplicável
+
+DENÚNCIAS
+
+Para reportar spam: ${data.contactEmail || 'abuse@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+Esta política está em vigor desde ${currentDate}.`;
+  }
+
+  return `ANTI-SPAM POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Anti-Spam Policy establishes ${data.siteName}'s guidelines and procedures to prevent, detect, and combat spam practices on our platform.
+
+Contact: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate}.`;
+};
+
+export const generateContentPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE CONTEÚDO - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta Política de Conteúdo estabelece as diretrizes sobre que tipos de conteúdo são permitidos em ${data.siteName}.
+
+INTRODUÇÃO
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+CONTEÚDO PERMITIDO
+
+- Conteúdo original e autêntico
+- Informações precisas e verificáveis
+- Discussões respeitosas e construtivas
+- Materiais educativos e informativos
+
+CONTEÚDO PROIBIDO
+
+- Conteúdo ilegal ou que viole direitos autorais
+- Material ofensivo, discriminatório ou de ódio
+- Spam, desinformação ou fake news
+- Conteúdo violento ou explícito inadequado
+- Assédio, bullying ou ameaças
+
+MODERAÇÃO
+
+Implementamos moderação através de:
+- Sistemas automatizados de detecção
+- Revisão manual por moderadores
+- Denúncias da comunidade
+- Análise de contexto e intenção
+
+CONSEQUÊNCIAS
+
+Violações podem resultar em:
+- Remoção de conteúdo
+- Advertência ao usuário
+- Suspensão de conta
+- Banimento permanente
+
+APPEALS
+
+Usuários podem contestar decisões através de: ${data.contactEmail || 'appeals@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+Esta política está em vigor desde ${currentDate}.`;
+  }
+
+  return `CONTENT POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This Content Policy establishes guidelines about what types of content are allowed on ${data.siteName}.
+
+Contact: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate}.`;
+};
+
+export const generateCommentModerationPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE MODERAÇÃO DE COMENTÁRIOS - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+Esta política define como moderamos comentários em ${data.siteName} para manter discussões saudáveis e construtivas.
+
+INTRODUÇÃO
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+DIRETRIZES DE COMENTÁRIOS
+
+Encorajamos:
+- Discussões respeitosas e civilizadas
+- Feedback construtivo
+- Diversidade de opiniões
+- Contribuições relevantes ao tópico
+
+Não permitimos:
+- Linguagem ofensiva ou discriminatória
+- Ataques pessoais ou assédio
+- Spam ou autopromoção excessiva
+- Informações falsas deliberadas
+- Conteúdo ilegal
+
+PROCESSO DE MODERAÇÃO
+
+${data.hasContentModeration ? `Utilizamos moderação ativa: ${data.moderationProcess || 'Combinação de filtros automatizados e revisão manual'}` : 'Moderamos comentários conforme necessário'}
+
+Tipos de moderação:
+- Pré-moderação para novos usuários
+- Pós-moderação para usuários estabelecidos
+- Análise de denúncias da comunidade
+- Verificação automatizada de conteúdo
+
+AÇÕES DE MODERAÇÃO
+
+- Advertência ao usuário
+- Edição ou remoção de comentário
+- Suspensão temporária
+- Banimento permanente
+
+RECURSOS E APPEALS
+
+Para contestar uma decisão: ${data.contactEmail || 'moderacao@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+Esta política está em vigor desde ${currentDate}.`;
+  }
+
+  return `COMMENT MODERATION POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+This policy defines how we moderate comments on ${data.siteName}.
+
+Contact: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate}.`;
+};
+
+export const generateAccessibilityPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE ACESSIBILIDADE - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+${data.siteName} está comprometido em garantir acessibilidade digital para pessoas com deficiência.
+
+INTRODUÇÃO
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+NOSSO COMPROMISSO
+
+Nos esforçamos continuamente para melhorar a acessibilidade do nosso site e aderir aos padrões WCAG 2.1 nível AA.
+
+RECURSOS DE ACESSIBILIDADE
+
+Nosso site implementa:
+- Navegação por teclado
+- Textos alternativos para imagens
+- Contraste adequado de cores
+- Tamanhos de fonte ajustáveis
+- Estrutura semântica HTML
+- Compatibilidade com leitores de tela
+
+TECNOLOGIAS ASSISTIVAS
+
+O site é compatível com:
+- Leitores de tela (NVDA, JAWS, VoiceOver)
+- Navegação por teclado
+- Software de reconhecimento de voz
+- Ampliadores de tela
+
+FEEDBACK E ASSISTÊNCIA
+
+Estamos constantemente trabalhando para melhorar. Se encontrar barreiras de acessibilidade:
+
+Email: ${data.contactEmail || 'acessibilidade@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+Descreva:
+- Qual página você estava acessando
+- Qual problema encontrou
+- Qual tecnologia assistiva estava usando
+
+MELHORIAS CONTÍNUAS
+
+Realizamos:
+- Auditorias regulares de acessibilidade
+- Testes com usuários reais
+- Treinamento de equipe
+- Atualizações baseadas em feedback
+
+Esta política está em vigor desde ${currentDate}.`;
+  }
+
+  return `ACCESSIBILITY POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+${data.siteName} is committed to ensuring digital accessibility for people with disabilities.
+
+Contact: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate}.`;
+};
+
+export const generateSustainabilityPolicy = (data: PolicyFormData): string => {
+  const currentDate = formatDate(data.language as LanguageCode);
+  
+  if (data.language === 'pt-BR') {
+    return `POLÍTICA DE SUSTENTABILIDADE - ${data.siteName.toUpperCase()}
+
+Última atualização: ${currentDate}
+
+${data.siteName} está comprometido com práticas sustentáveis e responsabilidade ambiental.
+
+INTRODUÇÃO
+
+Website: ${data.siteName}
+URL: ${data.siteUrl}
+Email: ${data.contactEmail || 'contato@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+NOSSOS COMPROMISSOS
+
+Sustentabilidade Digital:
+- Otimização de código para menor consumo energético
+- Hospedagem em servidores verdes
+- Redução de transferência de dados desnecessária
+- Cache eficiente e CDN otimizado
+
+Práticas Operacionais:
+- Redução de pegada de carbono
+- Uso eficiente de recursos
+- Reciclagem e descarte responsável
+- Parcerias com fornecedores sustentáveis
+
+RESPONSABILIDADE SOCIAL
+
+${data.companyName ? `${data.companyName} se compromete com:` : 'Nos comprometemos com:'}
+- Transparência nas operações
+- Ética nos negócios
+- Respeito aos direitos humanos
+- Contribuição para comunidade local
+
+OBJETIVOS DE DESENVOLVIMENTO
+
+Metas de curto prazo (1-2 anos):
+- Redução de 25% no consumo energético
+- 100% energia renovável
+- Neutralização de carbono
+
+Metas de longo prazo (3-5 anos):
+- Carbon negative operations
+- Zero desperdício
+- Impacto positivo líquido
+
+TRANSPARÊNCIA E REPORTING
+
+Publicamos relatórios anuais sobre:
+- Métricas de sustentabilidade
+- Progresso em metas
+- Impacto ambiental
+- Iniciativas implementadas
+
+ENGAJAMENTO
+
+Como você pode contribuir:
+- Use nossos serviços de forma consciente
+- Forneça feedback sobre sustentabilidade
+- Participe de nossas iniciativas
+- Compartilhe boas práticas
+
+Para sugestões de sustentabilidade: ${data.contactEmail || 'sustentabilidade@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+Esta política está em vigor desde ${currentDate}.`;
+  }
+
+  return `SUSTAINABILITY POLICY - ${data.siteName.toUpperCase()}
+
+Last updated: ${currentDate}
+
+${data.siteName} is committed to sustainable practices and environmental responsibility.
+
+Contact: ${data.contactEmail || 'contact@' + data.siteUrl.replace('https://', '').replace('http://', '')}
+
+This policy has been in effect since ${currentDate}.`;
+};

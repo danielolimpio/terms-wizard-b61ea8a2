@@ -1,9 +1,28 @@
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PolicyGenerator } from "@/components/PolicyGenerator";
+import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { getPolicyById } from "@/lib/policies";
+import { generateSustainabilityPolicy } from "@/lib/policyTemplates";
+import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function SustainabilityPolicyInfoPage() {
+const SustainabilityPolicyInfoPage = () => {
+  const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
+  const [showGenerator, setShowGenerator] = useState(false);
+  const handlePolicyGenerated = (formData: PolicyFormData) => {
+    const policyType = getPolicyById('sustainability-policy');
+    if (!policyType) return;
+    const content = generateSustainabilityPolicy(formData);
+    setGeneratedPolicy({ id: Date.now().toString(), type: policyType, content, formData, createdAt: new Date() });
+  };
+  const policyType = getPolicyById('sustainability-policy');
+  if (!policyType) return <div>Política não encontrada</div>;
+  if (generatedPolicy) return (<div className="min-h-screen bg-background"><Header /><main className="container mx-auto px-4 py-8"><GeneratedPolicyResult generatedPolicy={generatedPolicy} onGenerateNew={() => { setGeneratedPolicy(null); setShowGenerator(false); }} /></main></div>);
+  if (showGenerator) return (<div className="min-h-screen bg-background"><Header /><main className="container mx-auto px-4 py-8"><div className="mb-6"><Button variant="outline" onClick={() => setShowGenerator(false)}>← Voltar</Button></div><PolicyGenerator policyType={policyType} onGenerate={handlePolicyGenerated} /></main></div>);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -163,12 +182,7 @@ export default function SustainabilityPolicyInfoPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button 
-                    className="w-full"
-                    onClick={() => window.location.href = '/gerador-politica-sustentabilidade'}
-                  >
-                    Gerar Política de Sustentabilidade
-                  </Button>
+                  <Button className="w-full" onClick={() => setShowGenerator(true)}>Gerar Política de Sustentabilidade</Button>
                 </CardContent>
               </Card>
 
@@ -216,4 +230,6 @@ export default function SustainabilityPolicyInfoPage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default SustainabilityPolicyInfoPage;
