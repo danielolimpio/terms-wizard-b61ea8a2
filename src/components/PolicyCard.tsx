@@ -64,7 +64,7 @@ export const PolicyCard = ({ policy, onGenerate }: PolicyCardProps) => {
           className="w-full"
           onClick={() => onGenerate(policy.id)}
         >
-          Gerar {policy.name}
+          Gerar {policy.name.replace('Modelo ', 'Gerador de ')}
         </Button>
       </CardFooter>
     </Card>

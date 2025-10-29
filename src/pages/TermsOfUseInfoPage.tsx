@@ -1,359 +1,224 @@
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PolicyGenerator } from "@/components/PolicyGenerator";
+import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { getPolicyById } from "@/lib/policies";
+import { generateTermsOfUse } from "@/lib/policyTemplates";
+import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
+import { FileText, Shield, CheckCircle } from "lucide-react";
 
-export default function TermsOfUseInfoPage() {
+const TermsOfUseInfoPage = () => {
+  const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
+  const [showGenerator, setShowGenerator] = useState(false);
+
+  const handlePolicyGenerated = (formData: PolicyFormData) => {
+    const policyType = getPolicyById('terms-of-use');
+    if (!policyType) return;
+
+    const content = generateTermsOfUse(formData);
+    
+    const generated: GeneratedPolicy = {
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    };
+
+    setGeneratedPolicy(generated);
+  };
+
+  const handleGenerateNew = () => {
+    setGeneratedPolicy(null);
+    setShowGenerator(false);
+  };
+
+  const policyType = getPolicyById('terms-of-use');
+  
+  if (!policyType) {
+    return <div>Política não encontrada</div>;
+  }
+
+  if (generatedPolicy) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={handleGenerateNew}
+          />
+        </main>
+      </div>
+    );
+  }
+
+  if (showGenerator) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <div className="mb-6">
+            <Button variant="outline" onClick={() => setShowGenerator(false)}>
+              ← Voltar
+            </Button>
+          </div>
+          
+          <PolicyGenerator
+            policyType={policyType}
+            onGenerate={handlePolicyGenerated}
+          />
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
+      {/* Hero Section */}
+      <section className="bg-gradient-primary py-16 px-4 text-white">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Gerador de Termos de Uso
+          </h1>
+          <p className="text-xl mb-8 text-gray-100">
+            Crie termos de uso profissionais e completos para seu site em minutos
+          </p>
+          <Button 
+            variant="secondary" 
+            size="lg"
+            onClick={() => setShowGenerator(true)}
+          >
+            Gerar Termos de Uso Agora
+          </Button>
+        </div>
+      </section>
+
+      {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Termos de Uso: Guia Completo
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              Proteja seu negócio com termos de uso bem estruturados
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-2 mb-2">
+                <FileText className="h-6 w-6 text-primary" />
+                <CardTitle>O que são Termos de Uso?</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base">
+                Termos de Uso são documentos legais que estabelecem as regras, direitos e obrigações 
+                entre você e os usuários do seu site ou aplicativo. Eles definem como sua plataforma 
+                pode ser utilizada e protegem tanto você quanto seus usuários.
+              </CardDescription>
+            </CardContent>
+          </Card>
 
-          <div className="prose prose-slate max-w-none space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <span>📋</span>
-                  O que são Termos de Uso?
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Os Termos de Uso, também conhecidos como Termos de Serviço ou Termos e Condições, são um contrato 
-                  legal entre uma empresa e seus usuários que estabelece as regras, direitos e responsabilidades para 
-                  o uso de um produto, serviço ou plataforma digital. Este documento é fundamental para proteger 
-                  juridicamente a empresa e definir claramente as expectativas de ambas as partes.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Diferente da Política de Privacidade, que foca na proteção de dados, os Termos de Uso regulamentam 
-                  o comportamento do usuário, limitam a responsabilidade da empresa e estabelecem as condições sob 
-                  as quais o serviço pode ser utilizado. É um documento essencial que pode prevenir disputas legais 
-                  e proteger a empresa de diversos riscos jurídicos.
-                </p>
-              </CardContent>
-            </Card>
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-2 mb-2">
+                <Shield className="h-6 w-6 text-primary" />
+                <CardTitle>Por que são essenciais?</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base">
+                Termos de Uso bem elaborados protegem seu negócio contra responsabilidades legais, 
+                estabelecem limites claros de uso, definem propriedade intelectual e ajudam a resolver 
+                disputas. São fundamentais para qualquer site ou aplicativo profissional.
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Importância Jurídica e Proteção Legal</CardTitle>
-                <CardDescription>
-                  Por que todo negócio digital precisa de termos de uso
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Os Termos de Uso servem como uma blindagem jurídica para empresas digitais, estabelecendo limites 
-                  claros de responsabilidade e definindo as condições sob as quais o serviço é oferecido. Sem este 
-                  documento, empresas ficam vulneráveis a processos judiciais, interpretações adversas da legislação 
-                  e disputas desnecessárias com usuários.
+        {/* Features */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            O que incluímos nos Termos de Uso
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Aceitação dos Termos</h3>
+                <p className="text-sm text-muted-foreground">
+                  Define como e quando os usuários aceitam os termos
                 </p>
-                
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-2">🚨 Riscos da Ausência de Termos de Uso:</h4>
-                  <ul className="list-disc list-inside text-sm text-red-700 space-y-1">
-                    <li>Responsabilização ilimitada por danos ou prejuízos</li>
-                    <li>Impossibilidade de restringir tipos de uso inadequado</li>
-                    <li>Vulnerabilidade a processos por violação de direitos</li>
-                    <li>Dificuldade para suspender ou encerrar contas problemáticas</li>
-                    <li>Ausência de proteção para propriedade intelectual</li>
-                    <li>Impossibilidade de definir jurisdição para disputas</li>
-                  </ul>
-                </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  No Brasil, embora não exista legislação específica exigindo Termos de Uso, o Código Civil, o Código 
-                  de Defesa do Consumidor e o Marco Civil da Internet fornecem base legal para sua aplicação. 
-                  Tribunais brasileiros têm reconhecido a validade destes documentos quando bem estruturados e 
-                  claramente apresentados aos usuários.
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Uso Permitido</h3>
+                <p className="text-sm text-muted-foreground">
+                  Estabelece o que os usuários podem e não podem fazer
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Tipos de Plataformas que Necessitam</CardTitle>
-                <CardDescription>
-                  Quando implementar termos de uso é essencial
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Praticamente qualquer plataforma digital que permita interação de usuários, transações comerciais 
-                  ou ofereça serviços precisa de Termos de Uso. A complexidade e especificidade do documento variarão 
-                  conforme o tipo e risco do negócio.
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Propriedade Intelectual</h3>
+                <p className="text-sm text-muted-foreground">
+                  Protege seus direitos autorais e marcas registradas
                 </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                  <div className="space-y-4">
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-blue-600 mb-2">🛒 E-commerce</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Condições de venda, política de devolução, responsabilidade por produtos, 
-                        processo de checkout, garantias e limitações.
-                      </p>
-                    </div>
-                    
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-green-600 mb-2">💰 Fintechs</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Regulamentações financeiras, limites de transação, KYC, prevenção à 
-                        lavagem de dinheiro, responsabilidades fiscais.
-                      </p>
-                    </div>
-                    
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-purple-600 mb-2">🎓 EdTech</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Acesso a conteúdo, certificações, propriedade intelectual, 
-                        comportamento em fóruns, política de reembolso.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-orange-600 mb-2">🌐 SaaS</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Níveis de serviço, uptime, suporte técnico, limites de uso, 
-                        backup de dados, rescisão de contrato.
-                      </p>
-                    </div>
-                    
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-red-600 mb-2">📱 Apps Mobile</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Permissões do dispositivo, uso offline, atualizações, 
-                        compatibilidade, funcionalidades premium.
-                      </p>
-                    </div>
-                    
-                    <div className="p-4 border rounded-lg">
-                      <h4 className="font-semibold text-cyan-600 mb-2">🤝 Marketplaces</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Relação entre vendedores e compradores, taxas, disputas, 
-                        qualidade de produtos, avaliações.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Perspectiva do Google e SEO</CardTitle>
-                <CardDescription>
-                  Como termos de uso impactam presença digital
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  O Google e outros mecanismos de busca consideram a presença de Termos de Uso como um indicador de 
-                  credibilidade e profissionalismo de um site. Embora não seja um fator direto de ranking, sites com 
-                  documentos legais bem estruturados tendem a transmitir mais confiança aos usuários e aos algoritmos.
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Limitação de Responsabilidade</h3>
+                <p className="text-sm text-muted-foreground">
+                  Define limites de responsabilidade da plataforma
                 </p>
-                
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-green-800 mb-2">🎯 Benefícios para SEO:</h4>
-                  <ul className="list-disc list-inside text-sm text-green-700 space-y-1">
-                    <li><strong>Confiança do Usuário:</strong> Maior tempo de permanência no site</li>
-                    <li><strong>Taxa de Conversão:</strong> Usuários mais confiantes convertem mais</li>
-                    <li><strong>Google Ads:</strong> Políticas claras melhoram aprovação de anúncios</li>
-                    <li><strong>E-A-T (Expertise, Authoritativeness, Trustworthiness):</strong> Melhora percepção de autoridade</li>
-                    <li><strong>Conformidade:</strong> Reduz risco de penalizações por práticas inadequadas</li>
-                  </ul>
-                </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  Para negócios que utilizam Google Ads, AdSense ou Google Shopping, ter Termos de Uso claros pode 
-                  facilitar a aprovação de campanhas e reduzir o risco de suspensão de contas. O Google valoriza 
-                  transparência e sites que demonstram profissionalismo através de documentos legais completos.
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Modificações e Rescisão</h3>
+                <p className="text-sm text-muted-foreground">
+                  Como alterar os termos e encerrar contas
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Elementos Essenciais dos Termos de Uso</CardTitle>
-                <CardDescription>
-                  Componentes que não podem faltar no documento
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Um documento de Termos de Uso completo deve abordar todos os aspectos da relação entre empresa e 
-                  usuário, estabelecendo regras claras e protegendo ambas as partes. Cada seção deve ser específica 
-                  ao tipo de negócio e aos riscos envolvidos.
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Lei Aplicável</h3>
+                <p className="text-sm text-muted-foreground">
+                  Define jurisdição e legislação aplicável
                 </p>
-                
-                <div className="space-y-4">
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <h4 className="font-semibold mb-2">1. Aceitação dos Termos</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Como e quando os termos são aceitos, idade mínima para uso, consentimento parental 
-                      para menores de idade.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-green-500 pl-4">
-                    <h4 className="font-semibold mb-2">2. Descrição do Serviço</h4>
-                    <p className="text-sm text-muted-foreground">
-                      O que é oferecido, limitações técnicas, disponibilidade, funcionalidades 
-                      incluídas e excluídas.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-purple-500 pl-4">
-                    <h4 className="font-semibold mb-2">3. Condições de Uso</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Comportamentos permitidos e proibidos, restrições geográficas, 
-                      limites de idade, uso comercial vs. pessoal.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-orange-500 pl-4">
-                    <h4 className="font-semibold mb-2">4. Contas de Usuário</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Criação de conta, responsabilidade por credenciais, suspensão, 
-                      encerramento, recuperação de conta.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-red-500 pl-4">
-                    <h4 className="font-semibold mb-2">5. Propriedade Intelectual</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Direitos autorais, marcas registradas, licenças de uso, 
-                      conteúdo gerado pelo usuário, DMCA.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-cyan-500 pl-4">
-                    <h4 className="font-semibold mb-2">6. Limitação de Responsabilidade</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Isenções de responsabilidade, danos diretos e indiretos, 
-                      force majeure, disponibilidade do serviço.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-pink-500 pl-4">
-                    <h4 className="font-semibold mb-2">7. Rescisão e Suspensão</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Motivos para suspensão, processo de rescisão, 
-                      consequências do encerramento, recuperação de dados.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Estratégias de Implementação</CardTitle>
-                <CardDescription>
-                  Como apresentar e fazer valer os termos de uso
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <span className="text-blue-500 mt-1">📝</span>
-                      <div>
-                        <h4 className="font-medium">Apresentação Clara</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Link visível no rodapé, processo de cadastro, checkout e páginas importantes.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <span className="text-green-500 mt-1">✅</span>
-                      <div>
-                        <h4 className="font-medium">Consentimento Ativo</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Checkbox obrigatório, não pré-marcado, com linguagem clara sobre aceitação.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <span className="text-purple-500 mt-1">🔄</span>
-                      <div>
-                        <h4 className="font-medium">Controle de Versões</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Histórico de alterações, notificação de mudanças, data da última atualização.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <span className="text-orange-500 mt-1">⚖️</span>
-                      <div>
-                        <h4 className="font-medium">Validade Legal</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Revisão jurídica, adequação à legislação local, cláusulas válidas.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <span className="text-red-500 mt-1">🎯</span>
-                      <div>
-                        <h4 className="font-medium">Especificidade do Negócio</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Adaptação aos riscos específicos, setor de atuação, tipo de usuários.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <span className="text-cyan-500 mt-1">📞</span>
-                      <div>
-                        <h4 className="font-medium">Canal de Comunicação</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Meio de contato para dúvidas, disputas e esclarecimentos sobre os termos.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                  <h4 className="font-semibold text-yellow-800 mb-2">💡 Dica Importante:</h4>
-                  <p className="text-sm text-yellow-700">
-                    Mantenha uma cópia de quando cada usuário aceitou os termos. Isso pode ser crucial 
-                    em disputas legais para provar que o usuário concordou com as condições específicas.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="text-center pt-8">
-              <Button 
-                variant="google" 
-                size="lg"
-                onClick={() => window.location.href = '/?policy=terms-of-use'}
-              >
-                Gerar Termos de Uso Agora
-              </Button>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* CTA Section */}
+        <div className="bg-gradient-secondary rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">
+            Pronto para criar seus Termos de Uso?
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Gere um documento profissional em minutos, totalmente gratuito
+          </p>
+          <Button 
+            variant="default" 
+            size="lg"
+            onClick={() => setShowGenerator(true)}
+          >
+            Começar Agora
+          </Button>
+        </div>
       </main>
-      
+
       <Footer />
     </div>
   );
-}
+};
+
+export default TermsOfUseInfoPage;

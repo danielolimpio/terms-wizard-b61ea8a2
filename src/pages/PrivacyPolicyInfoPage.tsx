@@ -12,7 +12,7 @@ export default function PrivacyPolicyInfoPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Política de Privacidade: Guia Completo
+              Gerador de Política de Privacidade
             </h1>
             <p className="text-xl text-muted-foreground">
               Tudo que você precisa saber sobre políticas de privacidade para seu site

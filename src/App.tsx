@@ -10,6 +10,8 @@ import AllPoliciesPage from "./pages/AllPoliciesPage";
 import BlogPage from "./pages/BlogPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPolicyInfoPage from "./pages/PrivacyPolicyInfoPage";
+import TermsOfUseInfoPage from "./pages/TermsOfUseInfoPage";
+import CookiePolicyInfoPage from "./pages/CookiePolicyInfoPage";
 import TransparencyPolicyInfoPage from "./pages/TransparencyPolicyInfoPage";
 import SecurityPolicyInfoPage from "./pages/SecurityPolicyInfoPage";
 import AntispamPolicyInfoPage from "./pages/AntispamPolicyInfoPage";
@@ -41,16 +43,20 @@ const App = () => (
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/ajuda" element={<HelpPage />} />
           <Route path="/contato" element={<ContactPage />} />
-          <Route path="/privacy-policy-info" element={<PrivacyPolicyInfoPage />} />
-          <Route path="/transparency-policy-info" element={<TransparencyPolicyInfoPage />} />
-          <Route path="/security-policy-info" element={<SecurityPolicyInfoPage />} />
-          <Route path="/antispam-policy-info" element={<AntispamPolicyInfoPage />} />
-          <Route path="/copyright-policy-info" element={<CopyrightPolicyInfoPage />} />
-          <Route path="/content-policy-info" element={<ContentPolicyInfoPage />} />
-          <Route path="/comment-moderation-info" element={<CommentModerationInfoPage />} />
-          <Route path="/accessibility-policy-info" element={<AccessibilityPolicyInfoPage />} />
-          <Route path="/sustainability-policy-info" element={<SustainabilityPolicyInfoPage />} />
-          <Route path="/refund-policy-info" element={<RefundPolicyInfoPage />} />
+          
+          {/* Geradores de Políticas - URLs SEO Friendly */}
+          <Route path="/gerador-politica-privacidade" element={<PrivacyPolicyInfoPage />} />
+          <Route path="/gerador-termos-uso" element={<TermsOfUseInfoPage />} />
+          <Route path="/gerador-politica-cookies" element={<CookiePolicyInfoPage />} />
+          <Route path="/gerador-politica-reembolso" element={<RefundPolicyInfoPage />} />
+          <Route path="/gerador-politica-transparencia" element={<TransparencyPolicyInfoPage />} />
+          <Route path="/gerador-politica-seguranca" element={<SecurityPolicyInfoPage />} />
+          <Route path="/gerador-politica-antispam" element={<AntispamPolicyInfoPage />} />
+          <Route path="/gerador-politica-propriedade-intelectual" element={<CopyrightPolicyInfoPage />} />
+          <Route path="/gerador-politica-conteudo" element={<ContentPolicyInfoPage />} />
+          <Route path="/gerador-politica-moderacao" element={<CommentModerationInfoPage />} />
+          <Route path="/gerador-politica-acessibilidade" element={<AccessibilityPolicyInfoPage />} />
+          <Route path="/gerador-politica-sustentabilidade" element={<SustainabilityPolicyInfoPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/posts" element={<AdminPostsPage />} />
           <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />

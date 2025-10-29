@@ -170,7 +170,7 @@ const Index = () => {
             className="text-sm md:text-base px-6 md:px-8 shadow-xl"
             onClick={() => handleGeneratePolicy('privacy-policy')}
           >
-            Gerar Política de Privacidade
+            Criar Política de Privacidade Grátis
           </Button>
         </div>
       </section>
