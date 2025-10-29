@@ -26,6 +26,18 @@ import HelpPage from "./pages/HelpPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
 import AdminPostEditorPage from "./pages/AdminPostEditorPage";
+import PrivacyPolicyGenerator from "./pages/generators/PrivacyPolicyGenerator";
+import TermsOfUseGenerator from "./pages/generators/TermsOfUseGenerator";
+import CookiePolicyGenerator from "./pages/generators/CookiePolicyGenerator";
+import RefundPolicyGenerator from "./pages/generators/RefundPolicyGenerator";
+import TransparencyPolicyGenerator from "./pages/generators/TransparencyPolicyGenerator";
+import SecurityPolicyGenerator from "./pages/generators/SecurityPolicyGenerator";
+import AntispamPolicyGenerator from "./pages/generators/AntispamPolicyGenerator";
+import CopyrightPolicyGenerator from "./pages/generators/CopyrightPolicyGenerator";
+import ContentPolicyGenerator from "./pages/generators/ContentPolicyGenerator";
+import CommentModerationGenerator from "./pages/generators/CommentModerationGenerator";
+import AccessibilityPolicyGenerator from "./pages/generators/AccessibilityPolicyGenerator";
+import SustainabilityPolicyGenerator from "./pages/generators/SustainabilityPolicyGenerator";
 
 const queryClient = new QueryClient();
 
@@ -44,19 +56,19 @@ const App = () => (
           <Route path="/ajuda" element={<HelpPage />} />
           <Route path="/contato" element={<ContactPage />} />
           
-          {/* Geradores de Políticas - URLs SEO Friendly */}
-          <Route path="/gerador-politica-privacidade" element={<PrivacyPolicyInfoPage />} />
-          <Route path="/gerador-termos-uso" element={<TermsOfUseInfoPage />} />
-          <Route path="/gerador-politica-cookies" element={<CookiePolicyInfoPage />} />
-          <Route path="/gerador-politica-reembolso" element={<RefundPolicyInfoPage />} />
-          <Route path="/gerador-politica-transparencia" element={<TransparencyPolicyInfoPage />} />
-          <Route path="/gerador-politica-seguranca" element={<SecurityPolicyInfoPage />} />
-          <Route path="/gerador-politica-antispam" element={<AntispamPolicyInfoPage />} />
-          <Route path="/gerador-politica-propriedade-intelectual" element={<CopyrightPolicyInfoPage />} />
-          <Route path="/gerador-politica-conteudo" element={<ContentPolicyInfoPage />} />
-          <Route path="/gerador-politica-moderacao" element={<CommentModerationInfoPage />} />
-          <Route path="/gerador-politica-acessibilidade" element={<AccessibilityPolicyInfoPage />} />
-          <Route path="/gerador-politica-sustentabilidade" element={<SustainabilityPolicyInfoPage />} />
+          {/* Geradores - URLs SEO Friendly */}
+          <Route path="/gerador-politica-privacidade" element={<PrivacyPolicyGenerator />} />
+          <Route path="/gerador-termos-uso" element={<TermsOfUseGenerator />} />
+          <Route path="/gerador-politica-cookies" element={<CookiePolicyGenerator />} />
+          <Route path="/gerador-politica-reembolso" element={<RefundPolicyGenerator />} />
+          <Route path="/gerador-politica-transparencia" element={<TransparencyPolicyGenerator />} />
+          <Route path="/gerador-politica-seguranca" element={<SecurityPolicyGenerator />} />
+          <Route path="/gerador-politica-antispam" element={<AntispamPolicyGenerator />} />
+          <Route path="/gerador-politica-propriedade-intelectual" element={<CopyrightPolicyGenerator />} />
+          <Route path="/gerador-politica-conteudo" element={<ContentPolicyGenerator />} />
+          <Route path="/gerador-politica-moderacao" element={<CommentModerationGenerator />} />
+          <Route path="/gerador-politica-acessibilidade" element={<AccessibilityPolicyGenerator />} />
+          <Route path="/gerador-politica-sustentabilidade" element={<SustainabilityPolicyGenerator />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/posts" element={<AdminPostsPage />} />
           <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />
