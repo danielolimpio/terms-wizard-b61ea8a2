@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateSustainabilityPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function SustainabilityPolicyGenerator() {
+const SustainabilityPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('sustainability-policy');
   
@@ -52,4 +52,6 @@ export default function SustainabilityPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default SustainabilityPolicyGenerator;

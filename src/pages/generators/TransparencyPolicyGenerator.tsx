@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateTransparencyPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function TransparencyPolicyGenerator() {
+const TransparencyPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('transparency-policy');
   
@@ -52,4 +52,6 @@ export default function TransparencyPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default TransparencyPolicyGenerator;

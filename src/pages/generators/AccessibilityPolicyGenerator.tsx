@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateAccessibilityPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function AccessibilityPolicyGenerator() {
+const AccessibilityPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('accessibility-policy');
   
@@ -52,4 +52,6 @@ export default function AccessibilityPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default AccessibilityPolicyGenerator;

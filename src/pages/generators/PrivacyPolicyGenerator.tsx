@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function PrivacyPolicyGenerator() {
+const PrivacyPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   
   const policyType = getPolicyById('privacy-policy');
@@ -65,4 +65,6 @@ export default function PrivacyPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default PrivacyPolicyGenerator;

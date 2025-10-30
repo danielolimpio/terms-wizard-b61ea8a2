@@ -28,6 +28,7 @@ import AccessibilityPolicyGenerator from "./pages/generators/AccessibilityPolicy
 import SustainabilityPolicyGenerator from "./pages/generators/SustainabilityPolicyGenerator";
 
 const queryClient = new QueryClient();
+// Force rebuild - v1.0
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

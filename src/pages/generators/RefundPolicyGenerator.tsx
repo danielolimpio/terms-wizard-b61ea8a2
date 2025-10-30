@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateRefundPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function RefundPolicyGenerator() {
+const RefundPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('refund-policy');
   
@@ -52,4 +52,6 @@ export default function RefundPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default RefundPolicyGenerator;

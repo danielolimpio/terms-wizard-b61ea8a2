@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function CopyrightPolicyGenerator() {
+const CopyrightPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('copyright-policy');
   
@@ -52,4 +52,6 @@ export default function CopyrightPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default CopyrightPolicyGenerator;

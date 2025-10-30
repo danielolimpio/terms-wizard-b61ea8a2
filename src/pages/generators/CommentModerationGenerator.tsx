@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateCommentModerationPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function CommentModerationGenerator() {
+const CommentModerationGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('comment-moderation');
   
@@ -52,4 +52,6 @@ export default function CommentModerationGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default CommentModerationGenerator;

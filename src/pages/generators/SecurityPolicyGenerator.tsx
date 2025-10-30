@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateSecurityPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function SecurityPolicyGenerator() {
+const SecurityPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('security-policy');
   
@@ -52,4 +52,6 @@ export default function SecurityPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default SecurityPolicyGenerator;

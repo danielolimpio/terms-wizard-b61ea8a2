@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateTermsOfUse } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function TermsOfUseGenerator() {
+const TermsOfUseGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   
   const policyType = getPolicyById('terms-of-use');
@@ -41,4 +41,6 @@ export default function TermsOfUseGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default TermsOfUseGenerator;

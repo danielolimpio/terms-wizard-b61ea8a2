@@ -8,7 +8,7 @@ import { getPolicyById } from "@/lib/policies";
 import { generateAntispamPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
-export default function AntispamPolicyGenerator() {
+const AntispamPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('antispam-policy');
   
@@ -52,4 +52,6 @@ export default function AntispamPolicyGenerator() {
       <Footer />
     </div>
   );
-}
+};
+
+export default AntispamPolicyGenerator;
