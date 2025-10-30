@@ -2,13 +2,16 @@ import { PolicyType } from "@/types/policy";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 interface PolicyCardProps {
   policy: PolicyType;
-  onGenerate: (policyId: string) => void;
+  onGenerate?: (policyId: string) => void;
 }
 
 export const PolicyCard = ({ policy, onGenerate }: PolicyCardProps) => {
+  const navigate = useNavigate();
+  
   const categoryColors = {
     legal: "bg-blue-100 text-blue-800",
     privacy: "bg-purple-100 text-purple-800",
@@ -21,6 +24,10 @@ export const PolicyCard = ({ policy, onGenerate }: PolicyCardProps) => {
     privacy: "Privacidade",
     business: "Negócios",
     technical: "Técnico"
+  };
+
+  const handleClick = () => {
+    navigate(`/${policy.slug}`);
   };
 
   return (
@@ -62,7 +69,7 @@ export const PolicyCard = ({ policy, onGenerate }: PolicyCardProps) => {
         <Button 
           variant="google" 
           className="w-full"
-          onClick={() => onGenerate(policy.id)}
+          onClick={handleClick}
         >
           Gerar {policy.name.replace('Modelo ', '')}
         </Button>
