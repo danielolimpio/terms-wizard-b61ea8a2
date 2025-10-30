@@ -4,9 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
-import { lazy, Suspense } from "react";
 
-// Main pages - immediate load
+// Main pages
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AllPoliciesPage from "./pages/AllPoliciesPage";
@@ -18,36 +17,47 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
 import AdminPostEditorPage from "./pages/AdminPostEditorPage";
 
-// Generator pages - lazy load
-const PrivacyPolicyGenerator = lazy(() => import("./pages/generators/PrivacyPolicyGenerator"));
-const TermsOfUseGenerator = lazy(() => import("./pages/generators/TermsOfUseGenerator"));
-const CookiePolicyGenerator = lazy(() => import("./pages/generators/CookiePolicyGenerator"));
-const RefundPolicyGenerator = lazy(() => import("./pages/generators/RefundPolicyGenerator"));
-const TransparencyPolicyGenerator = lazy(() => import("./pages/generators/TransparencyPolicyGenerator"));
-const SecurityPolicyGenerator = lazy(() => import("./pages/generators/SecurityPolicyGenerator"));
-const AntispamPolicyGenerator = lazy(() => import("./pages/generators/AntispamPolicyGenerator"));
-const CopyrightPolicyGenerator = lazy(() => import("./pages/generators/CopyrightPolicyGenerator"));
-const ContentPolicyGenerator = lazy(() => import("./pages/generators/ContentPolicyGenerator"));
-const CommentModerationGenerator = lazy(() => import("./pages/generators/CommentModerationGenerator"));
-const AccessibilityPolicyGenerator = lazy(() => import("./pages/generators/AccessibilityPolicyGenerator"));
-const SustainabilityPolicyGenerator = lazy(() => import("./pages/generators/SustainabilityPolicyGenerator"));
+// Generator pages - DIRECT IMPORTS
+import PrivacyPolicyGenerator from "./pages/generators/PrivacyPolicyGenerator";
+import TermsOfUseGenerator from "./pages/generators/TermsOfUseGenerator";
+import CookiePolicyGenerator from "./pages/generators/CookiePolicyGenerator";
+import RefundPolicyGenerator from "./pages/generators/RefundPolicyGenerator";
+import TransparencyPolicyGenerator from "./pages/generators/TransparencyPolicyGenerator";
+import SecurityPolicyGenerator from "./pages/generators/SecurityPolicyGenerator";
+import AntispamPolicyGenerator from "./pages/generators/AntispamPolicyGenerator";
+import CopyrightPolicyGenerator from "./pages/generators/CopyrightPolicyGenerator";
+import ContentPolicyGenerator from "./pages/generators/ContentPolicyGenerator";
+import CommentModerationGenerator from "./pages/generators/CommentModerationGenerator";
+import AccessibilityPolicyGenerator from "./pages/generators/AccessibilityPolicyGenerator";
+import SustainabilityPolicyGenerator from "./pages/generators/SustainabilityPolicyGenerator";
+
+console.log("App loaded - generators imported:", {
+  PrivacyPolicyGenerator,
+  TermsOfUseGenerator,
+  CookiePolicyGenerator,
+  RefundPolicyGenerator,
+  TransparencyPolicyGenerator,
+  SecurityPolicyGenerator,
+  AntispamPolicyGenerator,
+  CopyrightPolicyGenerator,
+  ContentPolicyGenerator,
+  CommentModerationGenerator,
+  AccessibilityPolicyGenerator,
+  SustainabilityPolicyGenerator
+});
 
 const queryClient = new QueryClient();
 
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-  </div>
-);
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <CookieConsent />
-      <BrowserRouter>
-        <Suspense fallback={<LoadingFallback />}>
+const App = () => {
+  console.log("App rendering - build v2.0");
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <CookieConsent />
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/sobre" element={<AboutPage />} />
@@ -69,17 +79,20 @@ const App = () => (
             <Route path="/gerador-politica-moderacao" element={<CommentModerationGenerator />} />
             <Route path="/gerador-politica-acessibilidade" element={<AccessibilityPolicyGenerator />} />
             <Route path="/gerador-politica-sustentabilidade" element={<SustainabilityPolicyGenerator />} />
+            
+            {/* Admin routes */}
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route path="/admin/posts" element={<AdminPostsPage />} />
             <Route path="/admin/posts/new" element={<AdminPostEditorPage />} />
             <Route path="/admin/posts/edit/:id" element={<AdminPostEditorPage />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
