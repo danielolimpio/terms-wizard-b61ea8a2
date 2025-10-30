@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { PolicyFormData, AVAILABLE_LANGUAGES } from "@/types/policy";
 import { PolicyType } from "@/types/policy";
+import adsenseLogo from "@/assets/adsense.png";
 
 interface PolicyGeneratorProps {
   policyType: PolicyType;
@@ -80,7 +81,7 @@ export const PolicyGenerator = ({ policyType, onGenerate }: PolicyGeneratorProps
         <div className="flex items-center space-x-3">
           <span className="text-3xl">{policyType.icon}</span>
           <div>
-            <CardTitle className="text-xl">Gerar {policyType.name}</CardTitle>
+            <CardTitle className="text-xl">Gerador {policyType.name.replace('Modelo ', '')}</CardTitle>
             <CardDescription>{policyType.description}</CardDescription>
           </div>
         </div>
@@ -172,7 +173,8 @@ export const PolicyGenerator = ({ policyType, onGenerate }: PolicyGeneratorProps
               checked={formData.hasAdsense}
               onCheckedChange={(checked) => updateFormData('hasAdsense', checked)}
             />
-            <Label htmlFor="hasAdsense" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            <Label htmlFor="hasAdsense" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
+              <img src={adsenseLogo} alt="Google AdSense" className="h-4 w-auto" />
               Meu site usa Google AdSense
             </Label>
           </div>
@@ -1156,7 +1158,7 @@ export const PolicyGenerator = ({ policyType, onGenerate }: PolicyGeneratorProps
           )}
 
           <Button type="submit" variant="google" size="lg" className="w-full">
-            Gerar {policyType.name}
+            Gerar {policyType.name.replace('Modelo ', '')}
           </Button>
         </form>
       </CardContent>
