@@ -1,3 +1,4 @@
+// Privacy Policy Generator Page
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -10,14 +11,13 @@ import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
 const PrivacyPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
-  
   const policyType = getPolicyById('privacy-policy');
   
   if (!policyType) {
     return <div>Política não encontrada</div>;
   }
 
-  const handlePolicyGenerated = (formData: PolicyFormData) => {
+  const handleGenerate = (formData: PolicyFormData) => {
     const content = generatePrivacyPolicy(formData);
     setGeneratedPolicy({
       id: Date.now().toString(),
@@ -28,10 +28,6 @@ const PrivacyPolicyGenerator = () => {
     });
   };
 
-  const handleGenerateNew = () => {
-    setGeneratedPolicy(null);
-  };
-
   if (generatedPolicy) {
     return (
       <div className="min-h-screen bg-background">
@@ -39,7 +35,7 @@ const PrivacyPolicyGenerator = () => {
         <main className="container mx-auto px-4 py-8">
           <GeneratedPolicyResult
             generatedPolicy={generatedPolicy}
-            onGenerateNew={handleGenerateNew}
+            onGenerateNew={() => setGeneratedPolicy(null)}
           />
         </main>
         <Footer />
@@ -56,11 +52,7 @@ const PrivacyPolicyGenerator = () => {
             ← Voltar
           </Button>
         </div>
-        
-        <PolicyGenerator
-          policyType={policyType}
-          onGenerate={handlePolicyGenerated}
-        />
+        <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       </main>
       <Footer />
     </div>

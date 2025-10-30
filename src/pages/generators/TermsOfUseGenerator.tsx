@@ -1,3 +1,4 @@
+// Terms of Use Generator Page
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -10,13 +11,21 @@ import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
 const TermsOfUseGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
-  
   const policyType = getPolicyById('terms-of-use');
-  if (!policyType) return <div>Política não encontrada</div>;
+  
+  if (!policyType) {
+    return <div>Política não encontrada</div>;
+  }
 
-  const handlePolicyGenerated = (formData: PolicyFormData) => {
+  const handleGenerate = (formData: PolicyFormData) => {
     const content = generateTermsOfUse(formData);
-    setGeneratedPolicy({ id: Date.now().toString(), type: policyType, content, formData, createdAt: new Date() });
+    setGeneratedPolicy({
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    });
   };
 
   if (generatedPolicy) {
@@ -24,7 +33,10 @@ const TermsOfUseGenerator = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <GeneratedPolicyResult generatedPolicy={generatedPolicy} onGenerateNew={() => setGeneratedPolicy(null)} />
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={() => setGeneratedPolicy(null)}
+          />
         </main>
         <Footer />
       </div>
@@ -35,8 +47,12 @@ const TermsOfUseGenerator = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-6"><Button variant="outline" onClick={() => window.history.back()}>← Voltar</Button></div>
-        <PolicyGenerator policyType={policyType} onGenerate={handlePolicyGenerated} />
+        <div className="mb-6">
+          <Button variant="outline" onClick={() => window.history.back()}>
+            ← Voltar
+          </Button>
+        </div>
+        <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       </main>
       <Footer />
     </div>

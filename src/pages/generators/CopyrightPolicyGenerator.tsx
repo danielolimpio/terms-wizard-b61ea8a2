@@ -1,3 +1,4 @@
+// Copyright Policy Generator Page
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -12,16 +13,29 @@ const CopyrightPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('copyright-policy');
   
-  if (!policyType) return <div>Política não encontrada</div>;
+  if (!policyType) {
+    return <div>Política não encontrada</div>;
+  }
+
+  const handleGenerate = (formData: PolicyFormData) => {
+    const content = generateCopyrightPolicy(formData);
+    setGeneratedPolicy({
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    });
+  };
 
   if (generatedPolicy) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <GeneratedPolicyResult 
-            generatedPolicy={generatedPolicy} 
-            onGenerateNew={() => setGeneratedPolicy(null)} 
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={() => setGeneratedPolicy(null)}
           />
         </main>
         <Footer />
@@ -38,16 +52,7 @@ const CopyrightPolicyGenerator = () => {
             ← Voltar
           </Button>
         </div>
-        <PolicyGenerator 
-          policyType={policyType} 
-          onGenerate={(formData) => setGeneratedPolicy({ 
-            id: Date.now().toString(), 
-            type: policyType, 
-            content: generateCopyrightPolicy(formData), 
-            formData, 
-            createdAt: new Date() 
-          })} 
-        />
+        <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       </main>
       <Footer />
     </div>

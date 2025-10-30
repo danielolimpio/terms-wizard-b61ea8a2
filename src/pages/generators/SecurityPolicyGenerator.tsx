@@ -1,3 +1,4 @@
+// Security Policy Generator Page
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -12,16 +13,29 @@ const SecurityPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('security-policy');
   
-  if (!policyType) return <div>Política não encontrada</div>;
+  if (!policyType) {
+    return <div>Política não encontrada</div>;
+  }
+
+  const handleGenerate = (formData: PolicyFormData) => {
+    const content = generateSecurityPolicy(formData);
+    setGeneratedPolicy({
+      id: Date.now().toString(),
+      type: policyType,
+      content,
+      formData,
+      createdAt: new Date()
+    });
+  };
 
   if (generatedPolicy) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <GeneratedPolicyResult 
-            generatedPolicy={generatedPolicy} 
-            onGenerateNew={() => setGeneratedPolicy(null)} 
+          <GeneratedPolicyResult
+            generatedPolicy={generatedPolicy}
+            onGenerateNew={() => setGeneratedPolicy(null)}
           />
         </main>
         <Footer />
@@ -38,16 +52,7 @@ const SecurityPolicyGenerator = () => {
             ← Voltar
           </Button>
         </div>
-        <PolicyGenerator 
-          policyType={policyType} 
-          onGenerate={(formData) => setGeneratedPolicy({ 
-            id: Date.now().toString(), 
-            type: policyType, 
-            content: generateSecurityPolicy(formData), 
-            formData, 
-            createdAt: new Date() 
-          })} 
-        />
+        <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       </main>
       <Footer />
     </div>
