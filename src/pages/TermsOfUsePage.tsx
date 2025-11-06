@@ -19,125 +19,231 @@ export default function TermsOfUsePage() {
 
           <div className="prose prose-lg max-w-none text-muted-foreground">
             <div className="space-y-8">
+              <p className="text-base">
+                <strong>Última atualização:</strong> 7 de novembro de 2025
+              </p>
+
+              <p>
+                Bem-vindo(a) ao nosso site. Estes Termos de Uso ("Termos") regem o acesso e utilização do serviço online disponibilizado em{" "}
+                <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  https://politicadeprivacidade.org/
+                </a>{" "}
+                (doravante denominado "Site"). Ao acessar, navegar ou utilizar qualquer funcionalidade deste Site, você declara que leu, entendeu e concorda integralmente com todos os termos, condições e obrigações descritos abaixo.
+              </p>
+
+              <p>
+                Este documento é um contrato legal entre você e o proprietário do Site. Caso não concorde com qualquer parte destes Termos, recomendamos que interrompa imediatamente o uso do Site e não retorne até que sua decisão seja reconsiderada.
+              </p>
+
+              <hr className="my-8 border-border" />
+
               <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">1. Aceitação dos Termos</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">1. ACEITAÇÃO DOS TERMOS DE USO</h2>
                 <p>
-                  Ao acessar e usar o Gerador de Políticas, você concorda em cumprir estes 
-                  Termos de Uso. Se você não concordar com algum termo, não deve usar nossos serviços.
+                  O simples acesso a este Site já constitui aceitação plena e irrestrita destes Termos de Uso, bem como das demais políticas aqui referenciadas, incluindo a Política de Privacidade e a Política de Cookies. Recomendamos que você leia este documento com atenção antes de continuar navegando, pois ele define seus direitos e deveres como usuário.
+                </p>
+                <p>
+                  Ao utilizar nossos serviços, você afirma ser maior de 18 anos, possuir capacidade legal para celebrar contratos e estar ciente das implicações legais decorrentes do uso do Site.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">2. Descrição do Serviço</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">2. ALTERAÇÕES NESTE DOCUMENTO</h2>
                 <p>
-                  O Gerador de Políticas é uma plataforma online que permite criar documentos 
-                  legais personalizados para websites e negócios, incluindo:
+                  Nos reservamos o direito de modificar, atualizar ou substituir estes Termos de Uso a qualquer momento, conforme necessário, seja por mudanças na legislação, nas funcionalidades do Site ou nas práticas de segurança e privacidade.
+                </p>
+                <p>
+                  Quando houver alterações significativas — especialmente aquelas que afetem diretamente seus direitos como usuário — faremos esforços razoáveis para notificá-lo com antecedência mínima de 30 dias, por meio de aviso destacado no Site ou por e-mail, caso você tenha se cadastrado.
+                </p>
+                <p>
+                  O uso contínuo do Site após a publicação da nova versão dos Termos será considerado como aceitação tácita das modificações.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">3. USO PERMITIDO DO SITE</h2>
+                <p>Você está autorizado a usar este Site para os seguintes fins:</p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Navegar livremente pelas páginas públicas;</li>
+                  <li>Ler, baixar ou compartilhar conteúdos para uso pessoal e não comercial;</li>
+                  <li>Interagir com ferramentas, formulários ou recursos disponíveis;</li>
+                  <li>Entrar em contato conosco por meio dos canais oficiais fornecidos.</li>
+                </ul>
+                <p>Todos os direitos não expressamente concedidos neste documento são reservados.</p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">4. USO PROIBIDO E RESTRIÇÕES</h2>
+                <p>
+                  Você se compromete a não utilizar o Site de forma que viole qualquer lei federal, estadual, municipal ou internacional aplicável. É expressamente proibido:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Políticas de Privacidade</li>
-                  <li>Termos de Uso</li>
-                  <li>Políticas de Cookies</li>
-                  <li>Políticas de Reembolso</li>
-                  <li>E outros documentos legais</li>
+                  <li>Utilizar o Site para atividades ilegais, fraudulentas, enganosas ou maliciosas;</li>
+                  <li>Publicar, transmitir ou distribuir conteúdos difamatórios, ofensivos, obscenos, ameaçadores ou que incitem violência ou discriminação;</li>
+                  <li>Realizar tentativas de acesso não autorizado a sistemas, servidores, bancos de dados ou áreas restritas do Site;</li>
+                  <li>Empregar bots, spiders, scrapers ou quaisquer ferramentas automatizadas para coletar dados sem permissão;</li>
+                  <li>Interferir, interromper ou sobrecarregar o funcionamento técnico do Site;</li>
+                  <li>Copiar, reproduzir, revender ou explorar qualquer parte do Site para fins comerciais sem autorização prévia;</li>
+                  <li>Coletar ou armazenar dados pessoais de outros usuários sem consentimento;</li>
+                  <li>Fazer uso indevido da marca, logotipo ou identidade visual do Site.</li>
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">3. Uso Adequado</h2>
-                <p>Você concorda em usar nossos serviços apenas para fins legítimos e de acordo com:</p>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">5. PROPRIEDADE INTELECTUAL</h2>
+                <p>
+                  Todo o conteúdo presente neste Site — incluindo textos, artigos, vídeos, imagens, gráficos, logotipos, marcas registradas, códigos-fonte, designs e compilações de dados — é de propriedade exclusiva do proprietário do Site ou de seus parceiros e licenciadores.
+                </p>
+                <p>
+                  Esse conteúdo encontra-se protegido pelas leis brasileiras de direitos autorais (Lei nº 9.610/1998) e propriedade industrial (Lei nº 9.279/1996), bem como por tratados internacionais.
+                </p>
+                <p>
+                  Você recebe uma licença limitada, não exclusiva, intransferível e revogável para acessar e utilizar o conteúdo exclusivamente para fins pessoais, educacionais ou informativos. Qualquer outro uso — incluindo reprodução, modificação, distribuição ou venda — é estritamente proibido sem autorização por escrito.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">6. LIMITAÇÃO DE RESPONSABILIDADE</h2>
+                <p>
+                  O conteúdo disponibilizado neste Site tem natureza meramente informativa, educacional ou ilustrativa. Ele não constitui, sob qualquer hipótese, aconselhamento jurídico, financeiro, médico, técnico ou profissional de qualquer tipo.
+                </p>
+                <p>
+                  Não garantimos que as informações sejam sempre precisas, completas, atualizadas ou livres de erros. O uso das informações aqui contidas é de inteira responsabilidade do usuário.
+                </p>
+                <p>
+                  Em nenhuma circunstância o proprietário do Site será responsabilizado por danos diretos, indiretos, incidentais, especiais, consequenciais ou punitivos decorrentes do uso ou incapacidade de uso do Site, mesmo que tenhamos sido informados da possibilidade de tais danos.
+                </p>
+                <p>
+                  Isso inclui, mas não se limita a: perda de lucros, dados, reputação, oportunidades comerciais ou interrupção de negócios.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">7. LINKS PARA SITES DE TERCEIROS</h2>
+                <p>
+                  Este Site pode conter links para plataformas externas, redes sociais, serviços de pagamento, anunciantes ou parceiros afiliados. Esses links são fornecidos apenas como conveniência aos usuários.
+                </p>
+                <p>
+                  Não temos controle sobre o conteúdo, as políticas de privacidade, a segurança ou as práticas desses sites e, portanto, não assumimos qualquer responsabilidade por eles.
+                </p>
+                <p>
+                  A inclusão de um link não implica endosso, patrocínio ou recomendação formal. Recomendamos que você revise os termos e políticas de cada site visitado antes de fornecer dados ou realizar transações.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">8. COOKIES E TECNOLOGIAS DE RASTREAMENTO</h2>
+                <p>
+                  Utilizamos cookies, pixels, tags e outras tecnologias de rastreamento para melhorar sua experiência de navegação, analisar padrões de tráfego, personalizar conteúdos e exibir anúncios relevantes.
+                </p>
+                <p>
+                  Ao continuar navegando, você concorda com o uso dessas tecnologias. Para saber mais sobre como elas funcionam e como gerenciá-las, consulte nossa{" "}
+                  <a href="/politica-cookies" className="text-primary hover:underline">
+                    Política de Cookies
+                  </a>
+                  .
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">9. TRATAMENTO DE DADOS PESSOAIS</h2>
+                <p>
+                  Eventuais dados pessoais coletados (como nome, e-mail, IP, navegador) são tratados com base nos princípios da legalidade, necessidade e transparência, conforme previsto na <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
+                </p>
+                <p>
+                  Para mais detalhes sobre como seus dados são coletados, usados, armazenados e protegidos, consulte nossa{" "}
+                  <a href="/politica-privacidade" className="text-primary hover:underline">
+                    Política de Privacidade
+                  </a>
+                  .
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">10. RESTRIÇÃO DE IDADE</h2>
+                <p>
+                  Este Site é destinado exclusivamente a pessoas maiores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes menores de 18 anos. Caso tomemos conhecimento de que dados foram coletados acidentalmente, tomaremos providências imediatas para excluí-los.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">11. SUSPENSÃO OU ENCERRAMENTO DE ACESSO</h2>
+                <p>
+                  Reservamo-nos o direito de suspender, restringir ou encerrar seu acesso ao Site a qualquer momento, sem aviso prévio, caso detectemos violação destes Termos, comportamento fraudulento, uso abusivo ou risco à segurança do serviço.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">12. LEI APLICÁVEL E JURISDIÇÃO</h2>
+                <p>
+                  Estes Termos são regidos pelas leis da República Federativa do Brasil, independentemente de conflitos de leis. Qualquer disputa decorrente do uso deste Site será resolvida nos tribunais da comarca de São Paulo, Estado de São Paulo, com renúncia expressa a qualquer outro foro.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">13. CONTATO</h2>
+                <p>
+                  Se você tiver dúvidas, sugestões ou desejar exercer seus direitos relacionados à proteção de dados, entre em contato conosco pelos seguintes canais:
+                </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Todas as leis aplicáveis</li>
-                  <li>Estes Termos de Uso</li>
-                  <li>Quaisquer políticas adicionais referenciadas</li>
+                  <li>
+                    <strong>E-mail:</strong>{" "}
+                    <a href="mailto:contato@politicasdeprivacidade.org" className="text-primary hover:underline">
+                      contato@politicasdeprivacidade.org
+                    </a>
+                  </li>
+                  <li>
+                    <strong>Site:</strong>{" "}
+                    <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      https://politicadeprivacidade.org/
+                    </a>
+                  </li>
                 </ul>
               </section>
 
+              <hr className="my-8 border-border" />
+
               <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">4. Proibições</h2>
-                <p>É expressamente proibido:</p>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">🔗 REFERÊNCIAS OFICIAIS E FONTE AUTORIZADA DE MODELOS LEGAIS</h2>
+                <p>
+                  Este Termo de Uso foi elaborado com base nas mais rigorosas normas jurídicas nacionais e internacionais, e segue os padrões de transparência e conformidade adotados por profissionais de compliance e desenvolvedores de sites de alto nível. Para modelos de políticas jurídicas atualizadas, confiáveis e prontas para uso — validadas por especialistas em direito digital — consulte a referência oficial:
+                </p>
+
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Usar o serviço para atividades ilegais</li>
-                  <li>Tentar hackear ou comprometer a segurança da plataforma</li>
-                  <li>Reproduzir, distribuir ou criar obras derivadas sem autorização</li>
-                  <li>Usar scripts automatizados para acessar o serviço</li>
-                  <li>Sobrecarregar nossos servidores com solicitações excessivas</li>
+                  <li>
+                    <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Política de Privacidade.org — Fonte Autorizada de Modelos Legais para Sites Brasileiros
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      LGPD – Lei Geral de Proteção de Dados (Lei nº 13.709/2018)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      ANPD – Autoridade Nacional de Proteção de Dados
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://gdpr-info.eu" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      GDPR – Regulamento Geral de Proteção de Dados (União Europeia)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://support.google.com/adsense/answer/48182" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Google AdSense Program Policies
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Código de Defesa do Consumidor (Lei nº 8.078/1990)
+                    </a>
+                  </li>
                 </ul>
-              </section>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">5. Propriedade Intelectual</h2>
-                <p>
-                  Todo o conteúdo do site, incluindo textos, gráficos, logos, ícones e software, 
-                  é propriedade do Gerador de Políticas e protegido por leis de direitos autorais.
-                </p>
-                <p>
-                  Os documentos gerados pela plataforma podem ser usados livremente por você, 
-                  mas os templates e tecnologia permanecem nossa propriedade.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">6. Isenção de Responsabilidade</h2>
-                <p>
-                  Nossos serviços são fornecidos "como estão". Embora nos esforcemos para 
-                  fornecer informações precisas e atualizadas:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Não garantimos que os documentos atendam a todas as suas necessidades legais específicas</li>
-                  <li>Recomendamos sempre a revisão por um advogado qualificado</li>
-                  <li>Não somos responsáveis por danos decorrentes do uso dos documentos gerados</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">7. Limitação de Responsabilidade</h2>
-                <p>
-                  Em nenhuma circunstância seremos responsáveis por danos indiretos, 
-                  incidentais, especiais ou consequenciais decorrentes do uso de nossos serviços.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">8. Disponibilidade do Serviço</h2>
-                <p>
-                  Embora nos esforcemos para manter o serviço disponível 24/7, não garantimos 
-                  disponibilidade ininterrupta. Podemos suspender o serviço temporariamente 
-                  para manutenção ou atualizações.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">9. Modificações</h2>
-                <p>
-                  Reservamo-nos o direito de modificar estes termos a qualquer momento. 
-                  As alterações entrarão em vigor imediatamente após a publicação no site.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">10. Rescisão</h2>
-                <p>
-                  Podemos encerrar ou suspender seu acesso ao serviço imediatamente, 
-                  sem aviso prévio, por qualquer motivo, incluindo violação destes termos.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">11. Lei Aplicável</h2>
-                <p>
-                  Estes termos são regidos pelas leis brasileiras. Qualquer disputa será 
-                  resolvida nos tribunais competentes do Brasil.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">12. Contato</h2>
-                <p>
-                  Para dúvidas sobre estes termos, entre em contato conosco através do 
-                  e-mail: contato@politicasprivacidade.com
-                </p>
-                <p className="mt-4">
-                  <strong>Última atualização:</strong> Janeiro de 2025
+                <p className="mt-4 italic">
+                  Modelos de políticas disponibilizados em <strong>https://politicadeprivacidade.org/</strong> são utilizados por milhares de sites no Brasil como referência de conformidade e profissionalismo jurídico.
                 </p>
               </section>
             </div>
