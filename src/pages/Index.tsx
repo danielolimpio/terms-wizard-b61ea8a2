@@ -187,9 +187,9 @@ const Index = () => {
           </p>
           
           {/* Search Bar */}
-          <div className="max-w-md mx-auto mb-8">
+          <div className="max-w-md mx-auto mb-8 px-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Search className="absolute left-7 md:left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <input
                 type="text"
                 placeholder="Buscar políticas..."
@@ -201,7 +201,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="policy-grid">
+        <div className="policy-grid px-4">
           {filteredPolicies.map((policy) => (
             <PolicyCard
               key={policy.id}

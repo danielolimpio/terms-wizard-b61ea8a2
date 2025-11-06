@@ -17,6 +17,11 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
 import AdminPostEditorPage from "./pages/AdminPostEditorPage";
 
+// Info pages
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfUsePage from "./pages/TermsOfUsePage";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
+
 // Generator pages - DIRECT IMPORTS
 import PrivacyPolicyGenerator from "./pages/generators/PrivacyPolicyGenerator";
 import TermsOfUseGenerator from "./pages/generators/TermsOfUseGenerator";
@@ -65,6 +70,11 @@ const App = () => {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/ajuda" element={<HelpPage />} />
             <Route path="/contato" element={<ContactPage />} />
+            
+            {/* Info pages */}
+            <Route path="/politica-privacidade" element={<PrivacyPolicyPage />} />
+            <Route path="/termos-uso" element={<TermsOfUsePage />} />
+            <Route path="/politica-cookies" element={<CookiePolicyPage />} />
             
             {/* Geradores - URLs SEO Friendly */}
             <Route path="/gerador-politica-privacidade" element={<PrivacyPolicyGenerator />} />

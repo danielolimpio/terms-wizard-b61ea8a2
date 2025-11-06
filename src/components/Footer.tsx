@@ -10,7 +10,7 @@ export const Footer = () => {
               <img src={logo} alt="Políticas de Privacidade" className="h-14" />
             </a>
             <p className="text-base text-gray-300">
-              Crie políticas legais profissionais de forma rápida e fácil.
+              Crie políticas legais profissionais de forma rápida e fácil 100% gratuitos para seu site!
             </p>
           </div>
           
@@ -37,9 +37,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-white mb-4 text-lg">Legal</h3>
             <ul className="space-y-2 text-base">
-              <li><a href="/nossa-privacidade" className="text-gray-300 hover:text-primary">Nossa Privacidade</a></li>
-              <li><a href="/nossos-termos" className="text-gray-300 hover:text-primary">Nossos Termos</a></li>
-              <li><a href="/uso-cookies" className="text-gray-300 hover:text-primary">Uso de Cookies</a></li>
+              <li><a href="/politica-privacidade" className="text-gray-300 hover:text-primary">Política de Privacidade</a></li>
+              <li><a href="/termos-uso" className="text-gray-300 hover:text-primary">Termos de Uso</a></li>
+              <li><a href="/politica-cookies" className="text-gray-300 hover:text-primary">Política de Cookies</a></li>
             </ul>
           </div>
         </div>
