@@ -168,7 +168,7 @@ const Index = () => {
             variant="google" 
             size="xl" 
             className="text-sm md:text-base px-6 md:px-8 shadow-xl"
-            onClick={() => handleGeneratePolicy('privacy-policy')}
+            onClick={() => window.location.href = '/gerador-politica-privacidade'}
           >
             Criar Política de Privacidade Grátis
           </Button>

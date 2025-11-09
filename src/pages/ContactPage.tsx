@@ -79,10 +79,10 @@ export default function ContactPage() {
                     Para dúvidas gerais e suporte:
                   </p>
                   <a 
-                    href="mailto:contato@politicasprivacidade.com" 
+                    href="mailto:contato@politicadeprivacidade.org" 
                     className="text-primary hover:underline font-medium"
                   >
-                    contato@politicasprivacidade.com
+                    contato@politicadeprivacidade.org
                   </a>
                 </CardContent>
               </Card>

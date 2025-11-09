@@ -156,7 +156,7 @@ export default function CookiePolicyPage() {
                   mudanças significativas, notificaremos você através do site ou por outros meios.
                 </p>
                 <p className="mt-4">
-                  <strong>Última atualização:</strong> Janeiro de 2025
+                  <strong>Última atualização:</strong> Novembro de 2025
                 </p>
               </section>
 
@@ -164,7 +164,7 @@ export default function CookiePolicyPage() {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">Contato</h2>
                 <p>
                   Se você tiver dúvidas sobre nossa política de cookies, entre em contato 
-                  conosco através do e-mail: contato@politicasprivacidade.com
+                  conosco através do e-mail: contato@politicadeprivacidade.org
                 </p>
               </section>
             </div>

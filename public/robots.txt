@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gerador-politicas.com/sitemap.xml
+Sitemap: https://politicadeprivacidade.org/sitemap.xml
 
 # Otimizado para motores de busca
 Crawl-delay: 1

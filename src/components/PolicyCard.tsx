@@ -27,7 +27,24 @@ export const PolicyCard = ({ policy, onGenerate }: PolicyCardProps) => {
   };
 
   const handleClick = () => {
-    navigate(`/${policy.slug}`);
+    // Map policy slugs to generator routes
+    const generatorRoutes: Record<string, string> = {
+      'privacy-policy': '/gerador-politica-privacidade',
+      'terms-of-use': '/gerador-termos-uso',
+      'cookie-policy': '/gerador-politica-cookies',
+      'refund-policy': '/gerador-politica-reembolso',
+      'transparency-policy': '/gerador-politica-transparencia',
+      'security-policy': '/gerador-politica-seguranca',
+      'antispam-policy': '/gerador-politica-antispam',
+      'copyright-policy': '/gerador-politica-propriedade-intelectual',
+      'content-policy': '/gerador-politica-conteudo',
+      'comment-moderation': '/gerador-politica-moderacao',
+      'accessibility-policy': '/gerador-politica-acessibilidade',
+      'sustainability-policy': '/gerador-politica-sustentabilidade',
+    };
+    
+    const route = generatorRoutes[policy.id] || `/${policy.slug}`;
+    navigate(route);
   };
 
   return (

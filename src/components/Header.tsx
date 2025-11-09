@@ -68,7 +68,7 @@ export const Header = () => {
                     variant="google" 
                     size="sm" 
                     className="w-full justify-start"
-                    onClick={() => window.location.href = '/'}
+                    onClick={() => window.location.href = '/gerador-politica-privacidade'}
                   >
                     Gerar Política
                   </Button>
@@ -83,7 +83,7 @@ export const Header = () => {
           <Button variant="google-outline" size="sm" className="text-sm md:text-base px-4 md:px-6" onClick={() => window.location.href = '/ajuda'}>
             Ajuda
           </Button>
-          <Button variant="google" size="sm" className="text-sm md:text-base px-4 md:px-6" onClick={() => window.location.href = '/'}>
+          <Button variant="google" size="sm" className="text-sm md:text-base px-4 md:px-6" onClick={() => window.location.href = '/gerador-politica-privacidade'}>
             Gerar Política
           </Button>
         </div>

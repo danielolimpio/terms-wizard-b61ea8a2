@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">8. Contato</h2>
                 <p>
                   Para exercer seus direitos ou esclarecer dúvidas sobre esta política, 
-                  entre em contato conosco através do e-mail: contato@politicasprivacidade.com
+                  entre em contato conosco através do e-mail: contato@politicadeprivacidade.org
                 </p>
               </section>
 
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
                   a revise regularmente para se manter informado sobre como protegemos suas informações.
                 </p>
                 <p className="mt-4">
-                  <strong>Última atualização:</strong> Janeiro de 2025
+                  <strong>Última atualização:</strong> Novembro de 2025
                 </p>
               </section>
             </div>
