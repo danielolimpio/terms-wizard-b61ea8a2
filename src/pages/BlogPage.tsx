@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 
 interface BlogPost {
   id: string;
@@ -16,8 +18,20 @@ interface BlogPost {
 }
 
 export default function BlogPage() {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Featured article
+  const featuredArticle = {
+    id: 'featured-1',
+    title: 'Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito para Seu Site (2026)',
+    meta_description: 'Descubra como criar uma política de privacidade legalmente válida no Brasil e na UE. Modelo pronto para download, atualizado conforme LGPD e GDPR.',
+    categories: ['LGPD', 'Compliance', 'Privacidade'],
+    created_at: '2025-11-09',
+    slug: 'politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026',
+    image: blogHeroImage
+  };
 
   useEffect(() => {
     fetchPosts();
@@ -56,43 +70,89 @@ export default function BlogPage() {
             <div className="flex justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin" />
             </div>
-          ) : posts.length === 0 ? (
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center py-12">
-                <p className="text-muted-foreground">Nenhum post publicado ainda</p>
-              </CardContent>
-            </Card>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.map((post) => (
-                <Card key={post.id} className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      {post.categories.length > 0 && (
-                        <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                          {post.categories[0]}
-                        </span>
-                      )}
+            <div className="space-y-12">
+              {/* Featured Article */}
+              <Card 
+                className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group"
+                onClick={() => navigate(`/blog/${featuredArticle.slug}`)}
+              >
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-64 md:h-auto overflow-hidden">
+                    <img 
+                      src={featuredArticle.image} 
+                      alt={featuredArticle.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                        ⭐ Destaque
+                      </span>
                     </div>
-                    <CardTitle className="text-lg line-clamp-2">
-                      {post.title}
+                  </div>
+                  <CardHeader className="flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-3">
+                      {featuredArticle.categories.map((cat, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                          {cat}
+                        </span>
+                      ))}
+                    </div>
+                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
+                      {featuredArticle.title}
                     </CardTitle>
-                    <CardDescription className="line-clamp-3">
-                      {post.meta_description}
+                    <CardDescription className="text-base mb-4">
+                      {featuredArticle.meta_description}
                     </CardDescription>
-                  </CardHeader>
-                  <CardContent>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
-                        {new Date(post.created_at).toLocaleDateString('pt-BR')}
+                        {new Date(featuredArticle.created_at).toLocaleDateString('pt-BR')}
                       </span>
-                      <Button variant="ghost" size="sm">
-                        Ler mais →
+                      <Button variant="ghost" size="sm" className="group-hover:text-primary">
+                        Ler artigo completo →
                       </Button>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </CardHeader>
+                </div>
+              </Card>
+
+              {/* Other posts from database */}
+              {posts.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">Mais Artigos</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {posts.map((post) => (
+                      <Card key={post.id} className="h-full hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <div className="flex items-center justify-between mb-2">
+                            {post.categories.length > 0 && (
+                              <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                                {post.categories[0]}
+                              </span>
+                            )}
+                          </div>
+                          <CardTitle className="text-lg line-clamp-2">
+                            {post.title}
+                          </CardTitle>
+                          <CardDescription className="line-clamp-3">
+                            {post.meta_description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-muted-foreground">
+                              {new Date(post.created_at).toLocaleDateString('pt-BR')}
+                            </span>
+                            <Button variant="ghost" size="sm">
+                              Ler mais →
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
