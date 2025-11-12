@@ -66,7 +66,7 @@ export const POLICY_TYPES: PolicyType[] = [
   },
   {
     id: 'copyright-policy',
-    name: 'Modelo Política de Propriedade Intelectual',
+    name: 'Modelo Política de Propriedade',
     description: 'Protege direitos autorais e propriedade intelectual',
     keywords: ['gerador política propriedade intelectual', 'direitos autorais', 'propriedade intelectual', 'copyright'],
     slug: 'gerador-politica-propriedade-intelectual',

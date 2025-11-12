@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { Shield, AlertTriangle, CheckCircle2, FileText, Scale, Lock, Users, Eye, Ban, Clock } from "lucide-react";
 import heroImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
+import { BlogSidebar } from "@/components/BlogSidebar";
 
 export default function TermosUsoSegurancaJuridicaPost() {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ export default function TermosUsoSegurancaJuridicaPost() {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <article className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-8 max-w-7xl mx-auto">
+          <article className="flex-1 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="mb-8 text-sm text-muted-foreground">
             <span className="hover:text-primary cursor-pointer" onClick={() => navigate('/')}>Início</span>
@@ -557,10 +559,13 @@ export default function TermosUsoSegurancaJuridicaPost() {
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <BlogSidebar />
+      </div>
+    </div>
       
-      <Footer />
+    <Footer />
     </div>
   );
 }

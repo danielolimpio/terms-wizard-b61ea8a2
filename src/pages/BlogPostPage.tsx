@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { Shield, Lock, FileText, CheckCircle, AlertTriangle, Users, Globe, Scale } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
+import { BlogSidebar } from "@/components/BlogSidebar";
 
 export default function BlogPostPage() {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ export default function BlogPostPage() {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <article className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-8 max-w-7xl mx-auto">
+          <article className="flex-1 max-w-4xl">
           {/* Breadcrumb */}
           <nav className="mb-6 text-sm text-muted-foreground">
             <a href="/" className="hover:text-primary">Início</a>
@@ -429,10 +431,13 @@ export default function BlogPostPage() {
               </p>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <BlogSidebar />
+      </div>
+    </div>
       
-      <Footer />
+    <Footer />
     </div>
   );
 }

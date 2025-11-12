@@ -18,6 +18,8 @@ interface BlogPost {
   slug: string;
 }
 
+import { BlogSidebar } from "@/components/BlogSidebar";
+
 export default function BlogPage() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -70,7 +72,8 @@ export default function BlogPage() {
       <Header />
       
       <main className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="flex gap-8 max-w-7xl mx-auto">
+          <div className="flex-1">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
               Blog Gerador de Políticas
@@ -250,6 +253,9 @@ export default function BlogPage() {
             </Card>
           </div>
         </div>
+
+        <BlogSidebar />
+      </div>
       </main>
       
       <Footer />
