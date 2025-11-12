@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
+import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 
 interface BlogPost {
   id: string;
@@ -22,16 +23,29 @@ export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Featured article
-  const featuredArticle = {
-    id: 'featured-1',
-    title: 'Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito para Seu Site (2026)',
-    meta_description: 'Descubra como criar uma política de privacidade legalmente válida no Brasil e na UE. Modelo pronto para download, atualizado conforme LGPD e GDPR.',
-    categories: ['LGPD', 'Compliance', 'Privacidade'],
-    created_at: '2025-11-09',
-    slug: 'politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026',
-    image: blogHeroImage
-  };
+  // Featured and recent articles
+  const featuredArticles = [
+    {
+      id: 'featured-1',
+      title: 'Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito para Seu Site (2026)',
+      meta_description: 'Descubra como criar uma política de privacidade legalmente válida no Brasil e na UE. Modelo pronto para download, atualizado conforme LGPD e GDPR.',
+      categories: ['LGPD', 'Compliance', 'Privacidade'],
+      created_at: '2025-11-09',
+      slug: 'politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026',
+      image: blogHeroImage,
+      featured: true
+    },
+    {
+      id: 'featured-2',
+      title: 'Como Escrever os Termos do Seu Site para Evitar Processos e Garantir Segurança Jurídica',
+      meta_description: 'Seu site pode ser processado por falta de termos de uso. Aprenda a redigir termos claros, completos e adaptados à LGPD, com exemplo prático para blogs e e-commerces.',
+      categories: ['LGPD', 'Compliance', 'Termos de Uso'],
+      created_at: '2025-11-11',
+      slug: 'como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica',
+      image: blogTermosImage,
+      featured: false
+    }
+  ];
 
   useEffect(() => {
     fetchPosts();
@@ -75,13 +89,13 @@ export default function BlogPage() {
               {/* Featured Article */}
               <Card 
                 className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group"
-                onClick={() => navigate(`/blog/${featuredArticle.slug}`)}
+                onClick={() => navigate(`/blog/${featuredArticles[0].slug}`)}
               >
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="relative h-64 md:h-auto overflow-hidden">
                     <img 
-                      src={featuredArticle.image} 
-                      alt={featuredArticle.title}
+                      src={featuredArticles[0].image} 
+                      alt={featuredArticles[0].title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
@@ -92,21 +106,21 @@ export default function BlogPage() {
                   </div>
                   <CardHeader className="flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-3">
-                      {featuredArticle.categories.map((cat, idx) => (
+                      {featuredArticles[0].categories.map((cat, idx) => (
                         <span key={idx} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
                           {cat}
                         </span>
                       ))}
                     </div>
                     <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                      {featuredArticle.title}
+                      {featuredArticles[0].title}
                     </CardTitle>
                     <CardDescription className="text-base mb-4">
-                      {featuredArticle.meta_description}
+                      {featuredArticles[0].meta_description}
                     </CardDescription>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
-                        {new Date(featuredArticle.created_at).toLocaleDateString('pt-BR')}
+                        {new Date(featuredArticles[0].created_at).toLocaleDateString('pt-BR')}
                       </span>
                       <Button variant="ghost" size="sm" className="group-hover:text-primary">
                         Ler artigo completo →
@@ -116,13 +130,64 @@ export default function BlogPage() {
                 </div>
               </Card>
 
+              {/* Recent Articles */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6">Artigos Recentes</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {featuredArticles.slice(1).map((article) => (
+                    <Card 
+                      key={article.id} 
+                      className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden group"
+                      onClick={() => navigate(`/blog/${article.slug}`)}
+                    >
+                      <div className="relative h-48 overflow-hidden">
+                        <img 
+                          src={article.image} 
+                          alt={article.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <CardHeader>
+                        <div className="flex items-center gap-2 mb-2">
+                          {article.categories.map((cat, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                              {cat}
+                            </span>
+                          ))}
+                        </div>
+                        <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                          {article.title}
+                        </CardTitle>
+                        <CardDescription className="line-clamp-3">
+                          {article.meta_description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">
+                            {new Date(article.created_at).toLocaleDateString('pt-BR')}
+                          </span>
+                          <Button variant="ghost" size="sm" className="group-hover:text-primary">
+                            Ler mais →
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
               {/* Other posts from database */}
               {posts.length > 0 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Mais Artigos</h2>
+                  <h2 className="text-2xl font-bold mb-6">Mais Artigos do Blog</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {posts.map((post) => (
-                      <Card key={post.id} className="h-full hover:shadow-lg transition-shadow">
+                      <Card 
+                        key={post.id} 
+                        className="h-full hover:shadow-lg transition-shadow cursor-pointer"
+                        onClick={() => navigate(`/blog/${post.slug}`)}
+                      >
                         <CardHeader>
                           <div className="flex items-center justify-between mb-2">
                             {post.categories.length > 0 && (

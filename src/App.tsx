@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AllPoliciesPage from "./pages/AllPoliciesPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import TermosUsoSegurancaJuridicaPost from "./pages/blog/TermosUsoSegurancaJuridicaPost";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
@@ -70,6 +71,7 @@ const App = () => {
             <Route path="/politicas" element={<AllPoliciesPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026" element={<BlogPostPage />} />
+            <Route path="/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica" element={<TermosUsoSegurancaJuridicaPost />} />
             <Route path="/ajuda" element={<HelpPage />} />
             <Route path="/contato" element={<ContactPage />} />
             
