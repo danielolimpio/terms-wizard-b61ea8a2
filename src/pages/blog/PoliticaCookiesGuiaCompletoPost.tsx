@@ -56,44 +56,44 @@ export default function PoliticaCookiesGuiaCompletoPost() {
             </div>
 
             <div className="prose prose-lg max-w-none">
-              <p className="lead">
+              <p className="lead mb-8">
                 Você acabou de lançar um novo site. O design é impecável, o conteúdo é valioso, o SEO está alinhado. Mas, ao acessar sua própria página de "Política de Privacidade", você percebe algo estranho: um banner de cookies que aparece apenas como um aviso discreto — sem opção de recusa, sem detalhes sobre os tipos de rastreamento, sem controle real do usuário. E, pior: você não tem certeza se ele está em conformidade com a LGPD ou o GDPR.
               </p>
 
-              <p>
+              <p className="mb-6">
                 Esse é o erro mais comum — e mais caro — que empreendedores digitais cometem em 2026.
               </p>
 
-              <p>
+              <p className="mb-6">
                 Um banner de cookies mal configurado não é apenas um detalhe técnico. É uma brecha jurídica. E, segundo dados da Autoridade Nacional de Proteção de Dados (ANPD), em 2025, mais de 42% das multas aplicadas por violações de privacidade no Brasil foram relacionadas a falhas na coleta e gestão de cookies. Na Europa, o GDPR já aplicou multas superiores a €3,2 bilhões desde 2018 — e 71% delas envolviam consentimento inadequado para rastreamento.
               </p>
 
-              <p>
+              <p className="mb-6">
                 A verdade é simples: a Política de Cookies não é um formulário burocrático para cumprir exigência legal. É um pacto de confiança com seu usuário. E, se você não entende como construí-lo corretamente, cada visitante que entra no seu site pode, sem saber, estar exposto — e você, exposto a multas de até 2% do faturamento global.
               </p>
 
-              <p>
+              <p className="mb-6">
                 Este guia é a sua bússola. Sem jargões vazios. Sem templates copiados. Sem promessas de "solução mágica". Apenas o que realmente importa para cumprir a LGPD e o GDPR em 2026 — passo a passo, com exemplos reais, para WordPress e Shopify, e com o banner certo, do jeito certo.
               </p>
 
-              <p>Vamos começar.</p>
+              <p className="mb-8">Vamos começar.</p>
 
               <h2 className="flex items-center gap-3 mt-12 mb-6">
                 <AlertTriangle className="h-8 w-8 text-primary" />
                 Por Que Sua Política de Cookies Está Errada (e Como Saber)
               </h2>
 
-              <p>
+              <p className="mb-6">
                 Você já clicou em "Aceitar todos os cookies" em um site e depois se perguntou: "O que eu acabei de autorizar?"
               </p>
 
-              <p>Provavelmente, sim. E não é sua culpa.</p>
+              <p className="mb-6">Provavelmente, sim. E não é sua culpa.</p>
 
-              <p>
+              <p className="mb-6">
                 A maioria dos banners de cookies ainda opera como se estivéssemos em 2018: um pop-up amarelo, um botão "Aceitar" em destaque, outro "Recusar" quase invisível, e uma linkzinho minúsculo dizendo "Saiba mais". Isso não é consentimento. É coerção disfarçada.
               </p>
 
-              <p>
+              <p className="mb-6">
                 A LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018) e o GDPR (Regulamento Geral de Proteção de Dados da União Europeia) são claros: o consentimento deve ser livre, específico, informado e inequívoco.
               </p>
 
@@ -123,30 +123,30 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 </ul>
               </div>
 
-              <p>
+              <p className="mb-6">
                 Se seu banner não atende a isso, você está em risco. E não é só uma questão de multa. É de reputação.
               </p>
 
-              <p>
+              <p className="mb-6">
                 Imagine que você vai a um restaurante. O garçom coloca na sua mesa um prato sem pedir se você quer. "É só um pouco de pimenta", ele diz. Você come. Depois descobre que o prato tinha um alérgeno grave. Você não foi avisado. Não escolheu. Foi enganado.
               </p>
 
-              <p>É exatamente isso que acontece quando um site coleta dados sem consentimento claro.</p>
+              <p className="mb-8">É exatamente isso que acontece quando um site coleta dados sem consentimento claro.</p>
 
               <h2 className="flex items-center gap-3 mt-12 mb-6">
                 <Cookie className="h-8 w-8 text-primary" />
                 O Que São Cookies — e Por Que Eles São Tão Controvertidos em 2026
               </h2>
 
-              <p>
+              <p className="mb-6">
                 Cookies são pequenos arquivos de texto armazenados no navegador do usuário. Eles não são, por si só, perigosos. São como um bilhete que você deixa no bolso de um amigo para lembrar o que você pediu no bar: "Dois cafés, sem açúcar".
               </p>
 
-              <p>
+              <p className="mb-6">
                 Mas, quando esses bilhetes são lidos por terceiros — anunciantes, redes sociais, analíticos não declarados — eles deixam de ser úteis e viram rastros digitais.
               </p>
 
-              <p>Existem três tipos principais:</p>
+              <p className="mb-6">Existem três tipos principais:</p>
 
               <div className="space-y-6 my-8">
                 <div className="border-l-4 border-green-500 pl-6 py-2">
@@ -192,15 +192,15 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 </div>
               </div>
 
-              <p>
+              <p className="mb-6">
                 Em 2026, a grande mudança não está nos tipos de cookies — mas na intensidade da fiscalização.
               </p>
 
-              <p>
+              <p className="mb-6">
                 A ANPD, desde 2025, passou a auditar automaticamente sites com mais de 10 mil visitas/mês usando ferramentas de varredura de consentimento. E a União Europeia, com a nova ePrivacy Regulation em fase final de aprovação, vai exigir que todos os scripts de rastreamento sejam bloqueados por padrão, mesmo antes do consentimento — algo que já é obrigatório em países como Alemanha e França.
               </p>
 
-              <p>
+              <p className="mb-8">
                 Se você usa GA4, Meta Pixel ou qualquer ferramenta de rastreamento de terceiros — e não pede permissão — você está violando a lei.
               </p>
 
@@ -209,17 +209,17 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 LGPD x GDPR: O Que Mudou em 2026? (E Por Que Você Precisa Atender a Ambos)
               </h2>
 
-              <p>
+              <p className="mb-6">
                 Você pensa: "Meu site é só brasileiro. Não preciso me preocupar com o GDPR."
               </p>
 
-              <p>Falso.</p>
+              <p className="mb-6">Falso.</p>
 
-              <p>
+              <p className="mb-6">
                 Se seu site tem visitantes da União Europeia — mesmo que só 1,5% — você está sujeito ao GDPR. E, se você vende para a Europa, usa ferramentas internacionais (como Shopify, Google Ads, Hotjar), ou tem domínio .com, então você é obrigado a cumprir ambas as leis.
               </p>
 
-              <p>Aqui está o que realmente importa em 2026:</p>
+              <p className="mb-6">Aqui está o que realmente importa em 2026:</p>
 
               <div className="overflow-x-auto my-8">
                 <table className="w-full border-collapse bg-card rounded-lg overflow-hidden">
@@ -265,11 +265,11 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 </table>
               </div>
 
-              <p>
+              <p className="mb-6">
                 A diferença crucial? O GDPR agora exige registro de consentimento em formato auditável e criptografado. Ou seja: você não só precisa ter um banner correto — precisa provar, com logs imutáveis, que ele foi implementado, testado e mantido.
               </p>
 
-              <p>
+              <p className="mb-8">
                 Se você usa Shopify, por exemplo, o tema padrão não é compatível com LGPD. Se usa WordPress com plugins antigos de cookies, você pode estar expondo dados sem saber.
               </p>
 
@@ -433,15 +433,15 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 O Que Deve Estar na Sua Política de Cookies (Modelo Prático para 2026)
               </h2>
 
-              <p>
+              <p className="mb-6">
                 Um banner é só a ponta do iceberg. A política de cookies é o documento que explica tudo.
               </p>
 
-              <p>
+              <p className="mb-6">
                 Ela precisa estar acessível no rodapé do site, com link claro: "Política de Cookies".
               </p>
 
-              <p>Ela não é um texto copiado da internet. É sua explicação, em linguagem humana.</p>
+              <p className="mb-8">Ela não é um texto copiado da internet. É sua explicação, em linguagem humana.</p>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">Estrutura mínima obrigatória (atualizada para 2026):</h3>
 
@@ -619,11 +619,11 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 Como Provar que Você Está em Conformidade em 2026 (E Evitar Multas)
               </h2>
 
-              <p>
+              <p className="mb-6">
                 A ANPD não multa por "não ter um banner". Ela multa por não provar que o consentimento foi obtido corretamente.
               </p>
 
-              <p>Então, o que fazer?</p>
+              <p className="mb-6">Então, o que fazer?</p>
 
               <div className="space-y-4 my-8">
                 <div className="flex items-start gap-3">
@@ -678,11 +678,11 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 O Que Fazer Se Você Já Foi Notificado pela ANPD em 2026?
               </h2>
 
-              <p>
+              <p className="mb-6">
                 Se você recebeu uma notificação da ANPD — ou de um cliente que reclamou — não entre em pânico.
               </p>
 
-              <p>Aqui está o que fazer em 2026:</p>
+              <p className="mb-6">Aqui está o que fazer em 2026:</p>
 
               <ol className="space-y-3 my-6 list-decimal list-inside">
                 <li>Pare imediatamente qualquer rastreamento não consentido.</li>
