@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
+import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 
 interface BlogPost {
   id: string;
@@ -45,6 +46,16 @@ export default function BlogPage() {
       created_at: '2025-11-11',
       slug: 'como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica',
       image: blogTermosImage,
+      featured: false
+    },
+    {
+      id: 'featured-3',
+      title: 'Política de Cookies: Guia Completo para LGPD, GDPR e Como Instalar o Banner Correto em 2026',
+      meta_description: 'O banner de cookies errado pode gerar multas de até 2% do faturamento. Aprenda a cumprir a LGPD e GDPR com o modelo certo, passo a passo, para WordPress e Shopify.',
+      categories: ['LGPD', 'Compliance', 'Cookies'],
+      created_at: '2025-11-14',
+      slug: 'politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026',
+      image: blogCookiesImage,
       featured: false
     }
   ];
