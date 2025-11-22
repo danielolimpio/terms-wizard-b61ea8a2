@@ -186,32 +186,71 @@ const Index = () => {
       {/* How It Works Section */}
       <HowItWorks />
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 md:py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
-            Escolha o Tipo de Política
+      {/* Main Content - Policy Selection */}
+      <main className="container mx-auto px-4 py-12 md:py-16 relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10 opacity-30">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Section Header - Enhanced */}
+        <div className="text-center mb-10 md:mb-12 relative">
+          {/* Main Feature Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-cyan-500 text-white rounded-full px-5 md:px-6 py-2 mb-6 shadow-lg animate-pulse">
+            <span className="text-xs md:text-sm font-bold uppercase tracking-wider">✨ Ferramenta Principal</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 leading-tight">
+            Escolha o Tipo de <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-primary bg-[length:200%_auto] animate-[gradient_3s_linear_infinite]">
+              Política Legal
+            </span>
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground text-center mb-6 px-4">
-            Selecione o documento legal que você precisa gerar para seu site
+          
+          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            Selecione o documento legal que você precisa gerar para seu site. 
+            <span className="block mt-2 font-semibold text-foreground">
+              Gratuito, rápido e 100% profissional
+            </span>
           </p>
           
-          {/* Search Bar */}
-          <div className="max-w-md mx-auto mb-8 px-4">
-            <div className="relative">
-              <Search className="absolute left-7 md:left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-              <input
-                type="text"
-                placeholder="Buscar políticas..."
-                className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm md:text-base"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+          {/* Search Bar - Enhanced */}
+          <div className="max-w-2xl mx-auto mb-6">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-cyan-500 rounded-xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-card border-2 border-border rounded-xl shadow-lg hover:border-primary/50 transition-all">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Buscar políticas... (ex: privacidade, cookies, termos)"
+                  className="w-full pl-12 pr-4 py-4 bg-transparent border-0 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none text-base"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-lg px-4 py-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-muted-foreground">12 tipos de políticas</span>
+            </div>
+            <div className="flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-lg px-4 py-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-muted-foreground">Geração instantânea</span>
+            </div>
+            <div className="flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-lg px-4 py-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <span className="text-muted-foreground">100% gratuito</span>
             </div>
           </div>
         </div>
 
-        <div className="policy-grid px-4">
+        {/* Policy Cards Grid */}
+        <div className="policy-grid">
           {filteredPolicies.map((policy) => (
             <PolicyCard
               key={policy.id}
@@ -222,9 +261,15 @@ const Index = () => {
         </div>
 
         {filteredPolicies.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">
-              Nenhuma política encontrada para "{searchTerm}"
+          <div className="text-center py-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-muted mb-4">
+              <Search className="h-10 w-10 text-muted-foreground" />
+            </div>
+            <p className="text-xl text-muted-foreground mb-2">
+              Nenhuma política encontrada
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Tente buscar por "{searchTerm}" com outros termos
             </p>
           </div>
         )}
