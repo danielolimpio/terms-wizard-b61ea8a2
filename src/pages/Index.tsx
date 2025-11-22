@@ -7,6 +7,7 @@ import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { LiveStats } from "@/components/LiveStats";
 import { HowItWorks } from "@/components/HowItWorks";
+import { FeaturedBlog } from "@/components/FeaturedBlog";
 import { TrustBadges } from "@/components/TrustBadges";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/ui/button";
@@ -272,6 +273,9 @@ const Index = () => {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Featured Blog Section */}
+      <FeaturedBlog />
 
       {/* Trust Badges Section */}
       <TrustBadges />
