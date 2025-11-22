@@ -1,47 +1,47 @@
-import { Shield, CheckCircle, Lock, FileCheck, Globe, Award } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import lgpdSeal from "@/assets/seals/lgpd.png";
+import gdprSeal from "@/assets/seals/gdpr.webp";
+import isoSeal from "@/assets/seals/iso-27001.png";
+import ccpaSeal from "@/assets/seals/ccpa.png";
+import eprivacySeal from "@/assets/seals/eprivacy.png";
+import bestPracticesSeal from "@/assets/seals/best-practices.webp";
 
 const badges = [
   {
-    icon: Shield,
+    image: lgpdSeal,
     title: "LGPD",
     subtitle: "Compliant",
-    description: "Lei Geral de Proteção de Dados",
-    color: "from-blue-500 to-cyan-500"
+    description: "Lei Geral de Proteção de Dados"
   },
   {
-    icon: Globe,
+    image: gdprSeal,
     title: "GDPR",
     subtitle: "Ready",
-    description: "General Data Protection Regulation",
-    color: "from-purple-500 to-pink-500"
+    description: "General Data Protection Regulation"
   },
   {
-    icon: Lock,
+    image: isoSeal,
     title: "ISO 27001",
     subtitle: "Aligned",
-    description: "Segurança da Informação",
-    color: "from-orange-500 to-red-500"
+    description: "Segurança da Informação"
   },
   {
-    icon: FileCheck,
+    image: ccpaSeal,
     title: "CCPA",
     subtitle: "Compatible",
-    description: "California Consumer Privacy Act",
-    color: "from-green-500 to-emerald-500"
+    description: "California Consumer Privacy Act"
   },
   {
-    icon: CheckCircle,
+    image: eprivacySeal,
     title: "ePrivacy",
     subtitle: "2026",
-    description: "Regulamento de Privacidade Eletrônica",
-    color: "from-indigo-500 to-blue-500"
+    description: "Regulamento de Privacidade Eletrônica"
   },
   {
-    icon: Award,
+    image: bestPracticesSeal,
     title: "Best",
     subtitle: "Practices",
-    description: "Melhores Práticas Jurídicas",
-    color: "from-amber-500 to-yellow-500"
+    description: "Melhores Práticas Jurídicas"
   }
 ];
 
@@ -60,17 +60,18 @@ export const TrustBadges = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-6xl mx-auto">
           {badges.map((badge, index) => {
-            const Icon = badge.icon;
             return (
               <div 
                 key={index}
                 className="group relative bg-card border border-border rounded-xl p-4 hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Icon with gradient */}
-                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-lg bg-gradient-to-br ${badge.color} p-0.5 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="w-full h-full bg-card rounded-lg flex items-center justify-center">
-                    <Icon className="h-6 w-6 md:h-7 md:w-7 text-foreground" />
-                  </div>
+                {/* Seal Image */}
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <img 
+                    src={badge.image} 
+                    alt={`${badge.title} ${badge.subtitle}`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 
                 {/* Badge title */}
