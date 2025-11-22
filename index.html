@@ -13,6 +13,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Gerador de Políticas Legais - Privacidade, Termos de Uso e Mais</title>
     <meta name="description" content="Gerador gratuito de políticas de privacidade, termos de uso, política de cookies e outros documentos legais. Rápido, profissional e otimizado para seu site." />
     <meta name="author" content="Gerador de Políticas" />
@@ -24,22 +25,30 @@
     <meta property="og:description" content="Crie políticas de privacidade, termos de uso e outros documentos legais em minutos. Gratuito e profissional." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://politicadeprivacidade.org/" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://politicadeprivacidade.org/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Gerador de Políticas Legais" />
     <meta name="twitter:description" content="Crie documentos legais profissionais em minutos" />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://politicadeprivacidade.org/og-image.jpg" />
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "WebSite",
       "name": "Gerador de Políticas Legais",
       "description": "Ferramenta online gratuita para gerar políticas de privacidade, termos de uso e outros documentos legais",
       "url": "https://politicadeprivacidade.org/",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web Browser"
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://politicadeprivacidade.org/politicas?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
   </head>
