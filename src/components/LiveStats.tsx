@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { Users, FileText, TrendingUp, Clock } from "lucide-react";
+import avatar1 from "@/assets/avatars/avatar-1.jpg";
+import avatar2 from "@/assets/avatars/avatar-2.jpg";
+import avatar3 from "@/assets/avatars/avatar-3.jpg";
+import avatar4 from "@/assets/avatars/avatar-4.jpg";
 
 // Função para calcular estatísticas baseadas na data atual
 const calculateStats = () => {
@@ -147,10 +151,26 @@ export const LiveStats = () => {
         <div className="mt-8 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 border border-primary/20">
             <div className="flex -space-x-2">
-              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
-              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
-              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-background"></div>
-              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-background"></div>
+              <img 
+                src={avatar1} 
+                alt="Usuário satisfeito" 
+                className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-background object-cover"
+              />
+              <img 
+                src={avatar2} 
+                alt="Usuário satisfeito" 
+                className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-background object-cover"
+              />
+              <img 
+                src={avatar3} 
+                alt="Usuário satisfeito" 
+                className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-background object-cover"
+              />
+              <img 
+                src={avatar4} 
+                alt="Usuário satisfeito" 
+                className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-background object-cover"
+              />
             </div>
             <p className="text-xs md:text-sm font-medium text-foreground">
               <span className="font-bold text-primary">+2.800</span> pessoas criaram suas políticas esta semana
