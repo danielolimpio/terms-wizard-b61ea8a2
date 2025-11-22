@@ -66,11 +66,11 @@ export const TrustBadges = () => {
                 className="group relative bg-card border border-border rounded-xl p-4 hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Seal Image */}
-                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
                   <img 
                     src={badge.image} 
                     alt={`${badge.title} ${badge.subtitle}`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
                 
