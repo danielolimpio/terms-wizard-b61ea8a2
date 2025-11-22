@@ -185,9 +185,6 @@ const Index = () => {
       {/* How It Works Section */}
       <HowItWorks />
 
-      {/* Trust Badges Section */}
-      <TrustBadges />
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="mb-8">
@@ -275,6 +272,9 @@ const Index = () => {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
       
       <Footer />
     </div>
