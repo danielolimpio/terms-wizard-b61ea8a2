@@ -1,5 +1,9 @@
 import { FileCheck, FormInput, Download, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import avatar5 from "@/assets/avatars/avatar-5.jpg";
+import avatar6 from "@/assets/avatars/avatar-6.jpg";
+import avatar7 from "@/assets/avatars/avatar-7.jpg";
+import avatar8 from "@/assets/avatars/avatar-8.jpg";
 
 const steps = [
   {
@@ -109,9 +113,26 @@ export const HowItWorks = () => {
             
             <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-background"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-background"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-background"></div>
+                <img 
+                  src={avatar5} 
+                  alt="Usuário satisfeito" 
+                  className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                />
+                <img 
+                  src={avatar6} 
+                  alt="Usuário satisfeito" 
+                  className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                />
+                <img 
+                  src={avatar7} 
+                  alt="Usuário satisfeito" 
+                  className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                />
+                <img 
+                  src={avatar8} 
+                  alt="Usuário satisfeito" 
+                  className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                />
               </div>
               <span className="font-medium">
                 <span className="text-primary font-bold">+28.000</span> políticas geradas
