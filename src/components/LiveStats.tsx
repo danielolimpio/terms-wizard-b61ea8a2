@@ -70,8 +70,8 @@ export const LiveStats = () => {
     <section className="py-12 md:py-16 px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            📊 Estatísticas em Tempo Real
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent animate-gradient">
+            Estatísticas em Tempo Real
           </h2>
           <p className="text-sm md:text-base text-muted-foreground">
             Milhares de pessoas confiam no nosso gerador todos os dias
