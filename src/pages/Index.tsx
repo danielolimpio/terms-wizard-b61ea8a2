@@ -7,6 +7,7 @@ import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { LiveStats } from "@/components/LiveStats";
 import { HowItWorks } from "@/components/HowItWorks";
+import { TrustBadges } from "@/components/TrustBadges";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
@@ -183,6 +184,9 @@ const Index = () => {
 
       {/* How It Works Section */}
       <HowItWorks />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12">
