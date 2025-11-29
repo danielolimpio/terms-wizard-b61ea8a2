@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyCard } from "@/components/PolicyCard";
@@ -133,6 +134,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Privacidade Grátis | Crie em 2 Minutos</title>
+        <meta 
+          name="description" 
+          content="Gere política de privacidade grátis, conforme LGPD e GDPR. Crie termos de uso, cookies e mais em 2 minutos. Sem cadastro, 100% gratuito. Perfeito para blogs e e-commerce." 
+        />
+        <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, como gerar política privacidade, LGPD, GDPR, termos de uso" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/" />
+        <meta property="og:title" content="Gerador de Política de Privacidade Grátis | Crie em 2 Minutos" />
+        <meta property="og:description" content="Gere política de privacidade grátis, conforme LGPD e GDPR. Sem cadastro, 100% gratuito." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://politicadeprivacidade.org/" />
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

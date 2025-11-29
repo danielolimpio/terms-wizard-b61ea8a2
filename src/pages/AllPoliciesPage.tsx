@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -94,6 +95,14 @@ const policyDetails = {
 export default function AllPoliciesPage() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Todas as Políticas Legais | Gerador Completo de Documentos</title>
+        <meta 
+          name="description" 
+          content="Conheça todos os tipos de políticas que você pode gerar: privacidade, termos de uso, cookies, reembolso e mais. Documentos conforme LGPD e GDPR." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/politicas" />
+      </Helmet>
       <Header />
       
       <main className="flex-1 py-8">

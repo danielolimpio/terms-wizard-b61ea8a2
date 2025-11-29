@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -80,6 +81,14 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Blog | Guias sobre LGPD, GDPR e Políticas Legais</title>
+        <meta 
+          name="description" 
+          content="Artigos completos sobre política de privacidade, LGPD, GDPR, cookies e compliance digital. Guias práticos para criar documentos legais." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/blog" />
+      </Helmet>
       <Header />
       
       <main className="container mx-auto px-4 py-12">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FileText, Shield, Cookie, RefreshCw, Eye, Lock, Mail, AlertCircle, Copyright, MessageSquare, Users, Accessibility, Leaf, HelpCircle, Phone, Info, Newspaper } from "lucide-react";
@@ -5,6 +6,14 @@ import { FileText, Shield, Cookie, RefreshCw, Eye, Lock, Mail, AlertCircle, Copy
 export default function SitemapPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background via-background to-primary/5">
+      <Helmet>
+        <title>Mapa do Site | Todas as Páginas do Gerador de Políticas</title>
+        <meta 
+          name="description" 
+          content="Navegue por todas as seções do gerador de políticas legais. Acesso rápido a geradores, blog, ajuda e informações sobre LGPD e GDPR." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/sitemap" />
+      </Helmet>
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-12">

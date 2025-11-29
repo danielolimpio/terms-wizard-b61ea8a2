@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -75,6 +76,11 @@ const PoliticaPrivacidadeGratisPage = () => {
   if (generatedPolicy) {
     return (
       <div className="min-h-screen bg-background">
+        <Helmet>
+          <title>Política de Privacidade Gerada | Download Grátis</title>
+          <meta name="description" content="Sua política de privacidade está pronta! Baixe em PDF, DOC ou TXT e publique no seu site." />
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <Header />
         <main className="container mx-auto px-4 py-8">
           <GeneratedPolicyResult
@@ -90,6 +96,11 @@ const PoliticaPrivacidadeGratisPage = () => {
   if (showGenerator) {
     return (
       <div className="min-h-screen bg-background">
+        <Helmet>
+          <title>Gerar Política de Privacidade | Preencha o Formulário</title>
+          <meta name="description" content="Preencha o formulário com os dados do seu site para gerar sua política de privacidade profissional grátis." />
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <Header />
         <main className="container mx-auto px-4 py-8">
           <div className="mb-6">
@@ -109,6 +120,19 @@ const PoliticaPrivacidadeGratisPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Política de Privacidade Grátis | LGPD & GDPR | Sem Cadastro</title>
+        <meta 
+          name="description" 
+          content="Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR. Sem cadastro, download em PDF/DOC/TXT. Para blogs, e-commerce e sites." 
+        />
+        <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, política privacidade LGPD, modelo política privacidade" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/politica-de-privacidade-gratis" />
+        <meta property="og:title" content="Política de Privacidade Grátis | LGPD & GDPR" />
+        <meta property="og:description" content="Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://politicadeprivacidade.org/politica-de-privacidade-gratis" />
+      </Helmet>
       <Header />
       
       <main className="container mx-auto px-4 py-12 md:py-16">

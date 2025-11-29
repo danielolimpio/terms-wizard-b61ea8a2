@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,14 @@ import { Label } from "@/components/ui/label";
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contato | Gerador de Políticas Legais</title>
+        <meta 
+          name="description" 
+          content="Entre em contato conosco. Dúvidas sobre geração de políticas de privacidade, termos de uso e compliance com LGPD." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/contato" />
+      </Helmet>
       <Header />
       
       <main className="container mx-auto px-4 py-12">
