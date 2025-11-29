@@ -10,6 +10,7 @@ import { Loader2 } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
+import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
 
 interface BlogPost {
   id: string;
@@ -57,6 +58,16 @@ export default function BlogPage() {
       created_at: '2025-11-14',
       slug: 'politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026',
       image: blogCookiesImage,
+      featured: false
+    },
+    {
+      id: 'featured-4',
+      title: '10 Ações de Marketing que Mudam com a LGPD Hoje!',
+      meta_description: 'Descubra os 10 processos de marketing que a LGPD exige repensar para garantir conformidade e proteger dados dos seus usuários.',
+      categories: ['LGPD', 'Marketing', 'Compliance'],
+      created_at: '2025-11-28',
+      slug: '10-acoes-marketing-lgpd',
+      image: blogMarketingLGPDImage,
       featured: false
     }
   ];
