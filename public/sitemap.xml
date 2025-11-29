@@ -2,149 +2,156 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://politicadeprivacidade.org/</loc>
-    <lastmod>2025-11-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Páginas Principais -->
   <url>
     <loc>https://politicadeprivacidade.org/sobre</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/politicas</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/blog</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica</loc>
-    <lastmod>2025-11-11</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026</loc>
-    <lastmod>2025-11-22</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/ajuda</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/contato</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://politicadeprivacidade.org/sitemap</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Geradores de Políticas - URLs SEO Friendly -->
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-privacidade</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-termos-uso</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-cookies</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-reembolso</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-transparencia</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-seguranca</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-antispam</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-propriedade-intelectual</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-conteudo</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-moderacao</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-acessibilidade</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://politicadeprivacidade.org/gerador-politica-sustentabilidade</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

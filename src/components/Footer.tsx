@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.png";
-import { FileText, HelpCircle, Phone, Info, Newspaper, Shield, FileCheck, Cookie, MapPin, Mail, Smartphone } from "lucide-react";
+import { FileText, HelpCircle, Phone, Info, Newspaper, Shield, FileCheck, Cookie, MapPin, Mail, Smartphone, Map } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -70,6 +70,12 @@ export const Footer = () => {
                 <a href="/blog" className="text-gray-300 hover:text-primary flex items-center gap-2">
                   <Newspaper size={16} />
                   Blog
+                </a>
+              </li>
+              <li>
+                <a href="/sitemap" className="text-gray-300 hover:text-primary flex items-center gap-2">
+                  <Map size={16} />
+                  Mapa do Site
                 </a>
               </li>
             </ul>
