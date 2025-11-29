@@ -20,6 +20,44 @@ export function BlogSidebar() {
           <p className="text-base text-muted-foreground mb-4">
             Gere gratuitamente todas as políticas necessárias para seu site
           </p>
+          
+          {/* Mais Pesquisadas Section */}
+          <div className="mb-6 pb-6 border-b border-border">
+            <h3 className="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">
+              Mais Pesquisadas
+            </h3>
+            <div className="space-y-2">
+              <Button
+                variant="outline"
+                className="w-full justify-start text-left h-auto py-3 px-4 border-primary/50 bg-primary/5"
+                onClick={() => navigate('/gerador-politica-privacidade')}
+              >
+                <span className="mr-2 text-lg">🔒</span>
+                <span className="text-base font-semibold">Política de Privacidade Grátis</span>
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full justify-start text-left h-auto py-3 px-4"
+                onClick={() => navigate('/termos-de-uso')}
+              >
+                <span className="mr-2 text-lg">📋</span>
+                <span className="text-base">Gerador de Termos de Uso</span>
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full justify-start text-left h-auto py-3 px-4"
+                onClick={() => navigate('/politica-de-cookies')}
+              >
+                <span className="mr-2 text-lg">🍪</span>
+                <span className="text-base">Política de Cookies</span>
+              </Button>
+            </div>
+          </div>
+          
+          {/* All Policies */}
+          <h3 className="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">
+            Todas as Políticas
+          </h3>
           <div className="space-y-2">
             {POLICY_TYPES.map((policy) => (
               <Button

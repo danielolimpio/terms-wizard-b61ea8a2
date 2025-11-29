@@ -9,21 +9,21 @@ const steps = [
   {
     number: "01",
     icon: FileCheck,
-    title: "Escolha a Política",
+    title: "Escolha a Política de Privacidade",
     description: "Selecione o tipo de documento legal que você precisa: Política de Privacidade, Termos de Uso, Cookies e muito mais.",
     color: "from-blue-500 to-cyan-500"
   },
   {
     number: "02",
     icon: FormInput,
-    title: "Preencha os Dados",
+    title: "Preencha os Dados do Seu Site",
     description: "Responda perguntas simples sobre seu site: nome da empresa, URL, email de contato e tipo de dados coletados.",
     color: "from-purple-500 to-pink-500"
   },
   {
     number: "03",
     icon: Download,
-    title: "Baixe e Use",
+    title: "Baixe e Use Sua Política",
     description: "Sua política está pronta! Copie o texto, baixe em PDF, DOC ou TXT e publique no seu site em segundos.",
     color: "from-orange-500 to-red-500"
   }
@@ -47,7 +47,7 @@ export const HowItWorks = () => {
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Como <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">Funciona?</span>
+            Como Gerar Sua <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">Política de Privacidade</span> em 3 Passos Simples
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Crie documentos legais profissionais em apenas 3 passos simples. 
@@ -107,7 +107,7 @@ export const HowItWorks = () => {
               className="text-sm md:text-base px-6 md:px-8 shadow-lg hover:shadow-xl transition-shadow group"
               onClick={() => window.location.href = '/gerador-politica-privacidade'}
             >
-              Começar Agora Grátis
+              Gerar Política de Privacidade Grátis
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
