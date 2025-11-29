@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useSearchParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -10,7 +11,32 @@ import { generatePrivacyPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 
 const GeradorPoliticaPrivacidadePage = () => {
+  const [searchParams] = useSearchParams();
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
+  const [initialFormData, setInitialFormData] = useState<Partial<PolicyFormData> | null>(null);
+
+  useEffect(() => {
+    // Pre-fill form with URL params if available
+    const siteName = searchParams.get('siteName');
+    const siteUrl = searchParams.get('siteUrl');
+    const companyName = searchParams.get('companyName');
+    const contactEmail = searchParams.get('contactEmail');
+    const language = searchParams.get('language');
+    const country = searchParams.get('country');
+    const hasAdsense = searchParams.get('hasAdsense') === 'true';
+
+    if (siteName || siteUrl) {
+      setInitialFormData({
+        siteName: siteName || "",
+        siteUrl: siteUrl || "",
+        companyName: companyName || "",
+        contactEmail: contactEmail || "",
+        language: language || "pt-BR",
+        country: country || "Brasil",
+        hasAdsense,
+      });
+    }
+  }, [searchParams]);
 
   const handlePolicyGenerated = (formData: PolicyFormData) => {
     const policyType = getPolicyById('privacy-policy');
@@ -71,6 +97,7 @@ const GeradorPoliticaPrivacidadePage = () => {
         <PolicyGenerator
           policyType={policyType}
           onGenerate={handlePolicyGenerated}
+          initialFormData={initialFormData || undefined}
         />
       </main>
       <Footer />

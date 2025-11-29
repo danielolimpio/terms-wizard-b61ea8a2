@@ -13,17 +13,18 @@ import adsenseLogo from "@/assets/adsense.png";
 interface PolicyGeneratorProps {
   policyType: PolicyType;
   onGenerate: (formData: PolicyFormData) => void;
+  initialFormData?: Partial<PolicyFormData>;
 }
 
-export const PolicyGenerator = ({ policyType, onGenerate }: PolicyGeneratorProps) => {
+export const PolicyGenerator = ({ policyType, onGenerate, initialFormData }: PolicyGeneratorProps) => {
   const [formData, setFormData] = useState<PolicyFormData>({
-    siteName: "",
-    siteUrl: "",
-    hasAdsense: false,
-    language: "pt-BR",
-    contactEmail: "",
-    companyName: "",
-    country: "Brasil",
+    siteName: initialFormData?.siteName || "",
+    siteUrl: initialFormData?.siteUrl || "",
+    hasAdsense: initialFormData?.hasAdsense || false,
+    language: initialFormData?.language || "pt-BR",
+    contactEmail: initialFormData?.contactEmail || "",
+    companyName: initialFormData?.companyName || "",
+    country: initialFormData?.country || "Brasil",
     
     // Transparency Policy fields
     siteType: "",

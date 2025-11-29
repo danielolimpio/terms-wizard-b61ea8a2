@@ -11,6 +11,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FeaturedBlog } from "@/components/FeaturedBlog";
 import { TrustBadges } from "@/components/TrustBadges";
 import { FAQ } from "@/components/FAQ";
+import { HomePrivacyPolicyGenerator } from "@/components/HomePrivacyPolicyGenerator";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
@@ -190,6 +191,9 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      {/* Home Privacy Policy Generator */}
+      <HomePrivacyPolicyGenerator />
 
       {/* Live Stats Section */}
       <LiveStats />
