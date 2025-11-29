@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 // Main pages
 import Index from "./pages/Index";
@@ -15,6 +16,7 @@ import PoliticaCookiesGuiaCompletoPost from "./pages/blog/PoliticaCookiesGuiaCom
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
+import SitemapPage from "./pages/SitemapPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
 import AdminPostEditorPage from "./pages/AdminPostEditorPage";
@@ -55,6 +57,29 @@ console.log("App loaded - generators imported:", {
 
 const queryClient = new QueryClient();
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: Record<string, any>) => void;
+  }
+}
+
+// Google Analytics 4 tracking component
+const GATracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page view on route change
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('config', 'G-JT7VF729P8', {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
+  return null;
+};
+
 const App = () => {
   console.log("App rendering - build v2.0");
   
@@ -64,6 +89,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <GATracker />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/sobre" element={<AboutPage />} />
@@ -74,6 +100,7 @@ const App = () => {
           <Route path="/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026" element={<PoliticaCookiesGuiaCompletoPost />} />
             <Route path="/ajuda" element={<HelpPage />} />
             <Route path="/contato" element={<ContactPage />} />
+            <Route path="/sitemap" element={<SitemapPage />} />
             
             {/* Info pages */}
             <Route path="/politica-privacidade" element={<PrivacyPolicyPage />} />
