@@ -29,27 +29,27 @@ export function BlogSidebar() {
             <div className="space-y-2">
               <Button
                 variant="outline"
-                className="w-full justify-start text-left h-auto py-3 px-4 border-primary/50 bg-primary/5"
+                className="w-full justify-start text-left h-auto py-2.5 px-3 border-primary/50 bg-primary/5 flex items-center gap-2"
                 onClick={() => navigate('/gerador-politica-privacidade')}
               >
-                <span className="mr-2 text-lg">🔒</span>
-                <span className="text-base font-semibold">Política de Privacidade Grátis</span>
+                <span className="text-lg shrink-0">🔒</span>
+                <span className="text-sm font-semibold leading-tight">Política de Privacidade Grátis</span>
               </Button>
               <Button
                 variant="outline"
-                className="w-full justify-start text-left h-auto py-3 px-4"
-                onClick={() => navigate('/termos-de-uso')}
+                className="w-full justify-start text-left h-auto py-2.5 px-3 flex items-center gap-2"
+                onClick={() => navigate('/gerador-termos-uso')}
               >
-                <span className="mr-2 text-lg">📋</span>
-                <span className="text-base">Gerador de Termos de Uso</span>
+                <span className="text-lg shrink-0">📋</span>
+                <span className="text-sm leading-tight">Gerador de Termos de Uso</span>
               </Button>
               <Button
                 variant="outline"
-                className="w-full justify-start text-left h-auto py-3 px-4"
-                onClick={() => navigate('/politica-de-cookies')}
+                className="w-full justify-start text-left h-auto py-2.5 px-3 flex items-center gap-2"
+                onClick={() => navigate('/gerador-politica-cookies')}
               >
-                <span className="mr-2 text-lg">🍪</span>
-                <span className="text-base">Política de Cookies</span>
+                <span className="text-lg shrink-0">🍪</span>
+                <span className="text-sm leading-tight">Política de Cookies</span>
               </Button>
             </div>
           </div>
@@ -63,11 +63,11 @@ export function BlogSidebar() {
               <Button
                 key={policy.id}
                 variant="outline"
-                className="w-full justify-start text-left h-auto py-3 px-4"
+                className="w-full justify-start text-left h-auto py-2.5 px-3 flex items-center gap-2"
                 onClick={() => navigate(`/${policy.slug}`)}
               >
-                <span className="mr-2 text-lg">{policy.icon}</span>
-                <span className="text-base">{policy.name.replace('Modelo ', '')}</span>
+                <span className="text-lg shrink-0">{policy.icon}</span>
+                <span className="text-sm leading-tight">{policy.name.replace('Modelo ', '')}</span>
               </Button>
             ))}
           </div>
