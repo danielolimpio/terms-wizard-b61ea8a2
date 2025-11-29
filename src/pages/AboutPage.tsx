@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react";
+import authorPhoto from "@/assets/author-photo.jpg";
 
 export default function AboutPage() {
   return (
@@ -156,6 +158,90 @@ export default function AboutPage() {
                 Hoje, já ajudamos milhares de empresas a se manterem em conformidade legal, 
                 contribuindo para um ambiente digital mais transparente e seguro para todos.
               </p>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-12">
+            <CardHeader>
+              <CardTitle>Sobre o Autor – Especialista em Conformidade Digital e Proteção de Dados</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <img 
+                    src={authorPhoto} 
+                    alt="Fundador do Políticas de Privacidade" 
+                    className="w-48 h-48 rounded-lg object-cover shadow-lg"
+                  />
+                </div>
+                <div className="flex-1 space-y-4">
+                  <p className="text-muted-foreground">
+                    Sou desenvolvedor e pesquisador há mais de 8 anos no campo da governança digital e da adequação legal de websites no Brasil e no exterior. Fundei o Políticas de Privacidade com um objetivo claro: tornar o cumprimento da LGPD, GDPR e outras normas de proteção de dados acessível a todos, especialmente a pequenos empreendedores, criadores de conteúdo e donos de e-commerces que não contam com equipes jurídicas.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Não sou advogado, mas trabalho em constante diálogo com profissionais do Direito Digital para garantir que os modelos que disponibilizo sejam claros, atualizados e alinhados às melhores práticas internacionais. Meu foco nunca foi vender documentos — foi resolver um problema real: a burocracia, o custo e a falta de informação que impedem milhares de sites de operarem com segurança jurídica.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Este site foi construído com base em anos de análise de políticas de privacidade de empresas como Google, Meta, Shopify e startups brasileiras de alto crescimento. Tudo aqui é 100% gratuito, sem cadastro e sem obrigações — porque acredito que proteger a privacidade dos usuários não deveria ser um luxo, mas um padrão mínimo para qualquer site na web.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Se você está aqui, provavelmente busca mais do que um modelo: busca clareza, confiança e tranquilidade. E é exatamente isso que me motiva a atualizar este projeto diariamente.
+                  </p>
+                  <div className="pt-4">
+                    <p className="text-sm font-medium text-foreground mb-3">
+                      Fundador de Políticas de Privacidade<br />
+                      Comprometido com a web aberta, ética e legalmente segura.
+                    </p>
+                    <div className="flex gap-4">
+                      <a 
+                        href="https://www.facebook.com/danielolimpio.com.br" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Facebook"
+                      >
+                        <Facebook className="h-6 w-6" />
+                      </a>
+                      <a 
+                        href="https://x.com/danielolimpio_" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="X (Twitter)"
+                      >
+                        <Twitter className="h-6 w-6" />
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/danielolimpio_com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="h-6 w-6" />
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/in/danielolimpio-com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin className="h-6 w-6" />
+                      </a>
+                      <a 
+                        href="https://danielolimpio.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Website"
+                      >
+                        <Globe className="h-6 w-6" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
