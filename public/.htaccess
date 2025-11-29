@@ -2,15 +2,32 @@
   RewriteEngine On
   RewriteBase /
 
-  # Não redirecionar arquivos ou diretórios reais
+  # ===== IMPORTANTE: Servir arquivos estáticos ANTES de redirecionar para SPA =====
+  
+  # 1. Arquivos de verificação e SEO (Google, Bing, Yandex, etc.)
+  RewriteRule ^(google[a-z0-9]+\.html|BingSiteAuth\.xml|yandex_[a-z0-9]+\.html)$ - [L]
+  
+  # 2. Arquivos essenciais de SEO e monetização
+  RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|sitemap_index\.xml)$ - [L]
+  
+  # 3. Ícones e imagens da raiz
+  RewriteRule ^(favicon\.ico|apple-touch-icon.*\.png|og-image\.(jpg|png|webp)|android-chrome.*\.png|mstile.*\.png)$ - [L]
+  
+  # 4. Manifests e arquivos de configuração do navegador
+  RewriteRule ^(manifest\.json|browserconfig\.xml|site\.webmanifest)$ - [L]
+  
+  # 5. Diretório .well-known (SSL, Apple Pay, etc.)
+  RewriteRule ^\.well-known/ - [L]
+  
+  # 6. Extensões de arquivos estáticos comuns (imagens, fontes, docs, etc.)
+  RewriteRule \.(txt|xml|json|ico|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot|otf|pdf|zip|css|js|map)$ - [L]
+  
+  # 7. Não redirecionar arquivos ou diretórios reais (fallback)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Proteger arquivos estáticos essenciais de redirecionamento
-  RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|favicon\.ico|apple-touch-icon\.png|og-image\.(jpg|png)|\.well-known/|google.+\.html)$ - [L]
-
-  # Redirecionar todas as demais rotas para index.html (SPA)
+  # 8. APENAS AGORA: Redirecionar todas as demais rotas para index.html (SPA)
   RewriteRule ^ index.html [L]
 </IfModule>
 
