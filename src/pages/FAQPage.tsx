@@ -411,15 +411,43 @@ export default function FAQPage() {
             </p>
           </div>
 
+          {/* Quick Navigation */}
+          <div className="mb-12 sticky top-16 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-2 border-primary/20 rounded-2xl p-6 shadow-lg">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <ChevronRight className="h-5 w-5 text-primary" />
+              Navegação Rápida
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {faqSections.map((section) => {
+                const SectionIcon = section.icon;
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => {
+                      const element = document.getElementById(section.id);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-all hover:scale-105 ${section.bgColor} border-transparent hover:border-primary/50 group`}
+                  >
+                    <SectionIcon className={`h-4 w-4 ${section.color} group-hover:scale-110 transition-transform`} />
+                    <span className="text-sm font-medium text-foreground">{section.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* FAQ Sections */}
           <div className="space-y-8">
             {faqSections.map((section) => {
               const SectionIcon = section.icon;
               return (
-                <div key={section.id} className="scroll-mt-20" id={section.id}>
+                <div key={section.id} className="scroll-mt-32" id={section.id}>
                   {/* Section Header */}
                   <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-primary/20">
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${section.bgColor} flex items-center justify-center`}>
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${section.bgColor} flex items-center justify-center animate-pulse`}>
                       <SectionIcon className={`h-6 w-6 ${section.color}`} />
                     </div>
                     <div className="flex-1">
@@ -428,7 +456,7 @@ export default function FAQPage() {
                       </h2>
                       <Link 
                         to={section.slug}
-                        className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+                        className="text-sm text-primary hover:underline inline-flex items-center gap-1 hover:gap-2 transition-all"
                       >
                         Gerar esta política gratuitamente
                         <ChevronRight className="h-3 w-3" />
