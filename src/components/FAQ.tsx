@@ -9,6 +9,18 @@ import { HelpCircle } from "lucide-react";
 
 const faqData = [
   {
+    question: "A política de privacidade gerada é válida juridicamente?",
+    answer: "Sim, nossos modelos são baseados em legislações atuais como a LGPD e GDPR. No entanto, recomendamos sempre consultar um advogado para adaptações específicas ao seu negócio."
+  },
+  {
+    question: "Preciso de um advogado para revisar a política?",
+    answer: "Não é obrigatório, mas altamente recomendado para garantir total conformidade com as leis aplicáveis ao seu setor."
+  },
+  {
+    question: "Posso usar a política para meu site no Brasil e na Europa?",
+    answer: "Sim, nossos modelos são adaptados para atender às exigências da LGPD (Brasil) e GDPR (União Europeia)."
+  },
+  {
     question: "É realmente grátis?",
     answer: "Sim! Nosso gerador de políticas é 100% gratuito, sem taxas ocultas, sem limites de uso e sem necessidade de cadastro. Você pode gerar quantas políticas precisar, a qualquer momento, sem pagar nada."
   },
@@ -82,7 +94,7 @@ export const FAQ = () => {
             <HelpCircle className="h-6 md:h-8 w-6 md:w-8 text-primary" />
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
-            Perguntas Frequentes
+            Perguntas Frequentes sobre Política de Privacidade Grátis
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
             Tire todas as suas dúvidas sobre nosso gerador de políticas legais gratuito

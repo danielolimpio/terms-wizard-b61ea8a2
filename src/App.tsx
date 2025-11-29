@@ -20,6 +20,9 @@ import SitemapPage from "./pages/SitemapPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
 import AdminPostEditorPage from "./pages/AdminPostEditorPage";
+import PoliticaPrivacidadeGratisPage from "./pages/PoliticaPrivacidadeGratisPage";
+import GeradorPoliticaPrivacidadePage from "./pages/GeradorPoliticaPrivacidadePage";
+import ComoGerarPoliticaPrivacidadePage from "./pages/ComoGerarPoliticaPrivacidadePage";
 
 // Info pages
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
@@ -102,13 +105,17 @@ const App = () => {
             <Route path="/contato" element={<ContactPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             
+            {/* SEO Landing Pages */}
+            <Route path="/politica-de-privacidade-gratis" element={<PoliticaPrivacidadeGratisPage />} />
+            <Route path="/como-gerar-politica-de-privacidade" element={<ComoGerarPoliticaPrivacidadePage />} />
+            
             {/* Info pages */}
             <Route path="/politica-privacidade" element={<PrivacyPolicyPage />} />
             <Route path="/termos-uso" element={<TermsOfUsePage />} />
             <Route path="/politica-cookies" element={<CookiePolicyPage />} />
             
             {/* Geradores - URLs SEO Friendly */}
-            <Route path="/gerador-politica-privacidade" element={<PrivacyPolicyGenerator />} />
+            <Route path="/gerador-politica-privacidade" element={<GeradorPoliticaPrivacidadePage />} />
             <Route path="/gerador-termos-uso" element={<TermsOfUseGenerator />} />
             <Route path="/gerador-politica-cookies" element={<CookiePolicyGenerator />} />
             <Route path="/gerador-politica-reembolso" element={<RefundPolicyGenerator />} />

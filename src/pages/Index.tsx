@@ -146,26 +146,23 @@ const Index = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="mb-6">
             <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Gerador de <span className="text-cyan-400">Políticas Legais</span>
+              Gerador de Política de Privacidade Grátis | <span className="text-cyan-400">Crie em 2 Minutos</span>
             </h1>
-            <p className="text-base md:text-xl text-gray-100 max-w-3xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md">
-              Crie políticas de privacidade, termos de uso e outros documentos legais profissionais em minutos. 
-              Gratuito, rápido e otimizado para LGPD e GDPR.
-            </p>
+            <h2 className="text-lg md:text-2xl text-gray-100 max-w-4xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md font-medium">
+              Crie sua Política de Privacidade e Termos de Uso gratuitamente, em segundos, sem cadastro. 
+              Perfeito para blogs, lojas Shopify e WordPress.
+            </h2>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
             <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <Shield className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium text-gray-900">LGPD Compliant</span>
+              <span className="text-base md:text-lg font-bold text-gray-900">✅ 100% GRÁTIS</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <Zap className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium text-gray-900">Geração Instantânea</span>
+              <span className="text-base md:text-lg font-bold text-gray-900">⏱️ PRONTO EM 2 MINUTOS</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <Globe className="h-4 md:h-5 w-4 md:w-5 text-primary" />
-              <span className="text-xs md:text-sm font-medium text-gray-900">Múltiplos Idiomas</span>
+              <span className="text-base md:text-lg font-bold text-gray-900">🚫 SEM CADASTRO</span>
             </div>
           </div>
 
@@ -182,6 +179,13 @@ const Index = () => {
 
       {/* Live Stats Section */}
       <LiveStats />
+      
+      {/* Social Proof Message */}
+      <div className="py-4 text-center bg-gradient-to-r from-primary/5 via-cyan-500/5 to-primary/5">
+        <p className="text-sm md:text-base text-muted-foreground font-medium">
+          <span className="text-primary font-bold">+2.800 pessoas</span> criaram suas políticas esta semana. Junte-se a elas!
+        </p>
+      </div>
 
       {/* How It Works Section */}
       <HowItWorks />
@@ -204,14 +208,14 @@ const Index = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 leading-tight">
             Escolha o Tipo de <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-primary bg-[length:200%_auto] animate-[gradient_3s_linear_infinite]">
-              Política Legal
+              Política Legal que Você Precisa
             </span>
           </h2>
           
           <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
             Selecione o documento legal que você precisa gerar para seu site. 
             <span className="block mt-2 font-semibold text-foreground">
-              Gratuito, rápido e 100% profissional
+              Gratuito, rápido e 100% profissional.
             </span>
           </p>
           
@@ -279,15 +283,15 @@ const Index = () => {
       <section className="bg-gradient-secondary py-8 md:py-16 px-4">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8 md:mb-12">
-            Por que escolher nosso gerador?
+            Por que escolher nosso gerador de políticas legais?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
             <div className="text-center">
               <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Totalmente Gratuito</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Gratuito Sem Limites</h3>
               <p className="text-sm md:text-base text-muted-foreground">
                 Gere quantas políticas precisar sem custo algum. Sem limites ou restrições.
               </p>
@@ -297,7 +301,7 @@ const Index = () => {
               <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
                 <Zap className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Rápido e Simples</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Rápido: Pronto em 2 Minutos</h3>
               <p className="text-sm md:text-base text-muted-foreground">
                 Gere documentos profissionais em menos de 2 minutos. Interface intuitiva e fácil de usar.
               </p>
@@ -307,10 +311,38 @@ const Index = () => {
               <div className="bg-primary/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-6 md:h-8 w-6 md:w-8 text-primary" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Múltiplos Formatos</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Múltiplos Formatos e Idiomas</h3>
               <p className="text-sm md:text-base text-muted-foreground">
-                Baixe em TXT, DOC ou PDF. Copie o texto com um clique. Múltiplos idiomas disponíveis.
+                Baixe em TXT, DOC ou PDF. Copie o texto com um clique. Disponível em Português e Inglês.
               </p>
+            </div>
+          </div>
+          
+          {/* Social Proof Section */}
+          <div className="text-center border-t border-border pt-12">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
+              Sites que confiam em nós
+            </h3>
+            <p className="text-sm md:text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Milhares de sites já usam nossas políticas para estar em conformidade com a LGPD e GDPR. 
+              Usado por milhares de negócios brasileiros.
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
+              <div className="px-6 py-3 bg-card border border-border rounded-lg">
+                <span className="font-semibold text-foreground">E-commerce</span>
+              </div>
+              <div className="px-6 py-3 bg-card border border-border rounded-lg">
+                <span className="font-semibold text-foreground">Blogs</span>
+              </div>
+              <div className="px-6 py-3 bg-card border border-border rounded-lg">
+                <span className="font-semibold text-foreground">SaaS</span>
+              </div>
+              <div className="px-6 py-3 bg-card border border-border rounded-lg">
+                <span className="font-semibold text-foreground">Startups</span>
+              </div>
+              <div className="px-6 py-3 bg-card border border-border rounded-lg">
+                <span className="font-semibold text-foreground">WordPress</span>
+              </div>
             </div>
           </div>
         </div>
