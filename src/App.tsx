@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
+import { RedirectHandler } from "@/components/RedirectHandler";
 
 // Main pages
 import Index from "./pages/Index";
@@ -95,6 +96,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <GATracker />
+            <RedirectHandler />
             <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/sobre" element={<AboutPage />} />

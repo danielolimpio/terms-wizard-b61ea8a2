@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
+import { StructuredData } from "@/components/StructuredData";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -87,8 +89,32 @@ const GeradorPoliticaPrivacidadePage = () => {
         />
         <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-privacidade" />
       </Helmet>
+      
+      <StructuredData type="organization" />
+      <StructuredData 
+        type="breadcrumb" 
+        items={[
+          { name: "Geradores", url: "/politicas" },
+          { name: "Política de Privacidade", url: "/gerador-politica-privacidade" }
+        ]} 
+      />
+      <StructuredData 
+        type="product" 
+        name="Gerador de Política de Privacidade" 
+        description="Ferramenta gratuita para gerar política de privacidade conforme LGPD e GDPR. Baixe em PDF, DOC ou TXT."
+        offers={{
+          price: "0",
+          priceCurrency: "BRL"
+        }}
+      />
+      
       <Header />
       <main className="container mx-auto px-4 py-8">
+        <Breadcrumbs items={[
+          { name: "Geradores", url: "/politicas" },
+          { name: "Política de Privacidade", url: "/gerador-politica-privacidade" }
+        ]} />
+        
         <div className="mb-6">
           <Button variant="outline" onClick={() => window.history.back()}>
             ← Voltar
