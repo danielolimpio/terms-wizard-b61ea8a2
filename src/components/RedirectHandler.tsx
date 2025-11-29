@@ -15,7 +15,6 @@ const redirectMap: Record<string, string> = {
   "/contact-us": "/contato",
   "/help": "/ajuda",
   "/support": "/ajuda",
-  "/faq": "/ajuda",
   
   // URLs de geradores antigos
   "/generator/privacy": "/gerador-politica-privacidade",
@@ -44,6 +43,7 @@ const redirectMap: Record<string, string> = {
   "/sobre/": "/sobre",
   "/contato/": "/contato",
   "/ajuda/": "/ajuda",
+  "/faq/": "/faq",
 };
 
 export const RedirectHandler = () => {
