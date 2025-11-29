@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { LocationMap } from "@/components/LocationMap";
+import { MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -156,6 +158,33 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          {/* Mapa de Localização */}
+          <div className="mt-12">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  Nossa Localização
+                </CardTitle>
+                <CardDescription>
+                  Av. Julia Freire, 1200 - Expedicionários, João Pessoa - PB, CEP: 58.041-000
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <LocationMap
+                  address="Av. Julia Freire, 1200 - Expedicionários, João Pessoa - PB"
+                  latitude={-7.1328}
+                  longitude={-34.8612}
+                />
+                <div className="mt-4 p-4 bg-accent/50 rounded-lg">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">Pontos de Referência:</strong> Próximo ao Shopping Manaíra e Hospital Unimed
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>
