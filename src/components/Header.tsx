@@ -18,6 +18,9 @@ export const Header = () => {
       <a href="/politicas" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Todas as Políticas
       </a>
+      <a href="/faq" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+        FAQ
+      </a>
       <a href="/ajuda" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
         Ajuda
       </a>

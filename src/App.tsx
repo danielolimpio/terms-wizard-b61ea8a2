@@ -18,6 +18,7 @@ import PoliticaCookiesGuiaCompletoPost from "./pages/blog/PoliticaCookiesGuiaCom
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
+import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPostsPage from "./pages/AdminPostsPage";
@@ -106,6 +107,7 @@ const App = () => {
           <Route path="/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica" element={<TermosUsoSegurancaJuridicaPost />} />
           <Route path="/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026" element={<PoliticaCookiesGuiaCompletoPost />} />
             <Route path="/ajuda" element={<HelpPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/contato" element={<ContactPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
             
