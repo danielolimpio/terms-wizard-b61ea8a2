@@ -49,6 +49,12 @@ export const Footer = () => {
             <h3 className="font-semibold text-white mb-4 text-lg">Suporte</h3>
             <ul className="space-y-2 text-base">
               <li>
+                <a href="/faq" className="text-gray-300 hover:text-primary flex items-center gap-2">
+                  <HelpCircle size={16} />
+                  FAQ
+                </a>
+              </li>
+              <li>
                 <a href="/ajuda" className="text-gray-300 hover:text-primary flex items-center gap-2">
                   <HelpCircle size={16} />
                   Ajuda
