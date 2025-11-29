@@ -195,19 +195,6 @@ const Index = () => {
       {/* Home Privacy Policy Generator */}
       <HomePrivacyPolicyGenerator />
 
-      {/* Live Stats Section */}
-      <LiveStats />
-      
-      {/* Social Proof Message */}
-      <div className="py-4 text-center bg-gradient-to-r from-primary/5 via-cyan-500/5 to-primary/5">
-        <p className="text-sm md:text-base text-muted-foreground font-medium">
-          <span className="text-primary font-bold">+2.800 pessoas</span> criaram suas políticas esta semana. Junte-se a elas!
-        </p>
-      </div>
-
-      {/* How It Works Section */}
-      <HowItWorks />
-
       {/* Main Content - Policy Selection */}
       <main className="container mx-auto px-4 py-12 md:py-16 relative">
         {/* Background decoration */}
@@ -296,6 +283,19 @@ const Index = () => {
           </div>
         )}
       </main>
+
+      {/* Live Stats Section */}
+      <LiveStats />
+      
+      {/* Social Proof Message */}
+      <div className="py-4 text-center bg-gradient-to-r from-primary/5 via-cyan-500/5 to-primary/5">
+        <p className="text-sm md:text-base text-muted-foreground font-medium">
+          <span className="text-primary font-bold">+2.800 pessoas</span> criaram suas políticas esta semana. Junte-se a elas!
+        </p>
+      </div>
+
+      {/* How It Works Section */}
+      <HowItWorks />
 
       {/* Features Section */}
       <section className="bg-gradient-secondary py-8 md:py-16 px-4">
