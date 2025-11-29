@@ -11,6 +11,7 @@ import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
+import blogCMPImage from "@/assets/blog-o-que-e-cmp.jpg";
 
 interface BlogPost {
   id: string;
@@ -68,6 +69,16 @@ export default function BlogPage() {
       created_at: '2025-11-28',
       slug: '10-acoes-marketing-lgpd',
       image: blogMarketingLGPDImage,
+      featured: false
+    },
+    {
+      id: 'featured-5',
+      title: 'O Que é CMP? Plataforma de Gestão de Consentimento para Sites e Lojas',
+      meta_description: 'Entenda o que é uma CMP, como ela funciona e por que é obrigatória para sites que usam cookies na LGPD.',
+      categories: ['LGPD', 'Cookies', 'Compliance'],
+      created_at: '2025-11-29',
+      slug: 'o-que-e-cmp-plataforma-gestao-consentimento',
+      image: blogCMPImage,
       featured: false
     }
   ];
