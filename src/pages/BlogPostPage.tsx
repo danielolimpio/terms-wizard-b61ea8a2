@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Shield, Lock, FileText, CheckCircle, AlertTriangle, Users, Globe, Scale } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
+import { AuthorBio } from "@/components/AuthorBio";
 
 export default function BlogPostPage() {
   const navigate = useNavigate();
@@ -430,6 +431,9 @@ export default function BlogPostPage() {
                 Porque hoje, em 2026, a privacidade não é um detalhe. É o novo padrão de qualidade.
               </p>
             </div>
+
+            {/* Autor */}
+            <AuthorBio />
           </div>
         </article>
 

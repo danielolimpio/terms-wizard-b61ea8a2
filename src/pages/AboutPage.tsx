@@ -188,16 +188,13 @@ export default function AboutPage() {
                 </div>
                 <div className="flex-1 space-y-4">
                   <p className="text-muted-foreground">
-                    Sou desenvolvedor e pesquisador há mais de 8 anos no campo da governança digital e da adequação legal de websites no Brasil e no exterior. Fundei o Políticas de Privacidade com um objetivo claro: tornar o cumprimento da LGPD, GDPR e outras normas de proteção de dados acessível a todos, especialmente a pequenos empreendedores, criadores de conteúdo e donos de e-commerces que não contam com equipes jurídicas.
+                    Sou desenvolvedor e pesquisador há mais de 20 anos em governança digital e adequação legal de websites no Brasil e no exterior. Fundei o Políticas de Privacidade para tornar o cumprimento da LGPD, GDPR e outras normas acessível — especialmente a pequenos empreendedores, criadores de conteúdo e donos de e-commerce sem suporte jurídico.
                   </p>
                   <p className="text-muted-foreground">
-                    Não sou advogado, mas trabalho em constante diálogo com profissionais do Direito Digital para garantir que os modelos que disponibilizo sejam claros, atualizados e alinhados às melhores práticas internacionais. Meu foco nunca foi vender documentos — foi resolver um problema real: a burocracia, o custo e a falta de informação que impedem milhares de sites de operarem com segurança jurídica.
+                    Trabalho em parceria com especialistas em Direito Digital para oferecer modelos claros, atualizados e alinhados às melhores práticas globais. Meu objetivo nunca foi vender documentos, mas resolver um problema real: a burocracia, o custo e a falta de informação que impedem sites de operarem com segurança jurídica.
                   </p>
                   <p className="text-muted-foreground">
-                    Este site foi construído com base em anos de análise de políticas de privacidade de empresas como Google, Meta, Shopify e startups brasileiras de alto crescimento. Tudo aqui é 100% gratuito, sem cadastro e sem obrigações — porque acredito que proteger a privacidade dos usuários não deveria ser um luxo, mas um padrão mínimo para qualquer site na web.
-                  </p>
-                  <p className="text-muted-foreground">
-                    Se você está aqui, provavelmente busca mais do que um modelo: busca clareza, confiança e tranquilidade. E é exatamente isso que me motiva a atualizar este projeto diariamente.
+                    Este projeto nasceu da análise de políticas de empresas como Google, Meta e Shopify, e é 100% gratuito, sem cadastro ou obrigações — porque proteger a privacidade dos usuários deve ser um padrão, não um luxo. Se você está aqui, busca clareza, confiança e tranquilidade. E é isso que me motiva a atualizá-lo todos os dias.
                   </p>
                   <div className="pt-4">
                     <p className="text-sm font-medium text-foreground mb-3">
