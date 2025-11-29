@@ -3,6 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react";
+import { StructuredData } from "@/components/StructuredData";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import authorPhoto from "@/assets/author-photo.jpg";
 
 export default function AboutPage() {
@@ -16,10 +18,20 @@ export default function AboutPage() {
         />
         <link rel="canonical" href="https://politicadeprivacidade.org/sobre" />
       </Helmet>
+      
+      <StructuredData type="organization" />
+      <StructuredData 
+        type="breadcrumb" 
+        items={[
+          { name: "Sobre Nós", url: "/sobre" }
+        ]} 
+      />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ name: "Sobre Nós", url: "/sobre" }]} />
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
               Sobre o Gerador de Políticas

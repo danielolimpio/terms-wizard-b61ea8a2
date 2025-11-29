@@ -12,6 +12,7 @@ import { FeaturedBlog } from "@/components/FeaturedBlog";
 import { TrustBadges } from "@/components/TrustBadges";
 import { FAQ } from "@/components/FAQ";
 import { HomePrivacyPolicyGenerator } from "@/components/HomePrivacyPolicyGenerator";
+import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
@@ -148,6 +149,18 @@ const Index = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://politicadeprivacidade.org/" />
       </Helmet>
+      
+      <StructuredData type="organization" />
+      <StructuredData 
+        type="product" 
+        name="Gerador de Políticas Legais Gratuito" 
+        description="Ferramenta gratuita para gerar políticas de privacidade, termos de uso e políticas de cookies conforme LGPD e GDPR"
+        offers={{
+          price: "0",
+          priceCurrency: "BRL"
+        }}
+      />
+      
       <Header />
       
       {/* Hero Section */}
