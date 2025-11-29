@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,6 +6,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Sobre Nós | Gerador de Políticas Legais Gratuito</title>
+        <meta 
+          name="description" 
+          content="Conheça o gerador de políticas legais mais completo do Brasil. Ferramenta 100% gratuita para criar políticas de privacidade, termos de uso e mais." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/sobre" />
+      </Helmet>
       <Header />
       
       <main className="container mx-auto px-4 py-12">

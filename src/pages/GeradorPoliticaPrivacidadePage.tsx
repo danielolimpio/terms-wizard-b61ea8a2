@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -52,6 +53,14 @@ const GeradorPoliticaPrivacidadePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Privacidade | Crie Grátis Agora</title>
+        <meta 
+          name="description" 
+          content="Ferramenta profissional para gerar política de privacidade grátis. Preencha o formulário e baixe em PDF, DOC ou TXT. Conforme LGPD e GDPR." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-privacidade" />
+      </Helmet>
       <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">

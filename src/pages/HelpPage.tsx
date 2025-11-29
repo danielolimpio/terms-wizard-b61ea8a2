@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +7,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function HelpPage() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Central de Ajuda | Perguntas Frequentes sobre Políticas Legais</title>
+        <meta 
+          name="description" 
+          content="Tire suas dúvidas sobre como gerar políticas de privacidade, termos de uso e outros documentos legais. Respostas sobre LGPD, GDPR e compliance." 
+        />
+        <link rel="canonical" href="https://politicadeprivacidade.org/ajuda" />
+      </Helmet>
       <Header />
       
       <main className="container mx-auto px-4 py-12">
