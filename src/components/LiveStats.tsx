@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Users, FileText, TrendingUp, Clock } from "lucide-react";
 import avatar1 from "@/assets/avatars/avatar-1.jpg";
 import avatar2 from "@/assets/avatars/avatar-2.jpg";
@@ -26,11 +26,14 @@ const calculateStats = () => {
   };
 };
 
-// Componente de contador animado
-const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
+// Componente de contador animado com Intersection Observer
+const AnimatedCounter = ({ end, duration = 2000, startAnimation }: { end: number; duration?: number; startAnimation: boolean }) => {
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   
   useEffect(() => {
+    if (!startAnimation || hasAnimated) return;
+    
     let startTime: number;
     let animationFrame: number;
     
@@ -43,19 +46,47 @@ const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: num
         animationFrame = requestAnimationFrame(animate);
       } else {
         setCount(end);
+        setHasAnimated(true);
       }
     };
     
     animationFrame = requestAnimationFrame(animate);
     
     return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
+  }, [end, duration, startAnimation, hasAnimated]);
   
   return <span>{count.toLocaleString('pt-BR')}</span>;
 };
 
 export const LiveStats = () => {
   const [stats, setStats] = useState(calculateStats());
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  // Intersection Observer para detectar quando a seção aparece
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.2, // Ativa quando 20% da seção está visível
+        rootMargin: '0px'
+      }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
   
   // Atualiza estatísticas a cada minuto
   useEffect(() => {
@@ -67,7 +98,10 @@ export const LiveStats = () => {
   }, []);
   
   return (
-    <section className="py-12 md:py-16 px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10">
+    <section 
+      ref={sectionRef}
+      className="py-12 md:py-16 px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent animate-gradient">
@@ -85,7 +119,7 @@ export const LiveStats = () => {
               <FileText className="h-6 md:h-7 w-6 md:w-7 text-primary" />
             </div>
             <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">
-              <AnimatedCounter end={stats.today} />
+              <AnimatedCounter end={stats.today} startAnimation={isVisible} />
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-medium">
               Políticas Geradas Hoje
@@ -102,7 +136,7 @@ export const LiveStats = () => {
               <TrendingUp className="h-6 md:h-7 w-6 md:w-7 text-cyan-500" />
             </div>
             <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">
-              <AnimatedCounter end={stats.total} duration={2500} />
+              <AnimatedCounter end={stats.total} duration={2500} startAnimation={isVisible} />
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-medium">
               Total de Documentos
@@ -118,7 +152,7 @@ export const LiveStats = () => {
               <Users className="h-6 md:h-7 w-6 md:w-7 text-purple-500" />
             </div>
             <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">
-              <AnimatedCounter end={stats.activeUsers} duration={1500} />
+              <AnimatedCounter end={stats.activeUsers} duration={1500} startAnimation={isVisible} />
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-medium">
               Usuários Online Agora
@@ -135,7 +169,7 @@ export const LiveStats = () => {
               <Clock className="h-6 md:h-7 w-6 md:w-7 text-orange-500" />
             </div>
             <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">
-              <AnimatedCounter end={stats.avgTime} duration={1000} />
+              <AnimatedCounter end={stats.avgTime} duration={1000} startAnimation={isVisible} />
               <span className="text-lg md:text-2xl"> min</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-medium">
