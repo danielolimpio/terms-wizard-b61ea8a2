@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Shield, AlertTriangle, CheckCircle2, FileText, Scale, Lock, Users, Eye, Ban, Clock } from "lucide-react";
 import heroImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
+import { AuthorBio } from "@/components/AuthorBio";
 
 export default function TermosUsoSegurancaJuridicaPost() {
   const navigate = useNavigate();
@@ -558,6 +559,9 @@ export default function TermosUsoSegurancaJuridicaPost() {
                 <Button variant="ghost" size="sm">LinkedIn</Button>
               </div>
             </div>
+
+            {/* Autor */}
+            <AuthorBio />
           </div>
         </article>
 

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Shield, Cookie, Scale, FileCheck, AlertTriangle, CheckCircle2, XCircle, Settings } from "lucide-react";
 import heroImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
+import { AuthorBio } from "@/components/AuthorBio";
 
 export default function PoliticaCookiesGuiaCompletoPost() {
   const navigate = useNavigate();
@@ -849,6 +850,9 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                   {/* Add social share buttons here if needed */}
                 </div>
               </div>
+
+              {/* Autor */}
+              <AuthorBio />
             </div>
           </div>
 
