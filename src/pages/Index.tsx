@@ -284,6 +284,9 @@ const Index = () => {
         )}
       </main>
 
+      {/* How It Works Section */}
+      <HowItWorks />
+
       {/* Live Stats Section */}
       <LiveStats />
       
@@ -293,9 +296,6 @@ const Index = () => {
           <span className="text-primary font-bold">+2.800 pessoas</span> criaram suas políticas esta semana. Junte-se a elas!
         </p>
       </div>
-
-      {/* How It Works Section */}
-      <HowItWorks />
 
       {/* Features Section */}
       <section className="bg-gradient-secondary py-8 md:py-16 px-4">
