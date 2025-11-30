@@ -443,8 +443,8 @@ export default function BlogPostPage() {
 
             <SocialShare title="Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito (2026)" />
 
-            {/* Related Articles */}
-            <RelatedArticles />
+            {/* Related Articles - Artigos relacionados ao tema LGPD/Privacidade */}
+            <RelatedArticles tags={["lgpd", "privacidade", "gdpr", "compliance"]} currentArticleId="1" />
 
             {/* Autor */}
             <AuthorBio />

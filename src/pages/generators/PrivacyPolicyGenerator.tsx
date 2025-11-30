@@ -56,7 +56,7 @@ const PrivacyPolicyGenerator = () => {
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
-            <RelatedArticles />
+            <RelatedArticles policyType="privacy-policy" />
           </div>
           <BlogSidebar />
         </div>
