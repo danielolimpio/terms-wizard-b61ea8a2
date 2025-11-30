@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -86,7 +87,9 @@ const GoogleConsentModeV2Post = () => {
 
       <Header />
 
-      <article className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-8 max-w-7xl mx-auto">
+          <article className="flex-1 max-w-4xl">
         {/* Header */}
         <header className="mb-8">
           <div className="flex flex-wrap gap-2 mb-4">
@@ -135,19 +138,19 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-foreground">
                 Em janeiro de 2024, o Google deu um passo decisivo: o <strong>Consent Mode V2</strong> tornou-se obrigatório para qualquer site que use Google Ads, Google Analytics ou qualquer outro serviço do Google que dependa de cookies.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-foreground">
                 Muitos lojistas, marketers e criadores de conteúdo foram pegos de surpresa. De um dia para o outro, relatórios de conversão começaram a falhar. Campanhas pareciam menos eficazes. O remarketing perdeu precisão. E o pior: tudo isso aconteceu justamente porque os sites estavam mais alinhados à LGPD — ao bloquear pixels sem consentimento, como a lei exige.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-foreground">
                 A boa notícia? Existe uma solução técnica e legal: o <strong>Google Consent Mode V2</strong>. Ele permite que você respeite a privacidade dos usuários e, ao mesmo tempo, mantenha o desempenho de suas campanhas digitais.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-foreground">
                 Neste guia, você vai aprender, de forma clara e prática, como implementar o Google Consent Mode V2 na sua loja ou site em 2026, integrando-o perfeitamente à sua estratégia de conformidade com a LGPD — sem sacrificar dados, conversões ou orçamento publicitário.
               </p>
 
@@ -166,11 +169,11 @@ const GoogleConsentModeV2Post = () => {
           </h2>
 
           <div className="prose prose-lg max-w-none mb-6 space-y-4">
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-foreground">
               O <strong>Consent Mode V2</strong> é uma API do Google que permite que seus scripts (Analytics, Ads, Tag Manager) ajustem seu comportamento com base na escolha do usuário sobre cookies.
             </p>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-foreground">
               Antes, era tudo ou nada:
             </p>
           </div>
@@ -180,13 +183,13 @@ const GoogleConsentModeV2Post = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Se o usuário aceitasse cookies → tudo funcionava.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Se recusasse → nenhum dado era enviado, e suas métricas simplesmente desapareciam.
                   </p>
                 </div>
@@ -195,7 +198,7 @@ const GoogleConsentModeV2Post = () => {
           </Card>
 
           <div className="prose prose-lg max-w-none mb-6 space-y-4">
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-foreground">
               Com o Consent Mode V2, o Google introduziu um conceito revolucionário: <strong>modelagem baseada em consentimento</strong>.
             </p>
 
@@ -211,7 +214,7 @@ const GoogleConsentModeV2Post = () => {
                 Analogia simples
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-muted-foreground">
+            <CardContent className="text-foreground">
               <p className="mb-3">
                 É como um restaurante perguntar: "Posso anotar seu nome para a reserva?"
               </p>
@@ -251,8 +254,8 @@ const GoogleConsentModeV2Post = () => {
                   Conformidade Legal
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+            <CardContent>
+                <ul className="space-y-2 text-sm text-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                     <span>Cumpra a LGPD com rigor (só carrega cookies se houver consentimento)</span>
@@ -272,8 +275,8 @@ const GoogleConsentModeV2Post = () => {
                   Performance Otimizada
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+            <CardContent>
+                <ul className="space-y-2 text-sm text-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                     <span>Mantenha modelos preditivos do Google Ads funcionando</span>
@@ -289,7 +292,7 @@ const GoogleConsentModeV2Post = () => {
 
           <Card className="border-l-4 border-l-destructive bg-destructive/5">
             <CardContent className="pt-6">
-              <p className="text-muted-foreground font-semibold">
+              <p className="text-foreground font-semibold">
                 Ignorar essa integração em 2026 é como dirigir um carro com o freio de mão puxado: você está seguindo a lei, mas sabotando seu próprio desempenho.
               </p>
             </CardContent>
@@ -320,7 +323,7 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 Nem toda plataforma de gestão de consentimento oferece suporte nativo ao Consent Mode V2. Verifique se a sua CMP está na lista oficial do Google ou permite configuração personalizada.
               </p>
 
@@ -330,10 +333,10 @@ const GoogleConsentModeV2Post = () => {
                   Soluções compatíveis no Brasil:
                 </h4>
                 <ul className="space-y-2 ml-7">
-                  <li className="text-muted-foreground">• AdOpt</li>
-                  <li className="text-muted-foreground">• Cookiebot</li>
-                  <li className="text-muted-foreground">• Usercentrics</li>
-                  <li className="text-muted-foreground">• OneTrust</li>
+                  <li className="text-foreground">• AdOpt</li>
+                  <li className="text-foreground">• Cookiebot</li>
+                  <li className="text-foreground">• Usercentrics</li>
+                  <li className="text-foreground">• OneTrust</li>
                 </ul>
               </div>
 
@@ -369,11 +372,11 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 Se você usa GTM (recomendado), siga este fluxo:
               </p>
 
-              <ol className="space-y-3 list-decimal list-inside text-muted-foreground">
+              <ol className="space-y-3 list-decimal list-inside text-foreground">
                 <li>Acesse seu <strong>Google Tag Manager</strong></li>
                 <li>Vá em <strong>"Configurações da Conta" → "Configurações de Consentimento"</strong></li>
                 <li>Ative as opções:
@@ -900,7 +903,7 @@ const GoogleConsentModeV2Post = () => {
                   4. O Consent Mode V2 funciona com Meta Pixel?
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-muted-foreground">
+            <CardContent className="text-foreground">
                 Não. O Meta tem seu próprio sistema (Advanced Matching + Aggregated Event Measurement). Você precisará configurar separadamente para Facebook/Instagram.
               </CardContent>
             </Card>
@@ -911,7 +914,7 @@ const GoogleConsentModeV2Post = () => {
                   5. Onde encontro a documentação oficial do Google sobre Consent Mode V2?
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-muted-foreground">
+              <CardContent className="text-foreground">
                 Acesse o{" "}
                 <a 
                   href="https://developers.google.com/tag-platform/security/guides/consent" 
@@ -943,6 +946,10 @@ const GoogleConsentModeV2Post = () => {
         
         <AuthorBio />
       </article>
+
+      <BlogSidebar />
+        </div>
+      </div>
 
       <Footer />
     </div>
