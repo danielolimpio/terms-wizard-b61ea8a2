@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FileText, Scale, Shield, AlertTriangle, Users, Lock, Cookie } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function TermsOfUsePage() {
   return (
@@ -9,7 +11,10 @@ export default function TermsOfUsePage() {
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
+              <Scale className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
               Termos de Uso
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -17,25 +22,27 @@ export default function TermsOfUsePage() {
             </p>
           </div>
 
-          <div className="prose prose-lg max-w-none text-muted-foreground">
-            <div className="space-y-8">
-              <p className="text-base">
-                <strong>Última atualização:</strong> 7 de novembro de 2025
-              </p>
+          <div className="prose prose-lg max-w-none">
+            <div className="space-y-6">
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <p className="text-sm text-muted-foreground mb-6">
+                    <strong>Última atualização:</strong> 7 de novembro de 2025
+                  </p>
 
-              <p>
-                Bem-vindo(a) ao nosso site. Estes Termos de Uso ("Termos") regem o acesso e utilização do serviço online disponibilizado em{" "}
-                <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  https://politicadeprivacidade.org/
-                </a>{" "}
-                (doravante denominado "Site"). Ao acessar, navegar ou utilizar qualquer funcionalidade deste Site, você declara que leu, entendeu e concorda integralmente com todos os termos, condições e obrigações descritos abaixo.
-              </p>
+                  <p className="text-base text-foreground leading-relaxed mb-6">
+                    Bem-vindo(a) ao nosso site. Estes Termos de Uso ("Termos") regem o acesso e utilização do serviço online disponibilizado em{" "}
+                    <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
+                      https://politicadeprivacidade.org/
+                    </a>{" "}
+                    (doravante denominado "Site"). Ao acessar, navegar ou utilizar qualquer funcionalidade deste Site, você declara que leu, entendeu e concorda integralmente com todos os termos, condições e obrigações descritos abaixo.
+                  </p>
 
-              <p>
-                Este documento é um contrato legal entre você e o proprietário do Site. Caso não concorde com qualquer parte destes Termos, recomendamos que interrompa imediatamente o uso do Site e não retorne até que sua decisão seja reconsiderada.
-              </p>
-
-              <hr className="my-8 border-border" />
+                  <p className="text-base text-foreground leading-relaxed">
+                    Este documento é um contrato legal entre você e o proprietário do Site. Caso não concorde com qualquer parte destes Termos, recomendamos que interrompa imediatamente o uso do Site e não retorne até que sua decisão seja reconsiderada.
+                  </p>
+                </CardContent>
+              </Card>
 
               <section>
                 <h2 className="text-2xl font-semibold text-foreground mb-4">1. ACEITAÇÃO DOS TERMOS DE USO</h2>

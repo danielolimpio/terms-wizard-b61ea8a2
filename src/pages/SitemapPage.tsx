@@ -19,6 +19,9 @@ export default function SitemapPage() {
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-2xl mb-6 shadow-lg">
+              <FileText className="h-10 w-10 text-white" />
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
               Mapa do Site
             </h1>
@@ -29,9 +32,11 @@ export default function SitemapPage() {
 
           <div className="grid gap-8">
             {/* Páginas Principais */}
-            <section className="bg-card border border-border rounded-lg p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-                <FileText className="text-primary" />
+            <section className="bg-card border-2 border-primary/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="p-2 bg-primary/20 rounded-lg">
+                  <FileText className="text-primary h-6 w-6" />
+                </div>
                 Páginas Principais
               </h2>
               <ul className="grid md:grid-cols-2 gap-3">
@@ -74,9 +79,11 @@ export default function SitemapPage() {
             </section>
 
             {/* Geradores de Políticas */}
-            <section className="bg-card border border-border rounded-lg p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-                <Shield className="text-primary" />
+            <section className="bg-card border-2 border-primary/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="p-2 bg-primary/20 rounded-lg">
+                  <Shield className="text-primary h-6 w-6" />
+                </div>
                 Geradores de Políticas
               </h2>
               <ul className="grid md:grid-cols-2 gap-3">
@@ -156,9 +163,11 @@ export default function SitemapPage() {
             </section>
 
             {/* Páginas Informativas */}
-            <section className="bg-card border border-border rounded-lg p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-                <Info className="text-primary" />
+            <section className="bg-card border-2 border-primary/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="p-2 bg-primary/20 rounded-lg">
+                  <Info className="text-primary h-6 w-6" />
+                </div>
                 Páginas Informativas
               </h2>
               <ul className="grid md:grid-cols-2 gap-3">
@@ -184,9 +193,11 @@ export default function SitemapPage() {
             </section>
 
             {/* Posts do Blog */}
-            <section className="bg-card border border-border rounded-lg p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-                <Newspaper className="text-primary" />
+            <section className="bg-card border-2 border-primary/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="p-2 bg-primary/20 rounded-lg">
+                  <Newspaper className="text-primary h-6 w-6" />
+                </div>
                 Artigos do Blog
               </h2>
               <ul className="space-y-3">
