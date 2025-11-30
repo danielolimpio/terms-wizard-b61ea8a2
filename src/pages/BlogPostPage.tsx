@@ -7,6 +7,7 @@ import { Shield, Lock, FileText, CheckCircle, AlertTriangle, Users, Globe, Scale
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function BlogPostPage() {
   const navigate = useNavigate();
@@ -431,6 +432,8 @@ export default function BlogPostPage() {
                 Porque hoje, em 2026, a privacidade não é um detalhe. É o novo padrão de qualidade.
               </p>
             </div>
+
+            <SocialShare title="Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito (2026)" />
 
             {/* Autor */}
             <AuthorBio />

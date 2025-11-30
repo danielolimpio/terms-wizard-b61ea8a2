@@ -7,6 +7,7 @@ import { Shield, AlertTriangle, CheckCircle2, FileText, Scale, Lock, Users, Eye,
 import heroImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function TermosUsoSegurancaJuridicaPost() {
   const navigate = useNavigate();
@@ -559,6 +560,8 @@ export default function TermosUsoSegurancaJuridicaPost() {
                 <Button variant="ghost" size="sm">LinkedIn</Button>
               </div>
             </div>
+
+            <SocialShare title="Como Escrever os Termos do Seu Site para Evitar Processos e Garantir Segurança Jurídica" />
 
             {/* Autor */}
             <AuthorBio />
