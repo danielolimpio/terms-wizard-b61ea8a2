@@ -33,7 +33,10 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ name: "Sobre Nós", url: "/sobre" }]} />
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-2xl mb-6 shadow-lg">
+              <Globe className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
               Sobre o Gerador de Políticas
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -42,15 +45,17 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <span>🎯</span>
-                  Nossa Missão
+            <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="bg-gradient-to-br from-blue-500/10 to-blue-500/5">
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-500/20 rounded-lg">
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <span>Nossa Missão</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground leading-relaxed">
                   Democratizar o acesso a documentos legais de qualidade, permitindo que 
                   qualquer pessoa ou empresa possa gerar políticas profissionais de forma 
                   rápida, fácil e acessível.
@@ -58,15 +63,17 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <span>🚀</span>
-                  Nossa Visão
+            <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="bg-gradient-to-br from-purple-500/10 to-purple-500/5">
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-2 bg-purple-500/20 rounded-lg">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <span>Nossa Visão</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground leading-relaxed">
                   Ser a principal referência em geração automatizada de políticas legais, 
                   ajudando milhares de empresas a se manterem em conformidade legal de 
                   forma simples e eficiente.
@@ -75,8 +82,8 @@ export default function AboutPage() {
             </Card>
           </div>
 
-          <Card className="mb-12">
-            <CardHeader>
+          <Card className="mb-12 border-2 shadow-lg">
+            <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10">
               <CardTitle>Por Que Escolher Nosso Gerador?</CardTitle>
               <CardDescription>
                 Vantagens que fazem a diferença
@@ -151,8 +158,8 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
+          <Card className="border-2 shadow-lg">
+            <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10">
               <CardTitle>Nossa História</CardTitle>
             </CardHeader>
             <CardContent>
@@ -173,8 +180,8 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card className="mt-12">
-            <CardHeader>
+          <Card className="mt-12 border-2 shadow-lg">
+            <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10">
               <CardTitle>Sobre o Autor – Especialista em Conformidade Digital e Proteção de Dados</CardTitle>
             </CardHeader>
             <CardContent>
