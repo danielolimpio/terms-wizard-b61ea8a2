@@ -78,7 +78,7 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               </p>
 
               <p className="mb-6">
-                A verdade é simples: a Política de Cookies não é um formulário burocrático para cumprir exigência legal. É um pacto de confiança com seu usuário. E, se você não entende como construí-lo corretamente, cada visitante que entra no seu site pode, sem saber, estar exposto — e você, exposto a multas de até 2% do faturamento global.
+                A verdade é simples: a Política de Cookies não é um formulário burocrático para cumprir exigência legal. É um pacto de confiança com seu usuário. E, se você não entende como construí-lo corretamente, cada visitante que entra no seu site pode, sem saber, estar exposto — e você, exposto a multas de até 2% do faturamento global. <a href="/gerador-politica-privacidade" className="text-primary hover:underline font-semibold">(Confira também nosso guia completo sobre Política de Privacidade)</a>
               </p>
 
               <p className="mb-6">
@@ -103,7 +103,7 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               </p>
 
               <p className="mb-6">
-                A LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018) e o GDPR (Regulamento Geral de Proteção de Dados da União Europeia) são claros: o consentimento deve ser livre, específico, informado e inequívoco.
+                A <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018)</a> e o <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">GDPR (Regulamento Geral de Proteção de Dados da União Europeia)</a> são claros: o consentimento deve ser livre, específico, informado e inequívoco.
               </p>
 
               <div className="bg-primary/5 border-l-4 border-primary p-6 my-8 rounded-r-lg">
@@ -152,7 +152,7 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               </p>
 
               <p className="mb-6">
-                Mas, quando esses bilhetes são lidos por terceiros — anunciantes, redes sociais, analíticos não declarados — eles deixam de ser úteis e viram rastros digitais.
+                Mas, quando esses bilhetes são lidos por terceiros — anunciantes, redes sociais, analíticos não declarados — eles deixam de ser úteis e viram rastros digitais. Por isso, é essencial também ter <a href="/gerador-termos-uso" className="text-primary hover:underline font-semibold">Termos de Uso claros</a> que complementem sua Política de Cookies.
               </p>
 
               <p className="mb-6">Existem três tipos principais:</p>
@@ -206,7 +206,7 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               </p>
 
               <p className="mb-6">
-                A ANPD, desde 2025, passou a auditar automaticamente sites com mais de 10 mil visitas/mês usando ferramentas de varredura de consentimento. E a União Europeia, com a nova ePrivacy Regulation em fase final de aprovação, vai exigir que todos os scripts de rastreamento sejam bloqueados por padrão, mesmo antes do consentimento — algo que já é obrigatório em países como Alemanha e França.
+                A <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">ANPD (Autoridade Nacional de Proteção de Dados)</a>, desde 2025, passou a auditar automaticamente sites com mais de 10 mil visitas/mês usando ferramentas de varredura de consentimento. E a União Europeia, com a nova ePrivacy Regulation em fase final de aprovação, vai exigir que todos os scripts de rastreamento sejam bloqueados por padrão, mesmo antes do consentimento — algo que já é obrigatório em países como Alemanha e França, seguindo o <a href="https://iabeurope.eu/tcf-2-0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">IAB Europe Transparency & Consent Framework (TCF v2.2)</a>.
               </p>
 
               <p className="mb-8">
@@ -755,7 +755,7 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                 <div className="border-l-4 border-primary pl-6">
                   <h3 className="font-semibold text-lg mb-2">7. Como sei se meu banner estará funcionando em 2026?</h3>
                   <p>
-                    Teste em modo anônimo. Recuse todos os cookies. Verifique se os scripts de marketing (Google Analytics, Meta Pixel, TikTok) não carregam. Use o Cookiebot Scanner — ele agora detecta scripts escondidos em iframes e códigos dinâmicos.
+                    Teste em modo anônimo. Recuse todos os cookies. Verifique se os scripts de marketing (Google Analytics, Meta Pixel, TikTok) não carregam. Use o <a href="https://www.cookiebot.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Cookiebot Scanner</a> — ele agora detecta scripts escondidos em iframes e códigos dinâmicos.
                   </p>
                 </div>
               </div>
@@ -797,51 +797,6 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               <p className="text-muted-foreground italic">
                 Se você gostou deste guia, compartilhe com outro empreendedor que ainda está usando banners de 2020. A privacidade não é um detalhe técnico — é um direito humano. E você pode ser o motivo de alguém não ser multado.
               </p>
-
-              <div className="mt-12 pt-8 border-t border-border">
-                <h3 className="text-xl font-semibold mb-4">Links Internos Recomendados</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="https://politicadeprivacidade.org/" className="text-primary hover:underline">
-                      Gerador de Política de Privacidade Grátis
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026" className="text-primary hover:underline">
-                      Política de Privacidade: O Que É e Por Que Precisa (2026)
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica" className="text-primary hover:underline">
-                      Como Escrever Termos de Uso para Seu Site
-                    </a>
-                  </li>
-                </ul>
-
-                <h3 className="text-xl font-semibold mb-4 mt-8">Links Externos de Autoridade (2026)</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      ANPD - Autoridade Nacional de Proteção de Dados
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      GDPR - Official EU Website
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://iabeurope.eu/tcf-2-0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      IAB Europe – Transparency & Consent Framework (TCF v2.2)
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.cookiebot.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      Cookiebot - Cookie Scanner
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
 
             <div className="mt-12 pt-8 border-t border-border">
