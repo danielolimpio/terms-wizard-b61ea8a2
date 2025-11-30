@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -39,6 +40,11 @@ import { SocialShare } from "@/components/SocialShare";
 import blogDPOImage from "@/assets/blog-dpo-lgpd.jpg";
 
 export default function DPOnaLGPDPost() {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
