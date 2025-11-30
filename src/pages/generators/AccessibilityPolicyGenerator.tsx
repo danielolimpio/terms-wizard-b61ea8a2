@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { getPolicyById } from "@/lib/policies";
 import { generateAccessibilityPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -51,6 +52,7 @@ const AccessibilityPolicyGenerator = () => {
       <Header />
       <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

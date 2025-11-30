@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { FileText, Scale, Shield, AlertTriangle, Users, Lock, Cookie, Copyright } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -324,6 +325,7 @@ export default function TermsOfUsePage() {
       </main>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
