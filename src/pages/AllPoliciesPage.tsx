@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { POLICY_TYPES } from "@/lib/policies";
+import { FileText } from "lucide-react";
 
 const policyDetails = {
   'privacy-policy': {
@@ -108,30 +109,35 @@ export default function AllPoliciesPage() {
       <main className="flex-1 py-8">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-          <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-            Todas as Políticas Disponíveis
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça todos os tipos de políticas que você pode gerar para seu site ou negócio. 
-            Cada política é essencial para diferentes aspectos legais e de compliance.
-          </p>
-        </div>
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-2xl mb-6 shadow-lg">
+              <FileText className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
+              Todas as Políticas Disponíveis
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Conheça todos os tipos de políticas que você pode gerar para seu site ou negócio. 
+              Cada política é essencial para diferentes aspectos legais e de compliance.
+            </p>
+          </div>
 
         <div className="grid grid-cols-1 gap-8">
           {POLICY_TYPES.map((policy) => {
             const details = policyDetails[policy.id as keyof typeof policyDetails];
             return (
-              <Card key={policy.id} className="w-full">
-                <CardHeader>
+              <Card key={policy.id} className="w-full border-2 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10 border-b-2 border-primary/20">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{policy.icon}</span>
+                    <div className="p-3 bg-primary/20 rounded-xl">
+                      <span className="text-3xl">{policy.icon}</span>
+                    </div>
                     <CardTitle className="text-xl md:text-2xl">{policy.name}</CardTitle>
                   </div>
                   <CardDescription className="text-base">
                     {policy.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-6">
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-4">
