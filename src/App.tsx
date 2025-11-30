@@ -20,6 +20,7 @@ import PostOQueECMP from "./pages/blog/OQueECMPPost";
 import MultasLGPD2025Post from "./pages/blog/MultasLGPD2025Post";
 import GoogleConsentModeV2Post from "./pages/blog/GoogleConsentModeV2Post";
 import DPOnaLGPDPost from "./pages/blog/DPOnaLGPDPost";
+import LGPDMarketingDigitalPost from "./pages/blog/LGPDMarketingDigitalPost";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
@@ -116,6 +117,7 @@ const App = () => {
           <Route path="/blog/multas-lgpd-2025-valores-casos-reais" element={<MultasLGPD2025Post />} />
           <Route path="/blog/google-consent-mode-v2-implementar" element={<GoogleConsentModeV2Post />} />
           <Route path="/blog/dpo-lgpd-quem-pode-ser" element={<DPOnaLGPDPost />} />
+          <Route path="/blog/lgpd-marketing-digital" element={<LGPDMarketingDigitalPost />} />
             <Route path="/ajuda" element={<HelpPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/contato" element={<ContactPage />} />

@@ -6,6 +6,7 @@ import blogImage5 from "@/assets/blog-o-que-e-cmp.jpg";
 import blogImage6 from "@/assets/blog-multas-lgpd-2025.jpg";
 import blogImage7 from "@/assets/blog-google-consent-mode-v2.jpg";
 import blogImage8 from "@/assets/blog-dpo-lgpd.jpg";
+import blogImage9 from "@/assets/blog-lgpd-marketing-digital.jpg";
 
 export interface BlogArticle {
   id: string;
@@ -20,6 +21,17 @@ export interface BlogArticle {
 }
 
 export const blogArticles: BlogArticle[] = [
+  {
+    id: "9",
+    title: "LGPD e Marketing Digital: Como Adaptar Campanhas Sem Perder Performance",
+    excerpt: "Aprenda a alinhar campanhas de e-mail, Meta e Google Ads à LGPD sem impactar negativamente seus resultados.",
+    image: blogImage9,
+    readTime: "15 min",
+    slug: "/blog/lgpd-marketing-digital",
+    category: "Marketing Digital",
+    tags: ["lgpd", "marketing-digital", "compliance", "google-ads", "meta-ads"],
+    publishedAt: "2025-11-30"
+  },
   {
     id: "1",
     title: "Política de Privacidade: O Que É, Por Que Você Precisa e Modelo Gratuito 2026",
@@ -123,7 +135,8 @@ export const policyTypeToTags: Record<string, string[]> = {
   "transparency-policy": ["compliance", "transparência", "ética"],
   "comment-moderation": ["moderação", "comentários", "compliance"],
   "sustainability-policy": ["sustentabilidade", "responsabilidade", "ética"],
-  "accessibility-policy": ["acessibilidade", "inclusão", "wcag"]
+  "accessibility-policy": ["acessibilidade", "inclusão", "wcag"],
+  "marketing-digital": ["marketing-digital", "lgpd", "compliance", "google-ads", "meta-ads"]
 };
 
 /**
