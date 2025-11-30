@@ -1,5 +1,5 @@
 // Transparency Policy Generator Page
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -11,6 +11,10 @@ import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 const TransparencyPolicyGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
   const policyType = getPolicyById('transparency-policy');
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   if (!policyType) {
     return <div>Política não encontrada</div>;
