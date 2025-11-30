@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FileText, Scale, Shield, AlertTriangle, Users, Lock, Cookie } from "lucide-react";
+import { FileText, Scale, Shield, AlertTriangle, Users, Lock, Cookie, Copyright } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function TermsOfUsePage() {
@@ -44,169 +44,234 @@ export default function TermsOfUsePage() {
                 </CardContent>
               </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">1. ACEITAÇÃO DOS TERMOS DE USO</h2>
-                <p>
-                  O simples acesso a este Site já constitui aceitação plena e irrestrita destes Termos de Uso, bem como das demais políticas aqui referenciadas, incluindo a Política de Privacidade e a Política de Cookies. Recomendamos que você leia este documento com atenção antes de continuar navegando, pois ele define seus direitos e deveres como usuário.
-                </p>
-                <p>
-                  Ao utilizar nossos serviços, você afirma ser maior de 18 anos, possuir capacidade legal para celebrar contratos e estar ciente das implicações legais decorrentes do uso do Site.
-                </p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <FileText className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">1. ACEITAÇÃO DOS TERMOS DE USO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    O simples acesso a este Site já constitui aceitação plena e irrestrita destes Termos de Uso, bem como das demais políticas aqui referenciadas, incluindo a Política de Privacidade e a Política de Cookies. Recomendamos que você leia este documento com atenção antes de continuar navegando, pois ele define seus direitos e deveres como usuário.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Ao utilizar nossos serviços, você afirma ser maior de 18 anos, possuir capacidade legal para celebrar contratos e estar ciente das implicações legais decorrentes do uso do Site.
+                  </p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">2. ALTERAÇÕES NESTE DOCUMENTO</h2>
-                <p>
-                  Nos reservamos o direito de modificar, atualizar ou substituir estes Termos de Uso a qualquer momento, conforme necessário, seja por mudanças na legislação, nas funcionalidades do Site ou nas práticas de segurança e privacidade.
-                </p>
-                <p>
-                  Quando houver alterações significativas — especialmente aquelas que afetem diretamente seus direitos como usuário — faremos esforços razoáveis para notificá-lo com antecedência mínima de 30 dias, por meio de aviso destacado no Site ou por e-mail, caso você tenha se cadastrado.
-                </p>
-                <p>
-                  O uso contínuo do Site após a publicação da nova versão dos Termos será considerado como aceitação tácita das modificações.
-                </p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <AlertTriangle className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">2. ALTERAÇÕES NESTE DOCUMENTO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Nos reservamos o direito de modificar, atualizar ou substituir estes Termos de Uso a qualquer momento, conforme necessário, seja por mudanças na legislação, nas funcionalidades do Site ou nas práticas de segurança e privacidade.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Quando houver alterações significativas — especialmente aquelas que afetem diretamente seus direitos como usuário — faremos esforços razoáveis para notificá-lo com antecedência mínima de 30 dias, por meio de aviso destacado no Site ou por e-mail, caso você tenha se cadastrado.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    O uso contínuo do Site após a publicação da nova versão dos Termos será considerado como aceitação tácita das modificações.
+                  </p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">3. USO PERMITIDO DO SITE</h2>
-                <p>Você está autorizado a usar este Site para os seguintes fins:</p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Navegar livremente pelas páginas públicas;</li>
-                  <li>Ler, baixar ou compartilhar conteúdos para uso pessoal e não comercial;</li>
-                  <li>Interagir com ferramentas, formulários ou recursos disponíveis;</li>
-                  <li>Entrar em contato conosco por meio dos canais oficiais fornecidos.</li>
-                </ul>
-                <p>Todos os direitos não expressamente concedidos neste documento são reservados.</p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Shield className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">3. USO PERMITIDO DO SITE</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">Você está autorizado a usar este Site para os seguintes fins:</p>
+                  <ul className="list-disc list-inside space-y-3 ml-4 text-base text-foreground leading-relaxed">
+                    <li>Navegar livremente pelas páginas públicas;</li>
+                    <li>Ler, baixar ou compartilhar conteúdos para uso pessoal e não comercial;</li>
+                    <li>Interagir com ferramentas, formulários ou recursos disponíveis;</li>
+                    <li>Entrar em contato conosco por meio dos canais oficiais fornecidos.</li>
+                  </ul>
+                  <p className="text-base text-foreground leading-relaxed mt-4">Todos os direitos não expressamente concedidos neste documento são reservados.</p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">4. USO PROIBIDO E RESTRIÇÕES</h2>
-                <p>
-                  Você se compromete a não utilizar o Site de forma que viole qualquer lei federal, estadual, municipal ou internacional aplicável. É expressamente proibido:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Utilizar o Site para atividades ilegais, fraudulentas, enganosas ou maliciosas;</li>
-                  <li>Publicar, transmitir ou distribuir conteúdos difamatórios, ofensivos, obscenos, ameaçadores ou que incitem violência ou discriminação;</li>
-                  <li>Realizar tentativas de acesso não autorizado a sistemas, servidores, bancos de dados ou áreas restritas do Site;</li>
-                  <li>Empregar bots, spiders, scrapers ou quaisquer ferramentas automatizadas para coletar dados sem permissão;</li>
-                  <li>Interferir, interromper ou sobrecarregar o funcionamento técnico do Site;</li>
-                  <li>Copiar, reproduzir, revender ou explorar qualquer parte do Site para fins comerciais sem autorização prévia;</li>
-                  <li>Coletar ou armazenar dados pessoais de outros usuários sem consentimento;</li>
-                  <li>Fazer uso indevido da marca, logotipo ou identidade visual do Site.</li>
-                </ul>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <AlertTriangle className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">4. USO PROIBIDO E RESTRIÇÕES</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Você se compromete a não utilizar o Site de forma que viole qualquer lei federal, estadual, municipal ou internacional aplicável. É expressamente proibido:
+                  </p>
+                  <ul className="list-disc list-inside space-y-3 ml-4 text-base text-foreground leading-relaxed">
+                    <li>Utilizar o Site para atividades ilegais, fraudulentas, enganosas ou maliciosas;</li>
+                    <li>Publicar, transmitir ou distribuir conteúdos difamatórios, ofensivos, obscenos, ameaçadores ou que incitem violência ou discriminação;</li>
+                    <li>Realizar tentativas de acesso não autorizado a sistemas, servidores, bancos de dados ou áreas restritas do Site;</li>
+                    <li>Empregar bots, spiders, scrapers ou quaisquer ferramentas automatizadas para coletar dados sem permissão;</li>
+                    <li>Interferir, interromper ou sobrecarregar o funcionamento técnico do Site;</li>
+                    <li>Copiar, reproduzir, revender ou explorar qualquer parte do Site para fins comerciais sem autorização prévia;</li>
+                    <li>Coletar ou armazenar dados pessoais de outros usuários sem consentimento;</li>
+                    <li>Fazer uso indevido da marca, logotipo ou identidade visual do Site.</li>
+                  </ul>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">5. PROPRIEDADE INTELECTUAL</h2>
-                <p>
-                  Todo o conteúdo presente neste Site — incluindo textos, artigos, vídeos, imagens, gráficos, logotipos, marcas registradas, códigos-fonte, designs e compilações de dados — é de propriedade exclusiva do proprietário do Site ou de seus parceiros e licenciadores.
-                </p>
-                <p>
-                  Esse conteúdo encontra-se protegido pelas leis brasileiras de direitos autorais (Lei nº 9.610/1998) e propriedade industrial (Lei nº 9.279/1996), bem como por tratados internacionais.
-                </p>
-                <p>
-                  Você recebe uma licença limitada, não exclusiva, intransferível e revogável para acessar e utilizar o conteúdo exclusivamente para fins pessoais, educacionais ou informativos. Qualquer outro uso — incluindo reprodução, modificação, distribuição ou venda — é estritamente proibido sem autorização por escrito.
-                </p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Copyright className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">5. PROPRIEDADE INTELECTUAL</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Todo o conteúdo presente neste Site — incluindo textos, artigos, vídeos, imagens, gráficos, logotipos, marcas registradas, códigos-fonte, designs e compilações de dados — é de propriedade exclusiva do proprietário do Site ou de seus parceiros e licenciadores.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Esse conteúdo encontra-se protegido pelas leis brasileiras de direitos autorais (Lei nº 9.610/1998) e propriedade industrial (Lei nº 9.279/1996), bem como por tratados internacionais.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Você recebe uma licença limitada, não exclusiva, intransferível e revogável para acessar e utilizar o conteúdo exclusivamente para fins pessoais, educacionais ou informativos. Qualquer outro uso — incluindo reprodução, modificação, distribuição ou venda — é estritamente proibido sem autorização por escrito.
+                  </p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">6. LIMITAÇÃO DE RESPONSABILIDADE</h2>
-                <p>
-                  O conteúdo disponibilizado neste Site tem natureza meramente informativa, educacional ou ilustrativa. Ele não constitui, sob qualquer hipótese, aconselhamento jurídico, financeiro, médico, técnico ou profissional de qualquer tipo.
-                </p>
-                <p>
-                  Não garantimos que as informações sejam sempre precisas, completas, atualizadas ou livres de erros. O uso das informações aqui contidas é de inteira responsabilidade do usuário.
-                </p>
-                <p>
-                  Em nenhuma circunstância o proprietário do Site será responsabilizado por danos diretos, indiretos, incidentais, especiais, consequenciais ou punitivos decorrentes do uso ou incapacidade de uso do Site, mesmo que tenhamos sido informados da possibilidade de tais danos.
-                </p>
-                <p>
-                  Isso inclui, mas não se limita a: perda de lucros, dados, reputação, oportunidades comerciais ou interrupção de negócios.
-                </p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Shield className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">6. LIMITAÇÃO DE RESPONSABILIDADE</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    O conteúdo disponibilizado neste Site tem natureza meramente informativa, educacional ou ilustrativa. Ele não constitui, sob qualquer hipótese, aconselhamento jurídico, financeiro, médico, técnico ou profissional de qualquer tipo.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Não garantimos que as informações sejam sempre precisas, completas, atualizadas ou livres de erros. O uso das informações aqui contidas é de inteira responsabilidade do usuário.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Em nenhuma circunstância o proprietário do Site será responsabilizado por danos diretos, indiretos, incidentais, especiais, consequenciais ou punitivos decorrentes do uso ou incapacidade de uso do Site, mesmo que tenhamos sido informados da possibilidade de tais danos.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Isso inclui, mas não se limita a: perda de lucros, dados, reputação, oportunidades comerciais ou interrupção de negócios.
+                  </p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">7. LINKS PARA SITES DE TERCEIROS</h2>
-                <p>
-                  Este Site pode conter links para plataformas externas, redes sociais, serviços de pagamento, anunciantes ou parceiros afiliados. Esses links são fornecidos apenas como conveniência aos usuários.
-                </p>
-                <p>
-                  Não temos controle sobre o conteúdo, as políticas de privacidade, a segurança ou as práticas desses sites e, portanto, não assumimos qualquer responsabilidade por eles.
-                </p>
-                <p>
-                  A inclusão de um link não implica endosso, patrocínio ou recomendação formal. Recomendamos que você revise os termos e políticas de cada site visitado antes de fornecer dados ou realizar transações.
-                </p>
-              </section>
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <FileText className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">7. LINKS PARA SITES DE TERCEIROS</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Este Site pode conter links para plataformas externas, redes sociais, serviços de pagamento, anunciantes ou parceiros afiliados. Esses links são fornecidos apenas como conveniência aos usuários.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Não temos controle sobre o conteúdo, as políticas de privacidade, a segurança ou as práticas desses sites e, portanto, não assumimos qualquer responsabilidade por eles.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    A inclusão de um link não implica endosso, patrocínio ou recomendação formal. Recomendamos que você revise os termos e políticas de cada site visitado antes de fornecer dados ou realizar transações.
+                  </p>
+                </CardContent>
+              </Card>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">8. COOKIES E TECNOLOGIAS DE RASTREAMENTO</h2>
-                <p>
-                  Utilizamos cookies, pixels, tags e outras tecnologias de rastreamento para melhorar sua experiência de navegação, analisar padrões de tráfego, personalizar conteúdos e exibir anúncios relevantes.
-                </p>
-                <p>
-                  Ao continuar navegando, você concorda com o uso dessas tecnologias. Para saber mais sobre como elas funcionam e como gerenciá-las, consulte nossa{" "}
-                  <a href="/politica-cookies" className="text-primary hover:underline">
-                    Política de Cookies
-                  </a>
-                  .
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">9. TRATAMENTO DE DADOS PESSOAIS</h2>
-                <p>
-                  Eventuais dados pessoais coletados (como nome, e-mail, IP, navegador) são tratados com base nos princípios da legalidade, necessidade e transparência, conforme previsto na <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
-                </p>
-                <p>
-                  Para mais detalhes sobre como seus dados são coletados, usados, armazenados e protegidos, consulte nossa{" "}
-                  <a href="/politica-privacidade" className="text-primary hover:underline">
-                    Política de Privacidade
-                  </a>
-                  .
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">10. RESTRIÇÃO DE IDADE</h2>
-                <p>
-                  Este Site é destinado exclusivamente a pessoas maiores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes menores de 18 anos. Caso tomemos conhecimento de que dados foram coletados acidentalmente, tomaremos providências imediatas para excluí-los.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">11. SUSPENSÃO OU ENCERRAMENTO DE ACESSO</h2>
-                <p>
-                  Reservamo-nos o direito de suspender, restringir ou encerrar seu acesso ao Site a qualquer momento, sem aviso prévio, caso detectemos violação destes Termos, comportamento fraudulento, uso abusivo ou risco à segurança do serviço.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">12. LEI APLICÁVEL E JURISDIÇÃO</h2>
-                <p>
-                  Estes Termos são regidos pelas leis da República Federativa do Brasil, independentemente de conflitos de leis. Qualquer disputa decorrente do uso deste Site será resolvida nos tribunais da comarca de São Paulo, Estado de São Paulo, com renúncia expressa a qualquer outro foro.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">13. CONTATO</h2>
-                <p>
-                  Se você tiver dúvidas, sugestões ou desejar exercer seus direitos relacionados à proteção de dados, entre em contato conosco pelos seguintes canais:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>
-                    <strong>E-mail:</strong>{" "}
-                    <a href="mailto:contato@politicasdeprivacidade.org" className="text-primary hover:underline">
-                      contato@politicasdeprivacidade.org
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Cookie className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">8. COOKIES E TECNOLOGIAS DE RASTREAMENTO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Utilizamos cookies, pixels, tags e outras tecnologias de rastreamento para melhorar sua experiência de navegação, analisar padrões de tráfego, personalizar conteúdos e exibir anúncios relevantes.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Ao continuar navegando, você concorda com o uso dessas tecnologias. Para saber mais sobre como elas funcionam e como gerenciá-las, consulte nossa{" "}
+                    <a href="/politica-cookies" className="text-primary hover:underline">
+                      Política de Cookies
                     </a>
-                  </li>
-                  <li>
-                    <strong>Site:</strong>{" "}
-                    <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      https://politicadeprivacidade.org/
+                    .
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Lock className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">9. TRATAMENTO DE DADOS PESSOAIS</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Eventuais dados pessoais coletados (como nome, e-mail, IP, navegador) são tratados com base nos princípios da legalidade, necessidade e transparência, conforme previsto na <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
+                  </p>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Para mais detalhes sobre como seus dados são coletados, usados, armazenados e protegidos, consulte nossa{" "}
+                    <a href="/politica-privacidade" className="text-primary hover:underline">
+                      Política de Privacidade
                     </a>
-                  </li>
-                </ul>
-              </section>
+                    .
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Users className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">10. RESTRIÇÃO DE IDADE</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Este Site é destinado exclusivamente a pessoas maiores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes menores de 18 anos. Caso tomemos conhecimento de que dados foram coletados acidentalmente, tomaremos providências imediatas para excluí-los.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <AlertTriangle className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">11. SUSPENSÃO OU ENCERRAMENTO DE ACESSO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Reservamo-nos o direito de suspender, restringir ou encerrar seu acesso ao Site a qualquer momento, sem aviso prévio, caso detectemos violação destes Termos, comportamento fraudulento, uso abusivo ou risco à segurança do serviço.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Scale className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">12. LEI APLICÁVEL E JURISDIÇÃO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed">
+                    Estes Termos são regidos pelas leis da República Federativa do Brasil, independentemente de conflitos de leis. Qualquer disputa decorrente do uso deste Site será resolvida nos tribunais da comarca de São Paulo, Estado de São Paulo, com renúncia expressa a qualquer outro foro.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-500/20 shadow-md">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <FileText className="h-6 w-6 text-purple-500" />
+                    <h2 className="text-2xl font-semibold text-foreground">13. CONTATO</h2>
+                  </div>
+                  <p className="text-base text-foreground leading-relaxed mb-4">
+                    Se você tiver dúvidas, sugestões ou desejar exercer seus direitos relacionados à proteção de dados, entre em contato conosco pelos seguintes canais:
+                  </p>
+                  <ul className="list-disc list-inside space-y-3 ml-4 text-base text-foreground leading-relaxed">
+                    <li>
+                      <strong>E-mail:</strong>{" "}
+                      <a href="mailto:contato@politicasdeprivacidade.org" className="text-primary hover:underline">
+                        contato@politicasdeprivacidade.org
+                      </a>
+                    </li>
+                    <li>
+                      <strong>Site:</strong>{" "}
+                      <a href="https://politicadeprivacidade.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        https://politicadeprivacidade.org/
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
 
               <hr className="my-8 border-border" />
 
