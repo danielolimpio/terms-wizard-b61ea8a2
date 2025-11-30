@@ -13,6 +13,7 @@ import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
 import blogCMPImage from "@/assets/blog-o-que-e-cmp.jpg";
 import blogMultasImage from "@/assets/blog-multas-lgpd-2025.jpg";
+import blogConsentModeImage from "@/assets/blog-google-consent-mode-v2.jpg";
 
 interface BlogPost {
   id: string;
@@ -86,10 +87,20 @@ export default function BlogPage() {
       id: 'featured-6',
       title: 'Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades',
       meta_description: 'Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas.',
-      categories: ['LGPD', 'Compliance'],
-      created_at: '2025-11-30',
+      categories: ['LGPD', 'Multas', 'Compliance'],
+      created_at: '2025-01-30',
       slug: 'multas-lgpd-2025-valores-casos-reais',
       image: blogMultasImage,
+      featured: false
+    },
+    {
+      id: 'featured-7',
+      title: 'Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026',
+      meta_description: 'Guia prático para implementar o Consent Mode V2 do Google com LGPD, sem perder conversões nem tráfego.',
+      categories: ['Cookies', 'Implementação', 'LGPD'],
+      created_at: '2025-01-30',
+      slug: 'google-consent-mode-v2-implementar',
+      image: blogConsentModeImage,
       featured: false
     }
   ];
