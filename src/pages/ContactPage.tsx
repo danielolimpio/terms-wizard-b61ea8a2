@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { LocationMap } from "@/components/LocationMap";
+
 import { 
   MapPin, 
   Mail, 
@@ -304,11 +304,18 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0">
-                <LocationMap
-                  address="Av. Julia Freire, 1200 - Expedicionários, João Pessoa - PB"
-                  latitude={-7.1328}
-                  longitude={-34.8612}
-                />
+                <div className="w-full h-[400px] rounded-b-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.7!2d-34.8612!3d-7.1328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnNTguMSJTIDM0wrA1MSc0MC4zIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização no mapa"
+                  />
+                </div>
                 <div className="p-6 bg-muted/30 border-t">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
