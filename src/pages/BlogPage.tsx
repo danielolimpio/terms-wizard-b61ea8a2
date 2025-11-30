@@ -12,6 +12,7 @@ import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
 import blogCMPImage from "@/assets/blog-o-que-e-cmp.jpg";
+import blogMultasImage from "@/assets/blog-multas-lgpd-2025.jpg";
 
 interface BlogPost {
   id: string;
@@ -79,6 +80,16 @@ export default function BlogPage() {
       created_at: '2025-11-29',
       slug: 'o-que-e-cmp-plataforma-gestao-consentimento',
       image: blogCMPImage,
+      featured: false
+    },
+    {
+      id: 'featured-6',
+      title: 'Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades',
+      meta_description: 'Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas.',
+      categories: ['LGPD', 'Compliance'],
+      created_at: '2025-11-30',
+      slug: 'multas-lgpd-2025-valores-casos-reais',
+      image: blogMultasImage,
       featured: false
     }
   ];
