@@ -52,6 +52,20 @@ import CommentModerationGenerator from "./pages/generators/CommentModerationGene
 import AccessibilityPolicyGenerator from "./pages/generators/AccessibilityPolicyGenerator";
 import SustainabilityPolicyGenerator from "./pages/generators/SustainabilityPolicyGenerator";
 
+// Info pages for policies
+import NossaPrivacidadePage from "./pages/info/NossaPrivacidadePage";
+import UsoCookiesPage from "./pages/info/UsoCookiesPage";
+import NossosTermosPage from "./pages/info/NossosTermosPage";
+import PoliticaConteudoInfoPage from "./pages/info/PoliticaConteudoInfoPage";
+import ModeracaoComentariosInfoPage from "./pages/info/ModeracaoComentariosInfoPage";
+import PoliticaCookiesInfoPage from "./pages/info/PoliticaCookiesInfoPage";
+import PoliticaTransparenciaInfoPage from "./pages/info/PoliticaTransparenciaInfoPage";
+import PoliticaAntispamInfoPage from "./pages/info/PoliticaAntispamInfoPage";
+import PoliticaSustentabilidadeInfoPage from "./pages/info/PoliticaSustentabilidadeInfoPage";
+import PoliticaDireitosAutoraisInfoPage from "./pages/info/PoliticaDireitosAutoraisInfoPage";
+import PoliticaAcessibilidadeInfoPage from "./pages/info/PoliticaAcessibilidadeInfoPage";
+import PoliticaSegurancaInfoPage from "./pages/info/PoliticaSegurancaInfoPage";
+
 console.log("App loaded - generators imported:", {
   PrivacyPolicyGenerator,
   TermsOfUseGenerator,
@@ -131,6 +145,20 @@ const App = () => {
             <Route path="/politica-privacidade" element={<PrivacyPolicyPage />} />
             <Route path="/termos-uso" element={<TermsOfUsePage />} />
             <Route path="/politica-cookies" element={<CookiePolicyPage />} />
+            
+            {/* Policy info pages */}
+            <Route path="/nossa-privacidade" element={<NossaPrivacidadePage />} />
+            <Route path="/uso-cookies" element={<UsoCookiesPage />} />
+            <Route path="/nossos-termos" element={<NossosTermosPage />} />
+            <Route path="/politica-conteudo" element={<PoliticaConteudoInfoPage />} />
+            <Route path="/moderacao-comentarios" element={<ModeracaoComentariosInfoPage />} />
+            <Route path="/politica-cookies-info" element={<PoliticaCookiesInfoPage />} />
+            <Route path="/politica-transparencia" element={<PoliticaTransparenciaInfoPage />} />
+            <Route path="/politica-antispam" element={<PoliticaAntispamInfoPage />} />
+            <Route path="/politica-sustentabilidade" element={<PoliticaSustentabilidadeInfoPage />} />
+            <Route path="/politica-direitos-autorais" element={<PoliticaDireitosAutoraisInfoPage />} />
+            <Route path="/politica-acessibilidade" element={<PoliticaAcessibilidadeInfoPage />} />
+            <Route path="/politica-seguranca" element={<PoliticaSegurancaInfoPage />} />
             
             {/* Geradores - URLs SEO Friendly */}
             <Route path="/gerador-politica-privacidade" element={<GeradorPoliticaPrivacidadePage />} />
