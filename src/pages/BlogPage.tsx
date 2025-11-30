@@ -14,6 +14,7 @@ import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
 import blogCMPImage from "@/assets/blog-o-que-e-cmp.jpg";
 import blogMultasImage from "@/assets/blog-multas-lgpd-2025.jpg";
 import blogConsentModeImage from "@/assets/blog-google-consent-mode-v2.jpg";
+import blogDPOImage from "@/assets/blog-dpo-lgpd.jpg";
 
 interface BlogPost {
   id: string;
@@ -97,10 +98,20 @@ export default function BlogPage() {
       id: 'featured-7',
       title: 'Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026',
       meta_description: 'Guia prático para implementar o Consent Mode V2 do Google com LGPD, sem perder conversões nem tráfego.',
-      categories: ['Cookies', 'Implementação', 'LGPD'],
-      created_at: '2025-01-30',
+      categories: ['LGPD', 'Tecnologia', 'Google'],
+      created_at: '2025-01-24',
       slug: 'google-consent-mode-v2-implementar',
       image: blogConsentModeImage,
+      featured: false
+    },
+    {
+      id: 'featured-8',
+      title: 'DPO na LGPD: Quem Pode Ser, Funções e Como Terceirizar com Segurança',
+      meta_description: 'Descubra se sua empresa precisa de um DPO, quem pode assumir o cargo e como escolher um profissional qualificado.',
+      categories: ['LGPD', 'DPO', 'Conformidade'],
+      created_at: '2025-01-24',
+      slug: 'dpo-lgpd-quem-pode-ser',
+      image: blogDPOImage,
       featured: false
     }
   ];
