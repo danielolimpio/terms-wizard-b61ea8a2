@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Shield, CheckCircle2, Lock, Eye, Users, FileText, Clock, Mail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -226,6 +227,7 @@ export default function PrivacyPolicyPage() {
       </main>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

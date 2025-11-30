@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Cookie, Shield, Eye, Settings, FileText, AlertTriangle, Lock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -218,6 +219,7 @@ export default function CookiePolicyPage() {
       </main>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
