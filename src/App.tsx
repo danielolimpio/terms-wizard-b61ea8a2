@@ -17,6 +17,7 @@ import TermosUsoSegurancaJuridicaPost from "./pages/blog/TermosUsoSegurancaJurid
 import PoliticaCookiesGuiaCompletoPost from "./pages/blog/PoliticaCookiesGuiaCompletoPost";
 import Post10AcoesMarketingLGPD from "./pages/blog/10AcoesMarketingLGPDPost";
 import PostOQueECMP from "./pages/blog/OQueECMPPost";
+import MultasLGPD2025Post from "./pages/blog/MultasLGPD2025Post";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HelpPage from "./pages/HelpPage";
@@ -110,6 +111,7 @@ const App = () => {
           <Route path="/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026" element={<PoliticaCookiesGuiaCompletoPost />} />
           <Route path="/blog/10-acoes-marketing-lgpd" element={<Post10AcoesMarketingLGPD />} />
           <Route path="/blog/o-que-e-cmp-plataforma-gestao-consentimento" element={<PostOQueECMP />} />
+          <Route path="/blog/multas-lgpd-2025-valores-casos-reais" element={<MultasLGPD2025Post />} />
             <Route path="/ajuda" element={<HelpPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/contato" element={<ContactPage />} />
