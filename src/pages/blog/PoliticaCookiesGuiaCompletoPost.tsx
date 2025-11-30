@@ -6,6 +6,7 @@ import { ArrowLeft, Shield, Cookie, Scale, FileCheck, AlertTriangle, CheckCircle
 import heroImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
+import { SocialShare } from "@/components/SocialShare";
 
 export default function PoliticaCookiesGuiaCompletoPost() {
   const navigate = useNavigate();
@@ -850,6 +851,8 @@ export default function PoliticaCookiesGuiaCompletoPost() {
                   {/* Add social share buttons here if needed */}
                 </div>
               </div>
+
+              <SocialShare title="Como fazer aviso de cookies conforme LGPD: guia passo a passo" />
 
               {/* Autor */}
               <AuthorBio />

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { AuthorBio } from "@/components/AuthorBio";
+import { SocialShare } from "@/components/SocialShare";
 import { 
   Cookie,
   Settings,
@@ -929,6 +930,8 @@ const GoogleConsentModeV2Post = () => {
           </CardContent>
         </Card>
 
+        <SocialShare title="Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026" />
+        
         <AuthorBio />
       </article>
 

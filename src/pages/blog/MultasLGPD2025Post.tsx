@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AuthorBio } from "@/components/AuthorBio";
+import { SocialShare } from "@/components/SocialShare";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -627,6 +628,8 @@ export default function MultasLGPD2025Post() {
                   ))}
                 </div>
               </section>
+
+              <SocialShare title="Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades" />
 
               {/* Author Bio */}
               <AuthorBio />
