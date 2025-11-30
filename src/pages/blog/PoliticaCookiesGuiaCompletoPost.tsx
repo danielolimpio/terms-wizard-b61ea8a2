@@ -8,6 +8,7 @@ import heroImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export default function PoliticaCookiesGuiaCompletoPost() {
   const navigate = useNavigate();
@@ -859,6 +860,8 @@ export default function PoliticaCookiesGuiaCompletoPost() {
               </div>
 
               <SocialShare title="Como fazer aviso de cookies conforme LGPD: guia passo a passo" />
+
+              <RelatedArticles tags={["cookies", "lgpd", "gdpr", "compliance", "banner"]} currentArticleId="3" />
 
               {/* Autor */}
               <AuthorBio />

@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
 import { BlogSidebar } from "@/components/BlogSidebar";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, ShieldAlert, Scale, DollarSign, CheckCircle2, FileText, Clock, Users, Lock, TrendingUp, Gavel, Shield, XCircle, Target, Eye } from "lucide-react";
@@ -636,6 +637,8 @@ export default function MultasLGPD2025Post() {
               </section>
 
               <SocialShare title="Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades" />
+
+              <RelatedArticles tags={["multas", "lgpd", "compliance", "penalidades", "casos"]} currentArticleId="6" />
 
               {/* Author Bio */}
               <AuthorBio />

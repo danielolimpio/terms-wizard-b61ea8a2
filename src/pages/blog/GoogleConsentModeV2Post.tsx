@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import { 
   Cookie,
   Settings,
@@ -937,6 +938,8 @@ const GoogleConsentModeV2Post = () => {
         </Card>
 
         <SocialShare title="Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026" />
+        
+        <RelatedArticles tags={["google", "consent-mode", "cookies", "lgpd", "implementação"]} currentArticleId="7" />
         
         <AuthorBio />
       </article>
