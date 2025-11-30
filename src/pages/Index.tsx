@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
-import { Search, Shield, Zap, Globe } from "lucide-react";
+import { Search, Shield, Zap, Globe, BadgeCheck, Clock, UserX } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
@@ -183,14 +183,23 @@ const Index = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
-            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <span className="text-base md:text-lg font-bold text-gray-900">✅ 100% GRÁTIS</span>
+            <div className="group flex items-center gap-2 md:gap-3 bg-gradient-to-br from-green-50 to-emerald-50 backdrop-blur-sm rounded-xl px-4 md:px-6 py-2.5 md:py-3 shadow-lg border-2 border-green-200/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="p-1.5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300">
+                <BadgeCheck className="h-4 w-4 md:h-5 md:w-5 text-white" />
+              </div>
+              <span className="text-sm md:text-lg font-bold bg-gradient-to-r from-green-700 to-emerald-700 bg-clip-text text-transparent">100% GRÁTIS</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <span className="text-base md:text-lg font-bold text-gray-900">⏱️ PRONTO EM 2 MINUTOS</span>
+            <div className="group flex items-center gap-2 md:gap-3 bg-gradient-to-br from-blue-50 to-cyan-50 backdrop-blur-sm rounded-xl px-4 md:px-6 py-2.5 md:py-3 shadow-lg border-2 border-blue-200/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="p-1.5 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Clock className="h-4 w-4 md:h-5 md:w-5 text-white" />
+              </div>
+              <span className="text-sm md:text-lg font-bold bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent">PRONTO EM 2 MINUTOS</span>
             </div>
-            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 shadow-lg">
-              <span className="text-base md:text-lg font-bold text-gray-900">🚫 SEM CADASTRO</span>
+            <div className="group flex items-center gap-2 md:gap-3 bg-gradient-to-br from-purple-50 to-pink-50 backdrop-blur-sm rounded-xl px-4 md:px-6 py-2.5 md:py-3 shadow-lg border-2 border-purple-200/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="p-1.5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300">
+                <UserX className="h-4 w-4 md:h-5 md:w-5 text-white" />
+              </div>
+              <span className="text-sm md:text-lg font-bold bg-gradient-to-r from-purple-700 to-pink-700 bg-clip-text text-transparent">SEM CADASTRO</span>
             </div>
           </div>
 
