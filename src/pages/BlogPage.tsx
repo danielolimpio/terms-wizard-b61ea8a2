@@ -32,6 +32,11 @@ export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Featured and recent articles
   const featuredArticles = [
     {
@@ -99,7 +104,7 @@ export default function BlogPage() {
       title: 'Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026',
       meta_description: 'Guia prático para implementar o Consent Mode V2 do Google com LGPD, sem perder conversões nem tráfego.',
       categories: ['LGPD', 'Tecnologia', 'Google'],
-      created_at: '2025-01-24',
+      created_at: '2025-11-30',
       slug: 'google-consent-mode-v2-implementar',
       image: blogConsentModeImage,
       featured: false
@@ -109,7 +114,7 @@ export default function BlogPage() {
       title: 'DPO na LGPD: Quem Pode Ser, Funções e Como Terceirizar com Segurança',
       meta_description: 'Descubra se sua empresa precisa de um DPO, quem pode assumir o cargo e como escolher um profissional qualificado.',
       categories: ['LGPD', 'DPO', 'Conformidade'],
-      created_at: '2025-01-24',
+      created_at: '2025-11-30',
       slug: 'dpo-lgpd-quem-pode-ser',
       image: blogDPOImage,
       featured: false

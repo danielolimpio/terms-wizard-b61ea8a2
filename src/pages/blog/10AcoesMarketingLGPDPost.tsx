@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
@@ -23,6 +24,11 @@ import heroImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
 
 const Post10AcoesMarketingLGPD = () => {
   const navigate = useNavigate();
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
