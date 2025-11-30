@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
-import { Button } from "@/components/ui/button";
 import { getPolicyById } from "@/lib/policies";
 import { generateAntispamPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -46,14 +45,7 @@ const AntispamPolicyGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Button variant="outline" onClick={() => window.history.back()}>
-            ← Voltar
-          </Button>
-        </div>
-        <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
-      </main>
+      <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
       <Footer />
     </div>
   );
