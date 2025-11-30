@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Cookie, Shield, Eye, Settings, FileText, AlertTriangle, Lock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function CookiePolicyPage() {
   return (
@@ -9,7 +11,10 @@ export default function CookiePolicyPage() {
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl mb-6 shadow-lg">
+              <Cookie className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-clip-text text-transparent">
               Política de Cookies
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -17,8 +22,8 @@ export default function CookiePolicyPage() {
             </p>
           </div>
 
-          <div className="prose prose-lg max-w-none text-muted-foreground">
-            <div className="space-y-8">
+          <div className="prose prose-lg max-w-none">
+            <div className="space-y-6">
               <section>
                 <h2 className="text-2xl font-semibold text-foreground mb-4">O que são Cookies?</h2>
                 <p>
