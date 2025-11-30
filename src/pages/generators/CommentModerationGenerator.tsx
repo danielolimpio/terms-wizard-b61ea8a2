@@ -8,6 +8,8 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { getPolicyById } from "@/lib/policies";
 import { generateCommentModerationPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogSidebar } from "@/components/BlogSidebar";
 
 const CommentModerationGenerator = () => {
   const [generatedPolicy, setGeneratedPolicy] = useState<GeneratedPolicy | null>(null);
@@ -50,7 +52,15 @@ const CommentModerationGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <div className="flex gap-8">
+          <div className="flex-1">
+            <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
+            <RelatedArticles />
+          </div>
+          <BlogSidebar />
+        </div>
+      </div>
       <Footer />
       <ScrollToTop />
     </div>
