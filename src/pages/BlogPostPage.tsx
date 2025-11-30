@@ -78,7 +78,7 @@ export default function BlogPostPage() {
             </p>
 
             <p>
-              Nos últimos anos, a Política de Privacidade deixou de ser um detalhe técnico, escondido no rodapé de sites grandes. Ela se tornou o alicerce da confiança digital — e, para quem administra qualquer tipo de site ou blog no Brasil, uma obrigação legal, não uma escolha. E, se você não a tem, ou se ela foi feita com um gerador aleatório de 2018, você está exposto.
+              Nos últimos anos, a Política de Privacidade deixou de ser um detalhe técnico, escondido no rodapé de sites grandes. Ela se tornou o alicerce da confiança digital — e, para quem administra qualquer tipo de site ou blog no Brasil, uma obrigação legal estabelecida pela <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">LGPD (Lei nº 13.709/2018)</a>, não uma escolha. E, se você não a tem, ou se ela foi feita com um gerador aleatório de 2018, você está exposto.
             </p>
 
             <p>
@@ -141,7 +141,7 @@ export default function BlogPostPage() {
                 <div>
                   <p className="font-semibold text-destructive mb-2">Atenção: Multas podem chegar a R$ 50 milhões</p>
                   <p>
-                    E não é só no Brasil. Se um único visitante da União Europeia acessar seu site — mesmo que você não tenha sede lá — o GDPR entra em jogo. A lei europeia é tão rigorosa que multou a Meta em mais de 1,2 bilhão de euros em 2023 por violações de privacidade.
+                    E não é só no Brasil. Se um único visitante da União Europeia acessar seu site — mesmo que você não tenha sede lá — o <a href="https://gdpr-info.eu" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">GDPR (Regulamento Geral de Proteção de Dados)</a> entra em jogo. A lei europeia é tão rigorosa que multou a Meta em mais de 1,2 bilhão de euros em 2023 por violações de privacidade.
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function BlogPostPage() {
               <li>📝 <strong>Formulário de contato?</strong> → Nome, e-mail, mensagem.</li>
               <li>📧 <strong>Newsletter?</strong> → E-mail, IP, horário de abertura.</li>
               <li>🛒 <strong>Loja virtual?</strong> → Nome, endereço, CPF, cartão.</li>
-              <li>🍪 <strong>Cookies?</strong> → Google Analytics, Facebook Pixel, Hotjar.</li>
+              <li>🍪 <strong>Cookies?</strong> → Google Analytics, Facebook Pixel, Hotjar. <a href="/gerador-politica-cookies" className="text-primary hover:underline font-semibold">(Saiba como criar uma Política de Cookies)</a></li>
               <li>💬 <strong>Chat ao vivo?</strong> → WhatsApp, Zendesk, Tawk.to.</li>
               <li>🔐 <strong>Login com Google/Facebook?</strong> → Autenticação externa.</li>
             </ul>
@@ -261,7 +261,7 @@ export default function BlogPostPage() {
             </h2>
 
             <p>
-              A LGPD não é estática. Em 2025, a ANPD (Autoridade Nacional de Proteção de Dados) começou a aplicar multas com mais rigor. Em 2026, novas orientações devem ser publicadas sobre inteligência artificial e rastreamento comportamental.
+              A LGPD não é estática. Em 2025, a <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">ANPD (Autoridade Nacional de Proteção de Dados)</a> começou a aplicar multas com mais rigor. Em 2026, novas orientações devem ser publicadas sobre inteligência artificial e rastreamento comportamental.
             </p>
 
             <Card className="p-6 bg-primary/10 border-primary/20">
@@ -338,7 +338,7 @@ export default function BlogPostPage() {
             </Card>
 
             <p className="font-semibold text-lg mt-6">
-              A ANPD já aplicou mais de 300 multas em 2024. E em 2026, com a nova regulamentação sobre IA, o número pode triplicar.
+              A ANPD já aplicou mais de 300 multas em 2024. E em 2026, com a nova regulamentação sobre IA, o número pode triplicar. Além da Política de Privacidade, considere também implementar <a href="/gerador-termos-uso" className="text-primary hover:underline font-semibold">Termos de Uso</a> e uma <a href="/gerador-politica-transparencia" className="text-primary hover:underline font-semibold">Política de Transparência</a> para fortalecer a conformidade do seu site.
             </p>
 
             <h2 className="flex items-center gap-3 text-3xl font-bold text-foreground mt-12 mb-6">
@@ -363,12 +363,12 @@ export default function BlogPostPage() {
 
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">4. O que faço se um usuário pedir para excluir seus dados?</h3>
-                <p>Responda em até 15 dias. Confirme que os dados foram excluídos. Se você usa um serviço externo (como Mailchimp), também peça a exclusão lá. Mantenha um registro da solicitação.</p>
+                <p>Responda em até 15 dias. Confirme que os dados foram excluídos. Se você usa um serviço externo (como Mailchimp), também peça a exclusão lá. Mantenha um registro da solicitação. Esse direito é garantido tanto pela LGPD quanto pelo <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Código de Defesa do Consumidor</a>.</p>
               </Card>
 
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">5. A política precisa ser em português mesmo se meu site for em inglês?</h3>
-                <p>Sim. Se seu público principal é brasileiro, a LGPD exige que o documento esteja em português. Se você tem público internacional, pode ter versões em outros idiomas, mas a versão em português deve ser a principal.</p>
+                <p>Sim. Se seu público principal é brasileiro, a LGPD exige que o documento esteja em português. Se você tem público internacional, pode ter versões em outros idiomas, mas a versão em português deve ser a principal. Lembre-se também de incluir uma <a href="/gerador-politica-acessibilidade" className="text-primary hover:underline font-semibold">Política de Acessibilidade</a> para garantir que todos os usuários possam entender seus documentos.</p>
               </Card>
             </div>
 
@@ -402,32 +402,6 @@ export default function BlogPostPage() {
                 🚀 Gerar Minha Política de Privacidade Agora
               </Button>
             </Card>
-
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-6">
-              🔗 Links de Referência
-            </h2>
-
-            <div className="space-y-4">
-              <Card className="p-4">
-                <h3 className="font-semibold mb-2">Links Internos Relevantes:</h3>
-                <ul className="space-y-2 text-primary">
-                  <li><a href="/gerador-politica-transparencia" className="hover:underline">→ Como criar uma Política de Transparência</a></li>
-                  <li><a href="/gerador-politica-acessibilidade" className="hover:underline">→ Política de Acessibilidade para seu site</a></li>
-                  <li><a href="/gerador-termos-uso" className="hover:underline">→ Termos de Uso: O que precisa estar lá</a></li>
-                  <li><a href="/gerador-politica-cookies" className="hover:underline">→ Como gerar uma Política de Cookies</a></li>
-                </ul>
-              </Card>
-
-              <Card className="p-4">
-                <h3 className="font-semibold mb-2">Links Externos de Autoridade:</h3>
-                <ul className="space-y-2">
-                  <li>→ <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Autoridade Nacional de Proteção de Dados (ANPD)</a></li>
-                  <li>→ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LGPD – Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</a></li>
-                  <li>→ <a href="https://gdpr-info.eu" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GDPR – Regulamento Geral de Proteção de Dados (União Europeia)</a></li>
-                  <li>→ <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Código de Defesa do Consumidor (Lei nº 8.078/1990)</a></li>
-                </ul>
-              </Card>
-            </div>
 
             <div className="mt-12 p-8 bg-accent/50 rounded-lg text-center">
               <p className="text-lg mb-4">
