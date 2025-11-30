@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2 } from "lucide-react";
+import { Loader2, BookOpen } from "lucide-react";
 import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
 import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
@@ -155,7 +155,10 @@ export default function BlogPage() {
         <div className="flex gap-8 max-w-7xl mx-auto">
           <div className="flex-1">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-2xl mb-6 shadow-lg">
+              <BookOpen className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
               Blog Gerador de Políticas
             </h1>
             <p className="text-xl text-muted-foreground">
