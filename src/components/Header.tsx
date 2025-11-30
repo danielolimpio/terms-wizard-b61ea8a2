@@ -12,22 +12,22 @@ export const Header = () => {
       <a href="/" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Início
       </a>
-      <a href="/sobre" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/sobre" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Sobre
       </a>
-      <a href="/politicas" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/politicas" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Todas as Políticas
       </a>
-      <a href="/faq" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/faq" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         FAQ
       </a>
-      <a href="/ajuda" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/ajuda" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Ajuda
       </a>
-      <a href="/blog" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/blog" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Blog
       </a>
-      <a href="/contato" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+      <a href="/contato" className="text-base font-medium text-foreground hover:text-primary transition-colors">
         Contato
       </a>
     </>
