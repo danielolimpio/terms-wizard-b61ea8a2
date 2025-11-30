@@ -1,10 +1,12 @@
 // Comment Moderation Generator Page
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Button } from "@/components/ui/button";
 import { getPolicyById } from "@/lib/policies";
 import { generateCommentModerationPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -56,6 +58,19 @@ const CommentModerationGenerator = () => {
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
+            
+            <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
+              <h3 className="text-lg font-semibold mb-3">Tem dúvidas sobre Moderação de Comentários?</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Saiba como gerenciar comentários e manter um ambiente saudável
+              </p>
+              <Link to="/moderacao-comentarios">
+                <Button variant="outline" className="w-full">
+                  O que é Política de Moderação de Comentário?
+                </Button>
+              </Link>
+            </div>
+            
             <RelatedArticles policyType="comment-moderation" />
           </div>
           <BlogSidebar />

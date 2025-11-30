@@ -1,10 +1,12 @@
 // Cookie Policy Generator Page
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Button } from "@/components/ui/button";
 import { getPolicyById } from "@/lib/policies";
 import { generateCookiePolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -56,6 +58,19 @@ const CookiePolicyGenerator = () => {
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
+            
+            <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
+              <h3 className="text-lg font-semibold mb-3">Tem dúvidas sobre Política de Cookies?</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Saiba tudo sobre a página de Política de Cookies e sua importância
+              </p>
+              <Link to="/politica-cookies-info">
+                <Button variant="outline" className="w-full">
+                  O que é Política de Cookies?
+                </Button>
+              </Link>
+            </div>
+            
             <RelatedArticles policyType="cookie-policy" />
           </div>
           <BlogSidebar />

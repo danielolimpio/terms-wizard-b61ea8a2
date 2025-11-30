@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -130,6 +130,19 @@ const GeradorPoliticaPrivacidadePage = () => {
               onGenerate={handlePolicyGenerated}
               initialFormData={initialFormData || undefined}
             />
+            
+            <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
+              <h3 className="text-lg font-semibold mb-3">Tem dúvidas sobre Política de Privacidade?</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Saiba tudo sobre o que é, para que serve e onde utilizar
+              </p>
+              <Link to="/nossa-privacidade">
+                <Button variant="outline" className="w-full">
+                  O que é Política de Privacidade?
+                </Button>
+              </Link>
+            </div>
+            
             <RelatedArticles policyType="privacy-policy" />
           </div>
           <BlogSidebar />
