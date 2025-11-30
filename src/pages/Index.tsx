@@ -144,6 +144,7 @@ const Index = () => {
         />
         <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, como gerar política privacidade, LGPD, GDPR, termos de uso" />
         <link rel="canonical" href="https://politicadeprivacidade.org/" />
+        <link rel="preload" as="image" href={heroBackground} />
         <meta property="og:title" content="Gerador de Política de Privacidade Grátis | Crie em 2 Minutos" />
         <meta property="og:description" content="Gere política de privacidade grátis, conforme LGPD e GDPR. Sem cadastro, 100% gratuito." />
         <meta property="og:type" content="website" />
@@ -165,7 +166,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative py-16 md:py-24 px-4 bg-cover bg-center bg-no-repeat"
+        className="relative py-16 md:py-24 px-4 bg-gray-900 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
         {/* Dark overlay for better text contrast */}
