@@ -2,42 +2,44 @@ import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock } from "lucide-react";
-import blogImage1 from "@/assets/blog-politica-privacidade-2026.jpg";
-import blogImage2 from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
-import blogImage3 from "@/assets/blog-politica-cookies-guia-completo.jpg";
+import { getRelatedArticles, getRelatedArticlesForPolicy, BlogArticle } from "@/data/blogArticles";
 
-const articles = [
-  {
-    id: 1,
-    title: "Política de Privacidade: O Que É, Por Que Você Precisa e Modelo Gratuito 2026",
-    excerpt: "Descubra tudo sobre políticas de privacidade em 2026, incluindo LGPD, GDPR e como criar a sua de forma gratuita e profissional.",
-    image: blogImage1,
-    readTime: "8 min",
-    slug: "/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026",
-    category: "LGPD"
-  },
-  {
-    id: 2,
-    title: "Como Escrever Termos de Uso Para Seu Site, Evitar Processos e Garantir Segurança Jurídica",
-    excerpt: "Guia completo sobre termos de uso: o que incluir, como proteger seu negócio e evitar armadilhas legais que podem custar caro.",
-    image: blogImage2,
-    readTime: "10 min",
-    slug: "/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica",
-    category: "Jurídico"
-  },
-  {
-    id: 3,
-    title: "Política de Cookies: Guia Completo para LGPD, GDPR e Banner Correto em 2026",
-    excerpt: "O banner de cookies errado pode gerar multas de até 2% do faturamento. Aprenda a cumprir LGPD e GDPR com o modelo certo, passo a passo.",
-    image: blogImage3,
-    readTime: "12 min",
-    slug: "/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026",
-    category: "Compliance"
-  }
-];
+interface RelatedArticlesProps {
+  /** Tipo de política para buscar artigos relacionados */
+  policyType?: string;
+  /** Tags específicas para buscar artigos relacionados */
+  tags?: string[];
+  /** ID do artigo atual (para excluir da lista) */
+  currentArticleId?: string;
+  /** Número de artigos a exibir */
+  limit?: number;
+}
 
-export const RelatedArticles = () => {
+export const RelatedArticles = ({ 
+  policyType, 
+  tags, 
+  currentArticleId, 
+  limit = 3 
+}: RelatedArticlesProps) => {
   const navigate = useNavigate();
+
+  // Busca artigos relacionados baseado no contexto
+  let articles: BlogArticle[] = [];
+  
+  if (policyType) {
+    // Usa o tipo de política para buscar artigos
+    articles = getRelatedArticlesForPolicy(policyType, limit);
+  } else if (tags && tags.length > 0) {
+    // Usa tags específicas
+    articles = getRelatedArticles(tags, currentArticleId, limit);
+  } else {
+    // Fallback: retorna artigos mais recentes
+    articles = getRelatedArticles([], currentArticleId, limit);
+  }
+
+  if (articles.length === 0) {
+    return null; // Não renderiza se não houver artigos
+  }
 
   return (
     <section className="py-8 md:py-12">
@@ -63,6 +65,7 @@ export const RelatedArticles = () => {
                 src={article.image} 
                 alt={article.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
               />
               
               {/* Category badge */}

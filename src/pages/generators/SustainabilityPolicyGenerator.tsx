@@ -56,7 +56,7 @@ const SustainabilityPolicyGenerator = () => {
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
-            <RelatedArticles />
+            <RelatedArticles policyType="sustainability-policy" />
           </div>
           <BlogSidebar />
         </div>

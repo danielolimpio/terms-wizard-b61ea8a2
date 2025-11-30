@@ -8,14 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, BookOpen } from "lucide-react";
-import blogHeroImage from "@/assets/blog-politica-privacidade-2026.jpg";
-import blogTermosImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
-import blogCookiesImage from "@/assets/blog-politica-cookies-guia-completo.jpg";
-import blogMarketingLGPDImage from "@/assets/blog-10-acoes-marketing-lgpd.jpg";
-import blogCMPImage from "@/assets/blog-o-que-e-cmp.jpg";
-import blogMultasImage from "@/assets/blog-multas-lgpd-2025.jpg";
-import blogConsentModeImage from "@/assets/blog-google-consent-mode-v2.jpg";
-import blogDPOImage from "@/assets/blog-dpo-lgpd.jpg";
+import { blogArticles } from "@/data/blogArticles";
 
 interface BlogPost {
   id: string;
@@ -38,89 +31,17 @@ export default function BlogPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Featured and recent articles
-  const featuredArticles = [
-    {
-      id: 'featured-1',
-      title: 'Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito para Seu Site (2026)',
-      meta_description: 'Descubra como criar uma política de privacidade legalmente válida no Brasil e na UE. Modelo pronto para download, atualizado conforme LGPD e GDPR.',
-      categories: ['LGPD', 'Compliance', 'Privacidade'],
-      created_at: '2025-11-09',
-      slug: 'politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026',
-      image: blogHeroImage,
-      featured: true
-    },
-    {
-      id: 'featured-2',
-      title: 'Como Escrever os Termos do Seu Site para Evitar Processos e Garantir Segurança Jurídica',
-      meta_description: 'Seu site pode ser processado por falta de termos de uso. Aprenda a redigir termos claros, completos e adaptados à LGPD, com exemplo prático para blogs e e-commerces.',
-      categories: ['LGPD', 'Compliance', 'Termos de Uso'],
-      created_at: '2025-11-11',
-      slug: 'como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica',
-      image: blogTermosImage,
-      featured: false
-    },
-    {
-      id: 'featured-3',
-      title: 'Política de Cookies: Guia Completo para LGPD, GDPR e Como Instalar o Banner Correto em 2026',
-      meta_description: 'O banner de cookies errado pode gerar multas de até 2% do faturamento. Aprenda a cumprir a LGPD e GDPR com o modelo certo, passo a passo, para WordPress e Shopify.',
-      categories: ['LGPD', 'Compliance', 'Cookies'],
-      created_at: '2025-11-14',
-      slug: 'politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026',
-      image: blogCookiesImage,
-      featured: false
-    },
-    {
-      id: 'featured-4',
-      title: '10 Ações de Marketing que Mudam com a LGPD Hoje!',
-      meta_description: 'Descubra os 10 processos de marketing que a LGPD exige repensar para garantir conformidade e proteger dados dos seus usuários.',
-      categories: ['LGPD', 'Marketing', 'Compliance'],
-      created_at: '2025-11-28',
-      slug: '10-acoes-marketing-lgpd',
-      image: blogMarketingLGPDImage,
-      featured: false
-    },
-    {
-      id: 'featured-5',
-      title: 'O Que é CMP? Plataforma de Gestão de Consentimento para Sites e Lojas',
-      meta_description: 'Entenda o que é uma CMP, como ela funciona e por que é obrigatória para sites que usam cookies na LGPD.',
-      categories: ['LGPD', 'Cookies', 'Compliance'],
-      created_at: '2025-11-29',
-      slug: 'o-que-e-cmp-plataforma-gestao-consentimento',
-      image: blogCMPImage,
-      featured: false
-    },
-    {
-      id: 'featured-6',
-      title: 'Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades',
-      meta_description: 'Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas.',
-      categories: ['LGPD', 'Multas', 'Compliance'],
-      created_at: '2025-01-30',
-      slug: 'multas-lgpd-2025-valores-casos-reais',
-      image: blogMultasImage,
-      featured: false
-    },
-    {
-      id: 'featured-7',
-      title: 'Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026',
-      meta_description: 'Guia prático para implementar o Consent Mode V2 do Google com LGPD, sem perder conversões nem tráfego.',
-      categories: ['LGPD', 'Tecnologia', 'Google'],
-      created_at: '2025-11-30',
-      slug: 'google-consent-mode-v2-implementar',
-      image: blogConsentModeImage,
-      featured: false
-    },
-    {
-      id: 'featured-8',
-      title: 'DPO na LGPD: Quem Pode Ser, Funções e Como Terceirizar com Segurança',
-      meta_description: 'Descubra se sua empresa precisa de um DPO, quem pode assumir o cargo e como escolher um profissional qualificado.',
-      categories: ['LGPD', 'DPO', 'Conformidade'],
-      created_at: '2025-11-30',
-      slug: 'dpo-lgpd-quem-pode-ser',
-      image: blogDPOImage,
-      featured: false
-    }
-  ];
+  // Featured and recent articles - usa dados centralizados
+  const featuredArticles = blogArticles.map(article => ({
+    id: article.id,
+    title: article.title,
+    meta_description: article.excerpt,
+    categories: [article.category, ...article.tags.slice(0, 2)],
+    created_at: article.publishedAt,
+    slug: article.slug.replace('/blog/', ''),
+    image: article.image,
+    featured: article.id === "1"
+  }));
 
   useEffect(() => {
     fetchPosts();
