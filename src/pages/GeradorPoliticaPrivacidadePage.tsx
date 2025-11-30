@@ -8,6 +8,8 @@ import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
 import { Button } from "@/components/ui/button";
 import { StructuredData } from "@/components/StructuredData";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogSidebar } from "@/components/BlogSidebar";
 import { getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
@@ -109,7 +111,7 @@ const GeradorPoliticaPrivacidadePage = () => {
       />
       
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 max-w-7xl">
         <Breadcrumbs items={[
           { name: "Geradores", url: "/politicas" },
           { name: "Política de Privacidade", url: "/gerador-politica-privacidade" }
@@ -120,11 +122,18 @@ const GeradorPoliticaPrivacidadePage = () => {
             ← Voltar
           </Button>
         </div>
-        <PolicyGenerator
-          policyType={policyType}
-          onGenerate={handlePolicyGenerated}
-          initialFormData={initialFormData || undefined}
-        />
+        
+        <div className="flex gap-8">
+          <div className="flex-1">
+            <PolicyGenerator
+              policyType={policyType}
+              onGenerate={handlePolicyGenerated}
+              initialFormData={initialFormData || undefined}
+            />
+            <RelatedArticles policyType="privacy-policy" />
+          </div>
+          <BlogSidebar />
+        </div>
       </main>
       <Footer />
     </div>
