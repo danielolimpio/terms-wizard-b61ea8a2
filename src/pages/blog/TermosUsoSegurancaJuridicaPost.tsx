@@ -9,6 +9,7 @@ import heroImage from "@/assets/blog-termos-uso-seguranca-juridica.jpg";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export default function TermosUsoSegurancaJuridicaPost() {
   const navigate = useNavigate();
@@ -568,6 +569,8 @@ export default function TermosUsoSegurancaJuridicaPost() {
             </div>
 
             <SocialShare title="Como Escrever os Termos do Seu Site para Evitar Processos e Garantir Segurança Jurídica" />
+
+            <RelatedArticles tags={["termos-uso", "jurídico", "compliance", "legal"]} currentArticleId="2" />
 
             {/* Autor */}
             <AuthorBio />

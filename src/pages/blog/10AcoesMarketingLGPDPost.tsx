@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import { 
   ShieldAlert, 
   Users, 
@@ -727,6 +728,8 @@ const Post10AcoesMarketingLGPD = () => {
                 </section>
 
                 <SocialShare title="10 Ações de Marketing que Mudam com a LGPD Hoje!" />
+
+                <RelatedArticles tags={["marketing", "lgpd", "compliance", "dados"]} currentArticleId="4" />
 
                 <section className="mb-12">
                   <AuthorBio />

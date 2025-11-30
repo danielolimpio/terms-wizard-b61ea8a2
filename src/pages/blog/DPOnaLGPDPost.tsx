@@ -37,6 +37,7 @@ import {
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import blogDPOImage from "@/assets/blog-dpo-lgpd.jpg";
 
 export default function DPOnaLGPDPost() {
@@ -815,6 +816,8 @@ export default function DPOnaLGPDPost() {
               <SocialShare 
                 title="DPO na LGPD: Quem Pode Ser, Funções e Como Terceirizar com Segurança"
               />
+
+              <RelatedArticles tags={["dpo", "lgpd", "compliance", "profissional", "terceirização"]} currentArticleId="8" />
 
               <AuthorBio />
             </article>

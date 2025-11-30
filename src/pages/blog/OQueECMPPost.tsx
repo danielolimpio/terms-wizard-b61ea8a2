@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import { 
   ShieldCheck, 
   Cookie, 
@@ -833,6 +834,8 @@ const PostOQueECMP = () => {
                 </section>
 
                 <SocialShare title="O Que é CMP? Plataforma de Gestão de Consentimento para Sites e Lojas" />
+
+                <RelatedArticles tags={["cmp", "cookies", "lgpd", "consentimento", "tecnologia"]} currentArticleId="5" />
 
                 <section className="mb-12">
                   <AuthorBio />
