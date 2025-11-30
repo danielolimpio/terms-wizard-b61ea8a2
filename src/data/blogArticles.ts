@@ -96,7 +96,7 @@ export const blogArticles: BlogArticle[] = [
     slug: "/blog/multas-lgpd-2025-valores-casos-reais",
     category: "Compliance",
     tags: ["multas", "lgpd", "compliance", "penalidades", "casos"],
-    publishedAt: "2025-01-30"
+    publishedAt: "2025-11-30"
   },
   {
     id: "7",
