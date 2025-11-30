@@ -10,31 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar o repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # ✅ Versão mais recente
 
       - name: Configurar Node.js 18
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # ✅ Atualizado
         with:
           node-version: '18'
+          cache: 'npm'  # ✅ Cache automático do node_modules
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci  # ✅ Mais seguro e rápido que npm install em CI
 
       - name: Build do projeto
         run: npm run build
 
       - name: Mostrar arquivos gerados
-        run: ls -al dist/
+        run: ls -la dist/
 
       - name: Deploy FTP para Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v5.0.0  # ✅ Última versão estável
         with:
           server: ${{ secrets.FTP_HOST }}
           port: 21
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: dist/
+          local-dir: ./dist/
           server-dir: /
           dangerous-clean-slate: true
-          dry-run: false
-          log-level: verbose
+          # dry-run e log-level são opcionais; removi por padrão
