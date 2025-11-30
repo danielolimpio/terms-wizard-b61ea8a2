@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { PolicyFormData, AVAILABLE_LANGUAGES } from "@/types/policy";
 import { PolicyType } from "@/types/policy";
 import adsenseLogo from "@/assets/adsense.png";
+import { Shield } from "lucide-react";
 
 interface PolicyGeneratorProps {
   policyType: PolicyType;
@@ -25,6 +25,7 @@ export const PolicyGenerator = ({ policyType, onGenerate, initialFormData }: Pol
     contactEmail: initialFormData?.contactEmail || "",
     companyName: initialFormData?.companyName || "",
     country: initialFormData?.country || "Brasil",
+    acceptTerms: false,
     
     // Transparency Policy fields
     siteType: "",
@@ -69,6 +70,10 @@ export const PolicyGenerator = ({ policyType, onGenerate, initialFormData }: Pol
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.acceptTerms) {
+      alert("Você precisa aceitar os Termos e Condições para continuar.");
+      return;
+    }
     onGenerate(formData);
   };
 
@@ -77,108 +82,139 @@ export const PolicyGenerator = ({ policyType, onGenerate, initialFormData }: Pol
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <div className="flex items-center space-x-3">
-          <span className="text-3xl">{policyType.icon}</span>
-          <div>
-            <CardTitle className="text-xl">Gerador {policyType.name.replace('Modelo ', '')}</CardTitle>
-            <CardDescription>{policyType.description}</CardDescription>
-          </div>
-        </div>
-      </CardHeader>
-      
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="siteName">Nome do Site *</Label>
-              <Input
-                id="siteName"
-                placeholder="Meu Site Exemplo"
-                value={formData.siteName}
-                onChange={(e) => updateFormData('siteName', e.target.value)}
-                required
-              />
+    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto max-w-5xl">
+        <div className="bg-card border-2 border-border rounded-2xl shadow-2xl p-6 md:p-10">
+          {/* Header */}
+          <div className="flex items-start gap-4 mb-8">
+            <div className="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+              <Shield className="h-8 w-8 text-primary" />
             </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="siteUrl">URL do Site *</Label>
-              <Input
-                id="siteUrl"
-                placeholder="https://meusite.com"
-                value={formData.siteUrl}
-                onChange={(e) => updateFormData('siteUrl', e.target.value)}
-                required
-              />
+            <div className="flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Gerador {policyType.name.replace('Modelo ', '')}
+              </h2>
+              <p className="text-muted-foreground text-sm md:text-base">
+                {policyType.description}
+              </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="companyName">Nome da Empresa</Label>
-              <Input
-                id="companyName"
-                placeholder="Minha Empresa Ltda"
-                value={formData.companyName}
-                onChange={(e) => updateFormData('companyName', e.target.value)}
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="contactEmail">Email de Contato</Label>
-              <Input
-                id="contactEmail"
-                type="email"
-                placeholder="contato@meusite.com"
-                value={formData.contactEmail}
-                onChange={(e) => updateFormData('contactEmail', e.target.value)}
-              />
-            </div>
-          </div>
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Row 1: Site Name and URL */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="siteName" className="text-base font-semibold">
+                  Nome do Site <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="siteName"
+                  placeholder="Meu Site Exemplo"
+                  value={formData.siteName}
+                  onChange={(e) => updateFormData('siteName', e.target.value)}
+                  required
+                  className="h-12 text-base"
+                />
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="language">Idioma</Label>
-              <Select
-                value={formData.language}
-                onValueChange={(value) => updateFormData('language', value)}
+              <div className="space-y-2">
+                <Label htmlFor="siteUrl" className="text-base font-semibold">
+                  URL do Site <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="siteUrl"
+                  placeholder="https://meusite.com"
+                  value={formData.siteUrl}
+                  onChange={(e) => updateFormData('siteUrl', e.target.value)}
+                  required
+                  className="h-12 text-base"
+                />
+              </div>
+            </div>
+
+            {/* Row 2: Company Name and Contact Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="companyName" className="text-base font-semibold">
+                  Nome da Empresa
+                </Label>
+                <Input
+                  id="companyName"
+                  placeholder="Minha Empresa Ltda"
+                  value={formData.companyName}
+                  onChange={(e) => updateFormData('companyName', e.target.value)}
+                  className="h-12 text-base"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="contactEmail" className="text-base font-semibold">
+                  Email de Contato
+                </Label>
+                <Input
+                  id="contactEmail"
+                  type="email"
+                  placeholder="contato@meusite.com"
+                  value={formData.contactEmail}
+                  onChange={(e) => updateFormData('contactEmail', e.target.value)}
+                  className="h-12 text-base"
+                />
+              </div>
+            </div>
+
+            {/* Row 3: Language and Country */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="language" className="text-base font-semibold">
+                  Idioma
+                </Label>
+                <Select
+                  value={formData.language}
+                  onValueChange={(value) => updateFormData('language', value)}
+                >
+                  <SelectTrigger className="h-12 text-base">
+                    <SelectValue placeholder="Selecione o idioma" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {AVAILABLE_LANGUAGES.map((lang) => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        {lang.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="country" className="text-base font-semibold">
+                  País
+                </Label>
+                <Input
+                  id="country"
+                  placeholder="Brasil"
+                  value={formData.country}
+                  onChange={(e) => updateFormData('country', e.target.value)}
+                  className="h-12 text-base"
+                />
+              </div>
+            </div>
+
+            {/* Google AdSense Checkbox */}
+            <div className="flex items-center space-x-3 bg-muted/50 rounded-lg p-4">
+              <Checkbox
+                id="hasAdsense"
+                checked={formData.hasAdsense}
+                onCheckedChange={(checked) => updateFormData('hasAdsense', checked)}
+              />
+              <Label 
+                htmlFor="hasAdsense" 
+                className="text-base font-medium cursor-pointer flex items-center gap-2"
               >
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione o idioma" />
-                </SelectTrigger>
-                <SelectContent>
-                  {AVAILABLE_LANGUAGES.map((lang) => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      {lang.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                <img src={adsenseLogo} alt="Google AdSense" className="h-5 w-auto" />
+                Meu site usa Google AdSense
+              </Label>
             </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="country">País</Label>
-              <Input
-                id="country"
-                placeholder="Brasil"
-                value={formData.country}
-                onChange={(e) => updateFormData('country', e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="hasAdsense"
-              checked={formData.hasAdsense}
-              onCheckedChange={(checked) => updateFormData('hasAdsense', checked)}
-            />
-            <Label htmlFor="hasAdsense" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-              <img src={adsenseLogo} alt="Google AdSense" className="h-4 w-auto" />
-              Meu site usa Google AdSense
-            </Label>
-          </div>
 
           {/* Campos específicos para Política de Transparência */}
           {policyType.id === 'transparency-policy' && (
@@ -1158,11 +1194,54 @@ export const PolicyGenerator = ({ policyType, onGenerate, initialFormData }: Pol
             </>
           )}
 
-          <Button type="submit" variant="google" size="lg" className="w-full">
-            Gerar {policyType.name.replace('Modelo ', '')}
-          </Button>
-        </form>
-      </CardContent>
-    </Card>
+            {/* Terms Acceptance Checkbox */}
+            <div className="flex items-start space-x-3 pt-2">
+              <Checkbox
+                id="acceptTerms"
+                checked={formData.acceptTerms}
+                onCheckedChange={(checked) => updateFormData('acceptTerms', checked)}
+                className="mt-1"
+                required
+              />
+              <Label 
+                htmlFor="acceptTerms" 
+                className="text-sm cursor-pointer leading-relaxed"
+              >
+                Compreendo e aceito os{" "}
+                <a 
+                  href="/termos-de-uso" 
+                  target="_blank" 
+                  className="text-primary hover:underline font-medium"
+                >
+                  Termos e Condições
+                </a>
+                {" "}do PoliticaDePrivacidade.org e o Disclaimer
+              </Label>
+            </div>
+
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              variant="google"
+              size="xl"
+              className="w-full h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+              disabled={!formData.acceptTerms}
+            >
+              Gerar {policyType.name.replace('Modelo ', '')} →
+            </Button>
+
+            {/* Disclaimer */}
+            <div className="bg-muted/50 rounded-lg p-4 border border-border">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">Isenção de responsabilidade:</span>{" "}
+                esta política gerada é de natureza geral. Incentivamos você a procurar aconselhamento jurídico 
+                independente para adaptá-lo às suas próprias práticas de negócios. O PoliticaDePrivacidade.org 
+                não se responsabiliza pelo uso ou pelas ações tomadas, com base no conteúdo deste site.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   );
 };

@@ -16,6 +16,7 @@ export interface PolicyFormData {
   contactEmail?: string;
   companyName?: string;
   country?: string;
+  acceptTerms?: boolean;
   
   // Campos específicos para Política de Transparência
   siteType?: string;
