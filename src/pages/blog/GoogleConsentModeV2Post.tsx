@@ -126,20 +126,20 @@ const GoogleConsentModeV2Post = () => {
                 Seu tráfego caiu? Sua taxa de conversão desapareceu? Pode ser o novo mundo do consentimento
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-muted-foreground">
-              <p>
+            <CardContent className="space-y-4">
+              <p className="text-lg leading-relaxed">
                 Em janeiro de 2024, o Google deu um passo decisivo: o <strong>Consent Mode V2</strong> tornou-se obrigatório para qualquer site que use Google Ads, Google Analytics ou qualquer outro serviço do Google que dependa de cookies.
               </p>
 
-              <p>
+              <p className="text-lg leading-relaxed">
                 Muitos lojistas, marketers e criadores de conteúdo foram pegos de surpresa. De um dia para o outro, relatórios de conversão começaram a falhar. Campanhas pareciam menos eficazes. O remarketing perdeu precisão. E o pior: tudo isso aconteceu justamente porque os sites estavam mais alinhados à LGPD — ao bloquear pixels sem consentimento, como a lei exige.
               </p>
 
-              <p>
+              <p className="text-lg leading-relaxed">
                 A boa notícia? Existe uma solução técnica e legal: o <strong>Google Consent Mode V2</strong>. Ele permite que você respeite a privacidade dos usuários e, ao mesmo tempo, mantenha o desempenho de suas campanhas digitais.
               </p>
 
-              <p>
+              <p className="text-lg leading-relaxed">
                 Neste guia, você vai aprender, de forma clara e prática, como implementar o Google Consent Mode V2 na sua loja ou site em 2026, integrando-o perfeitamente à sua estratégia de conformidade com a LGPD — sem sacrificar dados, conversões ou orçamento publicitário.
               </p>
 
@@ -157,12 +157,12 @@ const GoogleConsentModeV2Post = () => {
             O que é o Google Consent Mode V2 (e por que ele mudou tudo em 2024)
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               O <strong>Consent Mode V2</strong> é uma API do Google que permite que seus scripts (Analytics, Ads, Tag Manager) ajustem seu comportamento com base na escolha do usuário sobre cookies.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Antes, era tudo ou nada:
             </p>
           </div>
@@ -186,12 +186,12 @@ const GoogleConsentModeV2Post = () => {
             </CardContent>
           </Card>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               Com o Consent Mode V2, o Google introduziu um conceito revolucionário: <strong>modelagem baseada em consentimento</strong>.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Mesmo quando o usuário recusa cookies de marketing, o Google continua a receber <strong>sinais anônimos</strong> (como cliques em anúncios, tempo de permanência estimado, tipo de dispositivo) para ajustar algoritmos de atribuição e remarketing — sem identificar o indivíduo.
             </p>
           </div>
@@ -221,16 +221,16 @@ const GoogleConsentModeV2Post = () => {
             Por que o Consent Mode V2 é essencial para sites brasileiros em 2026
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               No Brasil, a LGPD exige consentimento explícito para cookies de marketing e analytics. Isso significa que, se você não tiver um mecanismo de gestão de consentimento (CMP) que bloqueie pixels até o aceite, você está em risco de multa.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Mas bloquear tudo também tem um custo: perda de dados de conversão, atribuição imprecisa e orçamentos publicitários mal otimizados.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               O Consent Mode V2 resolve esse dilema. Ele permite que você:
             </p>
           </div>
@@ -295,8 +295,8 @@ const GoogleConsentModeV2Post = () => {
             Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026 – Passo a Passo
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6">
+            <p className="text-lg leading-relaxed">
               A implementação envolve duas partes: <strong>configuração técnica</strong> e <strong>integração com sua CMP</strong>. Vamos a elas.
             </p>
           </div>
@@ -398,7 +398,7 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
-              <p className="text-muted-foreground">
+              <p className="text-lg leading-relaxed">
                 Sua CMP precisa enviar dois sinais ao GTM assim que o usuário fizer sua escolha:
               </p>
 
@@ -455,7 +455,7 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
-              <p className="text-muted-foreground">
+              <p className="text-lg leading-relaxed">
                 Use as ferramentas do Google para confirmar que está tudo funcionando:
               </p>
 
@@ -474,7 +474,7 @@ const GoogleConsentModeV2Post = () => {
                 </li>
               </ul>
 
-              <p className="text-muted-foreground">
+              <p className="text-lg leading-relaxed">
                 Verifique se, ao recusar cookies, os eventos ainda são enviados no modo "sem armazenamento" (denied), e se, ao aceitar, os cookies são ativados normalmente.
               </p>
 
@@ -558,8 +558,8 @@ const GoogleConsentModeV2Post = () => {
             Benefícios reais: o que muda quando você implementa certo
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               Empresas que integraram corretamente o Google Consent Mode V2 reportaram:
             </p>
           </div>
@@ -647,12 +647,12 @@ const GoogleConsentModeV2Post = () => {
             E o Google Analytics 4? Ele funciona com Consent Mode V2?
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               <strong>Sim — e é essencial.</strong> O GA4 foi projetado para funcionar em ambientes com privacidade reforçada.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Quando <code className="bg-muted px-2 py-1 rounded text-sm">analytics_storage</code> está como <strong>denied</strong>, o GA4:
             </p>
           </div>
@@ -689,8 +689,8 @@ const GoogleConsentModeV2Post = () => {
             </Card>
           </div>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6">
+            <p className="text-lg leading-relaxed">
               Isso é suficiente para entender tendências, funis e comportamentos — sem identificar indivíduos.
             </p>
           </div>
@@ -714,12 +714,12 @@ const GoogleConsentModeV2Post = () => {
             Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026 – e por que não dá mais para adiar
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               Em 2026, o ecossistema digital exige maturidade em privacidade. O Google não só exige Consent Mode V2 — ele recompensa quem o implementa bem com melhores algoritmos, preços mais baixos e acesso a recursos avançados.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Ao mesmo tempo, a ANPD intensifica fiscalizações em setores como e-commerce, SaaS e marketing digital. A combinação perfeita é:
             </p>
           </div>
@@ -781,7 +781,7 @@ const GoogleConsentModeV2Post = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
+              <p className="text-lg leading-relaxed">
                 Use nosso gerador gratuito de política de privacidade LGPD — já compatível com Consent Mode V2 e atualizado para 2026.
               </p>
 
@@ -831,16 +831,16 @@ const GoogleConsentModeV2Post = () => {
             Conclusão: Privacidade e performance não são inimigas — são parceiras
           </h2>
 
-          <div className="prose prose-lg max-w-none mb-6 text-muted-foreground space-y-4">
-            <p>
+          <div className="prose prose-lg max-w-none mb-6 space-y-4">
+            <p className="text-lg leading-relaxed">
               O <strong>Google Consent Mode V2: Como Implementar na Sua Loja ou Site em 2026</strong> não é apenas uma atualização técnica. É um marco na evolução do marketing digital ético.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Empresas que enxergam a LGPD como oportunidade — e não como obstáculo — estão construindo marcas mais confiáveis, campanhas mais eficientes e relacionamentos mais duradouros com seus clientes.
             </p>
 
-            <p>
+            <p className="text-lg leading-relaxed">
               Respeitar a escolha do usuário não significa perder dados. Significa ganhar legitimidade. E, no longo prazo, ninguém vence sem ela.
             </p>
           </div>
