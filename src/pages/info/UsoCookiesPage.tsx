@@ -1,18 +1,38 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Cookie, Bell, Shield, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { StructuredData } from "@/components/StructuredData";
 
 const UsoCookiesPage = () => {
+  const breadcrumbItems = [
+    { name: "O que é o Banner de Cookies?", url: "/uso-cookies" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>O que é o Banner de Cookies? | Guia Completo 2025</title>
+        <meta name="description" content="Descubra o que é o banner de cookies, por que é obrigatório, o que deve conter e como implementar corretamente no seu site conforme LGPD e GDPR." />
+        <meta name="keywords" content="banner de cookies, popup cookies, LGPD, GDPR, consentimento cookies, CMP" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/uso-cookies" />
+      </Helmet>
+      <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-12 max-w-5xl">
+        <Breadcrumbs items={breadcrumbItems} />
+        
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mb-4">
+            <Cookie className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             O que é o Banner de Cookies?
           </h1>
           <p className="text-xl text-muted-foreground">

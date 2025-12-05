@@ -4,15 +4,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileCheck, Users, AlertCircle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { StructuredData } from "@/components/StructuredData";
 
 const PoliticaConteudoInfoPage = () => {
+  const breadcrumbItems = [
+    { name: "O que é Política de Conteúdo?", url: "/politica-conteudo" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>O que é Política de Conteúdo? | Guia Completo 2025</title>
+        <meta name="description" content="Entenda o que é Política de Conteúdo, para que serve, onde é necessária e como definir regras claras para conteúdo gerado por usuários." />
+        <meta name="keywords" content="política de conteúdo, conteúdo gerado por usuários, moderação, regras de comunidade, UGC" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/politica-conteudo" />
+      </Helmet>
+      <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-12 max-w-5xl">
+        <Breadcrumbs items={breadcrumbItems} />
+        
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mb-4">
+            <FileCheck className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             O que é Política de Conteúdo?
           </h1>
           <p className="text-xl text-muted-foreground">
