@@ -1,3 +1,8 @@
+# Force text/plain for ads.txt
+<IfModule mod_mime.c>
+  AddType text/plain .txt
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
