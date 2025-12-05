@@ -4,15 +4,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText, Scale, Shield, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { StructuredData } from "@/components/StructuredData";
 
 const NossosTermosPage = () => {
+  const breadcrumbItems = [
+    { name: "O que são Termos de Uso?", url: "/nossos-termos" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>O que são Termos de Uso? | Guia Completo 2025</title>
+        <meta name="description" content="Entenda o que são Termos de Uso, para que servem, quando são obrigatórios e o que deve conter. Guia completo para proteger seu negócio digital." />
+        <meta name="keywords" content="termos de uso, termos de serviço, termos e condições, contrato digital, proteção legal" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/nossos-termos" />
+      </Helmet>
+      <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-12 max-w-5xl">
+        <Breadcrumbs items={breadcrumbItems} />
+        
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mb-4">
+            <FileText className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             O que são Termos de Uso?
           </h1>
           <p className="text-xl text-muted-foreground">

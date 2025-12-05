@@ -1,18 +1,38 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, FileText, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { StructuredData } from "@/components/StructuredData";
 
 const NossaPrivacidadePage = () => {
+  const breadcrumbItems = [
+    { name: "O que é Política de Privacidade?", url: "/nossa-privacidade" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>O que é Política de Privacidade? | Guia Completo 2025</title>
+        <meta name="description" content="Descubra o que é Política de Privacidade, para que serve, onde usar e o que deve conter. Guia completo sobre LGPD e proteção de dados pessoais." />
+        <meta name="keywords" content="política de privacidade, LGPD, proteção de dados, privacidade online, dados pessoais" />
+        <link rel="canonical" href="https://politicadeprivacidade.org/nossa-privacidade" />
+      </Helmet>
+      <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      
       <Header />
       
       <main className="container mx-auto px-4 py-12 max-w-5xl">
+        <Breadcrumbs items={breadcrumbItems} />
+        
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mb-4">
+            <Shield className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             O que é Política de Privacidade?
           </h1>
           <p className="text-xl text-muted-foreground">
