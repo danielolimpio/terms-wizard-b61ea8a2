@@ -137,17 +137,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Gerador de Política de Privacidade Grátis | Crie em 2 Minutos - LGPD e GDPR</title>
+        <title>Gerador de Política de Privacidade Grátis Online – Crie em 2 Minutos (LGPD e GDPR)</title>
         <meta 
           name="description" 
-          content="✅ Gerador de Política de Privacidade grátis e online. Crie em 2 minutos conforme LGPD e GDPR. Sem cadastro, sem custo. Baixe em PDF, DOC ou TXT. Mais de 12 modelos de políticas legais para seu site." 
+          content="Gerador de Política de Privacidade 100% grátis e online. Crie sua política em 2 minutos conforme LGPD e GDPR. Sem cadastro. Baixe em PDF, DOC ou TXT. +5.000 políticas geradas. Ideal para blogs, e-commerce, Shopify e WordPress." 
         />
-        <meta name="keywords" content="gerador de política de privacidade, política de privacidade grátis, gerador política privacidade gratuito, criar política de privacidade, gerar política de privacidade, LGPD, GDPR, termos de uso, política de cookies, modelo política privacidade" />
+        <meta name="keywords" content="gerador de política de privacidade, política de privacidade grátis, gerar política de privacidade, criar política de privacidade online, modelo política de privacidade, gerador termos de uso, política de cookies, LGPD, GDPR, política privacidade site, política privacidade blog, política privacidade e-commerce" />
         <link rel="canonical" href="https://politicadeprivacidade.org/" />
         <link rel="preload" as="image" href={heroBackground} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta property="og:title" content="Gerador de Política de Privacidade Grátis | Crie em 2 Minutos" />
-        <meta property="og:description" content="Crie sua política de privacidade grátis conforme LGPD e GDPR. Sem cadastro, pronto em 2 minutos. Baixe em PDF, DOC ou TXT." />
+        <meta property="og:title" content="Gerador de Política de Privacidade Grátis Online – Crie em 2 Minutos" />
+        <meta property="og:description" content="Crie sua política de privacidade grátis conforme LGPD e GDPR. Sem cadastro, pronto em 2 minutos. Baixe em PDF, DOC ou TXT. +5.000 políticas geradas." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://politicadeprivacidade.org/" />
         <meta property="og:locale" content="pt_BR" />
@@ -178,12 +178,12 @@ const Index = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="mb-6">
             <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Gerador de Política de Privacidade Grátis | <span className="text-cyan-400">Crie em 2 Minutos</span>
+              Gerador de Política de Privacidade e Termos de Uso <span className="text-cyan-400">Grátis</span>
             </h1>
-            <p className="text-lg md:text-2xl text-gray-100 max-w-4xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md font-medium">
-              Crie sua Política de Privacidade conforme LGPD e GDPR gratuitamente, em 2 minutos, sem cadastro. 
-              Baixe em PDF, DOC ou TXT. Perfeito para blogs, e-commerce, Shopify e WordPress.
-            </p>
+            <h2 className="text-lg md:text-2xl text-gray-100 max-w-4xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md font-medium">
+              Crie sua Política de Privacidade personalizada conforme LGPD e GDPR em 2 minutos, sem cadastro. 
+              Baixe em PDF, DOC ou TXT. Mais de 5.000 políticas geradas para blogs, e-commerce, Shopify e WordPress.
+            </h2>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
@@ -319,7 +319,7 @@ const Index = () => {
       {/* Social Proof Message */}
       <div className="py-4 text-center bg-gradient-to-r from-primary/5 via-cyan-500/5 to-primary/5">
         <p className="text-sm md:text-base text-muted-foreground font-medium">
-          <span className="text-primary font-bold">+2.800 pessoas</span> criaram suas políticas esta semana. Junte-se a elas!
+          <span className="text-primary font-bold">+5.000 políticas geradas</span> por blogs, e-commerces e empresas em todo o Brasil. Junte-se a eles!
         </p>
       </div>
 
