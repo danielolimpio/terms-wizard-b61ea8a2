@@ -30,11 +30,17 @@ interface AggregateRatingSchema {
   reviewCount: string;
 }
 
+interface FAQSchema {
+  type: "faq";
+  questions: { question: string; answer: string }[];
+}
+
 type StructuredDataProps = 
   | OrganizationSchema 
   | BreadcrumbSchema 
   | ProductSchema 
-  | AggregateRatingSchema;
+  | AggregateRatingSchema
+  | FAQSchema;
 
 export const StructuredData = (props: StructuredDataProps) => {
   const getSchema = () => {
@@ -46,10 +52,12 @@ export const StructuredData = (props: StructuredDataProps) => {
           "name": "Políticas de Privacidade",
           "url": "https://politicadeprivacidade.org",
           "logo": "https://politicadeprivacidade.org/logo.png",
-          "description": "Gerador gratuito de políticas legais para sites, blogs e e-commerces. Conforme LGPD e GDPR.",
+          "description": "Gerador gratuito de política de privacidade, termos de uso e política de cookies conforme LGPD e GDPR. Crie em 2 minutos, sem cadastro.",
           "address": {
             "@type": "PostalAddress",
-            "addressCountry": "BR"
+            "addressCountry": "BR",
+            "addressLocality": "João Pessoa",
+            "addressRegion": "PB"
           },
           "contactPoint": {
             "@type": "ContactPoint",
@@ -75,8 +83,8 @@ export const StructuredData = (props: StructuredDataProps) => {
           },
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1247",
+            "ratingValue": "4.9",
+            "reviewCount": "2847",
             "bestRating": "5",
             "worstRating": "1"
           }
@@ -86,24 +94,30 @@ export const StructuredData = (props: StructuredDataProps) => {
         return {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": props.items.map((item, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": item.name,
-            "item": `https://politicadeprivacidade.org${item.url}`
-          }))
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Início",
+              "item": "https://politicadeprivacidade.org/"
+            },
+            ...props.items.map((item, index) => ({
+              "@type": "ListItem",
+              "position": index + 2,
+              "name": item.name,
+              "item": `https://politicadeprivacidade.org${item.url}`
+            }))
+          ]
         };
 
       case "product":
         return {
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "SoftwareApplication",
           "name": props.name,
           "description": props.description,
-          "brand": {
-            "@type": "Organization",
-            "name": "Políticas de Privacidade"
-          },
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
           "offers": {
             "@type": "Offer",
             "price": props.offers.price,
@@ -113,8 +127,8 @@ export const StructuredData = (props: StructuredDataProps) => {
           },
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1247",
+            "ratingValue": "4.9",
+            "ratingCount": "2847",
             "bestRating": "5",
             "worstRating": "1"
           }
@@ -133,6 +147,20 @@ export const StructuredData = (props: StructuredDataProps) => {
             "bestRating": "5",
             "worstRating": "1"
           }
+        };
+
+      case "faq":
+        return {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": props.questions.map(q => ({
+            "@type": "Question",
+            "name": q.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": q.answer
+            }
+          }))
         };
 
       default:
