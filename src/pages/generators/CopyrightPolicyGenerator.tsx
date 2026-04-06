@@ -83,7 +83,6 @@ const CopyrightPolicyGenerator = () => {
           <BlogSidebar />
         </div>
       </div>
-      </div>
       <Footer />
       <ScrollToTop />
     </div>

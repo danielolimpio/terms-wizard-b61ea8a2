@@ -83,7 +83,6 @@ const AccessibilityPolicyGenerator = () => {
           <BlogSidebar />
         </div>
       </div>
-      </div>
       <Footer />
       <ScrollToTop />
     </div>

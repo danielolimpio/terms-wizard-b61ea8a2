@@ -83,7 +83,6 @@ const AntispamPolicyGenerator = () => {
           <BlogSidebar />
         </div>
       </div>
-      </div>
       <Footer />
       <ScrollToTop />
     </div>

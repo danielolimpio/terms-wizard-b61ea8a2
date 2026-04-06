@@ -83,7 +83,6 @@ const ContentPolicyGenerator = () => {
           <BlogSidebar />
         </div>
       </div>
-      </div>
       <Footer />
       <ScrollToTop />
     </div>

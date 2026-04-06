@@ -83,7 +83,6 @@ const SecurityPolicyGenerator = () => {
           <BlogSidebar />
         </div>
       </div>
-      </div>
       <Footer />
       <ScrollToTop />
     </div>
