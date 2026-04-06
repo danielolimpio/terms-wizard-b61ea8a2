@@ -137,25 +137,28 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Gerador de Política de Privacidade Grátis | Crie em 2 Minutos</title>
+        <title>Gerador de Política de Privacidade Grátis | Crie em 2 Minutos - LGPD e GDPR</title>
         <meta 
           name="description" 
-          content="Gere política de privacidade grátis, conforme LGPD e GDPR. Crie termos de uso, cookies e mais em 2 minutos. Sem cadastro, 100% gratuito. Perfeito para blogs e e-commerce." 
+          content="✅ Gerador de Política de Privacidade grátis e online. Crie em 2 minutos conforme LGPD e GDPR. Sem cadastro, sem custo. Baixe em PDF, DOC ou TXT. Mais de 12 modelos de políticas legais para seu site." 
         />
-        <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, como gerar política privacidade, LGPD, GDPR, termos de uso" />
+        <meta name="keywords" content="gerador de política de privacidade, política de privacidade grátis, gerador política privacidade gratuito, criar política de privacidade, gerar política de privacidade, LGPD, GDPR, termos de uso, política de cookies, modelo política privacidade" />
         <link rel="canonical" href="https://politicadeprivacidade.org/" />
         <link rel="preload" as="image" href={heroBackground} />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:title" content="Gerador de Política de Privacidade Grátis | Crie em 2 Minutos" />
-        <meta property="og:description" content="Gere política de privacidade grátis, conforme LGPD e GDPR. Sem cadastro, 100% gratuito." />
+        <meta property="og:description" content="Crie sua política de privacidade grátis conforme LGPD e GDPR. Sem cadastro, pronto em 2 minutos. Baixe em PDF, DOC ou TXT." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://politicadeprivacidade.org/" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Políticas de Privacidade" />
       </Helmet>
       
       <StructuredData type="organization" />
       <StructuredData 
         type="product" 
-        name="Gerador de Políticas Legais Gratuito" 
-        description="Ferramenta gratuita para gerar políticas de privacidade, termos de uso e políticas de cookies conforme LGPD e GDPR"
+        name="Gerador de Política de Privacidade Grátis" 
+        description="Ferramenta online gratuita para gerar política de privacidade, termos de uso e política de cookies conforme LGPD e GDPR. Crie em 2 minutos sem cadastro."
         offers={{
           price: "0",
           priceCurrency: "BRL"
@@ -177,10 +180,10 @@ const Index = () => {
             <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               Gerador de Política de Privacidade Grátis | <span className="text-cyan-400">Crie em 2 Minutos</span>
             </h1>
-            <h2 className="text-lg md:text-2xl text-gray-100 max-w-4xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md font-medium">
-              Crie sua Política de Privacidade e Termos de Uso gratuitamente, em segundos, sem cadastro. 
-              Perfeito para blogs, lojas Shopify e WordPress.
-            </h2>
+            <p className="text-lg md:text-2xl text-gray-100 max-w-4xl mx-auto mb-6 md:mb-8 px-4 drop-shadow-md font-medium">
+              Crie sua Política de Privacidade conforme LGPD e GDPR gratuitamente, em 2 minutos, sem cadastro. 
+              Baixe em PDF, DOC ou TXT. Perfeito para blogs, e-commerce, Shopify e WordPress.
+            </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
@@ -324,7 +327,7 @@ const Index = () => {
       <section className="bg-gradient-secondary py-8 md:py-16 px-4">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8 md:mb-12">
-            Por que escolher nosso gerador de políticas legais?
+            Por Que Escolher Nosso Gerador de Política de Privacidade?
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
