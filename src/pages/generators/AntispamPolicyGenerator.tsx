@@ -1,6 +1,7 @@
 // Antispam Policy Generator Page
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -60,6 +61,7 @@ const AntispamPolicyGenerator = () => {
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
       </Helmet>
       <Header />
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
@@ -80,6 +82,7 @@ const AntispamPolicyGenerator = () => {
           </div>
           <BlogSidebar />
         </div>
+      </div>
       </div>
       <Footer />
       <ScrollToTop />
