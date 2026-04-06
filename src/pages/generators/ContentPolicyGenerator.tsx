@@ -53,8 +53,13 @@ const ContentPolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Conteúdo Grátis | Regras para Seu Site</title>
+        <meta name="description" content="✅ Gere política de conteúdo grátis para seu site ou plataforma. Defina regras claras para usuários. Sem cadastro, baixe em PDF, DOC ou TXT." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-conteudo" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />

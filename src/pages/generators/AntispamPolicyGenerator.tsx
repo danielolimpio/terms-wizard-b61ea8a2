@@ -53,8 +53,13 @@ const AntispamPolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política Antispam Grátis | Proteção contra Spam</title>
+        <meta name="description" content="✅ Gere política antispam grátis para seu site ou e-mail marketing. Conforme LGPD e CAN-SPAM. Sem cadastro, baixe em PDF, DOC ou TXT." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-antispam" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />

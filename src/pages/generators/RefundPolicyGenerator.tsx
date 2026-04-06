@@ -1,6 +1,6 @@
 // Refund Policy Generator Page
 import { useState, useEffect } from "react";
-import { Header } from "@/components/Header";
+import { Helmet } from "react-helmet-async";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
 import { GeneratedPolicyResult } from "@/components/GeneratedPolicyResult";
