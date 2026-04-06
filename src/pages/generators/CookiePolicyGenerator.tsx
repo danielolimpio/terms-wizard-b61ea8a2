@@ -61,6 +61,7 @@ const CookiePolicyGenerator = () => {
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
       </Helmet>
       <Header />
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">
           <div className="flex-1">
             <PolicyGenerator policyType={policyType} onGenerate={handleGenerate} />
