@@ -53,6 +53,7 @@ const SecurityPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Segurança Grátis | Proteção de Dados</title>
@@ -86,6 +87,7 @@ const SecurityPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

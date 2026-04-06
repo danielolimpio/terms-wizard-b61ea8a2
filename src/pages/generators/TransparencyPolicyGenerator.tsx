@@ -53,6 +53,7 @@ const TransparencyPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Transparência Grátis | Crie em 2 Minutos</title>
@@ -86,6 +87,7 @@ const TransparencyPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

@@ -53,6 +53,7 @@ const CopyrightPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Direitos Autorais Grátis | Proteja Seu Conteúdo</title>
@@ -86,6 +87,7 @@ const CopyrightPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

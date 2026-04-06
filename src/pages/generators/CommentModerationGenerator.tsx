@@ -53,6 +53,7 @@ const CommentModerationGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Moderação Grátis | Gerencie Comentários</title>
@@ -86,6 +87,7 @@ const CommentModerationGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 
