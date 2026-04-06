@@ -53,6 +53,7 @@ const SustainabilityPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Sustentabilidade Grátis | ESG e Responsabilidade</title>

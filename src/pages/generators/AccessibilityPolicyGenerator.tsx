@@ -53,6 +53,7 @@ const AccessibilityPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política de Acessibilidade Grátis | Inclusão Digital</title>

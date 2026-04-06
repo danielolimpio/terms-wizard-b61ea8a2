@@ -53,6 +53,7 @@ const AntispamPolicyGenerator = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Gerador de Política Antispam Grátis | Proteção contra Spam</title>
