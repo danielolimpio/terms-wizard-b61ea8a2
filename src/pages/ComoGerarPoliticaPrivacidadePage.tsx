@@ -8,12 +8,13 @@ const ComoGerarPoliticaPrivacidadePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Como Gerar Política de Privacidade | Guia Completo Passo a Passo</title>
+        <title>Como Gerar Política de Privacidade Grátis | Passo a Passo Completo 2026</title>
         <meta 
           name="description" 
-          content="Aprenda como criar política de privacidade profissional em 3 passos simples. Guia completo para gerar documento conforme LGPD e GDPR gratuitamente." 
+          content="✅ Aprenda como criar política de privacidade profissional grátis em 3 passos. Guia completo com tutorial passo a passo conforme LGPD e GDPR. Sem cadastro, gere agora!" 
         />
-        <meta name="keywords" content="como gerar política de privacidade, criar política privacidade, tutorial política privacidade, guia LGPD" />
+        <meta name="keywords" content="como gerar política de privacidade, criar política privacidade grátis, tutorial política privacidade, guia LGPD, passo a passo política de privacidade" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://politicadeprivacidade.org/como-gerar-politica-de-privacidade" />
       </Helmet>
       <Header />

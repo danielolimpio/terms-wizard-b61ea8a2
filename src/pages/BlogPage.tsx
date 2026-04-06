@@ -64,11 +64,12 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Blog | Guias sobre LGPD, GDPR e Políticas Legais</title>
+        <title>Blog LGPD e GDPR | Guias Completos sobre Políticas Legais para Sites</title>
         <meta 
           name="description" 
-          content="Artigos completos sobre política de privacidade, LGPD, GDPR, cookies e compliance digital. Guias práticos para criar documentos legais." 
+          content="Artigos completos sobre LGPD, GDPR, política de privacidade, cookies e compliance digital. Guias práticos para criar documentos legais e proteger seu site." 
         />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://politicadeprivacidade.org/blog" />
       </Helmet>
       <Header />

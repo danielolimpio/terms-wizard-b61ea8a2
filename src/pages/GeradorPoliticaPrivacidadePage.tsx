@@ -84,11 +84,12 @@ const GeradorPoliticaPrivacidadePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Gerador de Política de Privacidade | Crie Grátis Agora</title>
+        <title>Gerador de Política de Privacidade Grátis | LGPD e GDPR - Crie Agora</title>
         <meta 
           name="description" 
-          content="Ferramenta profissional para gerar política de privacidade grátis. Preencha o formulário e baixe em PDF, DOC ou TXT. Conforme LGPD e GDPR." 
+          content="✅ Gere sua política de privacidade grátis em 2 minutos. Conforme LGPD e GDPR. Baixe em PDF, DOC ou TXT. Sem cadastro, 100% gratuito. Ideal para blogs, e-commerce e sites." 
         />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-privacidade" />
       </Helmet>
       
