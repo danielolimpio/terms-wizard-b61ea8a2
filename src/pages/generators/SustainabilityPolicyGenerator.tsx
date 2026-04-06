@@ -87,6 +87,7 @@ const SustainabilityPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

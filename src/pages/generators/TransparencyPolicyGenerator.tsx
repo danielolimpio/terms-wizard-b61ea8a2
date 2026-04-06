@@ -87,6 +87,7 @@ const TransparencyPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

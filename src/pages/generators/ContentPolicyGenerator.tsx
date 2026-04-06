@@ -87,6 +87,7 @@ const ContentPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

@@ -87,6 +87,7 @@ const CopyrightPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

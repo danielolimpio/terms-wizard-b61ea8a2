@@ -87,6 +87,7 @@ const AntispamPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

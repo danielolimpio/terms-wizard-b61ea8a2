@@ -87,6 +87,7 @@ const SecurityPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

@@ -87,6 +87,7 @@ const CommentModerationGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 

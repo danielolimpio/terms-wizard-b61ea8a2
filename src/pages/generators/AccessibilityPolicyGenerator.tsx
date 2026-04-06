@@ -87,6 +87,7 @@ const AccessibilityPolicyGenerator = () => {
       <Footer />
       <ScrollToTop />
     </div>
+    </>
   );
 };
 
