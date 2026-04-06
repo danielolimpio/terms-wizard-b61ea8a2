@@ -121,15 +121,16 @@ const PoliticaPrivacidadeGratisPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Política de Privacidade Grátis | LGPD & GDPR | Sem Cadastro</title>
+        <title>Política de Privacidade Grátis | Gere Agora Conforme LGPD e GDPR</title>
         <meta 
           name="description" 
-          content="Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR. Sem cadastro, download em PDF/DOC/TXT. Para blogs, e-commerce e sites." 
+          content="✅ Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR. Sem cadastro, download em PDF, DOC ou TXT. Para blogs, e-commerce, Shopify e WordPress." 
         />
-        <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, política privacidade LGPD, modelo política privacidade" />
+        <meta name="keywords" content="política de privacidade grátis, gerador política privacidade, política privacidade LGPD, modelo política privacidade, criar política de privacidade" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-de-privacidade-gratis" />
-        <meta property="og:title" content="Política de Privacidade Grátis | LGPD & GDPR" />
-        <meta property="og:description" content="Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR." />
+        <meta property="og:title" content="Política de Privacidade Grátis | Gere Agora Conforme LGPD e GDPR" />
+        <meta property="og:description" content="Crie política de privacidade profissional grátis em 2 minutos. Conforme LGPD e GDPR. Sem cadastro." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://politicadeprivacidade.org/politica-de-privacidade-gratis" />
       </Helmet>

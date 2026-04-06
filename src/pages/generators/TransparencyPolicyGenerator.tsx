@@ -1,6 +1,7 @@
 // Transparency Policy Generator Page
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -53,6 +54,12 @@ const TransparencyPolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Transparência Grátis | Crie em 2 Minutos</title>
+        <meta name="description" content="✅ Gere política de transparência grátis para sua empresa. Demonstre compromisso ético e governança. Sem cadastro, baixe em PDF, DOC ou TXT." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-transparencia" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">

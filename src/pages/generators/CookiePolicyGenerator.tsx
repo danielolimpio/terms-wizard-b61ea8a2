@@ -1,6 +1,7 @@
 // Cookie Policy Generator Page
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -53,6 +54,12 @@ const CookiePolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Cookies Grátis | LGPD e GDPR - Crie Agora</title>
+        <meta name="description" content="✅ Gere política de cookies grátis em 2 minutos. Conforme LGPD e GDPR. Sem cadastro, baixe em PDF, DOC ou TXT. Ideal para sites com Google Analytics e AdSense." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-cookies" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">

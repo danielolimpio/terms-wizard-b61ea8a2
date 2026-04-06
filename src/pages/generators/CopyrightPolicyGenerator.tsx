@@ -1,6 +1,7 @@
 // Copyright Policy Generator Page
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -53,6 +54,12 @@ const CopyrightPolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Direitos Autorais Grátis | Proteja Seu Conteúdo</title>
+        <meta name="description" content="✅ Gere política de direitos autorais grátis. Proteja sua propriedade intelectual conforme DMCA. Sem cadastro, baixe em PDF, DOC ou TXT." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-propriedade-intelectual" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">

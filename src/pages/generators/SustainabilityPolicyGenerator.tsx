@@ -1,6 +1,7 @@
 // Sustainability Policy Generator Page
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolicyGenerator } from "@/components/PolicyGenerator";
@@ -53,6 +54,12 @@ const SustainabilityPolicyGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Gerador de Política de Sustentabilidade Grátis | ESG e Responsabilidade</title>
+        <meta name="description" content="✅ Gere política de sustentabilidade grátis para sua empresa. Demonstre compromisso ambiental e social. Sem cadastro, baixe em PDF, DOC ou TXT." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/gerador-politica-sustentabilidade" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      </Helmet>
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="flex gap-8">
