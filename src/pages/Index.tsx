@@ -392,6 +392,76 @@ const Index = () => {
         </div>
       </section>
 
+      {/* SEO Content Section - Similar to competitor */}
+      <section className="py-12 md:py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                Sobre a Política de Privacidade e Termos de Uso
+              </h2>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">O que é uma Política de Privacidade?</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Uma <strong>política de privacidade</strong> é um documento legal obrigatório que explica como um site coleta, armazena, utiliza e protege os dados pessoais dos seus visitantes e clientes. 
+                Segundo a <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">LGPD (Lei nº 13.709/2018)</a>, 
+                todo site que coleta dados pessoais — como nome, e-mail, CPF ou cookies — deve informar claramente aos usuários como esses dados serão tratados.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">A Importância da Política de Privacidade</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Ter uma política de privacidade não é apenas uma boa prática — é uma <strong>exigência legal</strong> em diversos países. 
+                No Brasil, a LGPD prevê multas de até R$ 50 milhões por infração. Na Europa, o <a href="https://commission.europa.eu/law/law-topic/data-protection_pt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">GDPR</a> pode aplicar multas de até 4% do faturamento global. 
+                Além disso, plataformas como <strong>Google AdSense</strong>, <strong>Google Play</strong>, <strong>Apple App Store</strong> e <strong>Shopify</strong> exigem uma política de privacidade publicada para aprovar seu cadastro.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3">O que são Termos de Uso?</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Os <strong>termos de uso</strong> (ou termos e condições) definem as regras para utilização do seu site ou aplicativo. 
+                Embora não sejam obrigatórios por lei em todos os casos, são altamente recomendados para proteger sua empresa contra abusos, 
+                definir responsabilidades e estabelecer direitos sobre propriedade intelectual. São essenciais para e-commerces, 
+                marketplaces e plataformas SaaS.
+              </p>
+            </div>
+            
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                Sobre o PoliticaDePrivacidade.org
+              </h2>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">O que é o PoliticaDePrivacidade.org?</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                O <strong>PoliticaDePrivacidade.org</strong> é um gerador de políticas legais <strong>100% gratuito</strong>, 
+                criado para ajudar proprietários de sites, blogs, e-commerces e aplicativos a criar documentos legais profissionais em minutos. 
+                Oferecemos mais de <strong>12 tipos de políticas</strong>, incluindo Política de Privacidade, Termos de Uso, 
+                Política de Cookies, Política de Reembolso e muito mais — tudo conforme LGPD e GDPR.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">Tem custos? Quanto tempo demora?</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                <strong>Não!</strong> É totalmente gratuito e sem limites. Em menos de <strong>2 minutos</strong> você gera 
+                uma política de privacidade ou termos de uso completos e personalizados. Sem cadastro, sem login, sem pegadinhas. 
+                Você pode baixar em <strong>PDF, DOC ou TXT</strong> e usar imediatamente no seu site.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">Para quem é indicado?</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Nosso gerador é ideal para <strong>blogs</strong>, <strong>lojas virtuais</strong> (Shopify, WooCommerce, Nuvemshop), 
+                <strong>sites WordPress</strong>, <strong>aplicativos móveis</strong>, <strong>startups</strong>, 
+                <strong>freelancers</strong> e qualquer negócio digital que precise estar em conformidade com a legislação de proteção de dados.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-3">É seguro usar?</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Sim! Todos os documentos gerados são baseados em templates validados por especialistas e atualizados regularmente. 
+                Seus dados não são armazenados — a geração é instantânea e local. Recomendamos sempre que revise o conteúdo gerado 
+                e, se necessário, consulte um advogado para adequações específicas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FAQ />
 
