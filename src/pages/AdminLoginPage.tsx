@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
+import { toSafeError } from '@/lib/safeError';
 import adminLogo from '@/assets/admin-logo.png';
 
 export default function AdminLoginPage() {
@@ -29,9 +30,7 @@ export default function AdminLoginPage() {
       });
 
       if (signInError) {
-        setError(signInError.message === 'Invalid login credentials' 
-          ? 'Email ou senha incorretos' 
-          : signInError.message);
+        setError('Email ou senha incorretos');
         setLoading(false);
         return;
       }
@@ -53,7 +52,8 @@ export default function AdminLoginPage() {
         }
       }
     } catch (err: any) {
-      setError('Erro ao fazer login: ' + err.message);
+      console.error('Login error:', err);
+      setError(toSafeError('auth'));
     }
 
     setLoading(false);
