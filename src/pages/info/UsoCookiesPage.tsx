@@ -22,6 +22,12 @@ const UsoCookiesPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/uso-cookies" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é um Banner de Cookies?", answer: "É um aviso exibido ao visitante do site pedindo consentimento para o uso de cookies, conforme exigido pela LGPD e GDPR." },
+        { question: "O Banner de Cookies é obrigatório?", answer: "Sim. Sites que utilizam cookies de rastreamento, analytics ou publicidade devem exibir um banner de consentimento conforme a legislação de proteção de dados." },
+        { question: "Qual a diferença entre Banner de Cookies e Política de Cookies?", answer: "O banner é o popup de consentimento exibido ao visitante. A Política de Cookies é a página que detalha quais cookies são usados e suas finalidades." },
+        { question: "Quais tipos de cookies precisam de consentimento?", answer: "Cookies de marketing, analytics e personalização precisam de consentimento. Cookies essenciais para o funcionamento do site podem ser usados sem consentimento prévio." }
+      ]} />
       
       <Header />
       

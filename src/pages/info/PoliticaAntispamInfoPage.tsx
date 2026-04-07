@@ -22,6 +22,12 @@ const PoliticaAntispamInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-antispam" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política Antispam?", answer: "É um documento que define as regras da empresa sobre envio de comunicações eletrônicas, garantindo que apenas mensagens autorizadas sejam enviadas." },
+        { question: "A Política Antispam é obrigatória?", answer: "Sim, para empresas que fazem email marketing. A LGPD exige consentimento prévio e a CAN-SPAM Act exige opção de descadastro em todas as comunicações." },
+        { question: "O que deve conter na Política Antispam?", answer: "Regras de opt-in e opt-out, frequência de envio, tipos de comunicações, processo de descadastro e medidas contra spam." },
+        { question: "Qual a diferença entre opt-in e double opt-in?", answer: "No opt-in simples o usuário aceita receber emails. No double opt-in, o usuário confirma a inscrição por email, garantindo maior qualidade da lista." }
+      ]} />
       <Header />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <Breadcrumbs items={breadcrumbItems} />

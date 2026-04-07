@@ -22,6 +22,12 @@ const NossosTermosPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/nossos-termos" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que são Termos de Uso?", answer: "Termos de Uso é um contrato digital que define as regras, direitos e responsabilidades entre o site/app e seus usuários." },
+        { question: "Termos de Uso são obrigatórios?", answer: "Embora não sejam obrigatórios por lei em todos os casos, são essenciais para proteger juridicamente o proprietário do site e definir limites de responsabilidade." },
+        { question: "Qual a diferença entre Termos de Uso e Política de Privacidade?", answer: "Os Termos de Uso regulam as regras de uso do site. A Política de Privacidade trata especificamente da coleta e tratamento de dados pessoais." },
+        { question: "O que deve conter nos Termos de Uso?", answer: "Deve conter regras de uso, propriedade intelectual, limitação de responsabilidade, condições de cancelamento, legislação aplicável e foro competente." }
+      ]} />
       
       <Header />
       

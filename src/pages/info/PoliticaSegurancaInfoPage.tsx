@@ -18,6 +18,12 @@ const PoliticaSegurancaInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-seguranca" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Segurança?", answer: "É um documento que define as medidas técnicas e organizacionais para proteger dados, sistemas e infraestrutura contra ameaças cibernéticas." },
+        { question: "A Política de Segurança é obrigatória?", answer: "A LGPD exige que empresas adotem medidas de segurança para proteger dados pessoais. A política formaliza essas medidas e demonstra conformidade." },
+        { question: "O que deve conter na Política de Segurança?", answer: "Medidas de proteção de dados, controle de acesso, criptografia, backup, resposta a incidentes, treinamento de equipe e auditorias periódicas." },
+        { question: "Qual a diferença entre Política de Segurança e Política de Privacidade?", answer: "A Política de Privacidade trata do uso de dados pessoais. A Política de Segurança foca nas medidas técnicas para proteger esses dados e sistemas." }
+      ]} />
       <Header />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <Breadcrumbs items={breadcrumbItems} />

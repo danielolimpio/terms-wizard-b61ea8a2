@@ -18,6 +18,12 @@ const PoliticaDireitosAutoraisInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-direitos-autorais" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Direitos Autorais?", answer: "É um documento que define os direitos sobre conteúdo, marcas e propriedade intelectual de um site, protegendo contra uso não autorizado." },
+        { question: "A Política de Direitos Autorais é obrigatória?", answer: "Não é obrigatória por lei, mas é essencial para proteger o conteúdo original do site e definir regras claras sobre uso e reprodução." },
+        { question: "O que deve conter na Política de Direitos Autorais?", answer: "Titularidade do conteúdo, licenças de uso, regras de reprodução, procedimento para denúncia de violação (DMCA) e consequências legais." },
+        { question: "Como proteger meu conteúdo contra plágio?", answer: "Tenha uma Política de Direitos Autorais clara, use avisos de copyright, registre obras importantes e implemente procedimentos de takedown (DMCA)." }
+      ]} />
       <Header />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <Breadcrumbs items={breadcrumbItems} />
