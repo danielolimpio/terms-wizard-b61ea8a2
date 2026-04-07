@@ -9,6 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, X } from 'lucide-react';
+import { toSafeError } from '@/lib/safeError';
+import DOMPurify from 'dompurify';
 
 export default function AdminPostEditorPage() {
   const { id } = useParams();
@@ -82,7 +84,8 @@ export default function AdminPostEditorPage() {
       setIsAdmin(true);
       setAuthLoading(false);
     } catch (err: any) {
-      setError('Erro de autenticação: ' + err.message);
+      console.error('Auth check error:', err);
+      setError(toSafeError('auth'));
       setAuthLoading(false);
     }
   };
@@ -99,7 +102,8 @@ export default function AdminPostEditorPage() {
         .single();
 
       if (error) {
-        setError('Erro ao carregar post: ' + error.message);
+        console.error('Fetch post error:', error);
+        setError(toSafeError('load'));
         navigate('/admin/posts');
       } else if (data) {
         setTitle(data.title);
@@ -116,7 +120,8 @@ export default function AdminPostEditorPage() {
         }
       }
     } catch (err: any) {
-      setError('Erro ao carregar post: ' + err.message);
+      console.error('Fetch post error:', err);
+      setError(toSafeError('load'));
     }
     setLoading(false);
   };
@@ -155,7 +160,8 @@ export default function AdminPostEditorPage() {
 
       return data.publicUrl;
     } catch (err: any) {
-      throw new Error('Erro ao fazer upload da imagem: ' + err.message);
+      console.error('Upload error:', err);
+      throw new Error(toSafeError('upload'));
     }
   };
 
@@ -172,15 +178,26 @@ export default function AdminPostEditorPage() {
         imageUrl = await uploadImage();
       }
 
+      const sanitizedContent = DOMPurify.sanitize(content, {
+        ALLOWED_TAGS: ['p', 'br', 'b', 'i', 'u', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'blockquote', 'pre', 'code', 'span', 'div', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'figure', 'figcaption', 'sup', 'sub'],
+        ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id', 'target', 'rel', 'width', 'height', 'style'],
+      });
+
+      if (sanitizedContent.length > 100000) {
+        setError('O conteúdo é muito longo. Limite de 100.000 caracteres.');
+        setLoading(false);
+        return;
+      }
+
       const postData = {
-        title,
-        slug,
-        meta_description: metaDescription,
-        content,
+        title: title.slice(0, 500),
+        slug: slug.slice(0, 500),
+        meta_description: metaDescription.slice(0, 500),
+        content: sanitizedContent,
         featured_image: imageUrl,
-        image_credit: imageCredit,
-        categories: categories.split(',').map(c => c.trim()).filter(Boolean),
-        tags: tags.split(',').map(t => t.trim()).filter(Boolean),
+        image_credit: imageCredit.slice(0, 500),
+        categories: categories.split(',').map(c => c.trim()).filter(Boolean).slice(0, 20),
+        tags: tags.split(',').map(t => t.trim()).filter(Boolean).slice(0, 50),
         published,
         published_at: published ? new Date().toISOString() : null,
         author_id: userId,
@@ -203,7 +220,8 @@ export default function AdminPostEditorPage() {
 
       navigate('/admin/posts');
     } catch (err: any) {
-      setError('Erro ao salvar post: ' + err.message);
+      console.error('Save post error:', err);
+      setError(toSafeError('save'));
     }
 
     setLoading(false);

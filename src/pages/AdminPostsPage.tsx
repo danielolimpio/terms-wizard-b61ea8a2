@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Plus, Edit, Trash2 } from 'lucide-react';
+import { toSafeError } from '@/lib/safeError';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -65,7 +66,8 @@ export default function AdminPostsPage() {
       setAuthLoading(false);
       fetchPosts();
     } catch (err: any) {
-      setError('Erro de autenticação: ' + err.message);
+      console.error('Auth check error:', err);
+      setError(toSafeError('auth'));
       setAuthLoading(false);
     }
   };
@@ -81,12 +83,14 @@ export default function AdminPostsPage() {
         .order('created_at', { ascending: false });
 
       if (error) {
-        setError('Erro ao carregar posts: ' + error.message);
+        console.error('Fetch posts error:', error);
+        setError(toSafeError('load'));
       } else {
         setPosts(data || []);
       }
     } catch (err: any) {
-      setError('Erro ao carregar posts: ' + err.message);
+      console.error('Fetch posts error:', err);
+      setError(toSafeError('load'));
     }
     setLoading(false);
   };
@@ -103,12 +107,14 @@ export default function AdminPostsPage() {
         .eq('id', deleteId);
 
       if (error) {
-        setError('Erro ao deletar post: ' + error.message);
+        console.error('Delete post error:', error);
+        setError(toSafeError('delete'));
       } else {
         fetchPosts();
       }
     } catch (err: any) {
-      setError('Erro ao deletar post: ' + err.message);
+      console.error('Delete post error:', err);
+      setError(toSafeError('delete'));
     }
     setDeleteId(null);
   };
@@ -119,7 +125,8 @@ export default function AdminPostsPage() {
       await supabase.auth.signOut();
       navigate('/admin/login');
     } catch (err: any) {
-      setError('Erro ao fazer logout: ' + err.message);
+      console.error('Logout error:', err);
+      setError(toSafeError('general'));
     }
   };
 
