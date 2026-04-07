@@ -22,6 +22,12 @@ const PoliticaTransparenciaInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-transparencia" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Transparência?", answer: "É um documento que demonstra o compromisso da empresa com práticas éticas, governança corporativa e comunicação aberta com stakeholders." },
+        { question: "Quem deve ter uma Política de Transparência?", answer: "Empresas públicas, organizações ESG, ONGs, fintechs e qualquer negócio que queira demonstrar compromisso com governança e ética." },
+        { question: "O que deve conter na Política de Transparência?", answer: "Princípios éticos, canais de denúncia, relatórios financeiros, práticas anticorrupção, compliance e comunicação com stakeholders." },
+        { question: "A Política de Transparência é obrigatória?", answer: "Para empresas públicas e de capital aberto sim. Para empresas privadas não é obrigatória, mas é uma boa prática de governança corporativa." }
+      ]} />
       
       <Header />
       

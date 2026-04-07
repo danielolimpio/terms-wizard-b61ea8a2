@@ -18,6 +18,12 @@ const PoliticaAcessibilidadeInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-acessibilidade" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Acessibilidade?", answer: "É um documento que estabelece o compromisso de um site com acessibilidade digital para pessoas com deficiência, seguindo diretrizes WCAG." },
+        { question: "A Política de Acessibilidade é obrigatória?", answer: "No Brasil, a Lei Brasileira de Inclusão (LBI) exige acessibilidade em sites de empresas com sede no país, especialmente órgãos públicos." },
+        { question: "O que são as diretrizes WCAG?", answer: "WCAG (Web Content Accessibility Guidelines) são padrões internacionais que definem como tornar conteúdo web acessível para pessoas com deficiência." },
+        { question: "O que deve conter na Política de Acessibilidade?", answer: "Nível de conformidade WCAG, recursos de acessibilidade implementados, canal de feedback, plano de melhorias e tecnologias assistivas suportadas." }
+      ]} />
       <Header />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <Breadcrumbs items={breadcrumbItems} />

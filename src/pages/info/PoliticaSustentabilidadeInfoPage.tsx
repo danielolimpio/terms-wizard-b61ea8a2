@@ -18,6 +18,12 @@ const PoliticaSustentabilidadeInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-sustentabilidade" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Sustentabilidade?", answer: "É um documento que formaliza o compromisso da empresa com práticas ambientalmente responsáveis, sociais e de governança (ESG)." },
+        { question: "Quem precisa de uma Política de Sustentabilidade?", answer: "Empresas de todos os portes que desejam demonstrar responsabilidade ambiental, especialmente aquelas sujeitas a regulamentações ESG." },
+        { question: "O que deve conter na Política de Sustentabilidade?", answer: "Metas ambientais, práticas de redução de impacto, responsabilidade social, governança sustentável e indicadores de desempenho." },
+        { question: "A Política de Sustentabilidade é obrigatória?", answer: "Para a maioria das empresas não é obrigatória por lei, mas é cada vez mais exigida por investidores, consumidores e parceiros comerciais." }
+      ]} />
       <Header />
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         <Breadcrumbs items={breadcrumbItems} />

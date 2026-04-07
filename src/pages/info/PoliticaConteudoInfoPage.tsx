@@ -22,6 +22,12 @@ const PoliticaConteudoInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-conteudo" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Conteúdo?", answer: "É um documento que define as regras sobre o tipo de conteúdo permitido em uma plataforma, incluindo conteúdo gerado por usuários." },
+        { question: "Quem precisa de uma Política de Conteúdo?", answer: "Sites com fóruns, comentários, marketplace, redes sociais ou qualquer plataforma que permita conteúdo gerado por usuários (UGC)." },
+        { question: "O que deve conter na Política de Conteúdo?", answer: "Regras claras sobre conteúdo proibido, processo de denúncia, consequências para violações, direitos de propriedade intelectual e moderação." },
+        { question: "A Política de Conteúdo é obrigatória?", answer: "Não é obrigatória por lei, mas é essencial para proteger a plataforma de responsabilidade legal e manter um ambiente seguro para os usuários." }
+      ]} />
       
       <Header />
       

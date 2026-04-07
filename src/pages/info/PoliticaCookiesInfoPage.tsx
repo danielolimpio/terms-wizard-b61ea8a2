@@ -22,6 +22,12 @@ const PoliticaCookiesInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/politica-cookies" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Cookies?", answer: "É um documento que informa aos visitantes quais cookies são utilizados no site, suas finalidades, duração e como gerenciar preferências." },
+        { question: "A Política de Cookies é obrigatória?", answer: "Sim. A LGPD e a GDPR exigem que sites informem sobre o uso de cookies e obtenham consentimento do usuário para cookies não essenciais." },
+        { question: "Quais são as categorias de cookies?", answer: "Essenciais (funcionamento do site), Analytics (métricas), Marketing (publicidade), Funcionalidade (preferências do usuário) e Redes Sociais (compartilhamento)." },
+        { question: "Posso gerar uma Política de Cookies grátis?", answer: "Sim. O Políticas de Privacidade oferece um gerador gratuito que cria sua Política de Cookies personalizada em minutos, conforme LGPD e GDPR." }
+      ]} />
       
       <Header />
       

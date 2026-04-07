@@ -22,6 +22,13 @@ const NossaPrivacidadePage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/nossa-privacidade" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é uma Política de Privacidade?", answer: "É um documento legal que informa aos usuários como seus dados pessoais são coletados, usados, armazenados e protegidos por um site ou aplicativo." },
+        { question: "A Política de Privacidade é obrigatória?", answer: "Sim. No Brasil, a LGPD (Lei Geral de Proteção de Dados) exige que qualquer site ou app que colete dados pessoais tenha uma Política de Privacidade." },
+        { question: "Quais sites precisam de Política de Privacidade?", answer: "Todo site que coleta qualquer tipo de dado pessoal — como e-mail, nome, CPF, cookies ou endereço IP — precisa ter uma Política de Privacidade." },
+        { question: "O que deve conter na Política de Privacidade?", answer: "Deve conter informações sobre quais dados são coletados, finalidade do uso, base legal, tempo de armazenamento, direitos dos titulares e dados de contato do responsável." },
+        { question: "Posso gerar uma Política de Privacidade grátis?", answer: "Sim. O Políticas de Privacidade oferece um gerador gratuito, sem cadastro, que cria sua política personalizada em menos de 2 minutos conforme LGPD e GDPR." }
+      ]} />
       
       <Header />
       

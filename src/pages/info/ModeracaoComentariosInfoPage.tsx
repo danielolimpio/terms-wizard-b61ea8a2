@@ -22,6 +22,12 @@ const ModeracaoComentariosInfoPage = () => {
         <link rel="canonical" href="https://politicadeprivacidade.org/moderacao-comentarios" />
       </Helmet>
       <StructuredData type="breadcrumb" items={breadcrumbItems} />
+      <StructuredData type="faq" questions={[
+        { question: "O que é Política de Moderação de Comentários?", answer: "É um documento que define as regras para publicação de comentários em um site, incluindo o que é permitido e proibido." },
+        { question: "Por que ter uma Política de Moderação?", answer: "Para manter um ambiente saudável, prevenir spam, discurso de ódio e proteger a plataforma de responsabilidade legal por conteúdo de terceiros." },
+        { question: "Quais os tipos de moderação de comentários?", answer: "Pré-moderação (aprovação antes da publicação), pós-moderação (revisão após publicação), moderação automática (filtros e IA) e moderação comunitária (denúncias de usuários)." },
+        { question: "A moderação de comentários é obrigatória?", answer: "Não é obrigatória por lei, mas o Marco Civil da Internet responsabiliza plataformas por conteúdo ilícito após notificação, tornando a moderação essencial." }
+      ]} />
       
       <Header />
       
