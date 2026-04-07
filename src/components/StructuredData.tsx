@@ -118,12 +118,45 @@ export const StructuredData = (props: StructuredDataProps) => {
           "description": props.description,
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
+          "image": "https://politicadeprivacidade.org/logo.png",
+          "brand": {
+            "@type": "Brand",
+            "name": "Políticas de Privacidade"
+          },
           "offers": {
             "@type": "Offer",
             "price": props.offers.price,
             "priceCurrency": props.offers.priceCurrency,
+            "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://politicadeprivacidade.org"
+            "url": "https://politicadeprivacidade.org",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "BRL"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": "0",
+                  "maxValue": "0",
+                  "unitCode": "MIN"
+                }
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "BR"
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "BR",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnDays": "0"
+            }
           },
           "aggregateRating": {
             "@type": "AggregateRating",
