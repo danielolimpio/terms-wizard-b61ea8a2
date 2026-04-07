@@ -236,10 +236,6 @@
     @apply px-3;
   }
   
-  /* Improve card spacing on mobile */
-  .card-professional {
-    @apply mx-2;
-  }
 }
 
 .adsense-banner {
