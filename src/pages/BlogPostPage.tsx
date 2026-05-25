@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -22,7 +23,16 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Política de Privacidade: O Que É e Modelo Grátis 2026</title>
+        <meta name="description" content="Guia 2026: o que é política de privacidade, por que seu site precisa e modelo gratuito conforme LGPD e GDPR. Pronto em minutos." />
+        <link rel="canonical" href="https://politicadeprivacidade.org/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026" />
+        <meta property="og:title" content="Política de Privacidade: O Que É e Modelo Grátis 2026" />
+        <meta property="og:description" content="O que é política de privacidade, por que seu site precisa e modelo gratuito conforme LGPD e GDPR." />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <Header />
+      
       
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-8 max-w-7xl mx-auto">
