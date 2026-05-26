@@ -169,7 +169,7 @@ const Index = () => {
       {/* Hero Section */}
       <section 
         className="relative py-16 md:py-24 px-4 bg-gray-900 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        style={{ backgroundImage: `url(/hero-background.jpg)` }}
       >
         {/* Dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black/60"></div>
