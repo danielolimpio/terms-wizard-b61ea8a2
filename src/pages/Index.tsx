@@ -144,7 +144,6 @@ const Index = () => {
         />
         <meta name="keywords" content="gerador de política de privacidade, política de privacidade grátis, gerar política de privacidade, criar política de privacidade online, modelo política de privacidade, gerador termos de uso, política de cookies, LGPD, GDPR, política privacidade site, política privacidade blog, política privacidade e-commerce" />
         <link rel="canonical" href="https://politicadeprivacidade.org/" />
-        <link rel="preload" as="image" href={heroBackground} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:title" content="Gerador de Política de Privacidade Grátis Online – Crie em 2 Minutos" />
         <meta property="og:description" content="Crie sua política de privacidade grátis conforme LGPD e GDPR. Sem cadastro, pronto em 2 minutos. Baixe em PDF, DOC ou TXT. +5.000 políticas geradas." />
