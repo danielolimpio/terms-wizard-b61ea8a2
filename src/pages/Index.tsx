@@ -18,7 +18,7 @@ import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 import { Search, Shield, Zap, Globe, BadgeCheck, Clock, UserX } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+
 
 const Index = () => {
   const [searchParams, setSearchParams] = useSearchParams();
