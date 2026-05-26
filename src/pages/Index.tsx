@@ -18,7 +18,7 @@ import { POLICY_TYPES, getPolicyById } from "@/lib/policies";
 import { generatePrivacyPolicy, generateTermsOfUse, generateCookiePolicy, generateRefundPolicy, generateTransparencyPolicy, generateSecurityPolicy, generateCopyrightPolicy } from "@/lib/policyTemplates";
 import { GeneratedPolicy, PolicyFormData } from "@/types/policy";
 import { Search, Shield, Zap, Globe, BadgeCheck, Clock, UserX } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+
 
 const Index = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -144,7 +144,6 @@ const Index = () => {
         />
         <meta name="keywords" content="gerador de política de privacidade, política de privacidade grátis, gerar política de privacidade, criar política de privacidade online, modelo política de privacidade, gerador termos de uso, política de cookies, LGPD, GDPR, política privacidade site, política privacidade blog, política privacidade e-commerce" />
         <link rel="canonical" href="https://politicadeprivacidade.org/" />
-        <link rel="preload" as="image" href={heroBackground} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:title" content="Gerador de Política de Privacidade Grátis Online – Crie em 2 Minutos" />
         <meta property="og:description" content="Crie sua política de privacidade grátis conforme LGPD e GDPR. Sem cadastro, pronto em 2 minutos. Baixe em PDF, DOC ou TXT. +5.000 políticas geradas." />
@@ -170,7 +169,7 @@ const Index = () => {
       {/* Hero Section */}
       <section 
         className="relative py-16 md:py-24 px-4 bg-gray-900 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        style={{ backgroundImage: `url(/hero-background.jpg)` }}
       >
         {/* Dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black/60"></div>
