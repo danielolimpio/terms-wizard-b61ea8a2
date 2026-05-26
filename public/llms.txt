@@ -1,0 +1,64 @@
+# Gerador de Políticas de Privacidade e Termos de Uso
+
+> Gere políticas de privacidade, termos de uso e documentos legais para sites e apps em minutos. Conforme LGPD, GDPR e CCPA.
+
+## Pages
+
+- [/](/): Gerador de políticas de privacidade e termos de uso grátis. Crie documentos legais em minutos, sem cadastro.
+- [/sobre](/sobre): Conheça nossa equipe e nossa missão de simplificar a conformidade legal para sites e aplicativos.
+- [/politicas](/politicas): Explore todos os modelos de políticas legais disponíveis: privacidade, cookies, termos de uso e mais.
+- [/ajuda](/ajuda): Central de ajuda com guias passo a passo para usar cada gerador de documentos legais.
+- [/faq](/faq): Perguntas frequentes sobre LGPD, GDPR, políticas de privacidade e termos de uso.
+- [/contato](/contato): Entre em contato conosco para dúvidas, suporte ou parcerias.
+- [/sitemap](/sitemap): Mapa completo do site com todas as páginas e geradores disponíveis.
+
+## Blog
+
+- [/blog](/blog): Artigos e guias sobre LGPD, GDPR, privacidade digital e conformidade legal para sites.
+- [/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026](/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026): O que é uma política de privacidade, por que seu site precisa de uma e modelo gratuito para 2026.
+- [/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica](/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica): Como escrever termos de uso que protejam seu site de processos e garantam segurança jurídica.
+- [/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026](/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026): Guia completo sobre política de cookies, banner correto e conformidade com LGPD e GDPR.
+- [/blog/10-acoes-marketing-lgpd](/blog/10-acoes-marketing-lgpd): 10 ações de marketing que respeitam a LGPD e aumentam a confiança do consumidor.
+- [/blog/o-que-e-cmp-plataforma-gestao-consentimento](/blog/o-que-e-cmp-plataforma-gestao-consentimento): O que é uma CMP (Consent Management Platform) e como gerenciar consentimento de cookies.
+- [/blog/multas-lgpd-2025-valores-casos-reais](/blog/multas-lgpd-2025-valores-casos-reais): Multas da LGPD em 2025: valores reais e casos que você precisa conhecer.
+- [/blog/google-consent-mode-v2-implementar](/blog/google-consent-mode-v2-implementar): Como implementar o Google Consent Mode V2 no seu site para anúncios e analytics.
+- [/blog/dpo-lgpd-quem-pode-ser](/blog/dpo-lgpd-quem-pode-ser): DPO na LGPD: quem pode ser, funções e obrigações do Encarregado de Dados.
+- [/blog/lgpd-marketing-digital](/blog/lgpd-marketing-digital): Como a LGPD impacta o marketing digital e o que fazer para estar em conformidade.
+
+## Geradores
+
+- [/gerador-politica-privacidade](/gerador-politica-privacidade): Gere uma política de privacidade personalizada conforme LGPD e GDPR.
+- [/gerador-termos-uso](/gerador-termos-uso): Crie termos de uso completos para sites, apps e plataformas digitais.
+- [/gerador-politica-cookies](/gerador-politica-cookies): Gere uma política de cookies com banner e categorias de consentimento.
+- [/gerador-politica-reembolso](/gerador-politica-reembolso): Modelo de política de reembolso e devolução para e-commerces.
+- [/gerador-politica-transparencia](/gerador-politica-transparencia): Política de transparência para órgãos públicos e organizações.
+- [/gerador-politica-seguranca](/gerador-politica-seguranca): Política de segurança da informação para proteção de dados corporativos.
+- [/gerador-politica-antispam](/gerador-politica-antispam): Política anti-spam para e-mail marketing e comunicações comerciais.
+- [/gerador-politica-propriedade-intelectual](/gerador-politica-propriedade-intelectual): Proteção de propriedade intelectual e direitos autorais online.
+- [/gerador-politica-conteudo](/gerador-politica-conteudo): Política de conteúdo para plataformas, fóruns e redes sociais.
+- [/gerador-politica-moderacao](/gerador-politica-moderacao): Política de moderação de comentários e conteúdo gerado por usuários.
+- [/gerador-politica-acessibilidade](/gerador-politica-acessibilidade): Política de acessibilidade digital conforme WCAG e legislação brasileira.
+- [/gerador-politica-sustentabilidade](/gerador-politica-sustentabilidade): Política de sustentabilidade e responsabilidade socioambiental.
+
+## Info
+
+- [/politica-privacidade](/politica-privacidade): Política de privacidade do próprio site.
+- [/termos-uso](/termos-uso): Termos de uso do serviço.
+- [/politica-cookies](/politica-cookies): Política de cookies do site.
+- [/nossa-privacidade](/nossa-privacidade): Detalhamento de como tratamos dados pessoais dos usuários.
+- [/uso-cookies](/uso-cookies): Informações sobre o uso de cookies e tecnologias de rastreamento.
+- [/nossos-termos](/nossos-termos): Termos e condições completos de utilização da plataforma.
+- [/politica-conteudo](/politica-conteudo): Diretrizes sobre conteúdo permitido e proibido.
+- [/moderacao-comentarios](/moderacao-comentarios): Regras de moderação de comentários e interações.
+- [/politica-cookies-info](/politica-cookies-info): Informações detalhadas sobre cookies e consentimento.
+- [/politica-transparencia](/politica-transparencia): Compromissos de transparência e boas práticas.
+- [/politica-antispam](/politica-antispam): Compromisso anti-spam e práticas de e-mail marketing.
+- [/politica-sustentabilidade](/politica-sustentabilidade): Compromissos ambientais e sociais.
+- [/politica-direitos-autorais](/politica-direitos-autorais): Proteção de direitos autorais e propriedade intelectual.
+- [/politica-acessibilidade](/politica-acessibilidade): Compromissos de acessibilidade digital.
+- [/politica-seguranca](/politica-seguranca): Práticas de segurança da informação adotadas.
+
+## Optional
+
+- [/politica-de-privacidade-gratis](/politica-de-privacidade-gratis): Landing page sobre política de privacidade gratuita.
+- [/como-gerar-politica-de-privacidade](/como-gerar-politica-de-privacidade): Guia passo a passo de como gerar uma política de privacidade.
