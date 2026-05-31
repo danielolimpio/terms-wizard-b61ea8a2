@@ -110,16 +110,19 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center space-y-2">
+          <p className="text-sm text-gray-400">
+            Plataforma confiável usada por mais de 10.000 sites no Brasil · Conforme LGPD e GDPR · Atualizado para 2026
+          </p>
           <p className="text-base text-gray-400">
-            Copyright © 2025 | Todos direitos reservados | Desenvolvido por{" "}
-            <a 
-              href="https://danielolimpio.com/" 
-              target="_blank" 
+            © 2020–2026 Políticas de Privacidade · Todos os direitos reservados · Desenvolvido por{" "}
+            <a
+              href="https://danielolimpio.com/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline font-medium"
             >
-              DanielOlimpio
+              Daniel Olímpio
             </a>
           </p>
         </div>
