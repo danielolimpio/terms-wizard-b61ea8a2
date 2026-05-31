@@ -9,6 +9,7 @@ import { BlogSidebar } from "@/components/BlogSidebar";
 import { AlertTriangle, Mail, Target, BarChart3, CheckCircle2, Shield, TrendingUp, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import blogImage from "@/assets/blog-lgpd-marketing-digital.jpg";
+import { ArticleSchema } from "@/components/ArticleSchema";
 
 export default function LGPDMarketingDigitalPost() {
   useEffect(() => {
