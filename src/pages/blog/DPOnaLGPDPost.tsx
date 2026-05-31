@@ -60,6 +60,13 @@ export default function DPOnaLGPDPost() {
         <meta property="og:type" content="article" />
         <link rel="canonical" href="https://politicasdeprivacidade.com.br/blog/dpo-lgpd-quem-pode-ser" />
       </Helmet>
+      <ArticleSchema
+        headline="DPO na LGPD: Quem Pode Ser, Funções e Como Terceirizar com Segurança"
+        description="Entenda o papel do DPO na LGPD, quem pode exercer a função, responsabilidades e como terceirizar com segurança."
+        url="https://politicadeprivacidade.org/blog/dpo-lgpd-quem-pode-ser"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+      />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
