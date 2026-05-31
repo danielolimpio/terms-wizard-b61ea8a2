@@ -10,6 +10,7 @@ import { BlogSidebar } from "@/components/BlogSidebar";
 import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { ArticleSchema } from "@/components/ArticleSchema";
 
 export default function TermosUsoSegurancaJuridicaPost() {
   const navigate = useNavigate();
