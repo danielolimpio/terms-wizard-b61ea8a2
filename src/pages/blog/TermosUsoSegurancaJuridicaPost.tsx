@@ -22,6 +22,13 @@ export default function TermosUsoSegurancaJuridicaPost() {
 
   return (
     <div className="min-h-screen bg-background">
+      <ArticleSchema
+        headline="Como Escrever os Termos do Seu Site, Evitar Processos e Garantir Segurança Jurídica"
+        description="Aprenda a redigir Termos de Uso eficazes para o seu site, evitando processos e garantindo segurança jurídica."
+        url="https://politicadeprivacidade.org/blog/como-escrever-termos-do-seu-site-evitar-processos-garantir-seguranca-juridica"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+      />
       <Header />
       
       <div className="container mx-auto px-4 py-12">
