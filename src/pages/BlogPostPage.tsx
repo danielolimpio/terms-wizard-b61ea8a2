@@ -32,6 +32,13 @@ export default function BlogPostPage() {
         <meta property="og:description" content="O que é política de privacidade, por que seu site precisa e modelo gratuito conforme LGPD e GDPR." />
         <meta property="og:type" content="article" />
       </Helmet>
+      <ArticleSchema
+        headline="Política de Privacidade: O Que É, Por Que Precisa e Modelo Gratuito para Seu Site (2026)"
+        description="Guia 2026: o que é política de privacidade, por que seu site precisa e modelo gratuito conforme LGPD e GDPR."
+        url="https://politicadeprivacidade.org/blog/politica-privacidade-o-que-e-por-que-precisa-modelo-gratuito-2026"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-09"
+      />
       <Header />
       
       
