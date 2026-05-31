@@ -48,6 +48,14 @@ export default function MultasLGPD2025Post() {
         <meta name="twitter:description" content="Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas." />
         <meta name="twitter:image" content={blogMultasImage} />
       </Helmet>
+      <ArticleSchema
+        headline="Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades"
+        description="Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas."
+        url="https://politicadeprivacidade.org/blog/multas-lgpd-2025-valores-casos-reais"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+        faq={multasFaq}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
         <Header />
