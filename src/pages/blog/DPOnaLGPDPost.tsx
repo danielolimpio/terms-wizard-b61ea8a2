@@ -39,6 +39,7 @@ import { AuthorBio } from "@/components/AuthorBio";
 import { SocialShare } from "@/components/SocialShare";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import blogDPOImage from "@/assets/blog-dpo-lgpd.jpg";
+import { ArticleSchema } from "@/components/ArticleSchema";
 
 export default function DPOnaLGPDPost() {
   // Scroll to top on mount
