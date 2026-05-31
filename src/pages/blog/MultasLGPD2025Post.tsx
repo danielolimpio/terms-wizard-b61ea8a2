@@ -11,6 +11,15 @@ import { Button } from "@/components/ui/button";
 import { AlertTriangle, ShieldAlert, Scale, DollarSign, CheckCircle2, FileText, Clock, Users, Lock, TrendingUp, Gavel, Shield, XCircle, Target, Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import blogMultasImage from "@/assets/blog-multas-lgpd-2025.jpg";
+import { ArticleSchema } from "@/components/ArticleSchema";
+
+const multasFaq = [
+  { question: "Posso ser multado mesmo sem ter tido um vazamento de dados?", answer: "Sim. A LGPD pune omissões e más práticas, não apenas incidentes. Falta de política de privacidade, uso de cookies sem consentimento ou negar direitos dos titulares já são infrações." },
+  { question: "Quanto tempo a ANPD leva para aplicar uma multa após uma denúncia?", answer: "O processo pode levar de 6 a 18 meses, dependendo da complexidade. Mas a notificação inicial (com prazo para defesa) costuma chegar em até 90 dias." },
+  { question: "Pequenos negócios estão realmente no radar da ANPD?", answer: "Sim. Embora a prioridade seja setores de alto risco, a ANPD recebe e analisa todas as reclamações de titulares. Um único usuário insatisfeito pode iniciar um processo." },
+  { question: "Existe uma forma de saber se estou em risco de multa?", answer: "Faça um autocheck: tem política de privacidade clara e personalizada? Pede consentimento para cookies não essenciais? Responde a pedidos de exclusão em até 15 dias? Se respondeu 'não' a qualquer um, está em risco." },
+  { question: "Onde posso encontrar modelos oficiais da ANPD?", answer: "Acesse o site oficial da Autoridade Nacional de Proteção de Dados (ANPD) e explore a seção 'Orientações e Guias'. Tudo é gratuito e voltado para diferentes perfis de empresas." },
+];
 
 export default function MultasLGPD2025Post() {
   const navigate = useNavigate();
@@ -39,6 +48,14 @@ export default function MultasLGPD2025Post() {
         <meta name="twitter:description" content="Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas." />
         <meta name="twitter:image" content={blogMultasImage} />
       </Helmet>
+      <ArticleSchema
+        headline="Multas da LGPD em 2025: Valores, Casos Reais e Como Evitar Penalidades"
+        description="Saiba quanto pode custar uma multa da LGPD, veja casos reais e aprenda a se proteger com boas práticas."
+        url="https://politicadeprivacidade.org/blog/multas-lgpd-2025-valores-casos-reais"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+        faq={multasFaq}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
         <Header />

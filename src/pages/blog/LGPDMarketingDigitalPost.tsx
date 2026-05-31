@@ -9,6 +9,7 @@ import { BlogSidebar } from "@/components/BlogSidebar";
 import { AlertTriangle, Mail, Target, BarChart3, CheckCircle2, Shield, TrendingUp, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import blogImage from "@/assets/blog-lgpd-marketing-digital.jpg";
+import { ArticleSchema } from "@/components/ArticleSchema";
 
 export default function LGPDMarketingDigitalPost() {
   useEffect(() => {
@@ -26,6 +27,13 @@ export default function LGPDMarketingDigitalPost() {
         <meta property="og:type" content="article" />
         <link rel="canonical" href="https://politicasdeprivacidade.com.br/blog/lgpd-marketing-digital" />
       </Helmet>
+      <ArticleSchema
+        headline="LGPD e Marketing Digital: Como Adaptar Campanhas Sem Perder Performance"
+        description="Como adaptar campanhas de marketing digital à LGPD sem perder performance, com práticas atualizadas para 2026."
+        url="https://politicadeprivacidade.org/blog/lgpd-marketing-digital"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+      />
 
       <div className="min-h-screen bg-background">
         <Header />
