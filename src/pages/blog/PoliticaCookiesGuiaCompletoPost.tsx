@@ -21,6 +21,13 @@ export default function PoliticaCookiesGuiaCompletoPost() {
 
   return (
     <div className="min-h-screen bg-background">
+      <ArticleSchema
+        headline="Política de Cookies: Guia Completo LGPD + GDPR e Banner Correto (2026)"
+        description="Guia completo de Política de Cookies em conformidade com LGPD e GDPR, com banner de consentimento correto para 2026."
+        url="https://politicadeprivacidade.org/blog/politica-cookies-guia-completo-lgpd-gdpr-banner-correto-2026"
+        image="https://politicadeprivacidade.org/logo.png"
+        datePublished="2025-11-30"
+      />
       <Header />
       
       <article className="container mx-auto px-4 py-12">
