@@ -7,6 +7,7 @@ import blogImage6 from "@/assets/blog-multas-lgpd-2025.jpg";
 import blogImage7 from "@/assets/blog-google-consent-mode-v2.jpg";
 import blogImage8 from "@/assets/blog-dpo-lgpd.jpg";
 import blogImage9 from "@/assets/blog-lgpd-marketing-digital.jpg";
+import blogImage10 from "@/assets/blog-direitos-titular-lgpd.jpg";
 
 export interface BlogArticle {
   id: string;
@@ -21,6 +22,17 @@ export interface BlogArticle {
 }
 
 export const blogArticles: BlogArticle[] = [
+  {
+    id: "10",
+    title: "Direitos do Titular na LGPD: Guia Completo dos 9 Direitos Garantidos por Lei",
+    excerpt: "Descubra quais são os 9 direitos garantidos pela LGPD ao titular de dados, com modelos de solicitação e o passo a passo para exercer cada um na prática.",
+    image: blogImage10,
+    readTime: "16 min",
+    slug: "/blog/direitos-titular-lgpd-guia-completo",
+    category: "LGPD",
+    tags: ["lgpd", "privacidade", "compliance", "dados", "titular", "direitos"],
+    publishedAt: "2026-06-28"
+  },
   {
     id: "9",
     title: "LGPD e Marketing Digital: Como Adaptar Campanhas Sem Perder Performance",
